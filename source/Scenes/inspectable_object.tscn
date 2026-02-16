@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ca5ehl3awp485"]
+
+[ext_resource type="Script" uid="uid://1j7n3ds73qte" path="res://Scripts/Inspectable.gd" id="1_gqcn6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fkqmd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gqcn6"]
+
+[node name="InspectableObject" type="StaticBody3D" unique_id=441466860]
+script = ExtResource("1_gqcn6")
+defaultCameraDistance = 2.0
+minCameraDistance = 1.0
+maxCameraDistance = 3.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1071911347]
+shape = SubResource("BoxShape3D_fkqmd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=31540225]
+mesh = SubResource("BoxMesh_gqcn6")
