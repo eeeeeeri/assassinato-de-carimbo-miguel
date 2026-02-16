@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dskcxgegt7slf"]
+
+[ext_resource type="Script" uid="uid://bdgkrea4w4sw2" path="res://Scripts/ObjectInspector.gd" id="1_hq2uk"]
+
+[node name="ObjectInspector" type="Node3D" unique_id=1508487688]
+script = ExtResource("1_hq2uk")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=850820707]
+transparent_bg = true
+size = Vector2i(1024, 1024)
+
+[node name="InspectionCamera" type="Camera3D" parent="SubViewport" unique_id=1486601183]
+near = 0.01
+far = 20.0
+
+[node name="ObjectParentPoint" type="Node3D" parent="SubViewport" unique_id=725816643]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.756218)
+
+[node name="MainLight" type="DirectionalLight3D" parent="SubViewport" unique_id=935541220]
+transform = Transform3D(0.7229792, -0.36071116, 0.589227, 0, 0.8528772, 0.5221116, -0.6908698, -0.3774758, 0.6166124, 0, 0, 0)
+
+[node name="RimLight" type="DirectionalLight3D" parent="SubViewport" unique_id=1938736714]
+transform = Transform3D(0.7229791, 0.3524387, -0.59421206, 3.7252903e-09, -0.86009276, -0.5101376, -0.6908698, 0.36881894, -0.62182903, 0, 0, 0)
+light_energy = 0.3

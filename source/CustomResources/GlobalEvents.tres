@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="GlobalEvents" format=3 uid="uid://yet4xur76d0b"]
+
+[ext_resource type="Script" uid="uid://cq4ymxlvi21h0" path="res://Scripts/GlobalEventsCR.gd" id="1_o4txr"]
+
+[resource]
+script = ExtResource("1_o4txr")
