@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bgpqxtkbaosy4"]
+
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/click_interactable.tscn" id="1_e5ax4"]
+
+[node name="Interactions_prototype" type="Node2D" unique_id=1761780971]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=97470348]
+
+[node name="ClickInteractable" parent="." unique_id=705077137 instance=ExtResource("1_e5ax4")]
+
+[connection signal="mouse_entered" from="ClickInteractable" to="ClickInteractable" method="_on_mouse_entered"]
