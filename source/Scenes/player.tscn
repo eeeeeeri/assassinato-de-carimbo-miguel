@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://bqbd2v2crepoy"]
+
+[ext_resource type="Script" uid="uid://5r2tqy85as8e" path="res://Scripts/player.gd" id="1_cvnsp"]
+[ext_resource type="Texture2D" uid="uid://d33lx5oru8566" path="res://Assets/player_temp.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/object_inspector.tscn" id="3_vgqql"]
+[ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/inspection_canvas.tscn" id="4_fkybt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o06y3"]
+radius = 40.0
+height = 100.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o06y3"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k7acu"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5v1tr"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0fj1v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o06y3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k7acu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5v1tr")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
+radius = 50.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1389957626]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_cvnsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=958186853]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_o06y3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=149292721]
+position = Vector2(0, -75)
+sprite_frames = SubResource("SpriteFrames_0fj1v")
+animation = &"idle"
+frame_progress = 0.017334761
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=297402548]
+offset = Vector2(0, -64)
+zoom = Vector2(0.8, 0.8)
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=287395072]
+
+[node name="ObjectInspector" parent="." unique_id=1508487688 instance=ExtResource("3_vgqql")]
+
+[node name="InspectionCanvas" parent="." unique_id=360760167 instance=ExtResource("4_fkybt")]
+z_index = 2
+
+[node name="PossiblePosition" type="Area2D" parent="." unique_id=1355852533]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PossiblePosition" unique_id=1174026719]
+shape = SubResource("CircleShape2D_vgqql")
+debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
