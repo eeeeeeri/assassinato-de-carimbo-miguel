@@ -1,6 +1,25 @@
 class_name Interactable extends Node
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 var is_interactable := false
+var time := 0.0
+var sprite_scale = 1
+var outline_thickness = 0
+
+func _process(delta: float) -> void:
+	
+	if is_interactable:
+		time += delta
+		sprite_scale = sin(time + 1.5*PI) * .05 + 1.05
+		outline_thickness = sin(time + 1.5*PI) * 2 + 2
+	else:
+		time = 0
+		sprite_scale = 1
+		outline_thickness = 0
+	sprite_2d.material.set_shader_parameter("thickness", outline_thickness)
+	sprite_2d.scale = Vector2(sprite_scale,sprite_scale)
+
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if is_interactable:
