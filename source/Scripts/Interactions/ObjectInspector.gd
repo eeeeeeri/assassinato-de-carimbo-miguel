@@ -10,11 +10,8 @@ class_name Inspector extends Node
 @export var PopupAnimDuration:float = .2
 
 var currentInspectable:Inspectable
-
 var scaleTween:Tween
-
 var initialized:bool
-
 var mouseDelta:Vector2
 
 func _ready() -> void:
@@ -46,8 +43,8 @@ func  EndInspection() -> void:
 		GlobalResources.GLOBAL_EVENTS.EndInspection.emit())
 	
 func _input(event: InputEvent) -> void:
-	if(Input.is_action_just_pressed("Cancel")):
-		EndInspection()
+	if(currentInspectable == null): return
+	
 	if(event is InputEventMouseMotion):
 		mouseDelta = event.relative
 		

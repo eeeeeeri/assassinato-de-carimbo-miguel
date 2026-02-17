@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bithnrtafppjm"]
+
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_67wj3"]
+[ext_resource type="Script" uid="uid://cu6fk46tr7fyn" path="res://Scripts/Interactions/InteractableInspectTxt.gd" id="2_w380c"]
+
+[node name="ClickInspectableText" unique_id=705077137 instance=ExtResource("1_67wj3")]
+script = ExtResource("2_w380c")
+TextsList = Array[String](["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "cccccccccccccccccccccccccccccccccc", "dddddddddddddddddddddddddddddddddd", "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"])
