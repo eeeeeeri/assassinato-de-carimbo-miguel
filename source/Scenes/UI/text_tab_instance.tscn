@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bsbxjriwo70va"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ctqcj"]
+font_size = 18
+
+[node name="TextTabInstance" type="Label" unique_id=1865317043]
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+label_settings = SubResource("LabelSettings_ctqcj")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+metadata/_tab_index = 0

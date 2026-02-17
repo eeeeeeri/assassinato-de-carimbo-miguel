@@ -1,0 +1,115 @@
+[gd_scene format=3 uid="uid://dsjfujutu60vs"]
+
+[ext_resource type="Script" uid="uid://n7i1e2y1a88a" path="res://Scripts/UI/InspectionCanvas.gd" id="1_f6lst"]
+[ext_resource type="Texture2D" uid="uid://odjhnr3nd1bk" path="res://Sprites/right-arrow-icon-27.png" id="2_o4yxg"]
+[ext_resource type="PackedScene" uid="uid://bsbxjriwo70va" path="res://Scenes/UI/text_tab_instance.tscn" id="2_vxc3v"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxc3v"]
+
+[node name="InspectionCanvas" type="Control" unique_id=360760167]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_f6lst")
+TextInstanceScene = ExtResource("2_vxc3v")
+
+[node name="3DObjectPanel" type="Control" parent="." unique_id=290056482]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="3DObjectPanel" unique_id=1912252679]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="ObjectCamTexture" type="TextureRect" parent="3DObjectPanel" unique_id=1575167569]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="TextPanel" type="Control" parent="." unique_id=159574153]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="TextPanel" unique_id=727301662]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="TabContainer" type="TabContainer" parent="TextPanel" unique_id=1718755218]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 85.0
+offset_top = 160.0
+offset_right = -85.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vxc3v")
+tab_alignment = 1
+tabs_position = 1
+
+[node name="ButtonLeft" type="Button" parent="TextPanel" unique_id=1440802899]
+visible = false
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 67.0
+offset_top = -35.0
+offset_right = 119.0
+offset_bottom = 35.0
+grow_vertical = 2
+scale = Vector2(-1, 1)
+icon = ExtResource("2_o4yxg")
+expand_icon = true
+
+[node name="ButtonRight" type="Button" parent="TextPanel" unique_id=1989232719]
+visible = false
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -68.0
+offset_top = -34.0
+offset_right = -16.0
+offset_bottom = 36.0
+grow_horizontal = 0
+grow_vertical = 2
+icon = ExtResource("2_o4yxg")
+expand_icon = true
+
+[connection signal="tab_changed" from="TextPanel/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="pressed" from="TextPanel/ButtonLeft" to="TextPanel/TabContainer" method="select_previous_available"]
+[connection signal="pressed" from="TextPanel/ButtonRight" to="TextPanel/TabContainer" method="select_next_available"]

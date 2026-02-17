@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ca5ehl3awp485"]
 
-[ext_resource type="Script" uid="uid://1j7n3ds73qte" path="res://Scripts/Inspectable.gd" id="1_gqcn6"]
+[ext_resource type="Script" uid="uid://1j7n3ds73qte" path="res://Scripts/Interactions/Inspectable.gd" id="1_gqcn6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_fkqmd"]
 
