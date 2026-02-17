@@ -1,7 +1,7 @@
 extends Node
 
 @onready var _3d_object_panel: Control = $"3DObjectPanel"
-@onready var object_cam_texture: TextureRect = $"3DObjectPanel/Background/ObjectCamTexture"
+@onready var object_cam_texture: TextureRect = $"3DObjectPanel/ObjectCamTexture"
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspect3D.connect(Inspect3D)

@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_f6lst")
 
 [node name="3DObjectPanel" type="Control" parent="." unique_id=290056482]
@@ -29,15 +30,12 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6784314)
 
-[node name="ObjectCamTexture" type="TextureRect" parent="3DObjectPanel/Background" unique_id=1575167569]
+[node name="ObjectCamTexture" type="TextureRect" parent="3DObjectPanel" unique_id=1575167569]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 52.0
-offset_top = 40.0
-offset_right = -52.0
-offset_bottom = -40.0
 grow_horizontal = 2
 grow_vertical = 2
-stretch_mode = 4
+expand_mode = 1
+stretch_mode = 5
