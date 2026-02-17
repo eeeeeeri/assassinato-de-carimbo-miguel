@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dskcxgegt7slf"]
 
-[ext_resource type="Script" uid="uid://bdgkrea4w4sw2" path="res://Scripts/ObjectInspector.gd" id="1_hq2uk"]
+[ext_resource type="Script" uid="uid://bdgkrea4w4sw2" path="res://Scripts/Interactions/ObjectInspector.gd" id="1_hq2uk"]
 
 [node name="ObjectInspector" type="Node3D" unique_id=1508487688]
 script = ExtResource("1_hq2uk")

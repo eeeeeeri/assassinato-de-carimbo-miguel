@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cj2a848vem8ks"]
 
-[ext_resource type="Script" uid="uid://dbwxdhea6e57i" path="res://Scripts/Interactable.gd" id="1_ioulm"]
+[ext_resource type="Script" uid="uid://dbwxdhea6e57i" path="res://Scripts/Interactions/InteractableObj.gd" id="1_ioulm"]
 [ext_resource type="Texture2D" uid="uid://bjac1385olelm" path="res://Sprites/Placeholders/RoundSquare.png" id="2_p2pn4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4glw"]

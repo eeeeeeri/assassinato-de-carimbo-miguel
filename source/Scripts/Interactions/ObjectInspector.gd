@@ -10,14 +10,13 @@ class_name Inspector extends Node
 @export var PopupAnimDuration:float = .2
 
 var currentInspectable:Inspectable
-
 var scaleTween:Tween
-
 var initialized:bool
-
 var mouseDelta:Vector2
 
 func _ready() -> void:
+	object_parent_point.scale = Vector3(.01, .01, .01)
+	sub_viewport.size = DisplayServer.window_get_size()
 	GlobalResources.GLOBAL_EVENTS.OnInteractInspection3D.connect(StartInspection)
 
 func StartInspection(inspectableScene:PackedScene) -> void:
@@ -28,7 +27,7 @@ func StartInspection(inspectableScene:PackedScene) -> void:
 	
 	object_parent_point.global_position = inspection_camera.global_position + -inspection_camera.global_basis.z.normalized() * currentInspectable.defaultCameraDistance
 	object_parent_point.add_child(currentInspectable)
-	object_parent_point.scale = Vector3.ZERO
+	object_parent_point.scale = Vector3(.01, .01, .01)
 	if(scaleTween): scaleTween.kill()
 	scaleTween = create_tween()
 	scaleTween.tween_property(object_parent_point, "scale", Vector3.ONE, PopupAnimDuration).finished.connect(func():
@@ -39,13 +38,13 @@ func  EndInspection() -> void:
 	
 	if(scaleTween): scaleTween.kill()
 	scaleTween = create_tween()
-	scaleTween.tween_property(object_parent_point, "scale", Vector3.ZERO, PopupAnimDuration).finished.connect(func():
+	scaleTween.tween_property(object_parent_point, "scale", Vector3(.01, .01, .01), PopupAnimDuration).finished.connect(func():
 		currentInspectable.queue_free()
 		GlobalResources.GLOBAL_EVENTS.EndInspection.emit())
 	
 func _input(event: InputEvent) -> void:
-	if(Input.is_action_just_pressed("Cancel")):
-		EndInspection()
+	if(currentInspectable == null): return
+	
 	if(event is InputEventMouseMotion):
 		mouseDelta = event.relative
 		
