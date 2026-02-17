@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://5r2tqy85as8e" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://d33lx5oru8566" path="res://Assets/player_temp.png" id="2_6t5aa"]
-[ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/object_inspector.tscn" id="3_vgqql"]
-[ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/inspection_canvas.tscn" id="4_fkybt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o06y3"]
 radius = 40.0
@@ -66,11 +64,6 @@ offset = Vector2(0, -64)
 zoom = Vector2(0.8, 0.8)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=287395072]
-
-[node name="ObjectInspector" parent="." unique_id=1508487688 instance=ExtResource("3_vgqql")]
-
-[node name="InspectionCanvas" parent="." unique_id=360760167 instance=ExtResource("4_fkybt")]
-z_index = 2
 
 [node name="PossiblePosition" type="Area2D" parent="." unique_id=1355852533]
 collision_layer = 4

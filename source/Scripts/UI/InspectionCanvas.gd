@@ -2,13 +2,13 @@ extends Node
 
 @export var TextInstanceScene:PackedScene
 
-@onready var _3d_object_panel: Control = $"3DObjectPanel"
-@onready var object_cam_texture: TextureRect = $"3DObjectPanel/ObjectCamTexture"
+@onready var _3d_object_panel: Control = $"CanvasLayer/3DObjectPanel"
+@onready var object_cam_texture: TextureRect = $"CanvasLayer/3DObjectPanel/ObjectCamTexture"
 
-@onready var text_panel: Control = $TextPanel
-@onready var tab_container: TabContainer = $TextPanel/TabContainer
-@onready var button_left: Button = $TextPanel/ButtonLeft
-@onready var button_right: Button = $TextPanel/ButtonRight
+@onready var text_panel: Control = $CanvasLayer/TextPanel
+@onready var tab_container: TabContainer = $CanvasLayer/TextPanel/TabContainer
+@onready var button_left: Button = $CanvasLayer/TextPanel/ButtonLeft
+@onready var button_right: Button = $CanvasLayer/TextPanel/ButtonRight
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspect3D.connect(Inspect3D)
