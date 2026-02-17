@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://5mrwdilq8lw"]
+
+[sub_resource type="Theme" id="Theme_vxwb6"]
+default_font_size = 18
+
+[node name="DialogButton" type="Button" unique_id=1828395968]
+custom_minimum_size = Vector2(0, 45)
+theme = SubResource("Theme_vxwb6")
+autowrap_mode = 2

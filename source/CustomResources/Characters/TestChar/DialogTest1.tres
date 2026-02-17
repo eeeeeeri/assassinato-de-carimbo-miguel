@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://21a42ak3oihb"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_gpskr"]
+
+[resource]
+script = ExtResource("1_gpskr")
+dialogOption = "Me empresta 100 reais?"
+charResponses = Array[String](["O QUEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE", "100 REAAAAAAAAAAAAAAAAAAAAAAAAISSSSSSSSSSSSS?????????????!!!!!!!!!!!!!!!!"])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

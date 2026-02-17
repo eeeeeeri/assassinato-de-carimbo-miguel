@@ -3,8 +3,15 @@
 [ext_resource type="Script" uid="uid://n7i1e2y1a88a" path="res://Scripts/UI/InspectionCanvas.gd" id="1_f6lst"]
 [ext_resource type="Texture2D" uid="uid://odjhnr3nd1bk" path="res://Sprites/right-arrow-icon-27.png" id="2_o4yxg"]
 [ext_resource type="PackedScene" uid="uid://bsbxjriwo70va" path="res://Scenes/UI/text_tab_instance.tscn" id="2_vxc3v"]
+[ext_resource type="PackedScene" uid="uid://5mrwdilq8lw" path="res://Scenes/UI/dialog_button.tscn" id="3_idqf3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vxc3v"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_2uy4u"]
+font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_166hs"]
+font_size = 18
 
 [node name="InspectionCanvas" type="Control" unique_id=360760167]
 layout_mode = 3
@@ -16,6 +23,7 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_f6lst")
 TextInstanceScene = ExtResource("2_vxc3v")
+DialogButtonScene = ExtResource("3_idqf3")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1988823393]
 
@@ -111,6 +119,93 @@ grow_horizontal = 0
 grow_vertical = 2
 icon = ExtResource("2_o4yxg")
 expand_icon = true
+
+[node name="DialogPanel" type="Control" parent="CanvasLayer" unique_id=1680356028]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="ColorRect" parent="CanvasLayer/DialogPanel" unique_id=1429193504]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="CharacterPortrait" type="TextureRect" parent="CanvasLayer/DialogPanel" unique_id=1816717548]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -159.0
+offset_top = -511.0
+offset_right = 159.0
+offset_bottom = -68.0
+grow_horizontal = 2
+grow_vertical = 0
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DialogPanel" unique_id=337631586]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -215.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0.58516484, 0.3359017, 0.18008909, 1)
+
+[node name="CharacterName" type="Label" parent="CanvasLayer/DialogPanel/ColorRect" unique_id=444401136]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 30.0
+offset_right = -30.0
+offset_bottom = 39.0
+grow_horizontal = 2
+label_settings = SubResource("LabelSettings_2uy4u")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DialogOptions" type="VBoxContainer" parent="CanvasLayer/DialogPanel/ColorRect" unique_id=1541288618]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -549.0
+offset_top = -66.5
+offset_right = 549.0
+offset_bottom = 93.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DialogLabel" type="Label" parent="CanvasLayer/DialogPanel/ColorRect" unique_id=435520882]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 29.0
+offset_top = 55.0
+offset_right = -29.0
+offset_bottom = -19.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_166hs")
+horizontal_alignment = 1
+autowrap_mode = 2
 
 [connection signal="tab_changed" from="CanvasLayer/TextPanel/TabContainer" to="." method="_on_tab_container_tab_changed"]
 [connection signal="pressed" from="CanvasLayer/TextPanel/ButtonLeft" to="CanvasLayer/TextPanel/TabContainer" method="select_previous_available"]
