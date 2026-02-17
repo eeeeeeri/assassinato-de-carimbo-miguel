@@ -17,16 +17,18 @@ mouse_filter = 2
 script = ExtResource("1_f6lst")
 TextInstanceScene = ExtResource("2_vxc3v")
 
-[node name="3DObjectPanel" type="Control" parent="." unique_id=290056482]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1988823393]
+
+[node name="3DObjectPanel" type="Control" parent="CanvasLayer" unique_id=290056482]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="3DObjectPanel" unique_id=1912252679]
+[node name="Background" type="ColorRect" parent="CanvasLayer/3DObjectPanel" unique_id=1912252679]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -35,7 +37,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6784314)
 
-[node name="ObjectCamTexture" type="TextureRect" parent="3DObjectPanel" unique_id=1575167569]
+[node name="ObjectCamTexture" type="TextureRect" parent="CanvasLayer/3DObjectPanel" unique_id=1575167569]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,16 +47,16 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextPanel" type="Control" parent="." unique_id=159574153]
+[node name="TextPanel" type="Control" parent="CanvasLayer" unique_id=159574153]
 visible = false
-layout_mode = 1
+layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="TextPanel" unique_id=727301662]
+[node name="Background" type="ColorRect" parent="CanvasLayer/TextPanel" unique_id=727301662]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,7 +65,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6784314)
 
-[node name="TabContainer" type="TabContainer" parent="TextPanel" unique_id=1718755218]
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/TextPanel" unique_id=1718755218]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -78,7 +80,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_vxc3v")
 tab_alignment = 1
 tabs_position = 1
 
-[node name="ButtonLeft" type="Button" parent="TextPanel" unique_id=1440802899]
+[node name="ButtonLeft" type="Button" parent="CanvasLayer/TextPanel" unique_id=1440802899]
 visible = false
 layout_mode = 1
 anchors_preset = 4
@@ -93,7 +95,7 @@ scale = Vector2(-1, 1)
 icon = ExtResource("2_o4yxg")
 expand_icon = true
 
-[node name="ButtonRight" type="Button" parent="TextPanel" unique_id=1989232719]
+[node name="ButtonRight" type="Button" parent="CanvasLayer/TextPanel" unique_id=1989232719]
 visible = false
 layout_mode = 1
 anchors_preset = 6
@@ -110,6 +112,6 @@ grow_vertical = 2
 icon = ExtResource("2_o4yxg")
 expand_icon = true
 
-[connection signal="tab_changed" from="TextPanel/TabContainer" to="." method="_on_tab_container_tab_changed"]
-[connection signal="pressed" from="TextPanel/ButtonLeft" to="TextPanel/TabContainer" method="select_previous_available"]
-[connection signal="pressed" from="TextPanel/ButtonRight" to="TextPanel/TabContainer" method="select_next_available"]
+[connection signal="tab_changed" from="CanvasLayer/TextPanel/TabContainer" to="." method="_on_tab_container_tab_changed"]
+[connection signal="pressed" from="CanvasLayer/TextPanel/ButtonLeft" to="CanvasLayer/TextPanel/TabContainer" method="select_previous_available"]
+[connection signal="pressed" from="CanvasLayer/TextPanel/ButtonRight" to="CanvasLayer/TextPanel/TabContainer" method="select_next_available"]

@@ -4,7 +4,10 @@
 [ext_resource type="Texture2D" uid="uid://bwceyaaxjaxpm" path="res://Assets/TilesetTEMPORARIO/tileset.png" id="1_go701"]
 [ext_resource type="Texture2D" uid="uid://bna84cpd2anbl" path="res://Assets/TilesetTEMPORARIO/tileset_stairs.png" id="2_5a7ea"]
 [ext_resource type="PackedScene" uid="uid://bqbd2v2crepoy" path="res://Scenes/player.tscn" id="4_o06y3"]
-[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/click_inspectable_object.tscn" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="6_o06y3"]
+[ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/Interactions/object_inspector.tscn" id="7_k7acu"]
+[ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/UI/inspection_canvas.tscn" id="8_5v1tr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5ukr8"]
 texture = ExtResource("1_5a7ea")
@@ -248,3 +251,11 @@ position = Vector2(342, 264)
 
 [node name="ClickInspectableObject" parent="." unique_id=705077137 instance=ExtResource("6_5ukr8")]
 position = Vector2(-265, -111)
+
+[node name="ClickInspectableText" parent="." unique_id=578831168 instance=ExtResource("6_o06y3")]
+position = Vector2(689, 36)
+
+[node name="ObjectInspector" parent="." unique_id=1508487688 instance=ExtResource("7_k7acu")]
+
+[node name="InspectionCanvas" parent="." unique_id=360760167 instance=ExtResource("8_5v1tr")]
+z_index = 2
