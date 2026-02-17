@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/Interactions/object_inspector.tscn" id="3_2anby"]
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="3_4eimr"]
 [ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/UI/inspection_canvas.tscn" id="4_2anby"]
+[ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="6_j2wl1"]
 
 [node name="Interactions_prototype" type="Node2D" unique_id=1761780971]
 
@@ -25,5 +26,8 @@ TextsList = Array[String](["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbb
 [node name="UI" type="CanvasLayer" parent="." unique_id=907953775]
 
 [node name="InspectionCanvas" parent="UI" unique_id=360760167 instance=ExtResource("4_2anby")]
+
+[node name="ClickCharacterInteractable" parent="." unique_id=738888708 instance=ExtResource("6_j2wl1")]
+position = Vector2(413, 165)
 
 [connection signal="mouse_entered" from="ClickInteractable" to="ClickInteractable" method="_on_mouse_entered"]

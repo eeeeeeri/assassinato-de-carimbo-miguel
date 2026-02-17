@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c8u2gfrtw53q4"]
+
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_ltl3q"]
+[ext_resource type="Script" uid="uid://cgbvf4hwycy1u" path="res://Scripts/Interactions/InteractableCharacter.gd" id="2_fy4sm"]
+[ext_resource type="Resource" uid="uid://duyxp42ds1oy7" path="res://CustomResources/Characters/TestChar/CharacterTest.tres" id="3_fy4sm"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="4_juau3"]
+
+[node name="ClickCharacterInteractable" unique_id=705077137 instance=ExtResource("1_ltl3q")]
+script = ExtResource("2_fy4sm")
+Character = ExtResource("3_fy4sm")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1151619031]
+scale = Vector2(1.31, 2.76)
+
+[node name="Sprite2D" parent="." index="1" unique_id=159541262]
+texture = ExtResource("4_juau3")

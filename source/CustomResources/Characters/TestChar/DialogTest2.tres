@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://cu6r0jodnpsou"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_boc2r"]
+
+[resource]
+script = ExtResource("1_boc2r")
+dialogOption = "se ela fosse a mulher do tempo quando vc assiste a TV e voce fosse assistir E sem saber, tivesse que voltar, mas por 1 milhão de reais voce deixaria usar ou ia embora?"
+charResponses = Array[String](["vou embora"])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"
