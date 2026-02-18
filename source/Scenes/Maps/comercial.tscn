@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://8ufp5uldstrx"]
+
+[ext_resource type="TileSet" uid="uid://btt8u4tqpkj43" path="res://CustomResources/tileset.tres" id="1_rv3b8"]
+[ext_resource type="PackedScene" uid="uid://bqbd2v2crepoy" path="res://Scenes/player.tscn" id="2_68qxl"]
+[ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/Interactions/object_inspector.tscn" id="3_kafox"]
+[ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/UI/inspection_canvas.tscn" id="4_t55c3"]
+[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="5_kafox"]
+
+[node name="Comercial" type="Node2D" unique_id=146350973]
+y_sort_enabled = true
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2054894502]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAP7/PwAGAAMAAAAAAP3/PwAGAAMAAAABAPz/PwAGAAMAAAAAAP//PwAGAAMAAAABAAAAPwAGAAMAAAABAAEAPwAGAAMAAAACAAIAPwAGAAMAAAACAAEAPwAGAAMAAAADAAAAPwAGAAMAAAACAPr/PwAGAAMAAAACAPv/PwAGAAMAAAADAPz/PwAGAAMAAAADAP3/PwAGAAMAAAAEAP7/PwAGAAMAAAAEAP3/PwAGAAMAAAAEAPv/PwAGAAMAAAAEAPr/PwAGAAMAAAADAPn/PwAGAAMAAAADAPj/PwAGAAMAAAACAPn/PwAGAAMAAAAFAPz/PwAGAAMAAAAGAPr/PwAGAAMAAAAFAPn/PwAGAAMAAAAFAPj/PwAGAAMAAAAEAPf/PwAGAAMAAAAEAPb/PwAGAAMAAAAFAPb/PwAGAAMAAAAFAPT/PwAGAAMAAAAFAPX/PwAGAAMAAAAGAPb/PwAGAAMAAAAGAPf/PwAGAAMAAAAHAPj/PwAGAAMAAAAFAPf/PwAGAAMAAAA=")
+tile_set = ExtResource("1_rv3b8")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=705766568]
+y_sort_enabled = true
+tile_set = ExtResource("1_rv3b8")
+
+[node name="Player" parent="." unique_id=1389957626 instance=ExtResource("2_68qxl")]
+position = Vector2(342, 264)
+
+[node name="ObjectInspector" parent="." unique_id=1508487688 instance=ExtResource("3_kafox")]
+
+[node name="InspectionCanvas" parent="." unique_id=360760167 instance=ExtResource("4_t55c3")]
+z_index = 2
+
+[node name="ClickTravel" parent="." unique_id=705077137 instance=ExtResource("5_kafox")]
+position = Vector2(-108, 170)
+scene = "res://Scenes/Maps/residencial.tscn"

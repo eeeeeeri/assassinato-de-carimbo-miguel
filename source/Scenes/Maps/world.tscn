@@ -1,0 +1,54 @@
+[gd_scene format=4 uid="uid://dkvx7ypjiyem4"]
+
+[ext_resource type="TileSet" uid="uid://btt8u4tqpkj43" path="res://CustomResources/tileset.tres" id="1_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://bqbd2v2crepoy" path="res://Scenes/player.tscn" id="4_o06y3"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="6_5ukr8"]
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="6_o06y3"]
+[ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/Interactions/object_inspector.tscn" id="7_k7acu"]
+[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="7_n2sjt"]
+[ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/UI/inspection_canvas.tscn" id="8_5v1tr"]
+
+[node name="World" type="Node2D" unique_id=146350973]
+y_sort_enabled = true
+
+[node name="Ground" type="TileMapLayer" parent="." unique_id=2054894502]
+z_index = -1
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAAAAAAAPwAEAAAAAAD/////PwAEAAAAAAD+////PwAAAAIAAAD+/wAAPwAAAAIAAAD+/wEAPwAEAAAAAAD+/wIAPwAIAAAAAAD+/wMAPwAEAAAAAAD+/wQAPwABAAIAAAD//wQAPwAEAAAAAAD//wUAPwAJAAAAAAAAAAQAPwAEAAAAAAAAAAUAPwAEAAAAAAAAAAMAPwAEAAAAAAABAAIAPwAEAAAAAAABAAEAPwAEAAAAAAABAAAAPwAEAAAAAAABAP//PwACAAIAAAABAP7/PwACAAIAAAAAAP3/PwACAAIAAAAAAPz/PwAJAAMAAAD///3/PwAAAAIAAAD///7/PwAAAAIAAAD//wAAPwAEAAAAAAD//wIAPwAEAAAAAAAAAAIAPwAEAAAAAAAAAAEAPwAEAAAAAAAAAP//PwAEAAAAAAAAAP7/PwAEAAAAAAD//wEAPwAEAAAAAAD//wMAPwAEAAAAAAD9////PwAGAAMAAAD+//7/PwAGAAMAAAD+//3/PwAGAAMAAAD///z/PwAGAAMAAAD///v/PwAGAAMAAAAAAPr/PwAGAAMAAAAAAPv/PwAGAAMAAAABAPz/PwAGAAMAAAABAP3/PwAGAAMAAAACAP7/PwAGAAMAAAACAP//PwAGAAMAAAADAAAAPwAGAAMAAAACAAEAPwAGAAMAAAACAAAAPwAGAAMAAAACAAIAPwAGAAMAAAABAAMAPwAGAAMAAAACAAQAPwAGAAMAAAABAAUAPwAGAAMAAAABAAQAPwAGAAMAAAABAAYAPwAGAAMAAAAAAAcAPwAGAAMAAAAAAAYAPwAGAAMAAAD//wcAPwAGAAMAAAD//wgAPwAGAAMAAAD+/wkAPwAGAAMAAAD+/wgAPwAGAAMAAAD+/wcAPwAGAAMAAAD+/wYAPwAGAAMAAAD//wYAPwAGAAMAAAD+/wUAPwAGAAMAAAD9/wcAPwAGAAMAAAD9/wYAPwAGAAMAAAD9/wUAPwAGAAMAAAD9/wQAPwAGAAMAAAD9/wMAPwAGAAMAAAD9/wIAPwAGAAMAAAD9/wAAPwAGAAMAAAD9/wEAPwAGAAMAAAD8/wMAPwAGAAMAAAD8/wQAPwAGAAMAAAD8/wUAPwAGAAMAAAACAAMAPwAGAAMAAAACAAYAPwAGAAMAAAABAAcAPwAGAAMAAAAAAAgAPwAGAAMAAAD//wkAPwAGAAMAAAD//woAPwAGAAMAAAD//wsAPwAGAAMAAAAAAAoAPwAGAAMAAAAAAAkAPwAGAAMAAAABAAgAPwAGAAMAAAADAAQAPwAGAAMAAAACAAUAPwAGAAMAAAA=")
+tile_set = ExtResource("1_5ukr8")
+
+[node name="Walls" type="TileMapLayer" parent="." unique_id=705766568]
+y_sort_enabled = true
+tile_map_data = PackedByteArray("AAD///n/eQALAAAAAAD///r/eQALAAAAAAD+//v/eQALAAAAAAD+//z/eQALAAAAAAD9//3/eQALAAAAAAD9//7/eQALAAAAAAD8////eQALAAAAAAD8/wEAeQALAAEAAAD8/wAAeQAHAAEAAAAAAPn/eQAJAAEAAAAAAPj/eQAFAAEAAAD8/wIAeQALAAAAAAD7/wMAeQALAAAAAAA=")
+tile_set = ExtResource("1_5ukr8")
+
+[node name="Ground2" type="TileMapLayer" parent="." unique_id=580316873]
+z_index = -1
+y_sort_enabled = true
+position = Vector2(128, 128)
+tile_map_data = PackedByteArray("AAACAPr/VAAKAAAAAAABAPn/VAAKAAAAAAABAPj/VAAKAAAAAAAAAPf/VAAKAAAAAAAAAPT/PwAJAAMAAAAAAPP/PwAJAAMAAAABAPT/PwAJAAMAAAABAPP/PwAJAAMAAAACAPT/PwAJAAMAAAADAPT/PwAJAAMAAAADAPX/PwAJAAMAAAADAPb/PwAJAAMAAAADAPf/PwAJAAMAAAADAPj/PwAJAAMAAAACAPf/PwAJAAMAAAACAPb/PwAJAAMAAAABAPX/PwAJAAMAAAACAPL/PwAJAAMAAAADAPL/PwAJAAMAAAADAPH/PwAJAAMAAAADAPD/PwAJAAMAAAACAPH/PwAJAAMAAAACAPD/PwAJAAMAAAABAPH/PwAJAAMAAAACAO//PwAJAAMAAAABAPL/PwAJAAMAAAAAAPX/PwAJAAMAAAABAPb/PwAJAAMAAAABAPf/PwAJAAMAAAACAPj/PwAJAAMAAAACAPn/PwAJAAMAAAADAPr/PwAJAAMAAAAEAPj/PwAJAAMAAAAEAPf/PwAJAAMAAAAEAPb/PwAJAAMAAAADAPP/PwAJAAMAAAACAPP/PwAJAAMAAAACAPX/PwAJAAMAAAADAPn/PwAJAAMAAAAEAPX/PwAJAAMAAAAFAPT/PwAJAAMAAAAEAPP/PwAJAAMAAAAEAPL/PwAJAAMAAAAEAPT/PwAJAAMAAAAFAPX/PwAJAAMAAAAFAPb/PwAJAAMAAAA=")
+tile_set = ExtResource("1_5ukr8")
+
+[node name="Walls2" type="TileMapLayer" parent="." unique_id=1712912388]
+y_sort_enabled = true
+position = Vector2(128, 128)
+tile_map_data = PackedByteArray("AAD///P/eQALAAAAAAAAAPL/eQALAAAAAAAAAPH/eQALAAAAAAABAPD/eQALAAAAAAABAO//eQALAAAAAAACAO7/eQALAAAAAAD///T/eQAHAAEAAAADAO7/eQAJAAAAAAADAO//eQAJAAAAAAAEAPD/eQAJAAAAAAAEAPH/eQAJAAAAAAAFAPL/eQAJAAAAAAAFAPP/eQAJAAAAAAAGAPT/eQAJAAAAAAACAO3/eQAFAAEAAAA=")
+tile_set = ExtResource("1_5ukr8")
+
+[node name="Player" parent="." unique_id=1389957626 instance=ExtResource("4_o06y3")]
+position = Vector2(342, 264)
+
+[node name="ClickInspectableObject" parent="." unique_id=705077137 instance=ExtResource("6_5ukr8")]
+position = Vector2(-265, -111)
+
+[node name="ClickInspectableText" parent="." unique_id=578831168 instance=ExtResource("6_o06y3")]
+position = Vector2(689, 36)
+
+[node name="ObjectInspector" parent="." unique_id=1508487688 instance=ExtResource("7_k7acu")]
+
+[node name="InspectionCanvas" parent="." unique_id=360760167 instance=ExtResource("8_5v1tr")]
+z_index = 2
+
+[node name="ClickTravel" parent="." unique_id=668825472 instance=ExtResource("7_n2sjt")]
+position = Vector2(-39, 467)
+scene = "res://Scenes/Maps/residencial.tscn"

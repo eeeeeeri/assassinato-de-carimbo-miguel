@@ -42,7 +42,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
-radius = 50.0
+radius = 60.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1389957626]
 collision_layer = 3
