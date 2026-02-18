@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://cpto2log0nt73"]
+
+[ext_resource type="Texture2D" uid="uid://dtpd1nka4hqcx" path="res://Assets/castelo.png" id="1_ctpkf"]
+[ext_resource type="Script" uid="uid://ctmp2lsnuuxod" path="res://Scripts/UI/map_button.gd" id="2_dpern"]
+
+[node name="Castelo" type="TextureButton" unique_id=899147109]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -100.0
+offset_right = 100.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(100, 100)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture_normal = ExtResource("1_ctpkf")
+script = ExtResource("2_dpern")
+
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

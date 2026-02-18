@@ -1,14 +1,17 @@
 class_name Interactable extends Node
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var interaction_area: Area2D = $InteractionArea
 
 var is_interactable := false
 var time := 0.0
 var sprite_scale = 1
 var outline_thickness = 0
 
+func _ready() -> void:
+	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(end_inspection)
+
 func _process(delta: float) -> void:
-	
 	if is_interactable:
 		time += delta
 		sprite_scale = sin(time + 1.5*PI) * .05 + 1.05
@@ -26,8 +29,15 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 		if(event.is_action_released("left_click")):
 			_interacted()
 
+
 func _interacted() -> void:
+	is_interactable = false
 	GlobalResources.GLOBAL_EVENTS.OnInteract.emit()
+
+
+func end_inspection() -> void:
+	if interaction_area.has_overlapping_bodies():
+		is_interactable = true
 
 
 func _on_interaction_area_body_entered(body: Node2D) -> void:

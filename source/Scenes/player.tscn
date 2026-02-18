@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://5r2tqy85as8e" path="res://Scripts/player.gd" id="1_cvnsp"]
 [ext_resource type="Texture2D" uid="uid://d33lx5oru8566" path="res://Assets/player_temp.png" id="2_6t5aa"]
+[ext_resource type="PackedScene" uid="uid://m3cjfjrwg6ke" path="res://Scenes/UI/mapa.tscn" id="3_6t5aa"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o06y3"]
 radius = 40.0
@@ -72,3 +73,5 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossiblePosition" unique_id=1174026719]
 shape = SubResource("CircleShape2D_vgqql")
 debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
+
+[node name="Mapa" parent="." unique_id=1576189297 instance=ExtResource("3_6t5aa")]

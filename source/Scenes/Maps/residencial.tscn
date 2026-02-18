@@ -1,40 +1,13 @@
 [gd_scene format=4 uid="uid://d4i27kar1d2u5"]
 
-[ext_resource type="TileSet" uid="uid://btt8u4tqpkj43" path="res://CustomResources/tileset.tres" id="1_ypm8x"]
-[ext_resource type="PackedScene" uid="uid://bqbd2v2crepoy" path="res://Scenes/player.tscn" id="2_6oeir"]
-[ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/Interactions/object_inspector.tscn" id="5_c23q5"]
+[ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_00dw8"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="5_ypm8x"]
-[ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/UI/inspection_canvas.tscn" id="6_m00pu"]
 
-[node name="Residencial" type="Node2D" unique_id=146350973]
-y_sort_enabled = true
+[node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
 
-[node name="Ground" type="TileMapLayer" parent="." unique_id=2054894502]
-z_index = -1
-y_sort_enabled = true
-tile_map_data = PackedByteArray("AAAAAP7/PwAGAAMAAAAAAP3/PwAGAAMAAAABAP3/PwAGAAMAAAABAPz/PwAGAAMAAAABAP//PwAGAAMAAAAAAP//PwAGAAMAAAABAAAAPwAGAAMAAAABAAEAPwAGAAMAAAACAAIAPwAGAAMAAAACAP//PwAGAAMAAAADAAAAPwAGAAMAAAACAPr/PwAGAAMAAAACAPv/PwAGAAMAAAADAPz/PwAGAAMAAAADAP3/PwAGAAMAAAAEAP7/PwAGAAMAAAAEAP3/PwAGAAMAAAAFAPz/PwAGAAMAAAADAPv/PwAGAAMAAAACAPn/PwAGAAMAAAADAPj/PwAGAAMAAAAFAPT/PwAGAAMAAAAEAPX/PwAGAAMAAAAEAPb/PwAGAAMAAAAEAPf/PwAGAAMAAAAFAPj/PwAGAAMAAAAFAPf/PwAGAAMAAAAGAPb/PwAGAAMAAAAGAPf/PwAGAAMAAAAHAPj/PwAGAAMAAAAGAPn/PwAGAAMAAAAGAPr/PwAGAAMAAAA=")
-tile_set = ExtResource("1_ypm8x")
+[node name="Ground" parent="." index="0" unique_id=2054894502]
+tile_map_data = PackedByteArray("AAD8/wEAPwAJAAMAAAD9/wIAPwAJAAMAAAD9/wMAPwAJAAMAAAD+/wQAPwAJAAMAAAD+/wUAPwAJAAMAAAD9/wAAPwAJAAMAAAD9////PwAJAAMAAAD+/wAAPwAJAAMAAAD+/wIAPwAJAAMAAAD//wIAPwAJAAMAAAD//wMAPwAJAAMAAAD///v/PwAJAAMAAAD///z/PwAJAAMAAAD+//3/PwAJAAMAAAD///7/PwAJAAMAAAD/////PwAJAAMAAAAAAAAAPwAJAAMAAAAAAAEAPwAJAAMAAAABAAAAPwAJAAMAAAABAP//PwAJAAMAAAAAAP7/PwAJAAMAAAABAPf/PwAJAAMAAAABAPj/PwAJAAMAAAAAAPn/PwAJAAMAAAABAPr/PwAJAAMAAAABAPv/PwAJAAMAAAACAPr/PwAJAAMAAAACAPn/PwAJAAMAAAADAPr/PwAJAAMAAAADAPv/PwAJAAMAAAADAPz/PwAJAAMAAAACAP3/PwAJAAMAAAA=")
 
-[node name="Walls" type="TileMapLayer" parent="." unique_id=705766568]
-y_sort_enabled = true
-tile_set = ExtResource("1_ypm8x")
-
-[node name="Player" parent="." unique_id=1389957626 instance=ExtResource("2_6oeir")]
-position = Vector2(342, 264)
-
-[node name="ObjectInspector" parent="." unique_id=1508487688 instance=ExtResource("5_c23q5")]
-
-[node name="InspectionCanvas" parent="." unique_id=360760167 instance=ExtResource("6_m00pu")]
-z_index = 2
-
-[node name="ClickTravel" parent="." unique_id=705077137 instance=ExtResource("5_ypm8x")]
-position = Vector2(146, -10)
-collision_layer = 1
-collision_mask = 1
+[node name="ClickTravel" parent="." index="5" unique_id=705077137 instance=ExtResource("5_ypm8x")]
+position = Vector2(-451, 47)
 scene = "res://Scenes/Maps/comercial.tscn"
-
-[node name="ClickTravel2" parent="." unique_id=949731898 instance=ExtResource("5_ypm8x")]
-position = Vector2(701, 317)
-collision_layer = 1
-collision_mask = 1
-scene = "res://Scenes/Maps/world.tscn"

@@ -5,7 +5,6 @@ extends CanvasLayer
 var tween : Tween
 var new_scene : String
 
-
 func change_scene_to(scene : String) -> void:
 	if tween:
 		tween.kill()
