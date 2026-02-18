@@ -33,7 +33,8 @@ func _physics_process(delta: float) -> void:
 		possible_position.position = get_local_mouse_position()
 		wait_position.start()
 		await wait_position.timeout
-		_get_mouse_position()
+		if !moving_to_object:
+			_get_mouse_position()
 	
 	if Input.get_vector("left", "right", "up", "down"):
 		mouse_mode = false
@@ -46,7 +47,6 @@ func _physics_process(delta: float) -> void:
 
 
 func _move_mouse() -> void:
-	
 	if position.direction_to(click_position).x > 0:
 		animated_sprite.scale.x = 1
 	elif position.direction_to(click_position).x < 0:
@@ -80,13 +80,17 @@ func _move_keyboard() -> void:
 
 
 func _get_mouse_position() -> void:
-	if !ray_cast_2d.is_colliding() and !possible_position.has_overlapping_bodies():
+	print(is_interacting)
+	print(moving_to_object)
+	print("============")
+	if (!ray_cast_2d.is_colliding() and !possible_position.has_overlapping_bodies()) or moving_to_object:
 		mouse_mode = true
 		click_position = get_global_mouse_position()
 	else:
-		var huh = HUH.instantiate()
-		huh.position = Vector2(0,-128)
-		add_child(huh)
+		if !is_interacting and !moving_to_object:
+			var huh = HUH.instantiate()
+			huh.position = Vector2(0,-128)
+			add_child(huh)
 
 
 func move_to_object(object_position : Vector2) -> void:

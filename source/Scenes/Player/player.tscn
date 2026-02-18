@@ -65,8 +65,11 @@ offset = Vector2(0, -64)
 zoom = Vector2(0.8, 0.8)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=287395072]
+collision_mask = 4
 
 [node name="PossiblePosition" type="Area2D" parent="." unique_id=1355852533]
+collision_layer = 4
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossiblePosition" unique_id=1174026719]
 shape = SubResource("CircleShape2D_vgqql")
@@ -75,5 +78,5 @@ debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
 [node name="Mapa" parent="." unique_id=1576189297 instance=ExtResource("3_htcer")]
 
 [node name="WaitPosition" type="Timer" parent="." unique_id=1826467238]
-wait_time = 0.02
+wait_time = 0.2
 one_shot = true
