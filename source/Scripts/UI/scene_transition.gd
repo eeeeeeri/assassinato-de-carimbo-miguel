@@ -13,8 +13,8 @@ func change_scene_to(scene : String) -> void:
 	color_rect.material.set_shader_parameter("invert", true)
 	
 	tween = create_tween().set_trans(Tween.TRANS_SINE)
-	tween.tween_method(update_shader, 0.0, 3.0, .5).connect("finished", _load_new_scene)
-	tween.chain().tween_method(update_shader, 0.0, 3.0, .5)
+	tween.tween_method(update_shader, -0.1, 3.0, .5).connect("finished", _load_new_scene)
+	tween.chain().tween_method(update_shader, -0.1, 3.0, .5)
 
 func update_shader(value : float) -> void:
 	color_rect.material.set_shader_parameter("progress", value)

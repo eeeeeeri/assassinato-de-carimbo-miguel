@@ -2,9 +2,12 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 
+const HUH = preload("uid://brvbdoqchxkay")
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var possible_position: Area2D = $PossiblePosition
+@onready var wait_position: Timer = $WaitPosition
 
 var click_position : Vector2
 var target_position : Vector2
@@ -28,6 +31,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("left_click") && !is_interacting:
 		ray_cast_2d.target_position = get_local_mouse_position()
 		possible_position.position = get_local_mouse_position()
+		wait_position.start()
+		await wait_position.timeout
 		_get_mouse_position()
 	
 	if Input.get_vector("left", "right", "up", "down"):
@@ -75,9 +80,13 @@ func _move_keyboard() -> void:
 
 
 func _get_mouse_position() -> void:
-	if !ray_cast_2d.is_colliding() && !possible_position.has_overlapping_bodies():
+	if !ray_cast_2d.is_colliding() and !possible_position.has_overlapping_bodies():
 		mouse_mode = true
 		click_position = get_global_mouse_position()
+	else:
+		var huh = HUH.instantiate()
+		huh.position = Vector2(0,-128)
+		add_child(huh)
 
 
 func move_to_object(object_position : Vector2) -> void:

@@ -28,7 +28,7 @@ shader_parameter/edges = 3
 shader_parameter/shape_feather = 0.1
 shader_parameter/sectors = 1
 shader_parameter/clock_feather = 0.0
-shader_parameter/progress = 0.0
+shader_parameter/progress = -0.1
 shader_parameter/progress_bias = Vector2(0, 0)
 
 [node name="SceneTransition" type="CanvasLayer" unique_id=25511972]
