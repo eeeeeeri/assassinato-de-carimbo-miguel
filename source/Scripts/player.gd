@@ -22,6 +22,8 @@ func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(_end_inspection)
 	GlobalResources.GLOBAL_EVENTS.MapOpen.connect(map_open)
 	GlobalResources.GLOBAL_EVENTS.MapClose.connect(map_close)
+	GlobalResources.GLOBAL_EVENTS.SusOpen.connect(sus_open)
+	GlobalResources.GLOBAL_EVENTS.SusClose.connect(sus_close)
 	GlobalResources.GLOBAL_EVENTS.MoveToObject.connect(move_to_object)
 	GlobalResources.GLOBAL_EVENTS.StopMoving.connect(stop_moving)
 
@@ -80,9 +82,6 @@ func _move_keyboard() -> void:
 
 
 func _get_mouse_position() -> void:
-	print(is_interacting)
-	print(moving_to_object)
-	print("============")
 	if (!ray_cast_2d.is_colliding() and !possible_position.has_overlapping_bodies()) or moving_to_object:
 		mouse_mode = true
 		click_position = get_global_mouse_position()
@@ -125,4 +124,12 @@ func map_open() -> void:
 
 
 func map_close() -> void:
+	is_interacting = false
+
+
+func sus_open() -> void:
+	is_interacting = true
+
+
+func sus_close() -> void:
 	is_interacting = false

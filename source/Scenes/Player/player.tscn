@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://5r2tqy85as8e" path="res://Scripts/player.gd" id="1_xpcdj"]
 [ext_resource type="Texture2D" uid="uid://d33lx5oru8566" path="res://Assets/player_temp.png" id="2_mtuoh"]
 [ext_resource type="PackedScene" uid="uid://m3cjfjrwg6ke" path="res://Scenes/UI/mapa.tscn" id="3_htcer"]
+[ext_resource type="PackedScene" uid="uid://brigp3oi0gu53" path="res://Scenes/UI/sus_select.tscn" id="4_mtuoh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o06y3"]
 radius = 40.0
@@ -76,6 +77,9 @@ shape = SubResource("CircleShape2D_vgqql")
 debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
 
 [node name="Mapa" parent="." unique_id=1576189297 instance=ExtResource("3_htcer")]
+
+[node name="SusSelect" parent="." unique_id=647023198 instance=ExtResource("4_mtuoh")]
+visible = false
 
 [node name="WaitPosition" type="Timer" parent="." unique_id=1826467238]
 wait_time = 0.2

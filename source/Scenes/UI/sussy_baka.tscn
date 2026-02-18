@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://b6qhhcbw14o3w"]
+
+[ext_resource type="Script" uid="uid://cr1lle55ko4gd" path="res://Scripts/UI/sussy_baka.gd" id="1_uynpu"]
+[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="2_qkck8"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="2_ukgb1"]
+[ext_resource type="Texture2D" uid="uid://bcxy583oqmksl" path="res://Assets/mark.png" id="4_qkck8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkck8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hs3kb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plliu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukgb1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qkck8"]
+resource_local_to_scene = true
+shader = ExtResource("2_qkck8")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[node name="SussyBaka" type="Button" unique_id=423670737]
+custom_minimum_size = Vector2(200, 240)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -4.0
+offset_top = -4.0
+offset_right = 4.0
+offset_bottom = 4.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_qkck8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_hs3kb")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_plliu")
+toggle_mode = true
+script = ExtResource("1_uynpu")
+sus_name = "Cadu"
+sus_sprite = ExtResource("2_ukgb1")
+
+[node name="Panel" type="Panel" parent="." unique_id=1011402180]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 240.0
+pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukgb1")
+
+[node name="Shadow" type="ColorRect" parent="Panel" unique_id=1074985927]
+z_index = -1
+material = SubResource("ShaderMaterial_qkck8")
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 240.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=371650066]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -100.0
+offset_right = 80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Panel/ColorRect" unique_id=2104799394]
+position = Vector2(80, 108)
+texture = ExtResource("2_ukgb1")
+
+[node name="Label" type="Label" parent="Panel" unique_id=1087784482]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -49.0
+offset_right = 37.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "NOME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mark" type="Sprite2D" parent="Panel" unique_id=125265218]
+position = Vector2(108, 84)
+texture = ExtResource("4_qkck8")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="toggled" from="." to="." method="_on_toggled"]

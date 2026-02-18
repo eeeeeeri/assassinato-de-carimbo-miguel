@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://brigp3oi0gu53"]
+
+[ext_resource type="Script" uid="uid://dnrpich0pg45h" path="res://Scripts/UI/sus_select.gd" id="1_7kxo7"]
+[ext_resource type="PackedScene" uid="uid://b6qhhcbw14o3w" path="res://Scenes/UI/sussy_baka.tscn" id="1_feb6v"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kxo7"]
+bg_color = Color(0, 0, 0, 0.39215687)
+
+[sub_resource type="Animation" id="Animation_tv2qg"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_7kxo7"]
+resource_name = "hide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 0.2),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_uk1mx"]
+resource_name = "show"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PanelContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 4),
+"update": 0,
+"values": [Vector2(0, -720), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PanelContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_x5eou"]
+_data = {
+&"RESET": SubResource("Animation_tv2qg"),
+&"hide": SubResource("Animation_7kxo7"),
+&"show": SubResource("Animation_uk1mx")
+}
+
+[node name="SusSelect" type="CanvasLayer" unique_id=647023198]
+script = ExtResource("1_7kxo7")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1021235507]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_styles/panel = SubResource("StyleBoxFlat_7kxo7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=191110118]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 40
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer" unique_id=1793387542]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 60
+columns = 4
+
+[node name="SussyBaka" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=423670737 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="SussyBaka2" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1534123851 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="SussyBaka3" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=183995324 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="SussyBaka4" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=202936831 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="SussyBaka5" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1032094193 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="SussyBaka6" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1785692410 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="SussyBaka7" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=2055334827 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="SussyBaka8" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1048267071 instance=ExtResource("1_feb6v")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1423558960]
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
+text = "CONFIRMAR SUSPEITOS"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=400091839]
+libraries/ = SubResource("AnimationLibrary_x5eou")
