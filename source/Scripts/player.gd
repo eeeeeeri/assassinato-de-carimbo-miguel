@@ -11,6 +11,7 @@ var target_position : Vector2
 var mouse_mode := false
 var is_interacting := false
 var is_possible_position := true
+var moving_to_object := false
 
 func _ready() -> void:
 	click_position = position
@@ -18,11 +19,13 @@ func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(_end_inspection)
 	GlobalResources.GLOBAL_EVENTS.MapOpen.connect(map_open)
 	GlobalResources.GLOBAL_EVENTS.MapClose.connect(map_close)
+	GlobalResources.GLOBAL_EVENTS.MoveToObject.connect(move_to_object)
+	GlobalResources.GLOBAL_EVENTS.StopMoving.connect(stop_moving)
 
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("left_click"):
+	if Input.is_action_just_pressed("left_click") && !is_interacting:
 		ray_cast_2d.target_position = get_local_mouse_position()
 		possible_position.position = get_local_mouse_position()
 		_get_mouse_position()
@@ -75,6 +78,21 @@ func _get_mouse_position() -> void:
 	if !ray_cast_2d.is_colliding() && !possible_position.has_overlapping_bodies():
 		mouse_mode = true
 		click_position = get_global_mouse_position()
+
+
+func move_to_object(object_position : Vector2) -> void:
+	moving_to_object = true
+	ray_cast_2d.target_position = object_position
+	possible_position.position = object_position
+	_get_mouse_position()
+
+
+func stop_moving() -> void:
+	if moving_to_object:
+		moving_to_object = false
+		click_position = position
+		velocity = Vector2.ZERO
+		animated_sprite.play("idle")
 
 
 func _on_interact():

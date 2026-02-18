@@ -92,5 +92,5 @@ shader_parameter/max_or_add = false
 script = ExtResource("2_7lkkb")
 scene = ""
 
-[node name="Sprite2D" parent="." index="1" unique_id=159541262]
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_pe0xi")

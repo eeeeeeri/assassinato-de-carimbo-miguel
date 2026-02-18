@@ -4,6 +4,12 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_aqi78"]
 [ext_resource type="Texture2D" uid="uid://cqypamh78b5wc" path="res://Assets/object_temp.png" id="3_u8gpf"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_ioulm"]
+radius = 256.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_aqi78"]
+radius = 100.0
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k4glw"]
 size = Vector2(82, 82)
 
@@ -20,21 +26,9 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_ioulm"]
-radius = 256.0
-
 [node name="ClickInteractable" type="StaticBody2D" unique_id=705077137]
-collision_layer = 5
-collision_mask = 5
 input_pickable = true
 script = ExtResource("1_ioulm")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1151619031]
-shape = SubResource("RectangleShape2D_k4glw")
-
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=159541262]
-material = SubResource("ShaderMaterial_gxer8")
-texture = ExtResource("3_u8gpf")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=146712339]
 collision_layer = 2
@@ -43,6 +37,20 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea" unique_id=2125542557]
 shape = SubResource("CircleShape2D_ioulm")
 
+[node name="StopArea" type="Area2D" parent="." unique_id=1120606992]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StopArea" unique_id=1626029816]
+shape = SubResource("CircleShape2D_aqi78")
+debug_color = Color(0.9887456, 0, 0.3037642, 0.41960785)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1151619031]
+shape = SubResource("RectangleShape2D_k4glw")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=159541262]
+material = SubResource("ShaderMaterial_gxer8")
+texture = ExtResource("3_u8gpf")
+
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
+[connection signal="body_entered" from="StopArea" to="." method="_on_stop_area_body_entered"]

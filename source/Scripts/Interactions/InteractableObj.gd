@@ -1,4 +1,4 @@
-class_name Interactable extends Node
+class_name Interactable extends Node2D
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interaction_area: Area2D = $InteractionArea
@@ -7,6 +7,7 @@ var is_interactable := false
 var time := 0.0
 var sprite_scale = 1
 var outline_thickness = 0
+var moving_to_object := false
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(end_inspection)
@@ -25,9 +26,12 @@ func _process(delta: float) -> void:
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	if is_interactable:
-		if(event.is_action_released("left_click")):
+	if (event.is_action_released("left_click")):
+		if is_interactable:
 			_interacted()
+		else:
+			moving_to_object = true
+			GlobalResources.GLOBAL_EVENTS.MoveToObject.emit(position)
 
 
 func _interacted() -> void:
@@ -46,3 +50,9 @@ func _on_interaction_area_body_entered(body: Node2D) -> void:
 
 func _on_interaction_area_body_exited(body: Node2D) -> void:
 	is_interactable = false
+
+
+func _on_stop_area_body_entered(body: Node2D) -> void:
+	if moving_to_object:
+		moving_to_object = false
+		GlobalResources.GLOBAL_EVENTS.StopMoving.emit()
