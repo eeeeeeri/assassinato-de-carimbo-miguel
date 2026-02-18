@@ -8,6 +8,7 @@
 size = Vector2(82, 82)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gxer8"]
+resource_local_to_scene = true
 shader = ExtResource("2_aqi78")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16

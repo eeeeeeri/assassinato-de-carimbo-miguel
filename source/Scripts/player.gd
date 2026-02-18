@@ -16,6 +16,8 @@ func _ready() -> void:
 	click_position = position
 	GlobalResources.GLOBAL_EVENTS.OnInteract.connect(_on_interact)
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(_end_inspection)
+	GlobalResources.GLOBAL_EVENTS.MapOpen.connect(map_open)
+	GlobalResources.GLOBAL_EVENTS.MapClose.connect(map_close)
 
 
 func _physics_process(delta: float) -> void:
@@ -84,4 +86,12 @@ func _on_interact():
 
 
 func _end_inspection():
+	is_interacting = false
+
+
+func map_open() -> void:
+	is_interacting = true
+
+
+func map_close() -> void:
 	is_interacting = false
