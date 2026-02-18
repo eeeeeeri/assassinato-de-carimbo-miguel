@@ -150,7 +150,7 @@ layout_mode = 2
 [node name="Button" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1423558960]
 layout_mode = 2
 theme_override_font_sizes/font_size = 64
-text = "CONFIRMAR SUSPEITOS"
+text = "CONFIRMAR CULPADOS"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=400091839]
 libraries/ = SubResource("AnimationLibrary_x5eou")
