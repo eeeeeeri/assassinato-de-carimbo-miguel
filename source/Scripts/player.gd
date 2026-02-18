@@ -30,12 +30,12 @@ func _physics_process(delta: float) -> void:
 	
 	if !is_interacting:
 		if mouse_mode:
-			_move_mouse(delta)
+			_move_mouse()
 		else:
-			_move_keyboard(delta)
+			_move_keyboard()
 
 
-func _move_mouse(delta: float) -> void:
+func _move_mouse() -> void:
 	
 	if position.direction_to(click_position).x > 0:
 		animated_sprite.scale.x = 1
@@ -51,7 +51,7 @@ func _move_mouse(delta: float) -> void:
 		animated_sprite.play("idle")
 
 
-func _move_keyboard(delta: float) -> void:
+func _move_keyboard() -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
 	
 	if direction.x > 0:

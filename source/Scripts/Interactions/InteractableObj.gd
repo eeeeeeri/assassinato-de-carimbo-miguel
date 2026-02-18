@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	if is_interactable:
 		time += delta
 		sprite_scale = sin(time + 1.5*PI) * .05 + 1.05
-		outline_thickness = sin(time + 1.5*PI) * 2 + 2
+		outline_thickness = 3
 	else:
 		time = 0
 		sprite_scale = 1

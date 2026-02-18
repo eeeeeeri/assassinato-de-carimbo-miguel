@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bv0scnf3c7m1r"]
+
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_3xajp"]
+[ext_resource type="Script" uid="uid://x1l35ueqvsmg" path="res://Scripts/Interactions/Travel.gd" id="2_7lkkb"]
+
+[node name="ClickTravel" unique_id=705077137 instance=ExtResource("1_3xajp")]
+script = ExtResource("2_7lkkb")
+scene = ""
