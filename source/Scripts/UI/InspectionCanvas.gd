@@ -1,6 +1,7 @@
 extends Node
 
 @export var TextInstanceScene:PackedScene
+@export var FinalImageInstanceScene:PackedScene
 @export var DialogButtonScene:PackedScene
 
 @onready var _3d_object_panel: Control = $"CanvasLayer/3DObjectPanel"
@@ -8,8 +9,11 @@ extends Node
 
 @onready var text_panel: Control = $CanvasLayer/TextPanel
 @onready var tab_container: TabContainer = $CanvasLayer/TextPanel/TabContainer
+@onready var back_image: TextureRect = $CanvasLayer/TextPanel/BackImage
 @onready var button_left: Button = $CanvasLayer/TextPanel/ButtonLeft
 @onready var button_right: Button = $CanvasLayer/TextPanel/ButtonRight
+
+const FINALIMAGENODE = "FinalImage"
 
 @onready var dialog_panel: Control = $CanvasLayer/DialogPanel
 @onready var character_portrait: TextureRect = $CanvasLayer/DialogPanel/CharacterPortrait
@@ -21,6 +25,7 @@ var inDialog:bool
 var currentCharacter:CharacterData
 var currentDialog:DialogData
 var currentDialogLineIndex:int
+var textHasFinalImage:bool
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspect3D.connect(Inspect3D)
@@ -32,7 +37,8 @@ func Inspect3D(camTex:ViewportTexture) -> void:
 	_3d_object_panel.visible = true
 	object_cam_texture.texture = camTex
 	
-func InspectText(texts:Array[String]) -> void:
+func InspectText(texts:Array[String], finalImage:Texture2D, backImage:Texture2D) -> void:
+	textHasFinalImage = finalImage != null
 	var i:int = 1
 	for text in texts:
 		var newText = TextInstanceScene.instantiate() as Label
@@ -40,11 +46,19 @@ func InspectText(texts:Array[String]) -> void:
 		newText.name = str(i)
 		tab_container.add_child(newText)
 		i+=1
-	text_panel.visible = true
+	if(textHasFinalImage):
+		var newImageContainer = FinalImageInstanceScene.instantiate()
+		var newImage = newImageContainer.find_child("FinalImage") as TextureRect
+		newImageContainer.name = str(i)
+		newImage.texture = finalImage
+		tab_container.add_child(newImageContainer)
+	back_image.visible = finalImage == null || texts.size() > 0
+	back_image.texture = backImage
 	tab_container.current_tab = 0
 	button_left.visible = false
 	button_right.visible = texts.size() > 1
 	tab_container.tabs_visible = texts.size() > 1
+	text_panel.visible = true
 	
 func InteractCharacter(character:CharacterData) -> void:
 	currentCharacter = character
@@ -61,6 +75,12 @@ func InteractCharacter(character:CharacterData) -> void:
 			StartDialog(option))
 		dialog_options.add_child(newDialog)
 	dialog_panel.visible = true
+	
+	if(!character.PlayedInitialDialog && character.InitialDialog != null):
+		StartDialog(character.InitialDialog)
+		character.PlayedInitialDialog = true
+		return
+	
 	dialog_options.visible = true
 	dialog_label.visible = false
 	
@@ -98,11 +118,12 @@ func EndInspection() -> void:
 	
 	for child in tab_container.get_children():
 		child.queue_free()
-
+		
 func _on_tab_container_tab_changed(tab: int) -> void:
 	button_left.visible = tab > 0
 	button_right.visible = tab < tab_container.get_children().size() - 1
-	
+	tab_container.tabs_visible = !textHasFinalImage || tab < tab_container.get_children().size() - 1
+
 #provisório
 func _input(event: InputEvent) -> void:
 	if(Input.is_action_just_pressed("Cancel")):

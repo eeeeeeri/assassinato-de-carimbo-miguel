@@ -4,6 +4,7 @@
 [ext_resource type="Resource" uid="uid://21a42ak3oihb" path="res://CustomResources/Characters/TestChar/DialogTest1.tres" id="2_fg73t"]
 [ext_resource type="Resource" uid="uid://cu6r0jodnpsou" path="res://CustomResources/Characters/TestChar/DialogTest2.tres" id="3_fm1we"]
 [ext_resource type="Resource" uid="uid://dhre5e6a1b85y" path="res://CustomResources/Characters/TestChar/DialogTest3.tres" id="4_rgdrc"]
+[ext_resource type="Resource" uid="uid://bfqdafv15tdx7" path="res://CustomResources/Characters/TestChar/DialogTest0.tres" id="5_fg73t"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="5_yg6yn"]
 [ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="6_4b5vx"]
 
@@ -11,4 +12,5 @@
 script = ExtResource("6_4b5vx")
 Name = "Vugnaes Sreo"
 Portrait = ExtResource("5_yg6yn")
+InitialDialog = ExtResource("5_fg73t")
 Dialogs = Array[ExtResource("1_0cgoy")]([ExtResource("2_fg73t"), ExtResource("3_fm1we"), ExtResource("4_rgdrc")])
