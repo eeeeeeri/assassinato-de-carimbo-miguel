@@ -3,7 +3,7 @@ class_name GlobalEvents extends Resource
 signal OnInteractInspection3D(inspectable:Inspectable)
 signal OnInspect3D(camTex:ViewportTexture)
 signal OnInteract()
-signal OnInteractInspectionText(texts:Array[String])
+signal OnInteractInspectionText(texts:Array[String], finalImage:Texture2D, backImage:Texture2D)
 signal OnStartDialog(character:CharacterData)
 signal EndInspection()
 signal MapOpen()
