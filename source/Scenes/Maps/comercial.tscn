@@ -1,0 +1,32 @@
+[gd_scene format=4 uid="uid://8ufp5uldstrx"]
+
+[ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_0eth3"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="3_68qxl"]
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="4_kafox"]
+[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="5_kafox"]
+[ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="5_t55c3"]
+
+[node name="Comercial" unique_id=146350973 instance=ExtResource("1_0eth3")]
+
+[node name="Ground" parent="." index="0" unique_id=2054894502]
+tile_map_data = PackedByteArray("AAD8/wEAPwAJAAMAAAD9/wIAPwAJAAMAAAD9/wMAPwAJAAMAAAD+/wQAPwAJAAMAAAD+/wUAPwAJAAMAAAD//wQAPwAJAAMAAAD//wMAPwAJAAMAAAD9////PwAJAAMAAAD9/wAAPwAJAAMAAAD+//3/PwAJAAMAAAD///7/PwAJAAMAAAD/////PwAJAAMAAAAAAAAAPwAJAAMAAAAAAAEAPwAJAAMAAAABAAAAPwAJAAMAAAABAP//PwAJAAMAAAABAP7/PwAJAAMAAAAAAP3/PwAJAAMAAAAAAPz/PwAJAAMAAAD///v/PwAJAAMAAAD///z/PwAJAAMAAAAAAPn/PwAJAAMAAAABAPr/PwAJAAMAAAABAPv/PwAJAAMAAAACAPz/PwAJAAMAAAACAP3/PwAJAAMAAAABAPn/PwAJAAMAAAACAPr/PwAJAAMAAAABAPf/PwAJAAMAAAACAPj/PwAJAAMAAAACAPn/PwAJAAMAAAADAPr/PwAJAAMAAAADAPv/PwAJAAMAAAA=")
+
+[node name="Walls" parent="." index="1" unique_id=705766568]
+tile_map_data = PackedByteArray("AAADAP//eQAIAAAAAAADAAAAeQAIAAAAAAACAAEAeQAIAAAAAAACAAIAeQAIAAAAAAABAAMAeQAIAAAAAAABAAQAeQAIAAAAAAAAAAUAeQAIAAAAAAA=")
+
+[node name="ClickTravel" parent="." index="5" unique_id=705077137 instance=ExtResource("5_kafox")]
+position = Vector2(544, -10)
+scene = "res://Scenes/Maps/residencial.tscn"
+
+[node name="ClickTravel2" parent="." index="6" unique_id=111834332 instance=ExtResource("5_kafox")]
+position = Vector2(-577, -14)
+scene = "res://Scenes/Maps/castelo.tscn"
+
+[node name="ClickInspectableObject" parent="." index="7" unique_id=2133723097 instance=ExtResource("3_68qxl")]
+position = Vector2(-243, -341)
+
+[node name="ClickInspectableText" parent="." index="8" unique_id=558703017 instance=ExtResource("4_kafox")]
+position = Vector2(-136, 334)
+
+[node name="ClickCharacterInteractable" parent="." index="9" unique_id=799633218 instance=ExtResource("5_t55c3")]
+position = Vector2(217, -350)

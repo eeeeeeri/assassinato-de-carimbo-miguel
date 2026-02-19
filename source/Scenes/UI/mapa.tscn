@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://m3cjfjrwg6ke"]
+
+[ext_resource type="Texture2D" uid="uid://f5bpgi48xjfa" path="res://Assets/map.png" id="1_5k086"]
+[ext_resource type="Shader" uid="uid://fotlq7tvk1fi" path="res://CustomResources/Shaders/tilt.gdshader" id="1_ttohs"]
+[ext_resource type="PackedScene" uid="uid://cpto2log0nt73" path="res://Scenes/UI/map_button.tscn" id="2_o0ld3"]
+[ext_resource type="Script" uid="uid://c1kspsa8fys0h" path="res://Scripts/UI/mapa.gd" id="2_vns23"]
+[ext_resource type="Script" uid="uid://bnbv38ity1a1b" path="res://Scripts/UI/map_view.gd" id="3_tfn6t"]
+[ext_resource type="Texture2D" uid="uid://crbku7k2hgqxx" path="res://Assets/comercial.png" id="3_vns23"]
+[ext_resource type="Texture2D" uid="uid://dj5vs7vxuehbx" path="res://Assets/residencial.png" id="4_tfn6t"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vns23"]
+shader = ExtResource("1_ttohs")
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[node name="Mapa" type="CanvasLayer" unique_id=1576189297]
+visible = false
+script = ExtResource("2_vns23")
+
+[node name="BG" type="ColorRect" parent="." unique_id=775402812]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=700103917]
+material = SubResource("ShaderMaterial_vns23")
+offset_right = 40.0
+offset_bottom = 40.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+mouse_filter = 0
+script = ExtResource("3_tfn6t")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1756197640]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 0
+
+[node name="TextureRect" type="TextureRect" parent="SubViewportContainer/SubViewport" unique_id=776663430]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -288.0
+offset_right = 512.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("1_5k086")
+
+[node name="Castelo" parent="SubViewportContainer/SubViewport/TextureRect" unique_id=899147109 instance=ExtResource("2_o0ld3")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 141.0
+offset_top = 92.0
+offset_right = 341.0
+offset_bottom = 292.0
+grow_horizontal = 1
+grow_vertical = 1
+scene = "res://Scenes/Maps/castelo.tscn"
+
+[node name="Comercial" parent="SubViewportContainer/SubViewport/TextureRect" unique_id=1935011696 instance=ExtResource("2_o0ld3")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 378.0
+offset_top = 257.0
+offset_right = 578.0
+offset_bottom = 457.0
+grow_horizontal = 1
+grow_vertical = 1
+texture_normal = ExtResource("3_vns23")
+scene = "res://Scenes/Maps/comercial.tscn"
+
+[node name="Residencial" parent="SubViewportContainer/SubViewport/TextureRect" unique_id=2004034567 instance=ExtResource("2_o0ld3")]
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 643.0
+offset_top = 181.0
+offset_right = 843.0
+offset_bottom = 381.0
+grow_horizontal = 1
+grow_vertical = 1
+texture_normal = ExtResource("4_tfn6t")
+scene = "res://Scenes/Maps/residencial.tscn"
+
+[connection signal="gui_input" from="SubViewportContainer" to="SubViewportContainer" method="_on_gui_input"]

@@ -1,0 +1,13 @@
+[gd_scene format=4 uid="uid://d4i27kar1d2u5"]
+
+[ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_00dw8"]
+[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="5_ypm8x"]
+
+[node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
+
+[node name="Ground" parent="." index="0" unique_id=2054894502]
+tile_map_data = PackedByteArray("AAD8/wEAPwAJAAMAAAD9/wIAPwAJAAMAAAD9/wMAPwAJAAMAAAD+/wQAPwAJAAMAAAD+/wUAPwAJAAMAAAD9/wAAPwAJAAMAAAD9////PwAJAAMAAAD+/wAAPwAJAAMAAAD+/wIAPwAJAAMAAAD//wIAPwAJAAMAAAD//wMAPwAJAAMAAAD///v/PwAJAAMAAAD///z/PwAJAAMAAAD+//3/PwAJAAMAAAD///7/PwAJAAMAAAD/////PwAJAAMAAAAAAAAAPwAJAAMAAAAAAAEAPwAJAAMAAAABAAAAPwAJAAMAAAABAP//PwAJAAMAAAAAAP7/PwAJAAMAAAABAPf/PwAJAAMAAAABAPj/PwAJAAMAAAAAAPn/PwAJAAMAAAABAPr/PwAJAAMAAAABAPv/PwAJAAMAAAACAPr/PwAJAAMAAAACAPn/PwAJAAMAAAADAPr/PwAJAAMAAAADAPv/PwAJAAMAAAADAPz/PwAJAAMAAAACAP3/PwAJAAMAAAA=")
+
+[node name="ClickTravel" parent="." index="5" unique_id=705077137 instance=ExtResource("5_ypm8x")]
+position = Vector2(-451, 47)
+scene = "res://Scenes/Maps/comercial.tscn"

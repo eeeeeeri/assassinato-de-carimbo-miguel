@@ -3,14 +3,31 @@
 [ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_ltl3q"]
 [ext_resource type="Script" uid="uid://cgbvf4hwycy1u" path="res://Scripts/Interactions/InteractableCharacter.gd" id="2_fy4sm"]
 [ext_resource type="Resource" uid="uid://duyxp42ds1oy7" path="res://CustomResources/Characters/TestChar/CharacterTest.tres" id="3_fy4sm"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_cf2ya"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="4_juau3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwxts"]
+resource_local_to_scene = true
+shader = ExtResource("4_cf2ya")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
 
 [node name="ClickCharacterInteractable" unique_id=705077137 instance=ExtResource("1_ltl3q")]
 script = ExtResource("2_fy4sm")
 Character = ExtResource("3_fy4sm")
 
-[node name="CollisionShape2D" parent="." index="0" unique_id=1151619031]
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+position = Vector2(1.5, -88)
 scale = Vector2(1.31, 2.76)
 
-[node name="Sprite2D" parent="." index="1" unique_id=159541262]
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_jwxts")
+position = Vector2(1.5, -88)
 texture = ExtResource("4_juau3")

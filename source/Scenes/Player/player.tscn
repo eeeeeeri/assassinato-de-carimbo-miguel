@@ -1,22 +1,24 @@
 [gd_scene format=3 uid="uid://bqbd2v2crepoy"]
 
-[ext_resource type="Script" uid="uid://5r2tqy85as8e" path="res://Scripts/player.gd" id="1_cvnsp"]
-[ext_resource type="Texture2D" uid="uid://d33lx5oru8566" path="res://Assets/player_temp.png" id="2_6t5aa"]
+[ext_resource type="Script" uid="uid://5r2tqy85as8e" path="res://Scripts/player.gd" id="1_xpcdj"]
+[ext_resource type="Texture2D" uid="uid://d33lx5oru8566" path="res://Assets/player_temp.png" id="2_mtuoh"]
+[ext_resource type="PackedScene" uid="uid://m3cjfjrwg6ke" path="res://Scenes/UI/mapa.tscn" id="3_htcer"]
+[ext_resource type="PackedScene" uid="uid://brigp3oi0gu53" path="res://Scenes/UI/sus_select.tscn" id="4_mtuoh"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_o06y3"]
 radius = 40.0
 height = 100.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o06y3"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_mtuoh")
 region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k7acu"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_mtuoh")
 region = Rect2(256, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5v1tr"]
-atlas = ExtResource("2_6t5aa")
+atlas = ExtResource("2_mtuoh")
 region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0fj1v"]
@@ -42,12 +44,12 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
-radius = 50.0
+radius = 60.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1389957626]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_cvnsp")
+script = ExtResource("1_xpcdj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=958186853]
 rotation = 1.5707964
@@ -64,6 +66,7 @@ offset = Vector2(0, -64)
 zoom = Vector2(0.8, 0.8)
 
 [node name="RayCast2D" type="RayCast2D" parent="." unique_id=287395072]
+collision_mask = 4
 
 [node name="PossiblePosition" type="Area2D" parent="." unique_id=1355852533]
 collision_layer = 4
@@ -72,3 +75,12 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PossiblePosition" unique_id=1174026719]
 shape = SubResource("CircleShape2D_vgqql")
 debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
+
+[node name="Mapa" parent="." unique_id=1576189297 instance=ExtResource("3_htcer")]
+
+[node name="SusSelect" parent="." unique_id=647023198 instance=ExtResource("4_mtuoh")]
+visible = false
+
+[node name="WaitPosition" type="Timer" parent="." unique_id=1826467238]
+wait_time = 0.2
+one_shot = true
