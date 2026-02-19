@@ -75,6 +75,12 @@ func InteractCharacter(character:CharacterData) -> void:
 			StartDialog(option))
 		dialog_options.add_child(newDialog)
 	dialog_panel.visible = true
+	
+	if(!character.PlayedInitialDialog && character.InitialDialog != null):
+		StartDialog(character.InitialDialog)
+		character.PlayedInitialDialog = true
+		return
+	
 	dialog_options.visible = true
 	dialog_label.visible = false
 	

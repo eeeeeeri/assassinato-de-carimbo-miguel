@@ -182,6 +182,7 @@ grow_vertical = 0
 color = Color(0.58516484, 0.3359017, 0.18008909, 1)
 
 [node name="CharacterName" type="Label" parent="CanvasLayer/DialogPanel/ColorRect" unique_id=444401136]
+visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
