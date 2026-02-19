@@ -1,0 +1,54 @@
+[gd_scene format=3 uid="uid://l7wjd1w8momj"]
+
+[ext_resource type="Script" uid="uid://b1h4kw2y7hu7i" path="res://Scripts/UI/gameUI.gd" id="1_acqpm"]
+[ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="2_5lict"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j8f76"]
+font_size = 40
+
+[node name="GameUI" type="CanvasLayer" unique_id=1169247324]
+script = ExtResource("1_acqpm")
+
+[node name="Canvas" type="Control" parent="." unique_id=1512050330]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CoinInfo" type="Control" parent="Canvas" unique_id=2070201393]
+layout_mode = 1
+anchors_preset = 0
+offset_right = 229.0
+offset_bottom = 117.0
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Canvas/CoinInfo" unique_id=909706289]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -71.5
+offset_top = -26.5
+offset_right = -18.5
+offset_bottom = 26.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_5lict")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CoinsCount" type="Label" parent="Canvas/CoinInfo" unique_id=840154043]
+layout_mode = 0
+offset_left = 111.0
+offset_top = 32.0
+offset_right = 191.0
+offset_bottom = 87.0
+text = "0"
+label_settings = SubResource("LabelSettings_j8f76")
+vertical_alignment = 1

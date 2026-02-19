@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="BoolArrayData" format=3 uid="uid://drc74scictreg"]
+
+[ext_resource type="Script" uid="uid://drndt6hvtud03" path="res://Scripts/Global/boolArrayDataCR.gd" id="1_0ovv8"]
+
+[resource]
+script = ExtResource("1_0ovv8")
+metadata/_custom_type_script = "uid://drndt6hvtud03"

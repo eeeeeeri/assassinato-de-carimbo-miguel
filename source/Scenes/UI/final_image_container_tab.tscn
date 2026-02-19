@@ -13,6 +13,12 @@ shader_parameter/inset = 0.0
 
 [node name="FinalImageContainer" type="SubViewportContainer" unique_id=860606578]
 material = SubResource("ShaderMaterial_nexxf")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 0
 script = ExtResource("2_8dmld")
 metadata/_tab_index = 1

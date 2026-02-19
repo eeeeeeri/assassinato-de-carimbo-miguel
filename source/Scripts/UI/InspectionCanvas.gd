@@ -3,23 +3,24 @@ extends Node
 @export var TextInstanceScene:PackedScene
 @export var FinalImageInstanceScene:PackedScene
 @export var DialogButtonScene:PackedScene
+@export var DialogButtonCoinScene:PackedScene
 
-@onready var _3d_object_panel: Control = $"CanvasLayer/3DObjectPanel"
-@onready var object_cam_texture: TextureRect = $"CanvasLayer/3DObjectPanel/ObjectCamTexture"
+@onready var _3d_object_panel: Control = $"3DObjectPanel"
+@onready var object_cam_texture: TextureRect = $"3DObjectPanel/ObjectCamTexture"
 
-@onready var text_panel: Control = $CanvasLayer/TextPanel
-@onready var tab_container: TabContainer = $CanvasLayer/TextPanel/TabContainer
-@onready var back_image: TextureRect = $CanvasLayer/TextPanel/BackImage
-@onready var button_left: Button = $CanvasLayer/TextPanel/ButtonLeft
-@onready var button_right: Button = $CanvasLayer/TextPanel/ButtonRight
+@onready var text_panel: Control = $TextPanel
+@onready var tab_container: TabContainer = $TextPanel/TabContainer
+@onready var back_image: TextureRect = $TextPanel/BackImage
+@onready var button_left: Button = $TextPanel/ButtonLeft
+@onready var button_right: Button = $TextPanel/ButtonRight
 
 const FINALIMAGENODE = "FinalImage"
 
-@onready var dialog_panel: Control = $CanvasLayer/DialogPanel
-@onready var character_portrait: TextureRect = $CanvasLayer/DialogPanel/CharacterPortrait
-@onready var dialog_options: VBoxContainer = $CanvasLayer/DialogPanel/ColorRect/DialogOptions
-@onready var dialog_label: Label = $CanvasLayer/DialogPanel/ColorRect/DialogLabel
-@onready var character_name: Label = $CanvasLayer/DialogPanel/ColorRect/CharacterName
+@onready var dialog_panel: Control = $DialogPanel
+@onready var character_portrait: TextureRect = $DialogPanel/CharacterPortrait
+@onready var dialog_options: VBoxContainer = $DialogPanel/ColorRect/DialogOptions
+@onready var dialog_label: Label = $DialogPanel/ColorRect/DialogLabel
+@onready var character_name: Label = $DialogPanel/ColorRect/CharacterName
 
 var inDialog:bool
 var currentCharacter:CharacterData
@@ -29,7 +30,6 @@ var textHasFinalImage:bool
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspect3D.connect(Inspect3D)
-	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(EndInspection)
 	GlobalResources.GLOBAL_EVENTS.OnInteractInspectionText.connect(InspectText)
 	GlobalResources.GLOBAL_EVENTS.OnStartDialog.connect(InteractCharacter)
 	
@@ -56,9 +56,14 @@ func InspectText(texts:Array[String], finalImage:Texture2D, backImage:Texture2D)
 	back_image.texture = backImage
 	tab_container.current_tab = 0
 	button_left.visible = false
-	button_right.visible = texts.size() > 1
-	tab_container.tabs_visible = texts.size() > 1
+	button_right.visible = (texts.size() > 1 && !textHasFinalImage) || (texts.size() > 0 && textHasFinalImage)
+	tab_container.tabs_visible = (texts.size() > 1 && !textHasFinalImage) || (texts.size() > 0 && textHasFinalImage)
 	text_panel.visible = true
+	
+func _on_tab_container_tab_changed(tab: int) -> void:
+	button_left.visible = tab > 0
+	button_right.visible = tab < tab_container.get_children().size() - 1
+	tab_container.tabs_visible = !textHasFinalImage || tab < tab_container.get_children().size() - 1
 	
 func InteractCharacter(character:CharacterData) -> void:
 	currentCharacter = character
@@ -69,11 +74,15 @@ func InteractCharacter(character:CharacterData) -> void:
 		child.queue_free()
 	
 	for option in character.Dialogs:
-		var newDialog:Button = DialogButtonScene.instantiate() as Button
+		if(option.disabled): continue
+		var scene:PackedScene = DialogButtonScene
+		if(option.requireCurrency): scene = DialogButtonCoinScene
+		var newDialog:Button = scene.instantiate() as Button
 		newDialog.text = option.dialogOption
 		newDialog.pressed.connect(func():
 			StartDialog(option))
 		dialog_options.add_child(newDialog)
+		option.currentInstance = newDialog
 	dialog_panel.visible = true
 	
 	if(!character.PlayedInitialDialog && character.InitialDialog != null):
@@ -85,6 +94,18 @@ func InteractCharacter(character:CharacterData) -> void:
 	dialog_label.visible = false
 	
 func StartDialog(dialog:DialogData) -> void:
+	if(dialog.requireCurrency):
+		if(GlobalResources.PLAYER_DATA.currencyAmount <= 0): return
+		else: GlobalResources.PLAYER_DATA.RemoveCurrency()
+		
+	if(dialog.disableOnPlay && currentCharacter.Dialogs.has(dialog)):
+		dialog.disabled = true
+		if(dialog.currentInstance != null): dialog.currentInstance.queue_free()
+	
+	if(dialog.charResponses.size() == 0):
+		dialog.onFinishDialog.emit()
+		return
+	
 	inDialog = true
 	currentDialog = dialog
 	currentDialogLineIndex = 0
@@ -102,6 +123,7 @@ func NextDialog() -> void:
 		dialog_label.visible = false
 		character_portrait.texture = currentCharacter.Portrait
 		inDialog = false
+		currentDialog.onFinishDialog.emit()
 		currentDialog = null
 		return
 	currentDialogLineIndex += 1
@@ -110,6 +132,8 @@ func NextDialog() -> void:
 		character_portrait.texture = currentDialog.responsePortraits.get(currentDialogLineIndex)
 	
 func EndInspection() -> void:
+	GlobalResources.GLOBAL_EVENTS.EndInspection.emit()
+	
 	_3d_object_panel.visible = false
 	text_panel.visible = false
 	dialog_panel.visible = false
@@ -119,14 +143,8 @@ func EndInspection() -> void:
 	for child in tab_container.get_children():
 		child.queue_free()
 		
-func _on_tab_container_tab_changed(tab: int) -> void:
-	button_left.visible = tab > 0
-	button_right.visible = tab < tab_container.get_children().size() - 1
-	tab_container.tabs_visible = !textHasFinalImage || tab < tab_container.get_children().size() - 1
-
-#provisório
 func _input(event: InputEvent) -> void:
-	if(Input.is_action_just_pressed("Cancel")):
-		GlobalResources.GLOBAL_EVENTS.EndInspection.emit()
-	if(Input.is_action_just_pressed("AdvanceDialog") && inDialog):
+	if(Input.is_action_just_released("Cancel")):
+		EndInspection()
+	if(Input.is_action_just_released("AdvanceDialog") && inDialog):
 		NextDialog()

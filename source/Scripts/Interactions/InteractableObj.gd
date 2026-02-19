@@ -8,9 +8,11 @@ var time := 0.0
 var sprite_scale = 1
 var outline_thickness = 0
 var moving_to_object := false
+var startSpriteScale:Vector2
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(end_inspection)
+	startSpriteScale = sprite_2d.scale
 
 func _process(delta: float) -> void:
 	if is_interactable:
@@ -22,7 +24,7 @@ func _process(delta: float) -> void:
 		sprite_scale = 1
 		outline_thickness = 0
 	sprite_2d.material.set_shader_parameter("thickness", outline_thickness)
-	sprite_2d.scale = Vector2(sprite_scale,sprite_scale)
+	sprite_2d.scale = startSpriteScale * sprite_scale
 
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:

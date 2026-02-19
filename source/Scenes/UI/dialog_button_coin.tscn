@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://ctouq213hfx2v"]
+
+[ext_resource type="PackedScene" uid="uid://5mrwdilq8lw" path="res://Scenes/UI/dialog_button.tscn" id="1_6ig8u"]
+[ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="2_miibg"]
+
+[node name="DialogButtonCoin" unique_id=1828395968 instance=ExtResource("1_6ig8u")]
+offset_right = 119.0
+icon_alignment = 2
+expand_icon = true
+
+[node name="TextureRect" type="TextureRect" parent="." index="0" unique_id=4120198]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -44.0
+offset_top = -15.0
+offset_right = -14.0
+offset_bottom = 15.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("2_miibg")
+expand_mode = 1
+stretch_mode = 5

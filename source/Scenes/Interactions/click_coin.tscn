@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://coc0rw5e4dwqa"]
+
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_ek5ul"]
+[ext_resource type="Script" uid="uid://dn6uxk7cm7j8x" path="res://Scenes/Interactions/coinInteractable.gd" id="2_57n2f"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_hknp1"]
+[ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="3_57n2f"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1x4st"]
+resource_local_to_scene = true
+shader = ExtResource("2_hknp1")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="Click_coin" unique_id=705077137 instance=ExtResource("1_ek5ul")]
+script = ExtResource("2_57n2f")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_1x4st")
+scale = Vector2(0.171875, 0.171875)
+texture = ExtResource("3_57n2f")
