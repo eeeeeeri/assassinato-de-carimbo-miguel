@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bsbxjriwo70va" path="res://Scenes/UI/text_tab_instance.tscn" id="2_vxc3v"]
 [ext_resource type="PackedScene" uid="uid://brf6vmqxym01r" path="res://Scenes/UI/final_image_container_tab.tscn" id="3_166hs"]
 [ext_resource type="PackedScene" uid="uid://5mrwdilq8lw" path="res://Scenes/UI/dialog_button.tscn" id="3_idqf3"]
+[ext_resource type="PackedScene" uid="uid://ctouq213hfx2v" path="res://Scenes/UI/dialog_button_coin.tscn" id="5_lsk2e"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_166hs"]
 
@@ -14,22 +15,14 @@ font_size = 28
 [sub_resource type="LabelSettings" id="LabelSettings_166hs"]
 font_size = 18
 
-[node name="InspectionCanvas" type="Control" unique_id=360760167]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
+[node name="InspectionCanvasLayer" type="CanvasLayer" unique_id=1988823393]
 script = ExtResource("1_f6lst")
 TextInstanceScene = ExtResource("2_vxc3v")
 FinalImageInstanceScene = ExtResource("3_166hs")
 DialogButtonScene = ExtResource("3_idqf3")
+DialogButtonCoinScene = ExtResource("5_lsk2e")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1988823393]
-
-[node name="3DObjectPanel" type="Control" parent="CanvasLayer" unique_id=290056482]
+[node name="3DObjectPanel" type="Control" parent="." unique_id=290056482]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -38,7 +31,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="CanvasLayer/3DObjectPanel" unique_id=1912252679]
+[node name="Background" type="ColorRect" parent="3DObjectPanel" unique_id=1912252679]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -47,7 +40,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6784314)
 
-[node name="ObjectCamTexture" type="TextureRect" parent="CanvasLayer/3DObjectPanel" unique_id=1575167569]
+[node name="ObjectCamTexture" type="TextureRect" parent="3DObjectPanel" unique_id=1575167569]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -57,7 +50,7 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
-[node name="TextPanel" type="Control" parent="CanvasLayer" unique_id=159574153]
+[node name="TextPanel" type="Control" parent="." unique_id=159574153]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -66,7 +59,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BackImage" type="TextureRect" parent="CanvasLayer/TextPanel" unique_id=899411172]
+[node name="BackImage" type="TextureRect" parent="TextPanel" unique_id=899411172]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -80,7 +73,7 @@ offset_bottom = 125.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="CanvasLayer/TextPanel" unique_id=727301662]
+[node name="Background" type="ColorRect" parent="TextPanel" unique_id=727301662]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -89,7 +82,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6784314)
 
-[node name="TabContainer" type="TabContainer" parent="CanvasLayer/TextPanel" unique_id=1718755218]
+[node name="TabContainer" type="TabContainer" parent="TextPanel" unique_id=1718755218]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -104,7 +97,7 @@ theme_override_styles/panel = SubResource("StyleBoxEmpty_166hs")
 tab_alignment = 1
 tabs_position = 1
 
-[node name="ButtonLeft" type="Button" parent="CanvasLayer/TextPanel" unique_id=1440802899]
+[node name="ButtonLeft" type="Button" parent="TextPanel" unique_id=1440802899]
 visible = false
 layout_mode = 1
 anchors_preset = 4
@@ -119,7 +112,7 @@ scale = Vector2(-1, 1)
 icon = ExtResource("2_o4yxg")
 expand_icon = true
 
-[node name="ButtonRight" type="Button" parent="CanvasLayer/TextPanel" unique_id=1989232719]
+[node name="ButtonRight" type="Button" parent="TextPanel" unique_id=1989232719]
 visible = false
 layout_mode = 1
 anchors_preset = 6
@@ -136,7 +129,7 @@ grow_vertical = 2
 icon = ExtResource("2_o4yxg")
 expand_icon = true
 
-[node name="DialogPanel" type="Control" parent="CanvasLayer" unique_id=1680356028]
+[node name="DialogPanel" type="Control" parent="." unique_id=1680356028]
 visible = false
 layout_mode = 3
 anchors_preset = 15
@@ -145,7 +138,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="CanvasLayer/DialogPanel" unique_id=1429193504]
+[node name="Background" type="ColorRect" parent="DialogPanel" unique_id=1429193504]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -154,7 +147,7 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6784314)
 
-[node name="CharacterPortrait" type="TextureRect" parent="CanvasLayer/DialogPanel" unique_id=1816717548]
+[node name="CharacterPortrait" type="TextureRect" parent="DialogPanel" unique_id=1816717548]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -170,7 +163,7 @@ grow_vertical = 0
 expand_mode = 1
 stretch_mode = 5
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer/DialogPanel" unique_id=337631586]
+[node name="ColorRect" type="ColorRect" parent="DialogPanel" unique_id=337631586]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -181,7 +174,7 @@ grow_horizontal = 2
 grow_vertical = 0
 color = Color(0.58516484, 0.3359017, 0.18008909, 1)
 
-[node name="CharacterName" type="Label" parent="CanvasLayer/DialogPanel/ColorRect" unique_id=444401136]
+[node name="CharacterName" type="Label" parent="DialogPanel/ColorRect" unique_id=444401136]
 visible = false
 layout_mode = 1
 anchors_preset = 10
@@ -194,7 +187,7 @@ label_settings = SubResource("LabelSettings_2uy4u")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="DialogOptions" type="VBoxContainer" parent="CanvasLayer/DialogPanel/ColorRect" unique_id=1541288618]
+[node name="DialogOptions" type="VBoxContainer" parent="DialogPanel/ColorRect" unique_id=1541288618]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -208,7 +201,7 @@ offset_bottom = 93.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DialogLabel" type="Label" parent="CanvasLayer/DialogPanel/ColorRect" unique_id=435520882]
+[node name="DialogLabel" type="Label" parent="DialogPanel/ColorRect" unique_id=435520882]
 visible = false
 layout_mode = 1
 anchors_preset = 15
@@ -224,6 +217,5 @@ label_settings = SubResource("LabelSettings_166hs")
 horizontal_alignment = 1
 autowrap_mode = 2
 
-[connection signal="tab_changed" from="CanvasLayer/TextPanel/TabContainer" to="." method="_on_tab_container_tab_changed"]
-[connection signal="pressed" from="CanvasLayer/TextPanel/ButtonLeft" to="CanvasLayer/TextPanel/TabContainer" method="select_previous_available"]
-[connection signal="pressed" from="CanvasLayer/TextPanel/ButtonRight" to="CanvasLayer/TextPanel/TabContainer" method="select_next_available"]
+[connection signal="pressed" from="TextPanel/ButtonLeft" to="TextPanel/TabContainer" method="select_previous_available"]
+[connection signal="pressed" from="TextPanel/ButtonRight" to="TextPanel/TabContainer" method="select_next_available"]

@@ -1,4 +1,6 @@
 extends Node
 
-const GLOBAL_EVENTS = preload("uid://yet4xur76d0b")
-const CHARACTERS_LOADER = preload("uid://6tb5g18mv8wn")
+var GLOBAL_EVENTS:GlobalEvents = preload("uid://yet4xur76d0b").duplicate()
+var CHARACTERS_LOADER:CharactersLoader = preload("uid://6tb5g18mv8wn").duplicate()
+var COMERCIAL_VISIBLE_STATE_DATA:BoolArrayData = preload("uid://drc74scictreg").duplicate()
+var PLAYER_DATA:PlayerData = preload("uid://bccffakg7r0f8").duplicate()

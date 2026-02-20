@@ -3,7 +3,84 @@
 [sub_resource type="Theme" id="Theme_vxwb6"]
 default_font_size = 18
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxwb6"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 40.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jv83p"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 40.0
+content_margin_bottom = 4.0
+bg_color = Color(0, 0, 0, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7sxj7"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 40.0
+content_margin_bottom = 4.0
+bg_color = Color(0.225, 0.225, 0.225, 0.6)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_aeww1"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 40.0
+content_margin_bottom = 4.0
+bg_color = Color(0.1, 0.1, 0.1, 0.3)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c4agr"]
+content_margin_left = 20.0
+content_margin_top = 4.0
+content_margin_right = 40.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
 [node name="DialogButton" type="Button" unique_id=1828395968]
 custom_minimum_size = Vector2(0, 45)
+offset_right = 105.0
+offset_bottom = 45.0
 theme = SubResource("Theme_vxwb6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_vxwb6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jv83p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_7sxj7")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_aeww1")
+theme_override_styles/focus = SubResource("StyleBoxFlat_c4agr")
+alignment = 0
 autowrap_mode = 2

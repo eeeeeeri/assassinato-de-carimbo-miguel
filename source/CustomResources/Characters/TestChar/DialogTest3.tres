@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_7dkby")
-dialogOption = "Conte até 10"
-charResponses = Array[String](["1", "2", "3", "4", "5", "6", "7", "garfos", "8", "9", "10"])
+dialogOption = "Me vê um jornal?"
+charResponses = Array[String](["Claro, aqui"])
+requireCurrency = true
+disableOnPlay = true
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

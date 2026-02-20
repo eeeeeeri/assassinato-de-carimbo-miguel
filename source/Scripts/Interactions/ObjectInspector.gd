@@ -18,6 +18,7 @@ func _ready() -> void:
 	object_parent_point.scale = Vector3(.01, .01, .01)
 	sub_viewport.size = DisplayServer.window_get_size()
 	GlobalResources.GLOBAL_EVENTS.OnInteractInspection3D.connect(StartInspection)
+	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(EndInspection)
 
 func StartInspection(inspectableScene:PackedScene) -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspect3D.emit(sub_viewport.get_texture())
@@ -25,6 +26,7 @@ func StartInspection(inspectableScene:PackedScene) -> void:
 	currentInspectable = inspectableScene.instantiate() as Inspectable
 	if(currentInspectable == null): return
 	
+	object_parent_point.global_rotation_degrees = Vector3.ZERO
 	object_parent_point.global_position = inspection_camera.global_position + -inspection_camera.global_basis.z.normalized() * currentInspectable.defaultCameraDistance
 	object_parent_point.add_child(currentInspectable)
 	object_parent_point.scale = Vector3(.01, .01, .01)
@@ -35,12 +37,13 @@ func StartInspection(inspectableScene:PackedScene) -> void:
 	
 func  EndInspection() -> void:
 	initialized = false
+	if(currentInspectable != null): currentInspectable.queue_free()
 	
-	if(scaleTween): scaleTween.kill()
-	scaleTween = create_tween()
-	scaleTween.tween_property(object_parent_point, "scale", Vector3(.01, .01, .01), PopupAnimDuration).finished.connect(func():
-		currentInspectable.queue_free()
-		GlobalResources.GLOBAL_EVENTS.EndInspection.emit())
+	#if(scaleTween): scaleTween.kill()
+	#scaleTween = create_tween()
+	#scaleTween.tween_property(object_parent_point, "scale", Vector3(.01, .01, .01), PopupAnimDuration).finished.connect(func():
+		#currentInspectable.queue_free()
+		#GlobalResources.GLOBAL_EVENTS.EndInspection.emit())
 	
 func _input(event: InputEvent) -> void:
 	if(currentInspectable == null): return
