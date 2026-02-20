@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="9_n0u8l"]
 [ext_resource type="Resource" uid="uid://drc74scictreg" path="res://CustomResources/Save/comercialVisibleStateData.tres" id="10_soy2c"]
 [ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/click_coin.tscn" id="11_w3u2l"]
+[ext_resource type="PackedScene" uid="uid://dsdpnmxl30dvj" path="res://Scenes/Interactions/click_stamp_lock.tscn" id="12_lnl00"]
 
 [node name="Comercial" unique_id=146350973 instance=ExtResource("1_0eth3")]
 
@@ -25,6 +26,7 @@ position = Vector2(544, -10)
 scene = "res://Scenes/Maps/residencial.tscn"
 
 [node name="ClickTravel2" parent="." index="5" unique_id=111834332 instance=ExtResource("5_kafox")]
+visible = false
 position = Vector2(-577, -14)
 scene = "res://Scenes/Maps/castelo.tscn"
 
@@ -53,9 +55,14 @@ BackImage = null
 [node name="VisibleStateSave" type="Node" parent="." index="11" unique_id=807322980 node_paths=PackedStringArray("targetNodes")]
 script = ExtResource("9_n0u8l")
 boolArrayData = ExtResource("10_soy2c")
-targetNodes = [NodePath("../Jornal"), NodePath("../Click_coin")]
+targetNodes = [NodePath("../Jornal"), NodePath("../Click_coin"), NodePath("../ClickTravel2"), NodePath("../ClickStampLock")]
 
 [node name="Click_coin" parent="." index="12" unique_id=1479825825 instance=ExtResource("11_w3u2l")]
 position = Vector2(662, -408)
 
+[node name="ClickStampLock" parent="." index="13" unique_id=550226506 instance=ExtResource("12_lnl00")]
+position = Vector2(-494, 225)
+
 [connection signal="DialogEnd" from="DialogTest3Event" to="Jornal" method="set_visible" binds= [true]]
+[connection signal="OnCorrectStampLock" from="ClickStampLock" to="ClickTravel2" method="set_visible" binds= [true]]
+[connection signal="OnCorrectStampLock" from="ClickStampLock" to="ClickStampLock" method="set_visible" binds= [false]]

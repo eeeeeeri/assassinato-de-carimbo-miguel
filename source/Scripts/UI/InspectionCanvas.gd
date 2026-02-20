@@ -1,4 +1,4 @@
-extends Node
+class_name InspectionCanvas extends Node
 
 @export var TextInstanceScene:PackedScene
 @export var FinalImageInstanceScene:PackedScene
@@ -22,6 +22,8 @@ const FINALIMAGENODE = "FinalImage"
 @onready var dialog_label: Label = $DialogPanel/ColorRect/DialogLabel
 @onready var character_name: Label = $DialogPanel/ColorRect/CharacterName
 
+@onready var stamp_lock_panel: StampLockPanel = $StampLockPanel
+
 var inDialog:bool
 var currentCharacter:CharacterData
 var currentDialog:DialogData
@@ -32,6 +34,7 @@ func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspect3D.connect(Inspect3D)
 	GlobalResources.GLOBAL_EVENTS.OnInteractInspectionText.connect(InspectText)
 	GlobalResources.GLOBAL_EVENTS.OnStartDialog.connect(InteractCharacter)
+	GlobalResources.GLOBAL_EVENTS.OnInspectStampLock.connect(InspectStampLock)
 	
 func Inspect3D(camTex:ViewportTexture) -> void:
 	_3d_object_panel.visible = true
@@ -131,12 +134,18 @@ func NextDialog() -> void:
 	if(currentDialog.responsePortraits.size() > currentDialogLineIndex && currentDialog.responsePortraits.get(currentDialogLineIndex) != null):
 		character_portrait.texture = currentDialog.responsePortraits.get(currentDialogLineIndex)
 	
+func InspectStampLock(correctStamp:StampData, correctSignal:Signal) -> void:
+	stamp_lock_panel.visible = true
+	stamp_lock_panel.StartInspection(correctStamp, correctSignal)
+
 func EndInspection() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.emit()
 	
 	_3d_object_panel.visible = false
 	text_panel.visible = false
 	dialog_panel.visible = false
+	stamp_lock_panel.EndInspection()
+	stamp_lock_panel.visible = false
 	
 	inDialog = false
 	

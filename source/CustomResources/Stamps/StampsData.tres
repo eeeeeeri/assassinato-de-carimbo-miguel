@@ -1,0 +1,47 @@
+[gd_resource type="Resource" script_class="StampsData" format=3 uid="uid://bojhochb4aoeu"]
+
+[ext_resource type="Script" uid="uid://cqm45ruloguuh" path="res://Scripts/Interactions/stampsDataCR.gd" id="1_iy3qe"]
+[ext_resource type="Texture2D" uid="uid://ce637lsy6mjqf" path="res://Assets/Carimbo/idade/agePlaceholder - Copia (2).png" id="1_p55hy"]
+[ext_resource type="Texture2D" uid="uid://bnbsupgv5ojqv" path="res://Assets/Carimbo/idade/agePlaceholder - Copia.png" id="2_otcjy"]
+[ext_resource type="Texture2D" uid="uid://cc4cs0bikrp0" path="res://Assets/Carimbo/idade/agePlaceholder.png" id="3_5abxg"]
+[ext_resource type="Texture2D" uid="uid://bx7m2t70sr0pu" path="res://Assets/Carimbo/nascimento/birthPlaceholder - Copia (2).png" id="4_gbebr"]
+[ext_resource type="Texture2D" uid="uid://biwo7cg1mo7wn" path="res://Assets/Carimbo/nascimento/birthPlaceholder - Copia.png" id="5_hxg7l"]
+[ext_resource type="Texture2D" uid="uid://beqnpkdk2jiy5" path="res://Assets/Carimbo/nascimento/birthPlaceholder.png" id="6_btpks"]
+[ext_resource type="Texture2D" uid="uid://c8k2vajv4wcji" path="res://Assets/Carimbo/familia/familyPlaceholder - Copia (2).png" id="7_nueq7"]
+[ext_resource type="Texture2D" uid="uid://r8olrqq6o7km" path="res://Assets/Carimbo/familia/familyPlaceholder - Copia.png" id="8_dli7g"]
+[ext_resource type="Texture2D" uid="uid://bymw7fj61c1lb" path="res://Assets/Carimbo/familia/familyPlaceholder.png" id="9_r0oul"]
+[ext_resource type="Texture2D" uid="uid://ca7rvu2fmd1kl" path="res://Assets/Carimbo/marca/markPlaceholder - Copia (2).png" id="10_f6w8e"]
+[ext_resource type="Texture2D" uid="uid://baxkch8d0fwbo" path="res://Assets/Carimbo/marca/markPlaceholder - Copia.png" id="11_isynn"]
+[ext_resource type="Texture2D" uid="uid://05qf5327rq85" path="res://Assets/Carimbo/marca/markPlaceholder.png" id="12_28e64"]
+[ext_resource type="Texture2D" uid="uid://bgnpcslauu5jk" path="res://Assets/Carimbo/profissao/profissaoPlaceHolder - Copia (2).png" id="13_nohca"]
+[ext_resource type="Texture2D" uid="uid://b4fbpwt5bxo1v" path="res://Assets/Carimbo/profissao/profissaoPlaceHolder - Copia.png" id="14_1tsxa"]
+[ext_resource type="Texture2D" uid="uid://6e01jtsrfa4y" path="res://Assets/Carimbo/profissao/profissaoPlaceHolder.png" id="15_tq0ae"]
+
+[resource]
+script = ExtResource("1_iy3qe")
+FamiliesSymbols = Dictionary[int, Texture2D]({
+0: ExtResource("7_nueq7"),
+1: ExtResource("8_dli7g"),
+2: ExtResource("9_r0oul")
+})
+ProfessionSymbols = Dictionary[int, Texture2D]({
+0: ExtResource("13_nohca"),
+1: ExtResource("14_1tsxa"),
+2: ExtResource("15_tq0ae")
+})
+MarkSymbols = Dictionary[int, Texture2D]({
+0: ExtResource("10_f6w8e"),
+1: ExtResource("11_isynn"),
+2: ExtResource("12_28e64")
+})
+AgeSymbols = Dictionary[int, Texture2D]({
+0: ExtResource("1_p55hy"),
+1: ExtResource("2_otcjy"),
+2: ExtResource("3_5abxg")
+})
+BirthSymbols = Dictionary[int, Texture2D]({
+0: ExtResource("4_gbebr"),
+1: ExtResource("5_hxg7l"),
+2: ExtResource("6_btpks")
+})
+metadata/_custom_type_script = "uid://cqm45ruloguuh"
