@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://crtsmg6s70bm6"]
+
+[ext_resource type="PackedScene" uid="uid://ch0baa8cgs4w" path="res://Scenes/UI/volume_slider.tscn" id="1_owiy1"]
+
+[node name="Settings" type="Control" unique_id=397556042]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1430442492]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer" unique_id=1828950278]
+layout_mode = 2
+theme_override_constants/margin_bottom = 24
+
+[node name="Label" type="Label" parent="VBoxContainer/MarginContainer" unique_id=1568770303]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "CONFIGURAÇÕES"
+horizontal_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=51827987]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="VBoxContainer/VBoxContainer" unique_id=2024111540]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "MASTER"
+horizontal_alignment = 1
+
+[node name="VolumeSlider" parent="VBoxContainer/VBoxContainer" unique_id=597039387 instance=ExtResource("1_owiy1")]
+layout_mode = 2
+bus_name = "Master"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer" unique_id=375704825]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label2" type="Label" parent="VBoxContainer/VBoxContainer2" unique_id=943772942]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "MÚSICA"
+horizontal_alignment = 1
+
+[node name="VolumeSlider2" parent="VBoxContainer/VBoxContainer2" unique_id=1552855525 instance=ExtResource("1_owiy1")]
+layout_mode = 2
+bus_name = "Music"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer" unique_id=1780771093]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Label3" type="Label" parent="VBoxContainer/VBoxContainer3" unique_id=411202323]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "EFEITOS SONOROS"
+horizontal_alignment = 1
+
+[node name="VolumeSlider3" parent="VBoxContainer/VBoxContainer3" unique_id=981993259 instance=ExtResource("1_owiy1")]
+layout_mode = 2
+bus_name = "SFX"

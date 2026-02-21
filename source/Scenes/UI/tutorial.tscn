@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://xn5yf12qhpmt"]
+
+[ext_resource type="Texture2D" uid="uid://bx6gmbyssm5yo" path="res://Assets/tutorial1.png" id="1_jwb06"]
+[ext_resource type="Script" uid="uid://bue8c36q0up0p" path="res://Scripts/UI/tutorial.gd" id="1_sa18l"]
+[ext_resource type="Texture2D" uid="uid://by8mc02qmdaqx" path="res://Assets/tutorial2.png" id="2_sa18l"]
+
+[node name="Tutorial" type="Control" unique_id=109390273]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_sa18l")
+
+[node name="Tutorial1" type="Sprite2D" parent="." unique_id=1045847556]
+texture = ExtResource("1_jwb06")
+centered = false
+
+[node name="Tutorial2" type="Sprite2D" parent="." unique_id=1985486505]
+visible = false
+texture = ExtResource("2_sa18l")
+centered = false
