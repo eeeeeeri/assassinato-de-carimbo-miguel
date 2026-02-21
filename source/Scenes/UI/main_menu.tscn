@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://33q6vaoy6h8k"]
+
+[ext_resource type="Script" uid="uid://cly6xr12vfjuv" path="res://Scripts/UI/main_menu.gd" id="1_o14dv"]
+[ext_resource type="PackedScene" uid="uid://crtsmg6s70bm6" path="res://Scenes/UI/settings.tscn" id="2_u7lva"]
+[ext_resource type="PackedScene" uid="uid://xn5yf12qhpmt" path="res://Scenes/UI/tutorial.tscn" id="3_mrfpk"]
+
+[node name="MainMenu" type="Control" unique_id=421816059]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o14dv")
+
+[node name="Main" type="Control" parent="." unique_id=1140801390]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=1867747888]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -157.0
+offset_right = 200.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Iniciar" type="Button" parent="Main/VBoxContainer" unique_id=2024991368]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "INICIAR"
+
+[node name="Config" type="Button" parent="Main/VBoxContainer" unique_id=1378450699]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "CONFIGURAÇÕES"
+
+[node name="Ajuda" type="Button" parent="Main/VBoxContainer" unique_id=1046908393]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "AJUDA"
+
+[node name="Sair" type="Button" parent="Main/VBoxContainer" unique_id=856090810]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "SAIR"
+
+[node name="Settings" parent="." unique_id=397556042 instance=ExtResource("2_u7lva")]
+visible = false
+layout_mode = 1
+
+[node name="BackButton" type="Button" parent="Settings" unique_id=1985522980]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 102.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="Tutorial" parent="." unique_id=109390273 instance=ExtResource("3_mrfpk")]
+visible = false
+layout_mode = 0
+
+[node name="BackButton" type="Button" parent="Tutorial" unique_id=2081214979]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 648.0
+offset_right = 102.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[connection signal="button_up" from="Main/VBoxContainer/Iniciar" to="." method="_on_iniciar_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Config" to="." method="_on_config_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Ajuda" to="." method="_on_ajuda_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Sair" to="." method="_on_sair_button_up"]
+[connection signal="button_up" from="Settings/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="button_up" from="Tutorial/BackButton" to="." method="_on_back_button_button_up"]
