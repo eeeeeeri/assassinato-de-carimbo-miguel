@@ -1,47 +1,83 @@
 [gd_resource type="Resource" script_class="StampsData" format=3 uid="uid://bojhochb4aoeu"]
 
 [ext_resource type="Script" uid="uid://cqm45ruloguuh" path="res://Scripts/Interactions/stampsDataCR.gd" id="1_iy3qe"]
-[ext_resource type="Texture2D" uid="uid://ce637lsy6mjqf" path="res://Assets/Carimbo/idade/agePlaceholder - Copia (2).png" id="1_p55hy"]
-[ext_resource type="Texture2D" uid="uid://bnbsupgv5ojqv" path="res://Assets/Carimbo/idade/agePlaceholder - Copia.png" id="2_otcjy"]
-[ext_resource type="Texture2D" uid="uid://cc4cs0bikrp0" path="res://Assets/Carimbo/idade/agePlaceholder.png" id="3_5abxg"]
-[ext_resource type="Texture2D" uid="uid://bx7m2t70sr0pu" path="res://Assets/Carimbo/nascimento/birthPlaceholder - Copia (2).png" id="4_gbebr"]
-[ext_resource type="Texture2D" uid="uid://biwo7cg1mo7wn" path="res://Assets/Carimbo/nascimento/birthPlaceholder - Copia.png" id="5_hxg7l"]
-[ext_resource type="Texture2D" uid="uid://beqnpkdk2jiy5" path="res://Assets/Carimbo/nascimento/birthPlaceholder.png" id="6_btpks"]
-[ext_resource type="Texture2D" uid="uid://c8k2vajv4wcji" path="res://Assets/Carimbo/familia/familyPlaceholder - Copia (2).png" id="7_nueq7"]
-[ext_resource type="Texture2D" uid="uid://r8olrqq6o7km" path="res://Assets/Carimbo/familia/familyPlaceholder - Copia.png" id="8_dli7g"]
-[ext_resource type="Texture2D" uid="uid://bymw7fj61c1lb" path="res://Assets/Carimbo/familia/familyPlaceholder.png" id="9_r0oul"]
-[ext_resource type="Texture2D" uid="uid://ca7rvu2fmd1kl" path="res://Assets/Carimbo/marca/markPlaceholder - Copia (2).png" id="10_f6w8e"]
-[ext_resource type="Texture2D" uid="uid://baxkch8d0fwbo" path="res://Assets/Carimbo/marca/markPlaceholder - Copia.png" id="11_isynn"]
-[ext_resource type="Texture2D" uid="uid://05qf5327rq85" path="res://Assets/Carimbo/marca/markPlaceholder.png" id="12_28e64"]
-[ext_resource type="Texture2D" uid="uid://bgnpcslauu5jk" path="res://Assets/Carimbo/profissao/profissaoPlaceHolder - Copia (2).png" id="13_nohca"]
-[ext_resource type="Texture2D" uid="uid://b4fbpwt5bxo1v" path="res://Assets/Carimbo/profissao/profissaoPlaceHolder - Copia.png" id="14_1tsxa"]
-[ext_resource type="Texture2D" uid="uid://6e01jtsrfa4y" path="res://Assets/Carimbo/profissao/profissaoPlaceHolder.png" id="15_tq0ae"]
+[ext_resource type="Texture2D" uid="uid://drml31775ldfp" path="res://Assets/Carimbo/idade/crianca.png" id="1_vajrb"]
+[ext_resource type="Texture2D" uid="uid://bg8rankhyt0md" path="res://Assets/Carimbo/idade/adulto.png" id="2_h7ijk"]
+[ext_resource type="Texture2D" uid="uid://brkcurhfdv8kn" path="res://Assets/Carimbo/idade/idoso.png" id="3_00gl3"]
+[ext_resource type="Texture2D" uid="uid://dknva67prsxj5" path="res://Assets/Carimbo/nascimento/1.png" id="4_rvwei"]
+[ext_resource type="Texture2D" uid="uid://di0crovx1rmkf" path="res://Assets/Carimbo/nascimento/2.png" id="5_cv2vy"]
+[ext_resource type="Texture2D" uid="uid://b8hd3rvt52d5y" path="res://Assets/Carimbo/nascimento/3.png" id="6_2w0b8"]
+[ext_resource type="Texture2D" uid="uid://dlp33pa2cqoj2" path="res://Assets/Carimbo/nascimento/4.png" id="7_iucqb"]
+[ext_resource type="Texture2D" uid="uid://0uucekloxuv0" path="res://Assets/Carimbo/familia/miguel.png" id="8_d7120"]
+[ext_resource type="Texture2D" uid="uid://ce043xejfuj2p" path="res://Assets/Carimbo/familia/bundasseca.png" id="9_xr1pu"]
+[ext_resource type="Texture2D" uid="uid://c68oi7v6bc678" path="res://Assets/Carimbo/familia/barriga.png" id="10_dtm10"]
+[ext_resource type="Texture2D" uid="uid://dvnxpmhopagg7" path="res://Assets/Carimbo/familia/guerra.png" id="11_xjr1h"]
+[ext_resource type="Texture2D" uid="uid://bktewdjrx8vlj" path="res://Assets/Carimbo/familia/passos.png" id="12_5yshj"]
+[ext_resource type="Texture2D" uid="uid://m52dyx5mje36" path="res://Assets/Carimbo/marca/ratomanocu.png" id="13_6323q"]
+[ext_resource type="Texture2D" uid="uid://crdp5dtf4vcao" path="res://Assets/Carimbo/marca/boy.png" id="14_pdxay"]
+[ext_resource type="Texture2D" uid="uid://ctwsej03kkt8h" path="res://Assets/Carimbo/marca/trigue_triste.png" id="15_ulo8t"]
+[ext_resource type="Texture2D" uid="uid://bwojow5em1avh" path="res://Assets/Carimbo/marca/mauricio.png" id="16_l0bjn"]
+[ext_resource type="Texture2D" uid="uid://buoc40less0we" path="res://Assets/Carimbo/marca/dragao_bol.png" id="17_2tf1a"]
+[ext_resource type="Texture2D" uid="uid://vdhst0qy614x" path="res://Assets/Carimbo/marca/croba.png" id="18_wgh2t"]
+[ext_resource type="Texture2D" uid="uid://84vjb6c8bwgq" path="res://Assets/Carimbo/marca/vacalo.png" id="19_ycwhh"]
+[ext_resource type="Texture2D" uid="uid://d0afjqvp87oo7" path="res://Assets/Carimbo/marca/craba.png" id="20_772h8"]
+[ext_resource type="Texture2D" uid="uid://b655d8s0xve6o" path="res://Assets/Carimbo/marca/mamaco.png" id="21_vy326"]
+[ext_resource type="Texture2D" uid="uid://bsggkdqq7v0mj" path="res://Assets/Carimbo/marca/cock.png" id="22_6q7tl"]
+[ext_resource type="Texture2D" uid="uid://d0xeen2iu2gqs" path="res://Assets/Carimbo/marca/carrocho.png" id="23_gsc3g"]
+[ext_resource type="Texture2D" uid="uid://dsjvaw7xs4tbo" path="res://Assets/Carimbo/marca/corpo.png" id="24_puf3v"]
+[ext_resource type="Texture2D" uid="uid://brfpg44irm2c2" path="res://Assets/Carimbo/profissao/taverneiro.png" id="25_c6a6k"]
+[ext_resource type="Texture2D" uid="uid://b0cx1juy7wtti" path="res://Assets/Carimbo/profissao/domestico.png" id="26_kmyir"]
+[ext_resource type="Texture2D" uid="uid://ddiqtybfrhnh4" path="res://Assets/Carimbo/profissao/guarda.png" id="27_3gimk"]
+[ext_resource type="Texture2D" uid="uid://bo4p6c03d4kbd" path="res://Assets/Carimbo/profissao/cozinheiro.png" id="28_7lk5j"]
+[ext_resource type="Texture2D" uid="uid://df2wygr54fxh7" path="res://Assets/Carimbo/profissao/artista.png" id="29_u8slr"]
+[ext_resource type="Texture2D" uid="uid://b4ctwwygvwqje" path="res://Assets/Carimbo/profissao/lojista.png" id="30_7j58y"]
+[ext_resource type="Texture2D" uid="uid://b6j5ld55sadpq" path="res://Assets/Carimbo/profissao/estudante.png" id="31_7mqyi"]
+[ext_resource type="Texture2D" uid="uid://cfx3b3srvev1a" path="res://Assets/Carimbo/profissao/aposentado.png" id="32_kkc5r"]
+[ext_resource type="Texture2D" uid="uid://bojnw2ryjn803" path="res://Assets/Carimbo/profissao/realeza.png" id="33_lybrs"]
 
 [resource]
 script = ExtResource("1_iy3qe")
 FamiliesSymbols = Dictionary[int, Texture2D]({
-0: ExtResource("7_nueq7"),
-1: ExtResource("8_dli7g"),
-2: ExtResource("9_r0oul")
+0: ExtResource("8_d7120"),
+1: ExtResource("9_xr1pu"),
+2: ExtResource("10_dtm10"),
+3: ExtResource("11_xjr1h"),
+4: ExtResource("12_5yshj")
 })
 ProfessionSymbols = Dictionary[int, Texture2D]({
-0: ExtResource("13_nohca"),
-1: ExtResource("14_1tsxa"),
-2: ExtResource("15_tq0ae")
+0: ExtResource("25_c6a6k"),
+1: ExtResource("26_kmyir"),
+2: ExtResource("27_3gimk"),
+3: ExtResource("28_7lk5j"),
+4: ExtResource("29_u8slr"),
+5: ExtResource("30_7j58y"),
+6: ExtResource("31_7mqyi"),
+7: ExtResource("32_kkc5r"),
+8: ExtResource("33_lybrs")
 })
 MarkSymbols = Dictionary[int, Texture2D]({
-0: ExtResource("10_f6w8e"),
-1: ExtResource("11_isynn"),
-2: ExtResource("12_28e64")
+0: ExtResource("13_6323q"),
+1: ExtResource("14_pdxay"),
+2: ExtResource("15_ulo8t"),
+3: ExtResource("16_l0bjn"),
+4: ExtResource("17_2tf1a"),
+5: ExtResource("18_wgh2t"),
+6: ExtResource("19_ycwhh"),
+7: ExtResource("20_772h8"),
+8: ExtResource("21_vy326"),
+9: ExtResource("22_6q7tl"),
+10: ExtResource("23_gsc3g"),
+11: ExtResource("24_puf3v")
 })
 AgeSymbols = Dictionary[int, Texture2D]({
-0: ExtResource("1_p55hy"),
-1: ExtResource("2_otcjy"),
-2: ExtResource("3_5abxg")
+0: ExtResource("1_vajrb"),
+1: ExtResource("2_h7ijk"),
+2: ExtResource("3_00gl3")
 })
 BirthSymbols = Dictionary[int, Texture2D]({
-0: ExtResource("4_gbebr"),
-1: ExtResource("5_hxg7l"),
-2: ExtResource("6_btpks")
+0: ExtResource("4_rvwei"),
+1: ExtResource("5_cv2vy"),
+2: ExtResource("6_2w0b8"),
+3: ExtResource("7_iucqb")
 })
 metadata/_custom_type_script = "uid://cqm45ruloguuh"
