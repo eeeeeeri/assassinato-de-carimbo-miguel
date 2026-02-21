@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://rfst80paug5w"]
+
+[ext_resource type="Script" uid="uid://duvgxr1w0xntn" path="res://Scripts/UI/pause.gd" id="1_goa2i"]
+[ext_resource type="PackedScene" uid="uid://crtsmg6s70bm6" path="res://Scenes/UI/settings.tscn" id="2_2ceew"]
+[ext_resource type="Shader" uid="uid://cnugbujjfv030" path="res://CustomResources/Shaders/blur.gdshader" id="2_3vu23"]
+[ext_resource type="PackedScene" uid="uid://xn5yf12qhpmt" path="res://Scenes/UI/tutorial.tscn" id="2_a111y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_no3u0"]
+shader = ExtResource("2_3vu23")
+shader_parameter/amount = 3.0000001425
+
+[node name="Pause" type="CanvasLayer" unique_id=1283916714]
+process_mode = 3
+script = ExtResource("1_goa2i")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1728305848]
+material = SubResource("ShaderMaterial_no3u0")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1931750660]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.39215687)
+
+[node name="Main" type="Control" parent="." unique_id=1864017201]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=1924433139]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -157.0
+offset_right = 200.0
+offset_bottom = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 1
+
+[node name="Label" type="Label" parent="Main/VBoxContainer" unique_id=1934646531]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "O jogo está pausado"
+horizontal_alignment = 1
+
+[node name="Continuar" type="Button" parent="Main/VBoxContainer" unique_id=1246880557]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "CONTINUAR"
+
+[node name="Config" type="Button" parent="Main/VBoxContainer" unique_id=318000254]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "CONFIGURAÇÕES"
+
+[node name="Ajuda" type="Button" parent="Main/VBoxContainer" unique_id=915609607]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "AJUDA"
+
+[node name="Sair" type="Button" parent="Main/VBoxContainer" unique_id=557317014]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "SAIR"
+
+[node name="Settings" parent="." unique_id=397556042 instance=ExtResource("2_2ceew")]
+visible = false
+
+[node name="BackButton" type="Button" parent="Settings" unique_id=305390840]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 102.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[node name="Tutorial" parent="." unique_id=109390273 instance=ExtResource("2_a111y")]
+visible = false
+
+[node name="BackButton" type="Button" parent="Tutorial" unique_id=513112633]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 648.0
+offset_right = 102.0
+offset_bottom = 690.0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[connection signal="button_up" from="Main/VBoxContainer/Continuar" to="." method="_on_continuar_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Config" to="." method="_on_config_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Ajuda" to="." method="_on_ajuda_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Sair" to="." method="_on_sair_button_up"]
+[connection signal="button_up" from="Settings/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="button_up" from="Tutorial/BackButton" to="." method="_on_back_button_button_up"]
