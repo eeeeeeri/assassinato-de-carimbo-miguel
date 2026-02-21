@@ -93,6 +93,20 @@ grow_vertical = 2
 expand_mode = 1
 stretch_mode = 5
 
+[node name="ButtonClose" type="Button" parent="3DObjectPanel" unique_id=276280872]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 31.0
+offset_right = -38.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "X"
+
 [node name="TextPanel" type="Control" parent="." unique_id=159574153]
 visible = false
 layout_mode = 3
@@ -172,6 +186,20 @@ grow_horizontal = 0
 grow_vertical = 2
 icon = ExtResource("2_o4yxg")
 expand_icon = true
+
+[node name="ButtonClose2" type="Button" parent="TextPanel" unique_id=351255746]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 31.0
+offset_right = -38.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "X"
 
 [node name="DialogPanel" type="Control" parent="." unique_id=1680356028]
 visible = false
@@ -261,6 +289,20 @@ label_settings = SubResource("LabelSettings_166hs")
 horizontal_alignment = 1
 autowrap_mode = 2
 
+[node name="ButtonClose3" type="Button" parent="DialogPanel" unique_id=1071998841]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 31.0
+offset_right = -38.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "X"
+
 [node name="StampLockPanel" type="Control" parent="." unique_id=278667236 node_paths=PackedStringArray("buttons")]
 visible = false
 layout_mode = 3
@@ -281,6 +323,20 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.6784314)
+
+[node name="ButtonClose4" type="Button" parent="StampLockPanel" unique_id=1056414361]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -105.0
+offset_top = 31.0
+offset_right = -38.0
+offset_bottom = 98.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "X"
 
 [node name="lock" type="TextureRect" parent="StampLockPanel" unique_id=717260180]
 layout_mode = 1
@@ -478,8 +534,12 @@ grow_vertical = 2
 [node name="CheckTimer" type="Timer" parent="StampLockPanel" unique_id=848968931]
 one_shot = true
 
+[connection signal="pressed" from="3DObjectPanel/ButtonClose" to="." method="EndInspection"]
 [connection signal="pressed" from="TextPanel/ButtonLeft" to="TextPanel/TabContainer" method="select_previous_available"]
 [connection signal="pressed" from="TextPanel/ButtonRight" to="TextPanel/TabContainer" method="select_next_available"]
+[connection signal="pressed" from="TextPanel/ButtonClose2" to="." method="EndInspection"]
+[connection signal="pressed" from="DialogPanel/ButtonClose3" to="." method="EndInspection"]
+[connection signal="pressed" from="StampLockPanel/ButtonClose4" to="." method="EndInspection"]
 [connection signal="pressed" from="StampLockPanel/Padlock/AgeButton" to="StampLockPanel" method="PressStampPart" binds= [0]]
 [connection signal="pressed" from="StampLockPanel/Padlock/professionButton" to="StampLockPanel" method="PressStampPart" binds= [1]]
 [connection signal="pressed" from="StampLockPanel/Padlock/MarkButton" to="StampLockPanel" method="PressStampPart" binds= [2]]

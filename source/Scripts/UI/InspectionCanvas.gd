@@ -90,7 +90,6 @@ func InteractCharacter(character:CharacterData) -> void:
 	
 	if(!character.PlayedInitialDialog && character.InitialDialog != null):
 		StartDialog(character.InitialDialog)
-		character.PlayedInitialDialog = true
 		return
 	
 	dialog_options.visible = true
@@ -126,6 +125,8 @@ func NextDialog() -> void:
 		dialog_label.visible = false
 		character_portrait.texture = currentCharacter.Portrait
 		inDialog = false
+		if(currentDialog == currentCharacter.InitialDialog):
+			currentCharacter.PlayedInitialDialog = true
 		currentDialog.onFinishDialog.emit()
 		currentDialog = null
 		return
