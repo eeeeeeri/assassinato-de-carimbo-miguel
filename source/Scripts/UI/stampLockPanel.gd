@@ -1,16 +1,18 @@
 class_name StampLockPanel extends Control
 
 @export var stampPartScene:PackedScene
+@export var buttons:Array[TextureButton]
 
 @onready var inspection_canvas_layer: InspectionCanvas = $".."
 
-@onready var age_container: TabContainer = $AgeContainer
-@onready var profession_container: TabContainer = $ProfessionContainer
-@onready var mark_container: TabContainer = $MarkContainer
-@onready var birth_container: TabContainer = $birthContainer
-@onready var family_container: TabContainer = $familyContainer
+@onready var age_container: TabContainer = $Padlock/AgeContainer
+@onready var profession_container: TabContainer = $Padlock/ProfessionContainer
+@onready var mark_container: TabContainer = $Padlock/MarkContainer
+@onready var birth_container: TabContainer = $Padlock/birthContainer
+@onready var family_container: TabContainer = $Padlock/familyContainer
 
 @onready var check_timer: Timer = $CheckTimer
+@onready var animation_player: AnimationPlayer = $lock/AnimationPlayer
 
 var tabContainers:Array[TabContainer] = []
 var correctStamp:StampData
@@ -50,6 +52,9 @@ func StartInspection(_correctStamp:StampData, _correctSignal:Signal) -> void:
 	correctStamp = _correctStamp
 	correctSignal = _correctSignal
 	
+	for button in buttons:
+			button.disabled = false
+	
 	check_timer.start()
 	
 func EndInspection() -> void:
@@ -69,6 +74,12 @@ func CheckCorrectStamp() -> void:
 	if(age_container.current_tab == correctStamp.Age && profession_container.current_tab == correctStamp.Profession &&
 	mark_container.current_tab == correctStamp.Mark && birth_container.current_tab == correctStamp.Birth &&
 	family_container.current_tab == correctStamp.Family):
-		correctSignal.emit()
-		inspection_canvas_layer.EndInspection()
+		for button in buttons:
+			button.disabled = true
+		
+		animation_player.play("lockOpen")
+		animation_player.animation_finished.connect(func(animName:String):
+			if(animName == "lockOpen"):
+				correctSignal.emit()
+				inspection_canvas_layer.EndInspection())
 	

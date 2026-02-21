@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dg4316gxkl21n"]
 
 [node name="stampPartImageScene" type="TextureRect" unique_id=392148384]
+modulate = Color(0.2784314, 0.2901961, 0.3254902, 1)
 expand_mode = 1
 stretch_mode = 5
 metadata/_tab_index = 0

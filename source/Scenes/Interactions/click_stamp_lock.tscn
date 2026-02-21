@@ -3,9 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_fm46c"]
 [ext_resource type="Script" uid="uid://cgh1llabybf4k" path="res://Scripts/Interactions/click_stampLock.gd" id="2_xe4fc"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_a3qss"]
-[ext_resource type="Resource" uid="uid://wotfu8qwvhmw" path="res://CustomResources/Stamps/testStamp.tres" id="3_xe4fc"]
+[ext_resource type="Resource" uid="uid://wotfu8qwvhmw" path="res://CustomResources/Stamps/BrucesfildeStamp.tres" id="3_xe4fc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pojhe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xe4fc"]
 resource_local_to_scene = true
 shader = ExtResource("3_a3qss")
 shader_parameter/thickness = 0.0
@@ -23,4 +23,4 @@ script = ExtResource("2_xe4fc")
 correctStamp = ExtResource("3_xe4fc")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_pojhe")
+material = SubResource("ShaderMaterial_xe4fc")
