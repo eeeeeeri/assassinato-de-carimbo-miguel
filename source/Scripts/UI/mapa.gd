@@ -2,6 +2,7 @@ extends CanvasLayer
 
 @onready var bg: ColorRect = $BG
 @onready var sub_viewport: SubViewportContainer = $SubViewportContainer
+@onready var player: CharacterBody2D = $".."
 
 var bg_tween : Tween
 var scale_tween : Tween

@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://duu8ety807k0j"]
+
+[ext_resource type="Shader" uid="uid://dkskcxcayytq3" path="res://CustomResources/Shaders/shake.gdshader" id="1_0megp"]
+[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="2_0megp"]
+[ext_resource type="Script" uid="uid://dbcq87xk3a21o" path="res://Scripts/UI/culpado.gd" id="2_map2b"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_map2b"]
+[ext_resource type="Texture2D" uid="uid://bcxy583oqmksl" path="res://Assets/mark.png" id="4_o846e"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o846e"]
+shader = ExtResource("1_0megp")
+shader_parameter/hit_effect = 1.0
+shader_parameter/shake_intensity = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_map2b"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukgb1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_atudq"]
+resource_local_to_scene = true
+shader = ExtResource("2_0megp")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[node name="Culpado" type="SubViewportContainer" unique_id=1548636854]
+material = SubResource("ShaderMaterial_o846e")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -120.0
+offset_top = -140.0
+offset_right = 120.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+script = ExtResource("2_map2b")
+
+[node name="SubViewport" type="SubViewport" parent="." unique_id=548840889]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(240, 280)
+render_target_update_mode = 4
+
+[node name="Panel" type="Panel" parent="SubViewport" unique_id=960644912]
+material = SubResource("ShaderMaterial_map2b")
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -100.0
+offset_top = -120.0
+offset_right = 100.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ukgb1")
+
+[node name="Shadow" type="ColorRect" parent="SubViewport/Panel" unique_id=1212980693]
+z_index = -1
+material = SubResource("ShaderMaterial_atudq")
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 240.0
+mouse_filter = 2
+
+[node name="ColorRect" type="ColorRect" parent="SubViewport/Panel" unique_id=101840902]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = -100.0
+offset_right = 80.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.8, 0.8, 0.8, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewport/Panel/ColorRect" unique_id=657806657]
+position = Vector2(80, 108)
+texture = ExtResource("3_map2b")
+
+[node name="Label" type="Label" parent="SubViewport/Panel" unique_id=324695650]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -49.0
+offset_right = 37.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset_ratio = Vector2(0.5, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 24
+text = "NOME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mark" type="Sprite2D" parent="SubViewport/Panel" unique_id=1490252984]
+position = Vector2(108, 84)
+texture = ExtResource("4_o846e")
