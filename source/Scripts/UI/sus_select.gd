@@ -1,6 +1,7 @@
 extends CanvasLayer
 
 const CULPADO = preload("uid://duu8ety807k0j")
+const PORTRAIT_TEMP = preload("uid://bn720yj88xobh")
 
 @onready var panel_container: PanelContainer = $PanelContainer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -15,6 +16,7 @@ var showing = false
 var suspeitos = []
 var culpados = []
 var confirming = false
+var correct := 0
 
 func _ready() -> void:
 	panel_container.visible = false
@@ -66,4 +68,10 @@ func _on_nao_button_up() -> void:
 
 
 func _on_sim_button_up() -> void:
-	animation_player.play("success")
+	for i in culpados:
+		if i.sus_name == "Cadu" or i.sus_name == "Armando":
+			correct += 1
+	if correct == 2 && culpados.size():
+		animation_player.play("success")
+	else:
+		animation_player.play("failed")
