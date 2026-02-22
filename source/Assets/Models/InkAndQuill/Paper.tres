@@ -1,0 +1,15 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dcg1bviq1jhdt"]
+
+[ext_resource type="Texture2D" uid="uid://idno3w7bia3c" path="res://Assets/Models/InkAndQuill/inkAndQuill_papel_generico_fundo.png" id="1_60gis"]
+
+[resource]
+resource_name = "Paper"
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("1_60gis")
+stencil_flags = 2
+stencil_outline_thickness = 0.001

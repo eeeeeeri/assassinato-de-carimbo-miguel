@@ -1,6 +1,6 @@
 extends Interactable
 
-@export var TextsList:Array[String]
+@export_multiline var TextsList:Array[String]
 @export var FinalImage:Texture2D
 @export var BackImage:Texture2D
 

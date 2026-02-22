@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_ggf1x")
 dialogOption = "Qual o seu nome e profissão?"
-charResponses = Array[String](["É Lady Fotocópia pra você, princesa do Reino de Carimbia."])
+charResponses = Array[String](["É Lady Fotocópia Miguel pra você, princesa do Reino de Carimbia."])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

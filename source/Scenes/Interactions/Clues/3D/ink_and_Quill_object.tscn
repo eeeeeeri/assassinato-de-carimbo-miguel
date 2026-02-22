@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://b7n282i8hb86c"]
+
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_7yjpx"]
+[ext_resource type="PackedScene" uid="uid://bus2udpfrmyro" path="res://Assets/Models/InkAndQuill/inkAndQuill.glb" id="2_glap8"]
+[ext_resource type="Material" uid="uid://d2nyhpfrdjcnm" path="res://Assets/Models/InkAndQuill/InkAndQuillOutline.tres" id="3_pqu3c"]
+[ext_resource type="Material" uid="uid://d1rd1p44i2nhs" path="res://Assets/Models/InkAndQuill/QuillOutline.tres" id="4_e2rgp"]
+
+[node name="InkAndQuillObject" unique_id=441466860 instance=ExtResource("1_7yjpx")]
+defaultCameraDistance = 0.25
+minCameraDistance = 0.15
+maxCameraDistance = 0.5
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=31540225]
+visible = false
+
+[node name="inkAndQuill2" parent="." index="2" unique_id=2089617996 instance=ExtResource("2_glap8")]
+
+[node name="Ink" parent="inkAndQuill2" index="0" unique_id=1678687128]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.052752692, 0.02898109, -0.06905092)
+material_overlay = ExtResource("3_pqu3c")
+
+[node name="Paper" parent="inkAndQuill2" index="1" unique_id=1312781551]
+material_overlay = ExtResource("3_pqu3c")
+
+[node name="Quill" parent="inkAndQuill2" index="2" unique_id=2108127818]
+transform = Transform3D(0.6641089, -0.7476141, -0.0057139914, -6.6815015e-10, -0.007642747, 0.9999708, -0.7476359, -0.6640895, -0.0050756163, -0.045088056, 0.0019966215, -0.025063992)
+material_overlay = ExtResource("4_e2rgp")
+
+[editable path="inkAndQuill2"]

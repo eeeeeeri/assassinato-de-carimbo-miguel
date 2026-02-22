@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://do4jah0ogu6xm"]
+
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_8vtyc"]
+[ext_resource type="PackedScene" uid="uid://dc7p55drhicgi" path="res://Assets/Models/ArmandoSword/armandoSword.glb" id="2_8vtyc"]
+[ext_resource type="Material" uid="uid://o2xarp81q6iu" path="res://Assets/Models/ArmandoSword/SwordOutline.tres" id="3_0s81v"]
+
+[node name="SwordObject" unique_id=441466860 instance=ExtResource("1_8vtyc")]
+defaultCameraDistance = 1.0
+minCameraDistance = 0.75
+maxCameraDistance = 2.0
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=31540225]
+visible = false
+
+[node name="armandoSword" parent="." index="2" unique_id=387607831 instance=ExtResource("2_8vtyc")]
+
+[node name="Sword" parent="armandoSword" index="0" unique_id=879717880]
+transform = Transform3D(0.96516734, -0.26163334, 0, 0.26163334, 0.96516734, 0, 0, 0, 1, -0.04272759, 0.09969784, 0.02189383)
+material_overlay = ExtResource("3_0s81v")
+
+[node name="Sheath" parent="armandoSword" index="1" unique_id=1046721038]
+transform = Transform3D(0.96518105, 0.2615828, 0, -0.2615828, 0.96518105, 0, 0, 0, 1, 0.06510866, 0.09903692, -0.026919514)
+material_overlay = ExtResource("3_0s81v")
+
+[editable path="armandoSword"]

@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ts76v28ppnib"]
+
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="1_3ql2t"]
+[ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="2_cwyrs"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_7uayf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ql2t"]
+resource_local_to_scene = true
+shader = ExtResource("3_7uayf")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="TextClue_armandoLetter" unique_id=705077137 instance=ExtResource("1_3ql2t")]
+TextsList = Array[String](["(Uma carta aberta)", "Armando,
+
+	Meu filho, eu sei que seu trabalho como guarda real é muito importante, mas por favor, tire um tempo para me visitar, desde que sua irmãzinha saiu de casa, tenho estado bem solitário, vocês dois são tudo o que eu tenho. Tem umas belas donzelas solteiras aqui na cidade pra você conversar.
+
+		Com amor, seu pai"])
+FinalImage = null
+BackImage = ExtResource("2_cwyrs")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_3ql2t")

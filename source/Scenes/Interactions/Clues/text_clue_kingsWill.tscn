@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://bv2ywypmendwm"]
+
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="1_mcs4r"]
+[ext_resource type="Texture2D" uid="uid://ccjdkj4svnfda" path="res://Assets/Pistas/kingsWill2.png" id="2_mcs4r"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_o4pca"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4wj3"]
+resource_local_to_scene = true
+shader = ExtResource("3_o4pca")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="TextClue_kingsWill" unique_id=705077137 instance=ExtResource("1_mcs4r")]
+TextsList = Array[String](["(Um documento carimbado)", "Testamento de Carimbo Miguel
+
+	Declaro enquanto em vida, que deixo a meia parte de minhas posses, assim como a coroa do reino de Carimbia para Fotocópia Miguel. O restante deve ser entregue a Brucesfilde Miguel, não antes que ele complete a maior idade."])
+FinalImage = ExtResource("2_mcs4r")
+BackImage = ExtResource("2_mcs4r")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_n4wj3")

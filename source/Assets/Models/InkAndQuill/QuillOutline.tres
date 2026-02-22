@@ -1,0 +1,13 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://d1rd1p44i2nhs"]
+
+[ext_resource type="Texture2D" uid="uid://dkmei4rw1yup4" path="res://Assets/Models/InkAndQuill/inkAndQuill_feather.png" id="1_e340m"]
+
+[resource]
+transparency = 1
+blend_mode = 4
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_e340m")
+grow = true
+grow_amount = 0.001

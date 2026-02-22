@@ -1,0 +1,16 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://bnhr14fqoqequ"]
+
+[ext_resource type="Texture2D" uid="uid://dkmei4rw1yup4" path="res://Assets/Models/InkAndQuill/inkAndQuill_feather.png" id="1_cb8af"]
+
+[resource]
+resource_name = "Feather"
+transparency = 1
+albedo_color = Color(0, 0, 0, 1)
+albedo_texture = ExtResource("1_cb8af")
+metallic = 1.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("1_cb8af")
+stencil_flags = 2
+stencil_outline_thickness = 0.001
