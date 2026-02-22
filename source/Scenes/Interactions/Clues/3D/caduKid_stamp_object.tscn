@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://hxeqv8j8vt5x"]
+
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_phnnn"]
+[ext_resource type="PackedScene" uid="uid://bkd58pmklxst" path="res://Assets/Models/CaduKidStamp/caduKidStamp.glb" id="2_phnnn"]
+
+[node name="CaduKidStampObject" unique_id=441466860 instance=ExtResource("1_phnnn")]
+defaultCameraDistance = 0.2
+minCameraDistance = 0.15
+maxCameraDistance = 0.4
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=31540225]
+visible = false
+
+[node name="caduKidStamp" parent="." index="2" unique_id=1229747156 instance=ExtResource("2_phnnn")]

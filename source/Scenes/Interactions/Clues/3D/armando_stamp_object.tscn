@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://wg6e6nq0w3m5"]
+
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_kuba8"]
+[ext_resource type="PackedScene" uid="uid://b0wemjsp45sj3" path="res://Assets/Models/ArmandoStamp/armandoStamp.glb" id="2_8b4ei"]
+
+[node name="ArmandoStampObject" unique_id=441466860 instance=ExtResource("1_kuba8")]
+defaultCameraDistance = 0.2
+minCameraDistance = 0.1
+maxCameraDistance = 0.4
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=31540225]
+visible = false
+
+[node name="armandoStamp" parent="." index="2" unique_id=1850817020 instance=ExtResource("2_8b4ei")]

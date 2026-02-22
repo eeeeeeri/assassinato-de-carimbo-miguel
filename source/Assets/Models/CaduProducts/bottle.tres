@@ -1,0 +1,29 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://b0goo2li5mqg8"]
+
+[ext_resource type="Texture2D" uid="uid://c0qjnacfjfhqq" path="res://Assets/Models/CaduProducts/caduProducts_bottleTexture.png" id="1_cbshm"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cbshm"]
+render_priority = 1
+transparency = 1
+shading_mode = 0
+albedo_color = Color(0, 0, 0, 1)
+grow = true
+grow_amount = 0.001
+stencil_mode = 3
+stencil_flags = 1
+stencil_compare = 5
+metadata/_stencil_owned = true
+
+[resource]
+resource_name = "bottle"
+next_pass = SubResource("StandardMaterial3D_cbshm")
+cull_mode = 2
+albedo_color = Color(0, 0, 0, 1)
+metallic = 1.0
+emission_enabled = true
+emission = Color(1, 1, 1, 1)
+emission_operator = 1
+emission_texture = ExtResource("1_cbshm")
+stencil_mode = 1
+stencil_flags = 2
+stencil_outline_thickness = 0.001

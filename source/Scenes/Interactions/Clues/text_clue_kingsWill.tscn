@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bv2ywypmendwm"]
 
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="1_mcs4r"]
-[ext_resource type="Texture2D" uid="uid://jsghdtal5fk1" path="res://Assets/Pistas/kingsWill.png" id="2_mcs4r"]
+[ext_resource type="Texture2D" uid="uid://ccjdkj4svnfda" path="res://Assets/Pistas/kingsWill2.png" id="2_mcs4r"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_o4pca"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n4wj3"]

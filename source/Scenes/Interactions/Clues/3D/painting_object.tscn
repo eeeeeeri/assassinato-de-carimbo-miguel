@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://dfqpsa6hsde0h"]
+
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_8a3gb"]
+[ext_resource type="PackedScene" uid="uid://bbehy0c65mgid" path="res://Assets/Models/Painting/painting.glb" id="2_for2f"]
+
+[node name="PaintingObject" unique_id=441466860 instance=ExtResource("1_8a3gb")]
+defaultCameraDistance = 1.0
+minCameraDistance = 0.75
+maxCameraDistance = 2.0
+
+[node name="MeshInstance3D" parent="." index="1" unique_id=31540225]
+visible = false
+
+[node name="painting" parent="." index="2" unique_id=1370590524 instance=ExtResource("2_for2f")]
