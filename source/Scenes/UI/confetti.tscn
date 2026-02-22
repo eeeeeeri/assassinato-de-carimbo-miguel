@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://duw0dr8wm210s"]
+
+[sub_resource type="Gradient" id="Gradient_n3trh"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xuu6n"]
+gradient = SubResource("Gradient_n3trh")
+width = 1
+height = 2
+
+[sub_resource type="Gradient" id="Gradient_02kyr"]
+offsets = PackedFloat32Array(0.63013697, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Curve" id="Curve_lh045"]
+_limits = [-1.0, 1.0, 0.0, 1.0]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[node name="Confetti" type="CPUParticles2D"]
+emitting = false
+amount = 32
+texture = SubResource("GradientTexture2D_xuu6n")
+one_shot = true
+explosiveness = 1.0
+spread = 180.0
+gravity = Vector2(0, 200)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angle_max = 360.0
+color = Color(1, 0.66999996, 0.66999996, 1)
+color_ramp = SubResource("Gradient_02kyr")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+hue_variation_curve = SubResource("Curve_lh045")

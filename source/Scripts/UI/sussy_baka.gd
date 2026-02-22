@@ -1,10 +1,12 @@
-extends Control
+extends Button
 
 @onready var label: Label = $Panel/Label
 @onready var sprite_2d: Sprite2D = $Panel/ColorRect/Sprite2D
 @onready var mark: Sprite2D = $Panel/Mark
 @onready var panel: Panel = $Panel
 @onready var shadow: ColorRect = $Panel/Shadow
+@onready var hit: AudioStreamPlayer = $Hit
+@onready var click: AudioStreamPlayer = $Click
 
 @export var sus_name : String
 @export var sus_sprite : Texture2D
@@ -13,6 +15,7 @@ var scale_tween : Tween
 var angle_tween : Tween
 var shadow_tween : Tween
 var mark_tween : Tween
+var selected := false
 
 func _ready() -> void:
 	label.text = sus_name
@@ -23,9 +26,23 @@ func _ready() -> void:
 
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:
-		mark_size(1)
+		hit.play()
+		_selected()
 	else:
-		mark_size(0)
+		click.play()
+		_unselected()
+
+
+func _selected() -> void:
+	button_pressed = true
+	mark_size(1)
+	selected = true
+
+
+func _unselected() -> void:
+	button_pressed = false
+	mark_size(0)
+	selected = false
 
 
 func rotate() -> void:
