@@ -4,6 +4,11 @@
 [ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="2_qkck8"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="2_ukgb1"]
 [ext_resource type="Texture2D" uid="uid://bcxy583oqmksl" path="res://Assets/mark.png" id="4_qkck8"]
+[ext_resource type="AudioStream" uid="uid://uqn0p0ifi6pt" path="res://Assets/SFX/hit00.wav" id="5_g5kyk"]
+[ext_resource type="AudioStream" uid="uid://cs8l2s2umnrym" path="res://Assets/SFX/hit01.wav" id="6_7wlro"]
+[ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="9_ifxus"]
+[ext_resource type="AudioStream" uid="uid://cnp65fjvv6lcx" path="res://Assets/SFX/hit07.wav" id="12_8g7gk"]
+[ext_resource type="AudioStream" uid="uid://dy2lshvuapwol" path="res://Assets/SFX/hit08.wav" id="13_8lshq"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkck8"]
 
@@ -11,14 +16,25 @@
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_plliu"]
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ifxus"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e2yq2"]
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ukgb1"]
 bg_color = Color(1, 1, 1, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qkck8"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifxus"]
 resource_local_to_scene = true
 shader = ExtResource("2_qkck8")
 shader_parameter/shadow_offset = Vector2(0, 0)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_fl4ab"]
+streams_count = 4
+stream_0/stream = ExtResource("5_g5kyk")
+stream_1/stream = ExtResource("6_7wlro")
+stream_2/stream = ExtResource("12_8g7gk")
+stream_3/stream = ExtResource("13_8lshq")
 
 [node name="SussyBaka" type="Button" unique_id=423670737]
 custom_minimum_size = Vector2(200, 240)
@@ -37,12 +53,14 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 theme_override_styles/normal = SubResource("StyleBoxEmpty_qkck8")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_hs3kb")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_plliu")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifxus")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_e2yq2")
 toggle_mode = true
 script = ExtResource("1_uynpu")
 sus_name = "Cadu"
 sus_sprite = ExtResource("2_ukgb1")
 
-[node name="Panel" type="Panel" parent="." unique_id=1011402180]
+[node name="Panel" type="Panel" parent="." unique_id=960644912]
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 240.0
@@ -50,15 +68,15 @@ pivot_offset_ratio = Vector2(0.5, 0)
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_ukgb1")
 
-[node name="Shadow" type="ColorRect" parent="Panel" unique_id=1074985927]
+[node name="Shadow" type="ColorRect" parent="Panel" unique_id=1212980693]
 z_index = -1
-material = SubResource("ShaderMaterial_qkck8")
+material = SubResource("ShaderMaterial_ifxus")
 layout_mode = 0
 offset_right = 200.0
 offset_bottom = 240.0
 mouse_filter = 2
 
-[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=371650066]
+[node name="ColorRect" type="ColorRect" parent="Panel" unique_id=101840902]
 clip_children = 2
 layout_mode = 1
 anchors_preset = 8
@@ -75,11 +93,11 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0.8, 0.8, 0.8, 1)
 
-[node name="Sprite2D" type="Sprite2D" parent="Panel/ColorRect" unique_id=2104799394]
+[node name="Sprite2D" type="Sprite2D" parent="Panel/ColorRect" unique_id=657806657]
 position = Vector2(80, 108)
 texture = ExtResource("2_ukgb1")
 
-[node name="Label" type="Label" parent="Panel" unique_id=1087784482]
+[node name="Label" type="Label" parent="Panel" unique_id=324695650]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -99,9 +117,18 @@ text = "NOME"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Mark" type="Sprite2D" parent="Panel" unique_id=125265218]
+[node name="Mark" type="Sprite2D" parent="Panel" unique_id=1490252984]
 position = Vector2(108, 84)
 texture = ExtResource("4_qkck8")
+
+[node name="Hit" type="AudioStreamPlayer" parent="." unique_id=1796140273]
+stream = SubResource("AudioStreamRandomizer_fl4ab")
+bus = &"SFX"
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=1941493808]
+stream = ExtResource("9_ifxus")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

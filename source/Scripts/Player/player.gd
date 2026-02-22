@@ -13,6 +13,7 @@ var click_position : Vector2
 var target_position : Vector2
 var mouse_mode := false
 var is_interacting := false
+var in_menu := false
 var is_possible_position := true
 var moving_to_object := false
 
@@ -32,7 +33,7 @@ func _ready() -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	if Input.is_action_just_pressed("left_click") && !is_interacting:
+	if Input.is_action_just_pressed("left_click") && !is_interacting && !in_menu:
 		ray_cast_2d.target_position = get_local_mouse_position()
 		possible_position.position = get_local_mouse_position()
 		wait_position.start()
@@ -88,7 +89,7 @@ func _get_mouse_position() -> void:
 		mouse_mode = true
 		click_position = get_global_mouse_position()
 	else:
-		if !is_interacting and !moving_to_object:
+		if !is_interacting and !moving_to_object and !in_menu:
 			var huh = HUH.instantiate()
 			huh.position = Vector2(0,-128)
 			add_child(huh)
@@ -138,8 +139,8 @@ func sus_close() -> void:
 
 
 func paused() -> void:
-	is_interacting = true
+	in_menu = true
 
 
 func unpaused() -> void:
-	is_interacting = false
+	in_menu = false
