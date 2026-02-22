@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StampData" format=3 uid="uid://71j6eoqoo6yo"]
+
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="1_crypq"]
+
+[resource]
+script = ExtResource("1_crypq")
+Profession = 8
+Mark = 9
+Age = 1
+metadata/_custom_type_script = "uid://dfqgxrvertj3e"

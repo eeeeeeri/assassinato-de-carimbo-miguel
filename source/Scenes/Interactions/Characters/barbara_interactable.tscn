@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cm4y2f527gbun"]
+
+[ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_7hadk"]
+[ext_resource type="Resource" uid="uid://b6xia38c240ds" path="res://CustomResources/Characters/Barbara/Barbara.tres" id="2_7hadk"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_a1f3d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7a652"]
+resource_local_to_scene = true
+shader = ExtResource("3_a1f3d")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="barbaraInteractable" unique_id=705077137 instance=ExtResource("1_7hadk")]
+Character = ExtResource("2_7hadk")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_7a652")

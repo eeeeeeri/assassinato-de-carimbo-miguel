@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://heai8fbv8xjc"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_ctqs7"]
+
+[resource]
+script = ExtResource("1_ctqs7")
+dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
+charResponses = Array[String](["Só consigo pensar nos barulhos que ouvi aqui pela vizinhança ontem a noite.", "-Que tipo de barulhos?", "Eu não sei, na hora achei que fosse uns gatos fazendo bagunça."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

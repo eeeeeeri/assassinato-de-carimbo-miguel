@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://dnr2ykof67e40"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_vkgcp"]
+[ext_resource type="Resource" uid="uid://bihcgxsy45o1b" path="res://CustomResources/Characters/Cadu/caduIntroductionDialog.tres" id="2_ivdam"]
+[ext_resource type="Resource" uid="uid://drqgc48vfnpnk" path="res://CustomResources/Characters/Cadu/caduStampDialog.tres" id="3_spuo0"]
+[ext_resource type="Resource" uid="uid://dqj6768ijdyyj" path="res://CustomResources/Characters/Cadu/caduSuspitionDialog.tres" id="4_xyhlq"]
+[ext_resource type="Resource" uid="uid://bpeja223j7n6o" path="res://CustomResources/Characters/Cadu/caduInitialDialog.tres" id="5_lylnh"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_g1xwp"]
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_ivdam"]
+[ext_resource type="Resource" uid="uid://c6chi2lhbrfu5" path="res://CustomResources/Stamps/CaduStamp.tres" id="7_vembr"]
+[ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="8_lrlew"]
+
+[resource]
+script = ExtResource("8_lrlew")
+Name = "Cadu Bundasseca"
+Portrait = ExtResource("6_g1xwp")
+Stamps = Array[ExtResource("7_ivdam")]([ExtResource("7_vembr")])
+InitialDialog = ExtResource("5_lylnh")
+Dialogs = Array[ExtResource("1_vkgcp")]([ExtResource("2_ivdam"), ExtResource("3_spuo0"), ExtResource("4_xyhlq")])
+metadata/_custom_type_script = "uid://vddqpk5j4snt"

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://c3873ka87mobb"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_py68b"]
+[ext_resource type="Resource" uid="uid://dggjjj2upv020" path="res://CustomResources/Characters/Marka/MarkaIntroductionDialog.tres" id="2_4jnwt"]
+[ext_resource type="Resource" uid="uid://bnd7edul2mq40" path="res://CustomResources/Characters/Marka/MarkaStampDialog.tres" id="3_5ctjd"]
+[ext_resource type="Resource" uid="uid://bxmuwrc7i8mmd" path="res://CustomResources/Characters/Marka/MarkaSuspitionDialog.tres" id="4_hhlw5"]
+[ext_resource type="Resource" uid="uid://dpxvyvyru0vf7" path="res://CustomResources/Characters/Marka/MarkaInitialDialog.tres" id="5_o5ehp"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_anaai"]
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_n2noq"]
+[ext_resource type="Resource" uid="uid://ocucq2i7ucxc" path="res://CustomResources/Stamps/MarkaStamp.tres" id="8_qkcmf"]
+[ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="9_grooo"]
+
+[resource]
+script = ExtResource("9_grooo")
+Name = "Marka Passos"
+Portrait = ExtResource("6_anaai")
+Stamps = Array[ExtResource("7_n2noq")]([ExtResource("8_qkcmf")])
+InitialDialog = ExtResource("5_o5ehp")
+Dialogs = Array[ExtResource("1_py68b")]([ExtResource("2_4jnwt"), ExtResource("3_5ctjd"), ExtResource("4_hhlw5")])
+metadata/_custom_type_script = "uid://vddqpk5j4snt"

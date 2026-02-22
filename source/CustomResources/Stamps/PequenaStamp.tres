@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="StampData" format=3 uid="uid://nsugappdoxt"]
+
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="1_sov48"]
+
+[resource]
+script = ExtResource("1_sov48")
+Family = 4
+Profession = 6
+Mark = 4
+metadata/_custom_type_script = "uid://dfqgxrvertj3e"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dkrmqv3v1g4ny"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_0m4y7"]
+
+[resource]
+script = ExtResource("1_0m4y7")
+dialogOption = "Qual o seu nome e profissão?"
+charResponses = Array[String](["É JAIR, E FIQUE SABENDO QUE EU ERA O MELHOR VENDEDOR QUE ESSE REINO JÁ VIU! AQUELE TEMPO É QUE ERA BOM, VOCÊS JOVENS ESTRAGAM TUDO."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

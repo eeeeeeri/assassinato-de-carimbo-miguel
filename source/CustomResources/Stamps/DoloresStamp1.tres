@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="StampData" format=3 uid="uid://c5f26onagudlm"]
+
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="1_jqumi"]
+
+[resource]
+script = ExtResource("1_jqumi")
+Family = 2
+Mark = 7
+Birth = 3
+Age = 1
+metadata/_custom_type_script = "uid://dfqgxrvertj3e"

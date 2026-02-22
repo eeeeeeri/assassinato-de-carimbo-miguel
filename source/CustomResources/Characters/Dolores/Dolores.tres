@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CharacterData" format=3 uid="uid://cavcbunbm4cp6"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_btysu"]
+[ext_resource type="Resource" uid="uid://s4n4xha5e63v" path="res://CustomResources/Characters/Dolores/DoloresIntroductionDialog.tres" id="2_ere83"]
+[ext_resource type="Resource" uid="uid://b1ojlnlleay6f" path="res://CustomResources/Characters/Dolores/DoloresStampDialog.tres" id="3_qha5k"]
+[ext_resource type="Resource" uid="uid://bxphem6pwfxxr" path="res://CustomResources/Characters/Dolores/DoloresSuspitionDialog.tres" id="4_tykag"]
+[ext_resource type="Resource" uid="uid://b8j7foi6svbdw" path="res://CustomResources/Characters/Dolores/DoloresInitialDialog.tres" id="5_x73ss"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_tnvob"]
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_02ugq"]
+[ext_resource type="Resource" uid="uid://c5f26onagudlm" path="res://CustomResources/Stamps/DoloresStamp1.tres" id="8_nfufb"]
+[ext_resource type="Resource" uid="uid://vgrldba0u7cn" path="res://CustomResources/Stamps/DoloresStamp2.tres" id="9_mcx32"]
+[ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="9_veqf7"]
+
+[resource]
+script = ExtResource("9_veqf7")
+Name = "Dolores de Barriga"
+Portrait = ExtResource("6_tnvob")
+Stamps = Array[ExtResource("7_02ugq")]([ExtResource("8_nfufb"), ExtResource("9_mcx32")])
+InitialDialog = ExtResource("5_x73ss")
+Dialogs = Array[ExtResource("1_btysu")]([ExtResource("2_ere83"), ExtResource("3_qha5k"), ExtResource("4_tykag")])
+metadata/_custom_type_script = "uid://vddqpk5j4snt"
