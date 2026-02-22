@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_8a3gb"]
 [ext_resource type="PackedScene" uid="uid://bbehy0c65mgid" path="res://Assets/Models/Painting/painting.glb" id="2_for2f"]
+[ext_resource type="Material" uid="uid://caijmrvgyydpe" path="res://Assets/Models/Painting/paintingOutline.tres" id="3_xn2ae"]
 
 [node name="PaintingObject" unique_id=441466860 instance=ExtResource("1_8a3gb")]
 defaultCameraDistance = 1.0
@@ -11,4 +12,9 @@ maxCameraDistance = 2.0
 [node name="MeshInstance3D" parent="." index="1" unique_id=31540225]
 visible = false
 
-[node name="painting" parent="." index="2" unique_id=1370590524 instance=ExtResource("2_for2f")]
+[node name="painting" parent="." index="2" unique_id=753898504 instance=ExtResource("2_for2f")]
+
+[node name="Painting" parent="painting" index="0" unique_id=1023350757]
+material_overlay = ExtResource("3_xn2ae")
+
+[editable path="painting"]

@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_phnnn"]
 [ext_resource type="PackedScene" uid="uid://bkd58pmklxst" path="res://Assets/Models/CaduKidStamp/caduKidStamp.glb" id="2_phnnn"]
+[ext_resource type="Material" uid="uid://cwdyoanxt5b5n" path="res://Assets/Models/ArmandoStamp/StampOutline.tres" id="3_dc5rf"]
 
 [node name="CaduKidStampObject" unique_id=441466860 instance=ExtResource("1_phnnn")]
 defaultCameraDistance = 0.2
@@ -12,3 +13,8 @@ maxCameraDistance = 0.4
 visible = false
 
 [node name="caduKidStamp" parent="." index="2" unique_id=1229747156 instance=ExtResource("2_phnnn")]
+
+[node name="caduStamp" parent="caduKidStamp" index="0" unique_id=2016624728]
+material_overlay = ExtResource("3_dc5rf")
+
+[editable path="caduKidStamp"]
