@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://ckmcvls0kwd8b"]
+
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="1_esky4"]
+[ext_resource type="Texture2D" uid="uid://b2l5q48qy4yom" path="res://Assets/Pistas/papel_generico.png" id="2_bntdo"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_6q3bt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_esky4"]
+resource_local_to_scene = true
+shader = ExtResource("3_6q3bt")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="TextClue_bastardSonDoc" unique_id=705077137 instance=ExtResource("1_esky4")]
+TextsList = Array[String](["(Um documento antigo)", "À vossa magestade Carimbo de reino de Carimbia,
+
+	Meu irmão, é com pesar que trago nesta carta uma terrível notícia. Chegou à atenção da família que um de vossos filhos é ilegítimo, proveniente de um impuro relacionamento da rainha de Carimbia com outro homem. Esperamos que tome medidas muito em breve em relação a este fato.
+
+		Xequira"])
+FinalImage = null
+BackImage = ExtResource("2_bntdo")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_esky4")

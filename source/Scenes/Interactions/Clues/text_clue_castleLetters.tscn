@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://3ir8xy0a71ca"]
+
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="1_r3x52"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_d823j"]
+[ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="2_nmiwn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8251"]
+resource_local_to_scene = true
+shader = ExtResource("2_d823j")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="TextClue_castleLetters" unique_id=705077137 instance=ExtResource("1_r3x52")]
+TextsList = Array[String](["(Uma pilha de correspondência do castelo)", "Vossa Magestade,
+
+	Sou um principe de um reino vizinho, no momento estou sozinho em uma terra distante e não consigo contatar meus familiares, peço que por favor, envie 300 moedas de ouro para o endereço do remetente, e assim que voltar para meu castelo, recompensarei à você e a seu povo com 1.000.000 moesdas de ouro.
+
+		Assinado,
+			Principe de Verdade", "Minha Princesa, 
+
+	Esqueça essa história de rainha, vamos fugir juntos e ser livres, longe de nossas famílias e suas burocracias! Tem que existir um jeito de você se livrar desse fardo.
+
+		Sempre seu,
+			Principe Impresso", "MEU MARIDO ESTÁ MORTO
+
+Não quero voltar a casar.
+Só quero FORNICAÇÃO
+
+Achas que tens o que é preciso para esmagares a minha rata?
+ME ENCONTRE na Rua dos Bobos número 0", "Oi meu nome é Samara, tenho 14 anos (Teria se estivesse viva), morri aos 13 em Carimbia. Eu andava de Ponei Quando não pude desviar de uma vinha espinhosa. O pior foi que o dono da terra não quis me ajudar, riu bastante mim após agonizar por 2 horas enroscada nas vinhas eu faleci, através dessa carta eu peço que façam com que eu possa descançar em paz. Envie isso para 5 reinos e minha alma estara sendo salva por você e pelos outros 5 que receberão. Caso não repasse essa mensagem vou visitar-lhe hoje a noite assim vc poderá conhecer a tal vinha bem de pertinho. Dia 15 de Julho Mariana resolveu rir dessa mensagem, uma noite depois ela sumiu sem deixar vestigios. O mesmo aconteceu com Kare dia 18 de Outubro. Não Quebre essa corrente por favor, a não ser que queira sentir a minha presença", "Você me deve. 
+E eu não cobro barato.
+Boa sorte aos pombinhos."])
+FinalImage = null
+BackImage = ExtResource("2_nmiwn")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_n8251")
