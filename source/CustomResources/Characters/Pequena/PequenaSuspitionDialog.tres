@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://bwhx6ewreju3t"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_hr74d"]
+
+[resource]
+script = ExtResource("1_hr74d")
+dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
+charResponses = Array[String](["Um menino na escola disse que a marca dele é mais legal que a minha, por que Maurício é mesma do Principe Brucesfilde, mas é mentira, Dragão Ból é muito mais legal!!"])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

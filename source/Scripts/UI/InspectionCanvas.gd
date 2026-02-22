@@ -4,6 +4,7 @@ class_name InspectionCanvas extends Node
 @export var FinalImageInstanceScene:PackedScene
 @export var DialogButtonScene:PackedScene
 @export var DialogButtonCoinScene:PackedScene
+@export var ModularStampScene:PackedScene
 
 @onready var _3d_object_panel: Control = $"3DObjectPanel"
 @onready var object_cam_texture: TextureRect = $"3DObjectPanel/ObjectCamTexture"
@@ -21,6 +22,7 @@ const FINALIMAGENODE = "FinalImage"
 @onready var dialog_options: VBoxContainer = $DialogPanel/ColorRect/DialogOptions
 @onready var dialog_label: Label = $DialogPanel/ColorRect/DialogLabel
 @onready var character_name: Label = $DialogPanel/ColorRect/CharacterName
+@onready var stamp_container: HBoxContainer = $DialogPanel/stampContainer
 
 @onready var stamp_lock_panel: StampLockPanel = $StampLockPanel
 
@@ -116,8 +118,22 @@ func StartDialog(dialog:DialogData) -> void:
 	if(currentDialog.responsePortraits.size() > currentDialogLineIndex && currentDialog.responsePortraits.get(currentDialogLineIndex) != null):
 		character_portrait.texture = currentDialog.responsePortraits.get(currentDialogLineIndex)
 	
+	CheckForShowStamp()
+	
 	dialog_options.visible = false
 	dialog_label.visible = true
+	
+func CheckForShowStamp() -> void:
+	ClearStampsContainer()
+	if(currentDialogLineIndex == currentDialog.showStampsLineIndex):
+		for stamp in currentCharacter.Stamps:
+			var stampInstance = ModularStampScene.instantiate() as ModularStamp
+			stamp_container.add_child(stampInstance)
+			stampInstance.SetupStamp(stamp)	
+
+func ClearStampsContainer() -> void:
+	for child in stamp_container.get_children():
+		child.queue_free()
 	
 func NextDialog() -> void:
 	if(currentDialogLineIndex >= currentDialog.charResponses.size() - 1):
@@ -129,11 +145,14 @@ func NextDialog() -> void:
 			currentCharacter.PlayedInitialDialog = true
 		currentDialog.onFinishDialog.emit()
 		currentDialog = null
+		ClearStampsContainer()
 		return
 	currentDialogLineIndex += 1
 	dialog_label.text = currentDialog.charResponses.get(currentDialogLineIndex)
 	if(currentDialog.responsePortraits.size() > currentDialogLineIndex && currentDialog.responsePortraits.get(currentDialogLineIndex) != null):
 		character_portrait.texture = currentDialog.responsePortraits.get(currentDialogLineIndex)
+	
+	CheckForShowStamp()
 	
 func InspectStampLock(correctStamp:StampData, correctSignal:Signal) -> void:
 	stamp_lock_panel.visible = true
@@ -149,6 +168,7 @@ func EndInspection() -> void:
 	stamp_lock_panel.visible = false
 	
 	inDialog = false
+	ClearStampsContainer()
 	
 	for child in tab_container.get_children():
 		child.queue_free()

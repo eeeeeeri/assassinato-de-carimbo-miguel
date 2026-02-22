@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dqj6768ijdyyj"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_10f1v"]
+
+[resource]
+script = ExtResource("1_10f1v")
+dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
+charResponses = Array[String](["uhmmm...", "Olha, eu não gosto de ficar falando dos outros por ai, ainda mais alguém da familia real, mas esses dias quando eu fui fazer umas entregas no castelo, eu vi a Princesa Fotocópia se esgueirando pra fora.", "Mas não conta pra ninguém que eu te disse isso."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

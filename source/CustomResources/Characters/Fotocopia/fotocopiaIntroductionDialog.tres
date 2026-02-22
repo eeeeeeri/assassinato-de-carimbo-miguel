@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dqnyrhmc0w82"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_ggf1x"]
+
+[resource]
+script = ExtResource("1_ggf1x")
+dialogOption = "Qual o seu nome e profissão?"
+charResponses = Array[String](["É Lady Fotocópia pra você, princesa do Reino de Carimbia."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://bxmuwrc7i8mmd"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_wx0c4"]
+
+[resource]
+script = ExtResource("1_wx0c4")
+dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
+charResponses = Array[String](["O meu marido, ele não voltou do trabalho ontem, e ele não é de sumir assim sem avisar, estou muito preocupada.", "-Onde ele trabalha?", "Ele trabalha como carimbeiro real no castelo. É graças ao trabalho dele que eu posso dedicar minha vida à minha arte e à nossa filha."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

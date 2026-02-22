@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://daklxd7i55k1e"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_rp2bh"]
+
+[resource]
+script = ExtResource("1_rp2bh")
+dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
+charResponses = Array[String](["A ÚNICA COISA SUSPEITA É COMO O INÚTIL DO MEU FILHO CONSEGUIU ARRUINAR A LOJA DA FAMÍLIA, ELE SÓ ESTRAGOU TUDO DESDE QUE APARECEU."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

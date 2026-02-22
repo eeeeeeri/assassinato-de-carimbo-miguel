@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://c8vl2fn4knwrp"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_oc6mv"]
+
+[resource]
+script = ExtResource("1_oc6mv")
+dialogOption = "Initial"
+charResponses = Array[String](["-Olá senhorita, fui encarregado pela corte real de investigar um caso, será que posso lhe fazer algumas perguntas?", "Você é um detetive de verdade? Que legaaal, pergunta, pergunta!!"])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

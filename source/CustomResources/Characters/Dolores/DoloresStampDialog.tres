@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://b1ojlnlleay6f"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_aljpx"]
+
+[resource]
+script = ExtResource("1_aljpx")
+dialogOption = "Poderia me mostrar seu carimbo?"
+charResponses = Array[String](["Posso saber pra que?", "-Os carimbos são realmente muitos importantes pra esse caso.", "Se é assim, acho que tudo bem.", "Aqui estão."])
+showStampsLineIndex = 3
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

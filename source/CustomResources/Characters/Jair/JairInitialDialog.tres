@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://dag2nf0cyhthq"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_0lsdx"]
+
+[resource]
+script = ExtResource("1_0lsdx")
+dialogOption = "Initial"
+charResponses = Array[String](["-Olá senhor, fui encarregado de investigar esse caso, será que posso lhe fazer algumas perguntas?", "Aquele muleque estragou tudo.", "-Senhor?", "O QUE? O QUE VOCÊ QUER?", "-Só gostaria de te fazer algumas perguntas."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

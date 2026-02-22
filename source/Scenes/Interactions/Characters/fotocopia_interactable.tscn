@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://bq2cs6n03ge7b"]
+
+[ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_dqog3"]
+[ext_resource type="Resource" uid="uid://kbddmohelx6c" path="res://CustomResources/Characters/Fotocopia/Fotocopia.tres" id="2_0emgn"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_qf7yd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc6dx"]
+resource_local_to_scene = true
+shader = ExtResource("4_qf7yd")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="FotocopiaInteractable" unique_id=705077137 instance=ExtResource("1_dqog3")]
+Character = ExtResource("2_0emgn")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_sc6dx")

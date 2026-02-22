@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://w5pumpwn04j6"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_2hy74"]
+
+[resource]
+script = ExtResource("1_2hy74")
+dialogOption = "Poderia me mostrar seu carimbo?"
+charResponses = Array[String](["Não posso, o papai não deixa! Ele diz que gente ruim pode fazer coisas ruins com meu carimbo."])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

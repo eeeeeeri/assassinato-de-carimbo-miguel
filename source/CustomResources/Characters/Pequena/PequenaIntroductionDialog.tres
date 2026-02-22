@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://b7ngs1h7eqhlx"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_n6ga4"]
+
+[resource]
+script = ExtResource("1_n6ga4")
+dialogOption = "Qual o seu nome e profissão?"
+charResponses = Array[String](["Meu nome é Pequena, eu sou a ajudante oficial do carimbeiro real!", "Graças ao meu papai todos no reino tem um carimbo, o nosso trabalho é muito importante!"])
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"
