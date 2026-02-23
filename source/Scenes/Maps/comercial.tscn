@@ -1,17 +1,17 @@
 [gd_scene format=4 uid="uid://8ufp5uldstrx"]
 
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_0eth3"]
-[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="3_68qxl"]
-[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="4_kafox"]
-[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="5_kafox"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="3_68qxl"]
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="4_kafox"]
+[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="5_kafox"]
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="5_t55c3"]
 [ext_resource type="Script" uid="uid://qbxtdyl75usm" path="res://Scripts/Characters/DialogEvents.gd" id="6_t55c3"]
 [ext_resource type="Resource" uid="uid://dhre5e6a1b85y" path="res://CustomResources/Characters/TestChar/DialogTest3.tres" id="7_u584y"]
 [ext_resource type="Texture2D" uid="uid://dgmkbt1wpf53s" path="res://Assets/Pistas/papel_generico_fundo.png" id="8_u584y"]
 [ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="9_n0u8l"]
 [ext_resource type="Resource" uid="uid://drc74scictreg" path="res://CustomResources/Save/comercialVisibleStateData.tres" id="10_soy2c"]
-[ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/click_coin.tscn" id="11_w3u2l"]
-[ext_resource type="PackedScene" uid="uid://dsdpnmxl30dvj" path="res://Scenes/Interactions/click_stamp_lock.tscn" id="12_lnl00"]
+[ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/MoveInteractions/click_coin.tscn" id="11_w3u2l"]
+[ext_resource type="PackedScene" uid="uid://dsdpnmxl30dvj" path="res://Scenes/Interactions/MoveInteractions/click_stamp_lock.tscn" id="12_lnl00"]
 
 [node name="Comercial" unique_id=146350973 instance=ExtResource("1_0eth3")]
 

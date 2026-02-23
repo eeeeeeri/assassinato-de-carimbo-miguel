@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c64be5ktqdv8q"]
 
-[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="1_3mluw"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_3mluw"]
 [ext_resource type="PackedScene" uid="uid://do4jah0ogu6xm" path="res://Scenes/Interactions/Clues/3D/sword_object.tscn" id="2_3mluw"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_uovmw"]
 

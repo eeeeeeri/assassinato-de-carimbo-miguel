@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c8u2gfrtw53q4"]
 
-[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_ltl3q"]
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_ltl3q"]
 [ext_resource type="Script" uid="uid://cgbvf4hwycy1u" path="res://Scripts/Interactions/InteractableCharacter.gd" id="2_fy4sm"]
 [ext_resource type="Resource" uid="uid://duyxp42ds1oy7" path="res://CustomResources/Characters/TestChar/CharacterTest.tres" id="3_fy4sm"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_cf2ya"]

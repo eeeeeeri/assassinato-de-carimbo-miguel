@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://hxeqv8j8vt5x"]
 
-[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_phnnn"]
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/MoveInteractions/inspectable_object.tscn" id="1_phnnn"]
 [ext_resource type="PackedScene" uid="uid://bkd58pmklxst" path="res://Assets/Models/CaduKidStamp/caduKidStamp.glb" id="2_phnnn"]
 [ext_resource type="Material" uid="uid://cwdyoanxt5b5n" path="res://Assets/Models/ArmandoStamp/StampOutline.tres" id="3_dc5rf"]
 

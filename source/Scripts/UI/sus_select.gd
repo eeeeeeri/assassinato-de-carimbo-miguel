@@ -37,6 +37,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Cancel") && showing:
 		animation_player.play("hide")
+		GlobalResources.GLOBAL_EVENTS.SusClose.emit()
 		showing = false
 
 

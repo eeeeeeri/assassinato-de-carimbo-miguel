@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://bgpqxtkbaosy4"]
 
-[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_e5ax4"]
-[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="2_iutop"]
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_e5ax4"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="2_iutop"]
 [ext_resource type="PackedScene" uid="uid://dskcxgegt7slf" path="res://Scenes/Interactions/object_inspector.tscn" id="3_2anby"]
-[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="3_4eimr"]
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="3_4eimr"]
 [ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/UI/inspection_canvas.tscn" id="4_2anby"]
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="6_j2wl1"]
 

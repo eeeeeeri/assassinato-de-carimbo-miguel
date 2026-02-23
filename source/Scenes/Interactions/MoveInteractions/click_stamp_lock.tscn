@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dsdpnmxl30dvj"]
 
-[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_fm46c"]
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_fm46c"]
 [ext_resource type="Script" uid="uid://cgh1llabybf4k" path="res://Scripts/Interactions/click_stampLock.gd" id="2_xe4fc"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_a3qss"]
 [ext_resource type="Resource" uid="uid://wotfu8qwvhmw" path="res://CustomResources/Stamps/BrucesfildeStamp.tres" id="3_xe4fc"]

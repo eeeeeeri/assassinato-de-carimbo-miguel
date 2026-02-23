@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://b7n282i8hb86c"]
 
-[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_7yjpx"]
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/MoveInteractions/inspectable_object.tscn" id="1_7yjpx"]
 [ext_resource type="PackedScene" uid="uid://bus2udpfrmyro" path="res://Assets/Models/InkAndQuill/inkAndQuill.glb" id="2_glap8"]
 [ext_resource type="Material" uid="uid://d2nyhpfrdjcnm" path="res://Assets/Models/InkAndQuill/InkAndQuillOutline.tres" id="3_pqu3c"]
 [ext_resource type="Material" uid="uid://d1rd1p44i2nhs" path="res://Assets/Models/InkAndQuill/QuillOutline.tres" id="4_e2rgp"]

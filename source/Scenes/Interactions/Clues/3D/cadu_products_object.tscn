@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://kwx8vknfophc"]
 
-[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_571o0"]
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/MoveInteractions/inspectable_object.tscn" id="1_571o0"]
 [ext_resource type="PackedScene" uid="uid://ci4iesrw485hf" path="res://Assets/Models/CaduProducts/caduProducts.glb" id="2_bpuls"]
 [ext_resource type="Material" uid="uid://b0goo2li5mqg8" path="res://Assets/Models/CaduProducts/bottle.tres" id="2_ehiis"]
 [ext_resource type="Material" uid="uid://dlru2mcgbm7on" path="res://Assets/Models/CaduProducts/ProductsOutline.tres" id="3_r3mut"]

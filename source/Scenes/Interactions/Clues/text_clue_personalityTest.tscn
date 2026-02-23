@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cbdcxtcvpptum"]
 
-[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/TextInspection/click_inspectable_text.tscn" id="1_ege78"]
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_ege78"]
 [ext_resource type="Texture2D" uid="uid://6sv77nx0ddvs" path="res://Assets/Pistas/jornal.png" id="2_ege78"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_x3tig"]
 

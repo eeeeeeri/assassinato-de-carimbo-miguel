@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://birawuwygp05j"]
 
-[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/click_interactable.tscn" id="1_g0npg"]
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_g0npg"]
 [ext_resource type="Script" uid="uid://cbw0f3rne7plg" path="res://Scripts/Interactions/InteractableInspectObj.gd" id="2_ohnjy"]
-[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="3_gg6pm"]
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/MoveInteractions/inspectable_object.tscn" id="3_gg6pm"]
 
 [node name="ClickInspectableObject" unique_id=705077137 instance=ExtResource("1_g0npg")]
 script = ExtResource("2_ohnjy")

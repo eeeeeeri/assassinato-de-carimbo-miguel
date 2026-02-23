@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d08xgowqidu6a"]
 
-[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="1_md5q4"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_md5q4"]
 [ext_resource type="PackedScene" uid="uid://kwx8vknfophc" path="res://Scenes/Interactions/Clues/3D/cadu_products_object.tscn" id="2_md5q4"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_v6pfp"]
 

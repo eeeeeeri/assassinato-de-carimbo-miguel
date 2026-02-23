@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bsq3nigw1o82s"]
 
-[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/ObjectInspection/click_inspectable_object.tscn" id="1_0d16n"]
+[ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_0d16n"]
 [ext_resource type="PackedScene" uid="uid://b7n282i8hb86c" path="res://Scenes/Interactions/Clues/3D/ink_and_Quill_object.tscn" id="2_0d16n"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_3v32j"]
 

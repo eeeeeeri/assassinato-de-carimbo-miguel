@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://m3cjfjrwg6ke"]
 
 [ext_resource type="Texture2D" uid="uid://f5bpgi48xjfa" path="res://Assets/map.png" id="1_5k086"]
-[ext_resource type="Shader" uid="uid://fotlq7tvk1fi" path="res://CustomResources/Shaders/tilt.gdshader" id="1_ttohs"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/tilt.gdshader" id="1_ttohs"]
 [ext_resource type="PackedScene" uid="uid://cpto2log0nt73" path="res://Scenes/UI/map_button.tscn" id="2_o0ld3"]
 [ext_resource type="Script" uid="uid://c1kspsa8fys0h" path="res://Scripts/UI/mapa.gd" id="2_vns23"]
-[ext_resource type="Script" uid="uid://bnbv38ity1a1b" path="res://Scripts/UI/map_view.gd" id="3_tfn6t"]
+[ext_resource type="Script" path="res://Scripts/UI/map_view.gd" id="3_tfn6t"]
 [ext_resource type="Texture2D" uid="uid://crbku7k2hgqxx" path="res://Assets/comercial.png" id="3_vns23"]
 [ext_resource type="Texture2D" uid="uid://dj5vs7vxuehbx" path="res://Assets/residencial.png" id="4_tfn6t"]
 

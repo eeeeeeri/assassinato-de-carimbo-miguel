@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://wg6e6nq0w3m5"]
 
-[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_kuba8"]
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/MoveInteractions/inspectable_object.tscn" id="1_kuba8"]
 [ext_resource type="PackedScene" uid="uid://b0wemjsp45sj3" path="res://Assets/Models/ArmandoStamp/armandoStamp.glb" id="2_8b4ei"]
 [ext_resource type="Material" uid="uid://cwdyoanxt5b5n" path="res://Assets/Models/ArmandoStamp/StampOutline.tres" id="3_ttks0"]
 

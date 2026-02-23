@@ -26,6 +26,7 @@ func _process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Cancel") && showing:
 		hide_map()
+		GlobalResources.GLOBAL_EVENTS.MapClose.emit()
 		showing = false
 
 func show_map() -> void:

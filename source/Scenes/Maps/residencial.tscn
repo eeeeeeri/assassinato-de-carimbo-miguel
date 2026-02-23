@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_00dw8"]
 [ext_resource type="Texture2D" uid="uid://b57w7tg5tssbi" path="res://Assets/vila/casas.png" id="2_xub7h"]
-[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="5_ypm8x"]
+[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="5_ypm8x"]
 
 [node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
 

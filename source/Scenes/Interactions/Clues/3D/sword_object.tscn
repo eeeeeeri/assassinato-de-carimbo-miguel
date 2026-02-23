@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://do4jah0ogu6xm"]
 
-[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/inspectable_object.tscn" id="1_8vtyc"]
+[ext_resource type="PackedScene" uid="uid://ca5ehl3awp485" path="res://Scenes/Interactions/MoveInteractions/inspectable_object.tscn" id="1_8vtyc"]
 [ext_resource type="PackedScene" uid="uid://dc7p55drhicgi" path="res://Assets/Models/ArmandoSword/armandoSword.glb" id="2_8vtyc"]
 [ext_resource type="Material" uid="uid://o2xarp81q6iu" path="res://Assets/Models/ArmandoSword/SwordOutline.tres" id="3_0s81v"]
 

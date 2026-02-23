@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 	if Input.get_vector("left", "right", "up", "down"):
 		mouse_mode = false
 	
-	if !is_interacting:
+	if !is_interacting && !in_menu:
 		if mouse_mode:
 			_move_mouse()
 		else:

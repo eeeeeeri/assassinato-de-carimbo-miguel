@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://onlxrfn3bp7l"]
 
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_lldms"]
-[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/click_travel.tscn" id="2_755oh"]
+[ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="2_755oh"]
 
 [node name="Castelo" unique_id=146350973 instance=ExtResource("1_lldms")]
 

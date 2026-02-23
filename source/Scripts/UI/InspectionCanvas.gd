@@ -32,6 +32,8 @@ var currentDialog:DialogData
 var currentDialogLineIndex:int
 var textHasFinalImage:bool
 
+var inspecting:bool
+
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspect3D.connect(Inspect3D)
 	GlobalResources.GLOBAL_EVENTS.OnInteractInspectionText.connect(InspectText)
@@ -41,6 +43,8 @@ func _ready() -> void:
 func Inspect3D(camTex:ViewportTexture) -> void:
 	_3d_object_panel.visible = true
 	object_cam_texture.texture = camTex
+	
+	inspecting = true
 	
 func InspectText(texts:Array[String], finalImage:Texture2D, backImage:Texture2D) -> void:
 	textHasFinalImage = finalImage != null
@@ -64,6 +68,8 @@ func InspectText(texts:Array[String], finalImage:Texture2D, backImage:Texture2D)
 	button_right.visible = (texts.size() > 1 && !textHasFinalImage) || (texts.size() > 0 && textHasFinalImage)
 	tab_container.tabs_visible = (texts.size() > 1 && !textHasFinalImage) || (texts.size() > 0 && textHasFinalImage)
 	text_panel.visible = true
+	
+	inspecting = true
 	
 func _on_tab_container_tab_changed(tab: int) -> void:
 	button_left.visible = tab > 0
@@ -89,6 +95,8 @@ func InteractCharacter(character:CharacterData) -> void:
 		dialog_options.add_child(newDialog)
 		option.currentInstance = newDialog
 	dialog_panel.visible = true
+	
+	inspecting = true
 	
 	if(!character.PlayedInitialDialog && character.InitialDialog != null):
 		StartDialog(character.InitialDialog)
@@ -157,6 +165,8 @@ func NextDialog() -> void:
 func InspectStampLock(correctStamp:StampData, correctSignal:Signal) -> void:
 	stamp_lock_panel.visible = true
 	stamp_lock_panel.StartInspection(correctStamp, correctSignal)
+	
+	inspecting = true
 
 func EndInspection() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.emit()
@@ -172,9 +182,12 @@ func EndInspection() -> void:
 	
 	for child in tab_container.get_children():
 		child.queue_free()
+	
+	inspecting = false
 		
 func _input(event: InputEvent) -> void:
 	if(Input.is_action_just_released("Cancel")):
-		EndInspection()
+		if(inspecting):
+			EndInspection()
 	if(Input.is_action_just_released("AdvanceDialog") && inDialog):
 		NextDialog()
