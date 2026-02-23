@@ -9,6 +9,8 @@ const HUH = preload("uid://brvbdoqchxkay")
 @onready var possible_position: Area2D = $PossiblePosition
 @onready var wait_position: Timer = $WaitPosition
 @onready var camera_2d: Camera2D = $Camera2D
+@onready var walk_timer: Timer = $WalkTimer
+@onready var walk_sound: AudioStreamPlayer = $WalkSound
 
 var click_position : Vector2
 var target_position : Vector2
@@ -150,3 +152,8 @@ func paused() -> void:
 
 func unpaused() -> void:
 	in_menu = false
+
+
+func _on_walk_timer_timeout() -> void:
+	if animated_sprite.animation == "walk":
+		walk_sound.play()

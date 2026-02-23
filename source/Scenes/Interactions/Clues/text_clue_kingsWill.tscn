@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_mcs4r"]
 [ext_resource type="Texture2D" uid="uid://ccjdkj4svnfda" path="res://Assets/Pistas/kingsWill2.png" id="2_mcs4r"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_n4wj3"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_o4pca"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4wj3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4pca"]
 resource_local_to_scene = true
 shader = ExtResource("3_o4pca")
 shader_parameter/thickness = 0.0
@@ -23,6 +24,7 @@ TextsList = Array[String](["(Um documento carimbado)", "Testamento de Carimbo Mi
 	Declaro enquanto em vida, que deixo a meia parte de minhas posses, assim como a coroa do reino de Carimbia para Fotocópia Miguel. O restante deve ser entregue a Brucesfilde Miguel, não antes que ele complete a maior idade."])
 FinalImage = ExtResource("2_mcs4r")
 BackImage = ExtResource("2_mcs4r")
+audio = ExtResource("3_n4wj3")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_n4wj3")
+material = SubResource("ShaderMaterial_o4pca")

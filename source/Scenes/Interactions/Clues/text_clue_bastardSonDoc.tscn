@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_esky4"]
 [ext_resource type="Texture2D" uid="uid://b2l5q48qy4yom" path="res://Assets/Pistas/papel_generico.png" id="2_bntdo"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_6q3bt"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_bntdo"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_esky4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6q3bt"]
 resource_local_to_scene = true
 shader = ExtResource("3_6q3bt")
 shader_parameter/thickness = 0.0
@@ -25,6 +26,7 @@ TextsList = Array[String](["(Um documento antigo)", "À vossa magestade Carimbo 
 		Xequira"])
 FinalImage = null
 BackImage = ExtResource("2_bntdo")
+audio = ExtResource("3_bntdo")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_esky4")
+material = SubResource("ShaderMaterial_6q3bt")

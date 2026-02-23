@@ -1,0 +1,17 @@
+[gd_resource type="AudioStreamRandomizer" format=3 uid="uid://nvgiklh7rdj8"]
+
+[ext_resource type="AudioStream" uid="uid://dol6r23tt6yos" path="res://Assets/SFX/paper00.wav" id="1_4ow26"]
+[ext_resource type="AudioStream" uid="uid://eaoecscnb2ky" path="res://Assets/SFX/paper01.wav" id="2_mwfrh"]
+[ext_resource type="AudioStream" uid="uid://eexeceo30hqd" path="res://Assets/SFX/paper02.wav" id="3_03ath"]
+[ext_resource type="AudioStream" uid="uid://c830vokl774hg" path="res://Assets/SFX/paper03.wav" id="4_6vfuy"]
+[ext_resource type="AudioStream" uid="uid://c5804c01hb7c7" path="res://Assets/SFX/paper04.wav" id="5_udskq"]
+[ext_resource type="AudioStream" uid="uid://lngdff80n3ho" path="res://Assets/SFX/paper05.wav" id="6_716tb"]
+
+[resource]
+streams_count = 6
+stream_0/stream = ExtResource("1_4ow26")
+stream_1/stream = ExtResource("2_mwfrh")
+stream_2/stream = ExtResource("3_03ath")
+stream_3/stream = ExtResource("4_6vfuy")
+stream_4/stream = ExtResource("5_udskq")
+stream_5/stream = ExtResource("6_716tb")

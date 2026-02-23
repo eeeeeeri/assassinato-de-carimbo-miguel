@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://dbwxdhea6e57i" path="res://Scripts/Interactions/InteractableObj.gd" id="1_ioulm"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_aqi78"]
 [ext_resource type="Texture2D" uid="uid://cqypamh78b5wc" path="res://Assets/object_temp.png" id="3_u8gpf"]
+[ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="4_gs4tt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ioulm"]
 radius = 256.0
@@ -31,6 +32,7 @@ collision_layer = 5
 collision_mask = 5
 input_pickable = true
 script = ExtResource("1_ioulm")
+audio = ExtResource("4_gs4tt")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=146712339]
 collision_layer = 2
@@ -53,6 +55,9 @@ shape = SubResource("RectangleShape2D_k4glw")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=159541262]
 material = SubResource("ShaderMaterial_gxer8")
 texture = ExtResource("3_u8gpf")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=610547525]
+bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]

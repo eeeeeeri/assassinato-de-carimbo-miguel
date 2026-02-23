@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_ege78"]
 [ext_resource type="Texture2D" uid="uid://6sv77nx0ddvs" path="res://Assets/Pistas/jornal.png" id="2_ege78"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_2msko"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_x3tig"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ege78"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x3tig"]
 resource_local_to_scene = true
 shader = ExtResource("3_x3tig")
 shader_parameter/thickness = 0.0
@@ -24,6 +25,7 @@ Calo - Teimoso | Caba - Companheiro | Mamaco - Curioso
 Cock - Convencido | Carrocho - Fiel | Corpo - Desleixado"])
 FinalImage = ExtResource("2_ege78")
 BackImage = ExtResource("2_ege78")
+audio = ExtResource("3_2msko")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_ege78")
+material = SubResource("ShaderMaterial_x3tig")

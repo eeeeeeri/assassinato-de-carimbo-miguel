@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_3ql2t"]
 [ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="2_cwyrs"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_7uayf"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_cwyrs"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3ql2t"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7uayf"]
 resource_local_to_scene = true
 shader = ExtResource("3_7uayf")
 shader_parameter/thickness = 0.0
@@ -25,6 +26,7 @@ TextsList = Array[String](["(Uma carta aberta)", "Armando,
 		Com amor, seu pai"])
 FinalImage = null
 BackImage = ExtResource("2_cwyrs")
+audio = ExtResource("3_cwyrs")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_3ql2t")
+material = SubResource("ShaderMaterial_7uayf")
