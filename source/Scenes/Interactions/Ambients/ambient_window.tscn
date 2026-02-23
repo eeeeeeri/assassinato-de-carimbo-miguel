@@ -1,21 +1,80 @@
 [gd_scene format=3 uid="uid://du73hwoai7lnk"]
 
+[ext_resource type="Script" uid="uid://djn6pknp1urma" path="res://Scripts/Interactions/ambient_window.gd" id="1_34cu5"]
 [ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="1_b1rqo"]
+[ext_resource type="PackedScene" uid="uid://dcff1ph7t34m2" path="res://Scenes/Interactions/PureClickInteractions/pureClick_interactable.tscn" id="3_3kkd0"]
+[ext_resource type="PackedScene" uid="uid://bkwtekniv2hh4" path="res://Scenes/Interactions/Clues/object_clue_cadu_kid_stamp.tscn" id="4_cq16l"]
+[ext_resource type="PackedScene" uid="uid://3ir8xy0a71ca" path="res://Scenes/Interactions/Clues/text_clue_castleLetters.tscn" id="5_eyvgr"]
+[ext_resource type="PackedScene" uid="uid://cm4y2f527gbun" path="res://Scenes/Interactions/Characters/barbara_interactable.tscn" id="6_w2wx7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3kkd0"]
+size = Vector2(188778, 153068)
+
+[sub_resource type="Gradient" id="Gradient_cq16l"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(0, 0, 0, 0.6784314)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_nkyta"]
+gradient = SubResource("Gradient_cq16l")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cq16l"]
+size = Vector2(974, 540)
 
 [node name="AmbientWindow" type="Node2D" unique_id=1550925338]
 z_index = 1
+script = ExtResource("1_34cu5")
 
-[node name="CanvasBlock" type="CanvasLayer" parent="." unique_id=685176459]
+[node name="background" type="StaticBody2D" parent="." unique_id=236795687]
+collision_layer = 8
+collision_mask = 8
+input_pickable = true
 
-[node name="TextureRect" type="TextureRect" parent="CanvasBlock" unique_id=1118568146]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 0
+[node name="CollisionShape2D" type="CollisionShape2D" parent="background" unique_id=1160932412]
+shape = SubResource("RectangleShape2D_3kkd0")
 
-[node name="Background" type="Sprite2D" parent="." unique_id=1442916352]
+[node name="Sprite2D" type="Sprite2D" parent="background" unique_id=1550161269]
+scale = Vector2(741.3204, 153236)
+texture = SubResource("GradientTexture1D_nkyta")
+
+[node name="Window" type="StaticBody2D" parent="." unique_id=1196447102]
+collision_layer = 8
+collision_mask = 8
+input_pickable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Window" unique_id=477099859]
+shape = SubResource("RectangleShape2D_cq16l")
+
+[node name="WindowBackground" type="Sprite2D" parent="Window" unique_id=1442916352]
 self_modulate = Color(0.30517232, 0.17734289, 0.07813848, 1)
 scale = Vector2(1.9023438, 1.0546875)
 texture = ExtResource("1_b1rqo")
+
+[node name="Interactions" type="Node2D" parent="." unique_id=1001932162]
+
+[node name="PureClickInteractable" parent="Interactions" unique_id=705077137 instance=ExtResource("3_3kkd0")]
+position = Vector2(220, -139)
+
+[node name="object_clue_caduKidStamp" parent="Interactions/PureClickInteractable" unique_id=1882282616 instance=ExtResource("4_cq16l")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable2" parent="Interactions" unique_id=2741898 instance=ExtResource("3_3kkd0")]
+position = Vector2(-284, -120)
+
+[node name="TextClue_castleLetters" parent="Interactions/PureClickInteractable2" unique_id=1300959452 instance=ExtResource("5_eyvgr")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable3" parent="Interactions" unique_id=1972573794 instance=ExtResource("3_3kkd0")]
+position = Vector2(-126, 140)
+
+[node name="barbaraInteractable" parent="Interactions/PureClickInteractable3" unique_id=1573159185 instance=ExtResource("6_w2wx7")]
+process_mode = 4
+visible = false
+
+[connection signal="input_event" from="background" to="." method="BackgroundInputEvent"]
+[connection signal="mouse_entered" from="Window" to="." method="WindowHoverEnter"]
+[connection signal="mouse_exited" from="Window" to="." method="WindowHoverExit"]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/object_clue_caduKidStamp" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/TextClue_castleLetters" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable3" to="Interactions/PureClickInteractable3/barbaraInteractable" method="_interacted" binds= [true]]

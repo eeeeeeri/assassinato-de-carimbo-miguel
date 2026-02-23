@@ -40,7 +40,9 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 			GlobalResources.GLOBAL_EVENTS.MoveToObject.emit(position)
 
 
-func _interacted() -> void:
+func _interacted(override:bool = false) -> void:
+	if(!override && GlobalResources.player.is_interacting):return
+	
 	is_interactable = false
 	audio_stream_player.play()
 	GlobalResources.GLOBAL_EVENTS.OnInteract.emit()

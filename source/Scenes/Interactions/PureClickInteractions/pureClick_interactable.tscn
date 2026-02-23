@@ -21,8 +21,6 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [node name="PureClickInteractable" type="StaticBody2D" unique_id=705077137]
-collision_layer = 5
-collision_mask = 5
 input_pickable = true
 script = ExtResource("1_taxwa")
 
@@ -34,3 +32,5 @@ material = SubResource("ShaderMaterial_gxer8")
 texture = ExtResource("3_xlrds")
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

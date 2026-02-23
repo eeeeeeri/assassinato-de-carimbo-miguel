@@ -12,6 +12,7 @@
 [ext_resource type="Resource" uid="uid://drc74scictreg" path="res://CustomResources/Save/comercialVisibleStateData.tres" id="10_soy2c"]
 [ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/MoveInteractions/click_coin.tscn" id="11_w3u2l"]
 [ext_resource type="PackedScene" uid="uid://dsdpnmxl30dvj" path="res://Scenes/Interactions/MoveInteractions/click_stamp_lock.tscn" id="12_lnl00"]
+[ext_resource type="PackedScene" uid="uid://daj7r5504tny8" path="res://Scenes/Interactions/MoveInteractions/click_interactable_ambient_window.tscn" id="13_g7iru"]
 
 [node name="Comercial" unique_id=146350973 instance=ExtResource("1_0eth3")]
 
@@ -62,6 +63,9 @@ position = Vector2(662, -408)
 
 [node name="ClickStampLock" parent="." index="13" unique_id=550226506 instance=ExtResource("12_lnl00")]
 position = Vector2(-494, 225)
+
+[node name="ClickInteractable_ambientWindow" parent="." index="14" unique_id=393011894 instance=ExtResource("13_g7iru")]
+position = Vector2(-575, -35)
 
 [connection signal="DialogEnd" from="DialogTest3Event" to="Jornal" method="set_visible" binds= [true]]
 [connection signal="OnCorrectStampLock" from="ClickStampLock" to="ClickTravel2" method="set_visible" binds= [true]]
