@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://daj7r5504tny8"]
+
+[ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_yvfst"]
+[ext_resource type="Script" uid="uid://kf2r62kt4png" path="res://Scripts/Interactions/InteractableAmbientWindow.gd" id="2_opnsm"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_kes6x"]
+[ext_resource type="PackedScene" uid="uid://du73hwoai7lnk" path="res://Scenes/Interactions/Ambients/ambient_window.tscn" id="3_opnsm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_opnsm"]
+resource_local_to_scene = true
+shader = ExtResource("3_kes6x")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="ClickInteractable_ambientWindow" unique_id=705077137 instance=ExtResource("1_yvfst")]
+script = ExtResource("2_opnsm")
+window = ExtResource("3_opnsm")
+popupDuration = 0.25
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_opnsm")

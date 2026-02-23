@@ -20,6 +20,8 @@ func _process(delta: float) -> void:
 			GlobalResources.GLOBAL_EVENTS.MapClose.emit()
 			showing = false
 		else:
+			if(GlobalResources.player.is_interacting):return
+			
 			show_map()
 			GlobalResources.GLOBAL_EVENTS.MapOpen.emit()
 			showing = true

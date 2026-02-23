@@ -30,6 +30,8 @@ func _process(delta: float) -> void:
 			GlobalResources.GLOBAL_EVENTS.SusClose.emit()
 			showing = false
 		else:
+			if(GlobalResources.player.is_interacting):return
+			
 			animation_player.play("show")
 			GlobalResources.GLOBAL_EVENTS.SusOpen.emit()
 			visible = true
