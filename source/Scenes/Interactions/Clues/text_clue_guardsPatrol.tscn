@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_n80r3"]
 [ext_resource type="Texture2D" uid="uid://b2l5q48qy4yom" path="res://Assets/Pistas/papel_generico.png" id="2_8qegx"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_8qegx"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_ytnb7"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n80r3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ytnb7"]
 resource_local_to_scene = true
 shader = ExtResource("3_ytnb7")
 shader_parameter/thickness = 0.0
@@ -21,6 +22,7 @@ shader_parameter/max_or_add = false
 TextsList = Array[String](["(Parece ser o conograma de patrulha dos guardas)", "Os guardas à postos devem patrulhar os arredores dos aposentos reais durante o dia, e os arredores do exterior do castelo durante a noite. NÃO FALE COM TRANSEUNTES DURANTE O SERVIÇO A NÃO SER QUE SE FAÇA NECESSÁRIO"])
 FinalImage = null
 BackImage = ExtResource("2_8qegx")
+audio = ExtResource("3_8qegx")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_n80r3")
+material = SubResource("ShaderMaterial_ytnb7")

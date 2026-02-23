@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_r3x52"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_d823j"]
 [ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="2_nmiwn"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_nmiwn"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_n8251"]
 resource_local_to_scene = true
@@ -39,6 +40,7 @@ E eu não cobro barato.
 Boa sorte aos pombinhos."])
 FinalImage = null
 BackImage = ExtResource("2_nmiwn")
+audio = ExtResource("3_nmiwn")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_n8251")

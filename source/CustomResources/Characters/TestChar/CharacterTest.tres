@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_0cgoy"]
 [ext_resource type="Resource" uid="uid://21a42ak3oihb" path="res://CustomResources/Characters/TestChar/DialogTest1.tres" id="2_fg73t"]
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="3_0f7db"]
 [ext_resource type="Resource" uid="uid://cu6r0jodnpsou" path="res://CustomResources/Characters/TestChar/DialogTest2.tres" id="3_fm1we"]
 [ext_resource type="Resource" uid="uid://dhre5e6a1b85y" path="res://CustomResources/Characters/TestChar/DialogTest3.tres" id="4_rgdrc"]
 [ext_resource type="Resource" uid="uid://bfqdafv15tdx7" path="res://CustomResources/Characters/TestChar/DialogTest0.tres" id="5_fg73t"]

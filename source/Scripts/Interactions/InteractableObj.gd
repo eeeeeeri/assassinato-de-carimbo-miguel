@@ -1,7 +1,10 @@
 class_name Interactable extends Node2D
 
+@export var audio : AudioStream
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interaction_area: Area2D = $InteractionArea
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 var is_interactable := false
 var time := 0.0
@@ -12,6 +15,7 @@ var startSpriteScale:Vector2
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(end_inspection)
+	audio_stream_player.stream = audio
 	startSpriteScale = sprite_2d.scale
 
 func _process(delta: float) -> void:
@@ -38,6 +42,7 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 
 func _interacted() -> void:
 	is_interactable = false
+	audio_stream_player.play()
 	GlobalResources.GLOBAL_EVENTS.OnInteract.emit()
 
 
