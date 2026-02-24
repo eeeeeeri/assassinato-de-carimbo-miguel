@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://barwsceayifj5"]
+
+[ext_resource type="PackedScene" uid="uid://du73hwoai7lnk" path="res://Scenes/Interactions/Ambients/ambient_window.tscn" id="1_bjg8k"]
+[ext_resource type="PackedScene" uid="uid://dcff1ph7t34m2" path="res://Scenes/Interactions/PureClickInteractions/pureClick_interactable.tscn" id="2_1c00a"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_g8r5a"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="4_bjg8k"]
+[ext_resource type="PackedScene" uid="uid://bdhwl61w25rit" path="res://Scenes/Interactions/Characters/jair_interactable.tscn" id="5_1c00a"]
+[ext_resource type="PackedScene" uid="uid://3xwv1cp1nhrc" path="res://Scenes/Interactions/Characters/dolores_interactable.tscn" id="6_6hy6e"]
+[ext_resource type="Texture2D" uid="uid://b2fq42d50qu12" path="res://Assets/Pistas/castelo_desenho.png" id="7_6hy6e"]
+[ext_resource type="PackedScene" uid="uid://uanj0yqwax66" path="res://Scenes/Interactions/Clues/text_clue_castleDrawing.tscn" id="8_bjg8k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8r5a"]
+resource_local_to_scene = true
+shader = ExtResource("3_g8r5a")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_75pbl"]
+resource_local_to_scene = true
+shader = ExtResource("3_g8r5a")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_82osm"]
+resource_local_to_scene = true
+shader = ExtResource("3_g8r5a")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="TavernWindow" unique_id=1550925338 instance=ExtResource("1_bjg8k")]
+
+[node name="Window" parent="." index="1" unique_id=1196447102]
+rotation = 0.5235988
+
+[node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_1c00a")]
+position = Vector2(-110, -226)
+outlineThickness = 30.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable" index="0" unique_id=1151619031]
+scale = Vector2(1.17, 2.56)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_g8r5a")
+scale = Vector2(0.9923665, 0.99236655)
+texture = ExtResource("4_bjg8k")
+
+[node name="jairInteractable" parent="Interactions/PureClickInteractable" index="2" unique_id=1064789908 instance=ExtResource("5_1c00a")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable2" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=1122020805 instance=ExtResource("2_1c00a")]
+position = Vector2(237, -45)
+outlineThickness = 30.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=1151619031]
+scale = Vector2(1.165, 2.32)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_75pbl")
+scale = Vector2(0.87022907, 0.87022907)
+texture = ExtResource("4_bjg8k")
+
+[node name="doloresInteractable" parent="Interactions/PureClickInteractable2" index="2" unique_id=1565268529 instance=ExtResource("6_6hy6e")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable3" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="2" unique_id=968819951 instance=ExtResource("2_1c00a")]
+position = Vector2(-232, 63)
+outlineThickness = 30.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable3" index="0" unique_id=1151619031]
+scale = Vector2(1.5, 1.3)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable3" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_82osm")
+scale = Vector2(0.13541666, 0.13541666)
+texture = ExtResource("7_6hy6e")
+
+[node name="TextClue_castleDrawing" parent="Interactions/PureClickInteractable3" index="2" unique_id=1988761618 instance=ExtResource("8_bjg8k")]
+process_mode = 4
+visible = false
+
+[connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/jairInteractable" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/doloresInteractable" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable3" to="Interactions/PureClickInteractable3/TextClue_castleDrawing" method="_interacted" binds= [true]]
+
+[editable path="Interactions/PureClickInteractable"]
+[editable path="Interactions/PureClickInteractable2"]
+[editable path="Interactions/PureClickInteractable3"]

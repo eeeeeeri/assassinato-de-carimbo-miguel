@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://dam2k6yxitb2j"]
+
+[ext_resource type="PackedScene" uid="uid://daj7r5504tny8" path="res://Scenes/Interactions/MoveInteractions/click_interactable_ambient_window.tscn" id="1_u3iib"]
+[ext_resource type="PackedScene" uid="uid://barwsceayifj5" path="res://Scenes/Interactions/Ambients/tavern_window.tscn" id="2_u3iib"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_vumn2"]
+[ext_resource type="Texture2D" uid="uid://baprraqc2mnhy" path="res://Assets/vila/porta_6.png" id="4_13f3o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vumn2"]
+resource_local_to_scene = true
+shader = ExtResource("3_vumn2")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="window_interact_tavern" unique_id=705077137 instance=ExtResource("1_u3iib")]
+window = ExtResource("2_u3iib")
+OutlineMaxThickness = 6.0
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+position = Vector2(5.48, 0)
+scale = Vector2(2.47, 3.537)
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_vumn2")
+texture = ExtResource("4_13f3o")
+
+[node name="Spark" parent="." index="4" unique_id=560819456]
+visible = false

@@ -4,8 +4,9 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_32kpe"]
 [ext_resource type="Texture2D" uid="uid://b2l5q48qy4yom" path="res://Assets/Pistas/papel_generico.png" id="2_kwi4a"]
 [ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_kwi4a"]
+[ext_resource type="Texture2D" uid="uid://dgmkbt1wpf53s" path="res://Assets/Pistas/papel_generico_fundo.png" id="5_5b7ny"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ku0yg"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gcnti"]
 resource_local_to_scene = true
 shader = ExtResource("2_32kpe")
 shader_parameter/thickness = 0.0
@@ -22,9 +23,10 @@ shader_parameter/max_or_add = false
 TextsList = Array[String](["(Um cartaz está pendurado)", "O Rei de Carimbia anuncia:
 
 Na véspera da próxima lua cheia, dentro de 2 semanas, será proclamado o próximo herdeiro do trono de Carimbia"])
-FinalImage = null
 BackImage = ExtResource("2_kwi4a")
 audio = ExtResource("3_kwi4a")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_ku0yg")
+material = SubResource("ShaderMaterial_gcnti")
+scale = Vector2(0.14930555, 0.14930557)
+texture = ExtResource("5_5b7ny")

@@ -85,7 +85,6 @@ func _on_stop_area_body_entered(body: Node2D) -> void:
 
 func _on_visibility_changed() -> void:
 	if(!visible): 
-		startProccessMode = process_mode
 		process_mode = Node.PROCESS_MODE_DISABLED
 	else:
-		process_mode = startProccessMode
+		process_mode = Node.PROCESS_MODE_INHERIT

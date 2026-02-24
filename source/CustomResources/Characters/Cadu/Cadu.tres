@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://drqgc48vfnpnk" path="res://CustomResources/Characters/Cadu/caduStampDialog.tres" id="3_spuo0"]
 [ext_resource type="Resource" uid="uid://dqj6768ijdyyj" path="res://CustomResources/Characters/Cadu/caduSuspitionDialog.tres" id="4_xyhlq"]
 [ext_resource type="Resource" uid="uid://bpeja223j7n6o" path="res://CustomResources/Characters/Cadu/caduInitialDialog.tres" id="5_lylnh"]
+[ext_resource type="Resource" uid="uid://i322no8msfij" path="res://CustomResources/Characters/Cadu/caduBuyNewsDialog.tres" id="5_spuo0"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_g1xwp"]
 [ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_ivdam"]
 [ext_resource type="Resource" uid="uid://c6chi2lhbrfu5" path="res://CustomResources/Stamps/CaduStamp.tres" id="7_vembr"]
@@ -16,5 +17,5 @@ Name = "Cadu Bundasseca"
 Portrait = ExtResource("6_g1xwp")
 Stamps = Array[ExtResource("7_ivdam")]([ExtResource("7_vembr")])
 InitialDialog = ExtResource("5_lylnh")
-Dialogs = Array[ExtResource("1_vkgcp")]([ExtResource("2_ivdam"), ExtResource("3_spuo0"), ExtResource("4_xyhlq")])
+Dialogs = Array[ExtResource("1_vkgcp")]([ExtResource("2_ivdam"), ExtResource("3_spuo0"), ExtResource("4_xyhlq"), ExtResource("5_spuo0")])
 metadata/_custom_type_script = "uid://vddqpk5j4snt"

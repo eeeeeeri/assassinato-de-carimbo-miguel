@@ -25,7 +25,17 @@ script = ExtResource("2_57n2f")
 OutlineMaxThickness = 20.0
 show_outline = false
 
+[node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.49, 0.49)
+
+[node name="CollisionShape2D" parent="StopArea" parent_id_path=PackedInt32Array(1120606992) index="0" unique_id=1626029816]
+scale = Vector2(0.43, 0.43)
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+scale = Vector2(0.475, 0.475)
+
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_6cx0w")
-scale = Vector2(0.171875, 0.171875)
+rotation = 1.5707964
+scale = Vector2(0.087, 0.087)
 texture = ExtResource("3_57n2f")
