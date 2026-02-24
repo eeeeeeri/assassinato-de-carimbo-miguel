@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_1dty1"]
 [ext_resource type="PackedScene" uid="uid://wg6e6nq0w3m5" path="res://Scenes/Interactions/Clues/3D/armando_stamp_object.tscn" id="2_8k4rp"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_72ek3"]
-[ext_resource type="Texture2D" uid="uid://bas21ggni0ba" path="res://Assets/Pistas/screenshots/armandoStamp.png" id="4_8k4rp"]
+[ext_resource type="Texture2D" uid="uid://cw28ewim7nul4" path="res://Assets/Pistas/screenshots/armandoStampIso.png" id="4_8k4rp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_72ek3"]
 resource_local_to_scene = true
@@ -24,6 +24,6 @@ OutlineMaxThickness = 10.0
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_72ek3")
-position = Vector2(0, 6)
-scale = Vector2(0.2109375, 0.21093749)
+position = Vector2(0, 4.7683716e-07)
+scale = Vector2(0.1484375, 0.14843747)
 texture = ExtResource("4_8k4rp")

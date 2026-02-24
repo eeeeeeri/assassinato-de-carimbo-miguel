@@ -25,3 +25,6 @@ popupDuration = 0.25
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_opnsm")
+
+[node name="dropShadow" parent="Sprite2D" index="0" unique_id=771579444]
+visible = false

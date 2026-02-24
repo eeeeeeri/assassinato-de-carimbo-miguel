@@ -8,6 +8,7 @@ class_name Interactable extends Node2D
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 @onready var spark: Sprite2D = $Spark
+@onready var drop_shadow: Sprite2D = $Sprite2D/dropShadow
 
 var is_interactable := false
 var time := 0.0
@@ -25,6 +26,7 @@ func _ready() -> void:
 	startSpriteScale = sprite_2d.scale
 	startProccessMode = process_mode
 	useSpark = spark.visible
+	drop_shadow.texture = sprite_2d.texture
 
 func _process(delta: float) -> void:
 	if is_interactable:

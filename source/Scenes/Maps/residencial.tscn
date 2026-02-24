@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://bv2ywypmendwm" path="res://Scenes/Interactions/Clues/text_clue_kingsWill.tscn" id="17_lon5d"]
 [ext_resource type="PackedScene" uid="uid://cbdcxtcvpptum" path="res://Scenes/Interactions/Clues/text_clue_personalityTest.tscn" id="18_sbyme"]
 [ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/MoveInteractions/click_coin.tscn" id="20_yajkd"]
+[ext_resource type="PackedScene" uid="uid://csp7loll5hw76" path="res://Scenes/Interactions/Clues/Ambients/window_interact_barriga_house.tscn" id="23_40lvq"]
 
 [node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
 
@@ -113,3 +114,6 @@ script = ExtResource("4_up5k5")
 boolArrayData = ExtResource("5_up5k5")
 targetNodes = [NodePath("../Click_coin")]
 metadata/_custom_type_script = "uid://d1y8kysganspd"
+
+[node name="window_interact_barrigaHouse" parent="." index="25" unique_id=737221805 instance=ExtResource("23_40lvq")]
+position = Vector2(1248, 1645)

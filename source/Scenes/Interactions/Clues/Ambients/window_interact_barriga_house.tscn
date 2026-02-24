@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://csp7loll5hw76"]
+
+[ext_resource type="PackedScene" uid="uid://daj7r5504tny8" path="res://Scenes/Interactions/MoveInteractions/click_interactable_ambient_window.tscn" id="1_47b8c"]
+[ext_resource type="PackedScene" uid="uid://dca7urjse1oss" path="res://Scenes/Interactions/Ambients/barriga_house_window.tscn" id="2_j4dfh"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_ikbnl"]
+[ext_resource type="Texture2D" uid="uid://8oqe4aemgfoy" path="res://Assets/vila/porta_2.png" id="4_qutv2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ojp0y"]
+resource_local_to_scene = true
+shader = ExtResource("3_ikbnl")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="window_interact_barrigaHouse" unique_id=705077137 instance=ExtResource("1_47b8c")]
+window = ExtResource("2_j4dfh")
+OutlineMaxThickness = 6.0
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+position = Vector2(5.48, 0)
+scale = Vector2(1.91, 3.77)
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_ojp0y")
+texture = ExtResource("4_qutv2")
+
+[node name="Spark" parent="." index="4" unique_id=560819456]
+visible = false

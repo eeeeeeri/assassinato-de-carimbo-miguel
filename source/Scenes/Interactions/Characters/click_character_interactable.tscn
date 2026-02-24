@@ -32,5 +32,8 @@ material = SubResource("ShaderMaterial_cf2ya")
 position = Vector2(1.5, -88)
 texture = ExtResource("4_juau3")
 
+[node name="dropShadow" parent="Sprite2D" index="0" unique_id=771579444]
+visible = false
+
 [node name="Spark" parent="." index="4" unique_id=560819456]
 visible = false
