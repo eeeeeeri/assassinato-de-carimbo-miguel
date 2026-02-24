@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="4_up5k5"]
 [ext_resource type="Resource" uid="uid://cifgbo4y764k1" path="res://CustomResources/Save/residencialVisibleStateData.tres" id="5_up5k5"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="5_ypm8x"]
+[ext_resource type="AudioStream" uid="uid://c6my8483ht875" path="res://Assets/Musicas/Carimbo Miguel OST — Reino de Carimbia.ogg" id="8_up5k5"]
 [ext_resource type="PackedScene" uid="uid://rioj1305753d" path="res://Scenes/Interactions/Clues/text_clue_annoucement.tscn" id="10_8l08s"]
 [ext_resource type="PackedScene" uid="uid://cp5fhaajjpm51" path="res://Scenes/Interactions/Clues/Ambients/window_interact_guerra_house.tscn" id="11_m00pu"]
 [ext_resource type="PackedScene" uid="uid://dam2k6yxitb2j" path="res://Scenes/Interactions/Clues/Ambients/window_interact_tavern.tscn" id="12_4gokj"]
@@ -22,19 +23,6 @@
 [ext_resource type="PackedScene" uid="uid://dchxrnf5qekr6" path="res://Scenes/Interactions/Clues/Ambients/window_interact_passos_house.tscn" id="24_8l08s"]
 [ext_resource type="PackedScene" uid="uid://ix0e2bgibtn0" path="res://Scenes/Interactions/Clues/Ambients/window_interact_bundasseca_house.tscn" id="25_fxayg"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_up5k5"]
-resource_local_to_scene = true
-shader = ExtResource("15_ndk88")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_40lvq"]
 resource_local_to_scene = true
 shader = ExtResource("15_ndk88")
@@ -49,6 +37,19 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8l08s"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxayg"]
 resource_local_to_scene = true
 shader = ExtResource("15_ndk88")
 shader_parameter/thickness = 0.0
@@ -105,7 +106,8 @@ position = Vector2(2614, 2364)
 
 [node name="ClickTravel" parent="." index="9" unique_id=705077137 instance=ExtResource("5_ypm8x")]
 position = Vector2(643, 1504)
-scene = "res://Scenes/Maps/comercial.tscn"
+scene = "res://Scenes/Maps/castelo.tscn"
+next_audio = ExtResource("8_up5k5")
 
 [node name="window_interact_barrigaHouse" parent="." index="10" unique_id=737221805 instance=ExtResource("23_40lvq")]
 position = Vector2(1248, 1645)
@@ -129,7 +131,7 @@ position = Vector2(807, 1387)
 position = Vector2(3763, 1296)
 
 [node name="Sprite2D" parent="TextClue_noKids" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_up5k5")
+material = SubResource("ShaderMaterial_40lvq")
 rotation = 0.5235988
 skew = -0.5235988
 
@@ -137,7 +139,7 @@ skew = -0.5235988
 position = Vector2(4094, 1424)
 
 [node name="Sprite2D" parent="TextClue_annoucement" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_40lvq")
+material = SubResource("ShaderMaterial_8l08s")
 rotation = 0.5235988
 skew = -0.5235988
 
@@ -145,7 +147,7 @@ skew = -0.5235988
 position = Vector2(1723, 1494)
 
 [node name="Sprite2D" parent="TextClue_annoucement2" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_8l08s")
+material = SubResource("ShaderMaterial_fxayg")
 rotation = -0.5235988
 skew = 0.5235988
 
