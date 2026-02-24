@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cf2ytexwnfh2s" path="res://Scenes/Interactions/Clues/object_clue_armando_stamp.tscn" id="4_c1hy4"]
 [ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="4_up5k5"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="5_kps16"]
+[ext_resource type="AudioStream" uid="uid://c6my8483ht875" path="res://Assets/Musicas/Carimbo Miguel OST — Reino de Carimbia.ogg" id="5_s0wg4"]
 [ext_resource type="Resource" uid="uid://cifgbo4y764k1" path="res://CustomResources/Save/residencialVisibleStateData.tres" id="5_up5k5"]
 [ext_resource type="PackedScene" uid="uid://bkwtekniv2hh4" path="res://Scenes/Interactions/Clues/object_clue_cadu_kid_stamp.tscn" id="5_x0dcx"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="5_ypm8x"]
@@ -61,7 +62,8 @@ position = Vector2(912, 1680)
 
 [node name="ClickTravel" parent="." index="7" unique_id=705077137 instance=ExtResource("5_ypm8x")]
 position = Vector2(643, 1504)
-scene = "res://Scenes/Maps/comercial.tscn"
+scene = "res://Scenes/Maps/castelo.tscn"
+next_audio = ExtResource("5_s0wg4")
 audio = ExtResource("5_kps16")
 
 [node name="object_clue_armandoStamp" parent="." index="8" unique_id=953559596 instance=ExtResource("4_c1hy4")]
@@ -124,4 +126,3 @@ audio = ExtResource("5_kps16")
 
 [node name="caduInteractable" parent="." index="26" unique_id=1182710947 instance=ExtResource("25_s0wg4")]
 position = Vector2(1808, 1584)
-audio_volume = 0.0

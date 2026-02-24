@@ -24,6 +24,7 @@ buses/default_bus_layout="uid://bfrxlsb70bokl"
 GlobalResources="*uid://c75kdqehc8fau"
 SceneTransition="*uid://cayf2wvh0c2ue"
 ConfigFileHandler="*uid://bxx0rqipgomo3"
+Music="*uid://cmgaa35ll2nq6"
 
 [display]
 

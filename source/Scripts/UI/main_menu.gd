@@ -1,5 +1,7 @@
 extends Control
 
+const CARIMBO_MIGUEL_OST___VILA_DE_CARIMBIA = preload("uid://btb6burm64qvp")
+
 @onready var continuar_button: Button = $Main/VBoxContainer/Continuar
 @onready var config_button: Button = $Main/VBoxContainer/Config
 @onready var ajuda_button: Button = $Main/VBoxContainer/Ajuda
@@ -34,4 +36,4 @@ func _on_config_button_up() -> void:
 
 
 func _on_iniciar_button_up() -> void:
-	SceneTransition.change_scene_to("res://Scenes/Maps/residencial.tscn")
+	SceneTransition.change_scene_to("res://Scenes/Maps/residencial.tscn",CARIMBO_MIGUEL_OST___VILA_DE_CARIMBIA)
