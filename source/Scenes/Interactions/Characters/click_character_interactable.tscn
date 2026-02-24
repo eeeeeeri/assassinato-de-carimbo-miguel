@@ -26,8 +26,8 @@ Character = ExtResource("3_fy4sm")
 audio = ExtResource("4_jwxts")
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
-position = Vector2(1.5, -88)
-scale = Vector2(1.31, 2.76)
+position = Vector2(2, -41.000004)
+scale = Vector2(1.226, 1.45)
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_jwxts")

@@ -53,6 +53,7 @@ shader_parameter/max_or_add = false
 
 [node name="Window" parent="." index="1" unique_id=1196447102]
 rotation = -0.5235988
+skew = -0.5235988
 
 [node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_dtvhp")]
 position = Vector2(-267, -43)

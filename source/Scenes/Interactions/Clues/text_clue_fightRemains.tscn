@@ -1,10 +1,10 @@
 [gd_scene format=3 uid="uid://bwagedpootfh0"]
 
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_uj1sl"]
-[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_x1seo"]
+[ext_resource type="AudioStream" uid="uid://82micr3asrbt" path="res://Assets/SFX/SFX - An+ílise.wav" id="2_gp3ge"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_lcilw"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gp3ge"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj1sl"]
 resource_local_to_scene = true
 shader = ExtResource("4_lcilw")
 shader_parameter/thickness = 0.0
@@ -19,8 +19,8 @@ shader_parameter/max_or_add = false
 
 [node name="TextClue_fightRemains" unique_id=705077137 instance=ExtResource("1_uj1sl")]
 TextsList = Array[String](["(É possível ver rastros de uma briga e gotas de sangue no beco)"])
-audio = ExtResource("3_x1seo")
+audio = ExtResource("2_gp3ge")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
 visible = false
-material = SubResource("ShaderMaterial_gp3ge")
+material = SubResource("ShaderMaterial_uj1sl")

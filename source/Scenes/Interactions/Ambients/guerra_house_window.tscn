@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://d2ceuxnbo8pld" path="res://Assets/Pistas/planta.png" id="8_wxdj8"]
 [ext_resource type="PackedScene" uid="uid://b6d3oetbfh87p" path="res://Scenes/Interactions/Clues/text_clue_roomPlant.tscn" id="9_b2pbl"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xx30j"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxdj8"]
 resource_local_to_scene = true
 shader = ExtResource("3_wxdj8")
 shader_parameter/thickness = 0.0
@@ -23,7 +23,7 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxd8k"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2pbl"]
 resource_local_to_scene = true
 shader = ExtResource("3_wxdj8")
 shader_parameter/thickness = 0.0
@@ -53,13 +53,14 @@ shader_parameter/max_or_add = false
 
 [node name="Window" parent="." index="1" unique_id=1196447102]
 rotation = 0.5235988
+skew = 0.5235988
 
 [node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_dxd8k")]
 position = Vector2(-110, -226)
 outlineThickness = 30.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_xx30j")
+material = SubResource("ShaderMaterial_wxdj8")
 scale = Vector2(0.10546874, 0.10546875)
 texture = ExtResource("4_b2pbl")
 
@@ -75,7 +76,7 @@ outlineThickness = 30.0
 scale = Vector2(1.385, 2.855)
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_dxd8k")
+material = SubResource("ShaderMaterial_b2pbl")
 scale = Vector2(0.44140625, 0.44140628)
 texture = ExtResource("6_xx30j")
 
