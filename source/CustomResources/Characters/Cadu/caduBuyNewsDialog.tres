@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="DialogData" format=3 uid="uid://i322no8msfij"]
+
+[ext_resource type="Script" uid="uid://bfm8hy3lr78j7" path="res://Scripts/Characters/dialogDataCR.gd" id="1_ecn7q"]
+
+[resource]
+script = ExtResource("1_ecn7q")
+dialogOption = "Posso comprar um jornal?"
+charResponses = Array[String](["Claro, aqui está!"])
+requireCurrency = true
+disableOnPlay = true
+metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

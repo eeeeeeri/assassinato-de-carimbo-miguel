@@ -18,7 +18,7 @@ stream_2/stream = ExtResource("5_pdt85")
 stream_3/stream = ExtResource("6_7lsmq")
 stream_4/stream = ExtResource("7_pnrbt")
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c53vl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_leq3n"]
 resource_local_to_scene = true
 shader = ExtResource("2_hknp1")
 shader_parameter/thickness = 0.0
@@ -38,7 +38,17 @@ script = ExtResource("2_57n2f")
 OutlineMaxThickness = 20.0
 audio = SubResource("AudioStreamRandomizer_085jx")
 
+[node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.64, 0.64)
+
+[node name="CollisionShape2D" parent="StopArea" parent_id_path=PackedInt32Array(1120606992) index="0" unique_id=1626029816]
+scale = Vector2(0.45, 0.45)
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+scale = Vector2(0.44, 0.44)
+
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_c53vl")
-scale = Vector2(0.171875, 0.171875)
+material = SubResource("ShaderMaterial_leq3n")
+rotation = 1.5707964
+scale = Vector2(0.09145426, 0.09145427)
 texture = ExtResource("3_57n2f")

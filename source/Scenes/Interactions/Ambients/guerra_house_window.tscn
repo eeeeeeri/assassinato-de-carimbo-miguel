@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cbicevskynt2f"]
+
+[ext_resource type="PackedScene" uid="uid://du73hwoai7lnk" path="res://Scenes/Interactions/Ambients/ambient_window.tscn" id="1_xx30j"]
+[ext_resource type="PackedScene" uid="uid://dcff1ph7t34m2" path="res://Scenes/Interactions/PureClickInteractions/pureClick_interactable.tscn" id="2_dxd8k"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_wxdj8"]
+[ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="4_b2pbl"]
+[ext_resource type="PackedScene" uid="uid://ts76v28ppnib" path="res://Scenes/Interactions/Clues/text_clue_armandoLetter.tscn" id="5_8akhf"]
+[ext_resource type="PackedScene" uid="uid://c64be5ktqdv8q" path="res://Scenes/Interactions/Clues/object_clue_sword.tscn" id="6_kooac"]
+[ext_resource type="Texture2D" uid="uid://bhffh3dnv0kl2" path="res://Assets/Pistas/screenshots/swordIso.png" id="6_xx30j"]
+[ext_resource type="Texture2D" uid="uid://d2ceuxnbo8pld" path="res://Assets/Pistas/planta.png" id="8_wxdj8"]
+[ext_resource type="PackedScene" uid="uid://b6d3oetbfh87p" path="res://Scenes/Interactions/Clues/text_clue_roomPlant.tscn" id="9_b2pbl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xx30j"]
+resource_local_to_scene = true
+shader = ExtResource("3_wxdj8")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxd8k"]
+resource_local_to_scene = true
+shader = ExtResource("3_wxdj8")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pt6of"]
+resource_local_to_scene = true
+shader = ExtResource("3_wxdj8")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="GuerraHouseWindow" unique_id=1550925338 instance=ExtResource("1_xx30j")]
+
+[node name="Window" parent="." index="1" unique_id=1196447102]
+rotation = 0.5235988
+
+[node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_dxd8k")]
+position = Vector2(-110, -226)
+outlineThickness = 30.0
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_xx30j")
+scale = Vector2(0.10546874, 0.10546875)
+texture = ExtResource("4_b2pbl")
+
+[node name="TextClue_armandoLetter" parent="Interactions/PureClickInteractable" index="2" unique_id=1160529449 instance=ExtResource("5_8akhf")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable2" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=1122020805 instance=ExtResource("2_dxd8k")]
+position = Vector2(237, -45)
+outlineThickness = 30.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=1151619031]
+scale = Vector2(1.385, 2.855)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_dxd8k")
+scale = Vector2(0.44140625, 0.44140628)
+texture = ExtResource("6_xx30j")
+
+[node name="object_clue_Sword" parent="Interactions/PureClickInteractable2" index="2" unique_id=1722311510 instance=ExtResource("6_kooac")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable3" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="2" unique_id=968819951 instance=ExtResource("2_dxd8k")]
+position = Vector2(-232, 63)
+outlineThickness = 30.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable3" index="0" unique_id=1151619031]
+scale = Vector2(1.07, 0.835)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable3" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_pt6of")
+scale = Vector2(0.13541666, 0.13541666)
+texture = ExtResource("8_wxdj8")
+
+[node name="TextClue_roomPlant" parent="Interactions/PureClickInteractable3" index="2" unique_id=2061515504 instance=ExtResource("9_b2pbl")]
+process_mode = 4
+visible = false
+
+[connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/TextClue_armandoLetter" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/object_clue_Sword" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable3" to="Interactions/PureClickInteractable3/TextClue_roomPlant" method="_interacted" binds= [true]]
+
+[editable path="Interactions/PureClickInteractable"]
+[editable path="Interactions/PureClickInteractable2"]
+[editable path="Interactions/PureClickInteractable3"]

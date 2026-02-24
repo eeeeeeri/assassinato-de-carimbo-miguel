@@ -3,26 +3,63 @@
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_00dw8"]
 [ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="2_x0dcx"]
 [ext_resource type="Texture2D" uid="uid://b6yordjq6oiyl" path="res://Assets/vila/vila.png" id="2_xub7h"]
-[ext_resource type="PackedScene" uid="uid://cf2ytexwnfh2s" path="res://Scenes/Interactions/Clues/object_clue_armando_stamp.tscn" id="4_c1hy4"]
 [ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="4_up5k5"]
 [ext_resource type="Resource" uid="uid://cifgbo4y764k1" path="res://CustomResources/Save/residencialVisibleStateData.tres" id="5_up5k5"]
-[ext_resource type="PackedScene" uid="uid://bkwtekniv2hh4" path="res://Scenes/Interactions/Clues/object_clue_cadu_kid_stamp.tscn" id="5_x0dcx"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="5_ypm8x"]
-[ext_resource type="PackedScene" uid="uid://d08xgowqidu6a" path="res://Scenes/Interactions/Clues/object_clue_cadu_products.tscn" id="6_yajkd"]
-[ext_resource type="PackedScene" uid="uid://bsq3nigw1o82s" path="res://Scenes/Interactions/Clues/object_clue_ink_and_quill.tscn" id="7_ndk88"]
-[ext_resource type="PackedScene" uid="uid://gs5a1n6d2f4v" path="res://Scenes/Interactions/Clues/object_clue_painting.tscn" id="8_up5k5"]
-[ext_resource type="PackedScene" uid="uid://c64be5ktqdv8q" path="res://Scenes/Interactions/Clues/object_clue_sword.tscn" id="9_40lvq"]
 [ext_resource type="PackedScene" uid="uid://rioj1305753d" path="res://Scenes/Interactions/Clues/text_clue_annoucement.tscn" id="10_8l08s"]
-[ext_resource type="PackedScene" uid="uid://ts76v28ppnib" path="res://Scenes/Interactions/Clues/text_clue_armandoLetter.tscn" id="11_fxayg"]
-[ext_resource type="PackedScene" uid="uid://dq5a74lynji46" path="res://Scenes/Interactions/Clues/text_clue_barbaraLetter.tscn" id="12_kps16"]
-[ext_resource type="PackedScene" uid="uid://ckmcvls0kwd8b" path="res://Scenes/Interactions/Clues/text_clue_bastardSonDoc.tscn" id="13_s0wg4"]
-[ext_resource type="PackedScene" uid="uid://uanj0yqwax66" path="res://Scenes/Interactions/Clues/text_clue_castleDrawing.tscn" id="14_pty0l"]
-[ext_resource type="PackedScene" uid="uid://3ir8xy0a71ca" path="res://Scenes/Interactions/Clues/text_clue_castleLetters.tscn" id="15_g7mqf"]
-[ext_resource type="PackedScene" uid="uid://84pqspn1bnei" path="res://Scenes/Interactions/Clues/text_clue_guardsPatrol.tscn" id="16_8hvyc"]
-[ext_resource type="PackedScene" uid="uid://bv2ywypmendwm" path="res://Scenes/Interactions/Clues/text_clue_kingsWill.tscn" id="17_lon5d"]
+[ext_resource type="PackedScene" uid="uid://cp5fhaajjpm51" path="res://Scenes/Interactions/Clues/Ambients/window_interact_guerra_house.tscn" id="11_m00pu"]
+[ext_resource type="PackedScene" uid="uid://dam2k6yxitb2j" path="res://Scenes/Interactions/Clues/Ambients/window_interact_tavern.tscn" id="12_4gokj"]
+[ext_resource type="PackedScene" uid="uid://bwagedpootfh0" path="res://Scenes/Interactions/Clues/text_clue_fightRemains.tscn" id="13_oj2xv"]
+[ext_resource type="PackedScene" uid="uid://bli10dlqoffgd" path="res://Scenes/Interactions/Clues/text_clue_noKids.tscn" id="14_oogwp"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="15_ndk88"]
+[ext_resource type="PackedScene" uid="uid://barlk3ug4t0n7" path="res://Scenes/Interactions/Characters/pequena_interactable.tscn" id="16_by2w1"]
+[ext_resource type="PackedScene" uid="uid://3re02ymifkec" path="res://Scenes/Interactions/Characters/cadu_interactable.tscn" id="17_onfkq"]
 [ext_resource type="PackedScene" uid="uid://cbdcxtcvpptum" path="res://Scenes/Interactions/Clues/text_clue_personalityTest.tscn" id="18_sbyme"]
+[ext_resource type="Script" uid="uid://qbxtdyl75usm" path="res://Scripts/Characters/DialogEvents.gd" id="18_yajkd"]
+[ext_resource type="Resource" uid="uid://i322no8msfij" path="res://CustomResources/Characters/Cadu/caduBuyNewsDialog.tres" id="19_ndk88"]
 [ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/MoveInteractions/click_coin.tscn" id="20_yajkd"]
 [ext_resource type="PackedScene" uid="uid://csp7loll5hw76" path="res://Scenes/Interactions/Clues/Ambients/window_interact_barriga_house.tscn" id="23_40lvq"]
+[ext_resource type="PackedScene" uid="uid://dchxrnf5qekr6" path="res://Scenes/Interactions/Clues/Ambients/window_interact_passos_house.tscn" id="24_8l08s"]
+[ext_resource type="PackedScene" uid="uid://ix0e2bgibtn0" path="res://Scenes/Interactions/Clues/Ambients/window_interact_bundasseca_house.tscn" id="25_fxayg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_up5k5"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_40lvq"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8l08s"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
 
 [node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
 
@@ -57,63 +94,78 @@ visible = false
 [node name="Player" parent="." index="5" unique_id=1389957626]
 position = Vector2(912, 1680)
 
-[node name="ClickTravel" parent="." index="7" unique_id=705077137 instance=ExtResource("5_ypm8x")]
+[node name="VisibleStateSaver" type="Node" parent="." index="7" unique_id=266798634 node_paths=PackedStringArray("targetNodes")]
+script = ExtResource("4_up5k5")
+boolArrayData = ExtResource("5_up5k5")
+targetNodes = [NodePath("../Click_coin"), NodePath("../caduInteractable/BuyNewsEvent/TextClue_personalityTest")]
+metadata/_custom_type_script = "uid://d1y8kysganspd"
+
+[node name="Click_coin" parent="." index="8" unique_id=1710188801 instance=ExtResource("20_yajkd")]
+position = Vector2(2614, 2364)
+
+[node name="ClickTravel" parent="." index="9" unique_id=705077137 instance=ExtResource("5_ypm8x")]
 position = Vector2(643, 1504)
 scene = "res://Scenes/Maps/comercial.tscn"
 
-[node name="object_clue_armandoStamp" parent="." index="8" unique_id=953559596 instance=ExtResource("4_c1hy4")]
-position = Vector2(2168, 1760)
-
-[node name="object_clue_caduKidStamp" parent="." index="9" unique_id=1433928130 instance=ExtResource("5_x0dcx")]
-position = Vector2(2408, 1888)
-
-[node name="object_clue_caduProducts" parent="." index="10" unique_id=972716579 instance=ExtResource("6_yajkd")]
-position = Vector2(2592, 2080)
-
-[node name="object_clue_InkAndQuill" parent="." index="11" unique_id=1529313292 instance=ExtResource("7_ndk88")]
-position = Vector2(2840, 2216)
-
-[node name="object_clue_Painting" parent="." index="12" unique_id=788519744 instance=ExtResource("8_up5k5")]
-position = Vector2(3120, 2344)
-
-[node name="object_clue_Sword" parent="." index="13" unique_id=1143465593 instance=ExtResource("9_40lvq")]
-position = Vector2(3440, 2240)
-
-[node name="TextClue_annoucement" parent="." index="14" unique_id=1246281753 instance=ExtResource("10_8l08s")]
-position = Vector2(3696, 2057)
-
-[node name="TextClue_armandoLetter" parent="." index="15" unique_id=319192190 instance=ExtResource("11_fxayg")]
-position = Vector2(3920, 1872)
-
-[node name="TextClue_barbaraLetter" parent="." index="16" unique_id=177388277 instance=ExtResource("12_kps16")]
-position = Vector2(4144, 1720)
-
-[node name="TextClue_bastardSonDoc" parent="." index="17" unique_id=855956287 instance=ExtResource("13_s0wg4")]
-position = Vector2(3872, 1536)
-
-[node name="TextClue_castleDrawing" parent="." index="18" unique_id=1340173266 instance=ExtResource("14_pty0l")]
-position = Vector2(3568, 1440)
-
-[node name="TextClue_castleLetters" parent="." index="19" unique_id=2140866769 instance=ExtResource("15_g7mqf")]
-position = Vector2(3256, 1320)
-
-[node name="TextClue_guardsPatrol" parent="." index="20" unique_id=1090590201 instance=ExtResource("16_8hvyc")]
-position = Vector2(3144, 1080)
-
-[node name="TextClue_kingsWill" parent="." index="21" unique_id=778961392 instance=ExtResource("17_lon5d")]
-position = Vector2(2880, 1248)
-
-[node name="TextClue_personalityTest" parent="." index="22" unique_id=1351897928 instance=ExtResource("18_sbyme")]
-position = Vector2(2592, 1376)
-
-[node name="Click_coin" parent="." index="23" unique_id=1710188801 instance=ExtResource("20_yajkd")]
-position = Vector2(2979, 1743)
-
-[node name="VisibleStateSaver" type="Node" parent="." index="24" unique_id=266798634 node_paths=PackedStringArray("targetNodes")]
-script = ExtResource("4_up5k5")
-boolArrayData = ExtResource("5_up5k5")
-targetNodes = [NodePath("../Click_coin")]
-metadata/_custom_type_script = "uid://d1y8kysganspd"
-
-[node name="window_interact_barrigaHouse" parent="." index="25" unique_id=737221805 instance=ExtResource("23_40lvq")]
+[node name="window_interact_barrigaHouse" parent="." index="10" unique_id=737221805 instance=ExtResource("23_40lvq")]
 position = Vector2(1248, 1645)
+
+[node name="window_interact_passosHouse" parent="." index="11" unique_id=582383259 instance=ExtResource("24_8l08s")]
+position = Vector2(2248, 1108)
+
+[node name="window_interact_bundassecaHouse" parent="." index="12" unique_id=454586084 instance=ExtResource("25_fxayg")]
+position = Vector2(2784, 1067)
+
+[node name="window_interact_guerraHouse" parent="." index="13" unique_id=1803920644 instance=ExtResource("11_m00pu")]
+position = Vector2(3309, 897)
+
+[node name="window_interact_tavern" parent="." index="14" unique_id=1785357394 instance=ExtResource("12_4gokj")]
+position = Vector2(3626, 1287)
+
+[node name="TextClue_fightRemains" parent="." index="15" unique_id=1098548116 instance=ExtResource("13_oj2xv")]
+position = Vector2(807, 1387)
+
+[node name="TextClue_noKids" parent="." index="16" unique_id=2063602921 instance=ExtResource("14_oogwp")]
+position = Vector2(3763, 1296)
+
+[node name="Sprite2D" parent="TextClue_noKids" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_up5k5")
+rotation = 0.5235988
+skew = -0.5235988
+
+[node name="TextClue_annoucement" parent="." index="17" unique_id=1810679662 instance=ExtResource("10_8l08s")]
+position = Vector2(4094, 1424)
+
+[node name="Sprite2D" parent="TextClue_annoucement" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_40lvq")
+rotation = 0.5235988
+skew = -0.5235988
+
+[node name="TextClue_annoucement2" parent="." index="18" unique_id=1945928193 instance=ExtResource("10_8l08s")]
+position = Vector2(1723, 1494)
+
+[node name="Sprite2D" parent="TextClue_annoucement2" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_8l08s")
+rotation = -0.5235988
+skew = 0.5235988
+
+[node name="pequenaInteractable" parent="." index="19" unique_id=1648232328 instance=ExtResource("16_by2w1")]
+position = Vector2(2100, 2235)
+
+[node name="caduInteractable" parent="." index="20" unique_id=135454890 instance=ExtResource("17_onfkq")]
+position = Vector2(3142, 1686)
+
+[node name="BuyNewsEvent" type="Node" parent="caduInteractable" index="6" unique_id=878885564]
+script = ExtResource("18_yajkd")
+SourceDialog = ExtResource("19_ndk88")
+
+[node name="TextClue_personalityTest" parent="caduInteractable/BuyNewsEvent" index="0" unique_id=259402919 instance=ExtResource("18_sbyme")]
+process_mode = 4
+visible = false
+position = Vector2(3281, 1785)
+
+[connection signal="DialogEnd" from="caduInteractable/BuyNewsEvent" to="caduInteractable/BuyNewsEvent/TextClue_personalityTest" method="set_visible" binds= [true]]
+
+[editable path="TextClue_noKids"]
+[editable path="TextClue_annoucement"]
+[editable path="TextClue_annoucement2"]
