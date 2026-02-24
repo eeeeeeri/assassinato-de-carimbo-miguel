@@ -5,6 +5,7 @@
 [ext_resource type="Resource" uid="uid://duyxp42ds1oy7" path="res://CustomResources/Characters/TestChar/CharacterTest.tres" id="3_fy4sm"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_cf2ya"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="4_juau3"]
+[ext_resource type="AudioStream" uid="uid://d3nw4qua7wbt4" path="res://Assets/SFX/SFX - NPC.wav" id="4_jwxts"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jwxts"]
 resource_local_to_scene = true
@@ -22,6 +23,7 @@ shader_parameter/max_or_add = false
 [node name="ClickCharacterInteractable" unique_id=705077137 instance=ExtResource("1_ltl3q")]
 script = ExtResource("2_fy4sm")
 Character = ExtResource("3_fy4sm")
+audio = ExtResource("4_jwxts")
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
 position = Vector2(1.5, -88)
@@ -31,3 +33,9 @@ scale = Vector2(1.31, 2.76)
 material = SubResource("ShaderMaterial_jwxts")
 position = Vector2(1.5, -88)
 texture = ExtResource("4_juau3")
+
+[node name="dropShadow" parent="Sprite2D" index="0" unique_id=771579444]
+visible = false
+
+[node name="Spark" parent="." index="4" unique_id=560819456]
+visible = false

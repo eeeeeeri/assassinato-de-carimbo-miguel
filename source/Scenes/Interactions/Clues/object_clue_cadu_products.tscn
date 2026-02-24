@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_md5q4"]
 [ext_resource type="PackedScene" uid="uid://kwx8vknfophc" path="res://Scenes/Interactions/Clues/3D/cadu_products_object.tscn" id="2_md5q4"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_v6pfp"]
+[ext_resource type="Texture2D" uid="uid://cuufy8wvwveop" path="res://Assets/Pistas/screenshots/caduProductsIso.png" id="4_hsobc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_hsobc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v6pfp"]
 resource_local_to_scene = true
 shader = ExtResource("3_v6pfp")
 shader_parameter/thickness = 0.0
@@ -19,6 +20,12 @@ shader_parameter/max_or_add = false
 
 [node name="object_clue_caduProducts" unique_id=705077137 instance=ExtResource("1_md5q4")]
 InspectableScene = ExtResource("2_md5q4")
+OutlineMaxThickness = 10.0
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+scale = Vector2(1.83, 1.825)
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_hsobc")
+material = SubResource("ShaderMaterial_v6pfp")
+scale = Vector2(0.31640622, 0.31640628)
+texture = ExtResource("4_hsobc")

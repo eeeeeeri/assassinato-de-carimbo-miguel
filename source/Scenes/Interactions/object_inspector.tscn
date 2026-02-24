@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dskcxgegt7slf"]
 
 [ext_resource type="Script" uid="uid://bdgkrea4w4sw2" path="res://Scripts/Interactions/ObjectInspector.gd" id="1_hq2uk"]
+[ext_resource type="Script" uid="uid://bubslxtj0n7vi" path="res://Scripts/Utility/screenshotUtility.gd" id="2_wpqwj"]
 
 [node name="ObjectInspector" type="Node3D" unique_id=1508487688]
 script = ExtResource("1_hq2uk")
@@ -18,7 +19,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.756218)
 
 [node name="MainLight" type="DirectionalLight3D" parent="SubViewport" unique_id=935541220]
 transform = Transform3D(0.7229792, -0.36071116, 0.589227, 0, 0.8528772, 0.5221116, -0.6908698, -0.3774758, 0.6166124, 0, 0, 0)
+visible = false
 
 [node name="RimLight" type="DirectionalLight3D" parent="SubViewport" unique_id=1938736714]
 transform = Transform3D(0.7229791, 0.3524387, -0.59421206, 3.7252903e-09, -0.86009276, -0.5101376, -0.6908698, 0.36881894, -0.62182903, 0, 0, 0)
+visible = false
 light_energy = 0.3
+
+[node name="screenshoter" type="Node" parent="." unique_id=98510224 node_paths=PackedStringArray("camera")]
+process_mode = 4
+script = ExtResource("2_wpqwj")
+camera = NodePath("../SubViewport/InspectionCamera")
+directory = "res://Assets/Pistas/screenshots/screenshot.png"

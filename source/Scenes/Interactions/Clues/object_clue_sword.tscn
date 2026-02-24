@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_3mluw"]
 [ext_resource type="PackedScene" uid="uid://do4jah0ogu6xm" path="res://Scenes/Interactions/Clues/3D/sword_object.tscn" id="2_3mluw"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_uovmw"]
+[ext_resource type="Texture2D" uid="uid://bhffh3dnv0kl2" path="res://Assets/Pistas/screenshots/swordIso.png" id="4_dlrd3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlrd3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uovmw"]
 resource_local_to_scene = true
 shader = ExtResource("3_uovmw")
 shader_parameter/thickness = 0.0
@@ -19,6 +20,12 @@ shader_parameter/max_or_add = false
 
 [node name="object_clue_Sword" unique_id=705077137 instance=ExtResource("1_3mluw")]
 InspectableScene = ExtResource("2_3mluw")
+OutlineMaxThickness = 10.0
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+scale = Vector2(1.17, 2)
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_dlrd3")
+material = SubResource("ShaderMaterial_uovmw")
+scale = Vector2(0.32421875, 0.32421872)
+texture = ExtResource("4_dlrd3")

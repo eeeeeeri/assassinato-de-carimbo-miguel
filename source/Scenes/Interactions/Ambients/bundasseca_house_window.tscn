@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://n0rfwbq8jmlu"]
+
+[ext_resource type="PackedScene" uid="uid://du73hwoai7lnk" path="res://Scenes/Interactions/Ambients/ambient_window.tscn" id="1_7kl4y"]
+[ext_resource type="PackedScene" uid="uid://dcff1ph7t34m2" path="res://Scenes/Interactions/PureClickInteractions/pureClick_interactable.tscn" id="2_dtvhp"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_r3d7o"]
+[ext_resource type="Texture2D" uid="uid://bwd2satt7bsxw" path="res://Assets/Pistas/screenshots/caduStampIso.png" id="4_nw337"]
+[ext_resource type="PackedScene" uid="uid://bkwtekniv2hh4" path="res://Scenes/Interactions/Clues/object_clue_cadu_kid_stamp.tscn" id="5_nw337"]
+[ext_resource type="Texture2D" uid="uid://cuufy8wvwveop" path="res://Assets/Pistas/screenshots/caduProductsIso.png" id="6_2vph4"]
+[ext_resource type="PackedScene" uid="uid://d08xgowqidu6a" path="res://Scenes/Interactions/Clues/object_clue_cadu_products.tscn" id="7_2vph4"]
+[ext_resource type="Texture2D" uid="uid://ennwxvomjifv" path="res://Assets/Pistas/screenshots/inkAndQuillIso.png" id="8_7kl4y"]
+[ext_resource type="PackedScene" uid="uid://bsq3nigw1o82s" path="res://Scenes/Interactions/Clues/object_clue_ink_and_quill.tscn" id="9_7kl4y"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nw337"]
+resource_local_to_scene = true
+shader = ExtResource("3_r3d7o")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vph4"]
+resource_local_to_scene = true
+shader = ExtResource("3_r3d7o")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7kl4y"]
+resource_local_to_scene = true
+shader = ExtResource("3_r3d7o")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="BundassecaHouseWindow" unique_id=1550925338 instance=ExtResource("1_7kl4y")]
+
+[node name="Window" parent="." index="1" unique_id=1196447102]
+rotation = -0.5235988
+
+[node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_dtvhp")]
+position = Vector2(-267, -43)
+outlineThickness = 30.0
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_nw337")
+scale = Vector2(0.16406244, 0.16406246)
+texture = ExtResource("4_nw337")
+
+[node name="object_clue_caduKidStamp" parent="Interactions/PureClickInteractable" index="2" unique_id=1572542185 instance=ExtResource("5_nw337")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable3" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=1560656246 instance=ExtResource("2_dtvhp")]
+position = Vector2(177, -204)
+outlineThickness = 30.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable3" index="0" unique_id=1151619031]
+scale = Vector2(1.72, 1.69)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable3" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_2vph4")
+scale = Vector2(0.2929687, 0.29296875)
+texture = ExtResource("6_2vph4")
+
+[node name="object_clue_caduProducts" parent="Interactions/PureClickInteractable3" index="2" unique_id=545206605 instance=ExtResource("7_2vph4")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable4" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="2" unique_id=742716121 instance=ExtResource("2_dtvhp")]
+position = Vector2(-357, 72)
+outlineThickness = 30.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable4" index="0" unique_id=1151619031]
+scale = Vector2(1.685, 1)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable4" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_7kl4y")
+scale = Vector2(0.26953128, 0.2695313)
+texture = ExtResource("8_7kl4y")
+
+[node name="object_clue_InkAndQuill" parent="Interactions/PureClickInteractable4" index="2" unique_id=1614793728 instance=ExtResource("9_7kl4y")]
+process_mode = 4
+visible = false
+
+[connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/object_clue_caduKidStamp" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable3" to="Interactions/PureClickInteractable3/object_clue_caduProducts" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable4" to="Interactions/PureClickInteractable4/object_clue_InkAndQuill" method="_interacted" binds= [true]]
+
+[editable path="Interactions/PureClickInteractable"]
+[editable path="Interactions/PureClickInteractable3"]
+[editable path="Interactions/PureClickInteractable4"]

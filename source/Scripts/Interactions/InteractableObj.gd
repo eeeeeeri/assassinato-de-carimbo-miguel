@@ -1,10 +1,17 @@
 class_name Interactable extends Node2D
 
+@export var OutlineMaxThickness:float = 3
+@export var hideSprite:bool = false
+@export var show_outline := true
 @export var audio : AudioStream
+@export var audio_volume : float
+@export var audio_pitch := 1.0
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var spark: Sprite2D = $Spark
+@onready var drop_shadow: Sprite2D = $Sprite2D/dropShadow
 
 var is_interactable := false
 var time := 0.0
@@ -13,23 +20,33 @@ var outline_thickness = 0
 var moving_to_object := false
 var startSpriteScale:Vector2
 
+var startProccessMode:Node.ProcessMode
+var useSpark:bool
+
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(end_inspection)
 	audio_stream_player.stream = audio
 	startSpriteScale = sprite_2d.scale
+	startProccessMode = process_mode
+	useSpark = spark.visible
+	drop_shadow.texture = sprite_2d.texture
+	audio_stream_player.volume_db = audio_volume
+	audio_stream_player.pitch_scale = audio_pitch
 
 func _process(delta: float) -> void:
-	if is_interactable:
+	if is_interactable && show_outline:
 		time += delta
 		sprite_scale = sin(time + 1.5*PI) * .05 + 1.05
-		outline_thickness = 3
+		outline_thickness = OutlineMaxThickness
 	else:
 		time = 0
 		sprite_scale = 1
 		outline_thickness = 0
 	sprite_2d.material.set_shader_parameter("thickness", outline_thickness)
 	sprite_2d.scale = startSpriteScale * sprite_scale
-
+	spark.visible = is_interactable && useSpark
+	if(hideSprite):
+		sprite_2d.visible = is_interactable
 
 func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 	if (event.is_action_released("left_click")):
@@ -65,3 +82,9 @@ func _on_stop_area_body_entered(body: Node2D) -> void:
 	if moving_to_object:
 		moving_to_object = false
 		GlobalResources.GLOBAL_EVENTS.StopMoving.emit()
+
+func _on_visibility_changed() -> void:
+	if(!visible): 
+		process_mode = Node.PROCESS_MODE_DISABLED
+	else:
+		process_mode = Node.PROCESS_MODE_INHERIT

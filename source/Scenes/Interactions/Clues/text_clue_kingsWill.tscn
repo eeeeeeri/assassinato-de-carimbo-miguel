@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_n4wj3"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_o4pca"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_o4pca"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n4wj3"]
 resource_local_to_scene = true
 shader = ExtResource("3_o4pca")
 shader_parameter/thickness = 0.0
@@ -27,4 +27,6 @@ BackImage = ExtResource("2_mcs4r")
 audio = ExtResource("3_n4wj3")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_o4pca")
+material = SubResource("ShaderMaterial_n4wj3")
+scale = Vector2(0.10763889, 0.107638896)
+texture = ExtResource("2_mcs4r")

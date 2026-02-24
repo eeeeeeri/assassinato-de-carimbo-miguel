@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_hknp1"]
 [ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="3_57n2f"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1x4st"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6cx0w"]
 resource_local_to_scene = true
 shader = ExtResource("2_hknp1")
 shader_parameter/thickness = 0.0
@@ -19,9 +19,23 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [node name="Click_coin" unique_id=705077137 instance=ExtResource("1_ek5ul")]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("2_57n2f")
+OutlineMaxThickness = 20.0
+show_outline = false
+
+[node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.49, 0.49)
+
+[node name="CollisionShape2D" parent="StopArea" parent_id_path=PackedInt32Array(1120606992) index="0" unique_id=1626029816]
+scale = Vector2(0.43, 0.43)
+
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+scale = Vector2(0.475, 0.475)
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_1x4st")
-scale = Vector2(0.171875, 0.171875)
+material = SubResource("ShaderMaterial_6cx0w")
+rotation = 1.5707964
+scale = Vector2(0.087, 0.087)
 texture = ExtResource("3_57n2f")

@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dca7urjse1oss"]
+
+[ext_resource type="PackedScene" uid="uid://du73hwoai7lnk" path="res://Scenes/Interactions/Ambients/ambient_window.tscn" id="1_w3dth"]
+[ext_resource type="PackedScene" uid="uid://dcff1ph7t34m2" path="res://Scenes/Interactions/PureClickInteractions/pureClick_interactable.tscn" id="2_sd702"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_kki88"]
+[ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="4_fqty5"]
+[ext_resource type="PackedScene" uid="uid://dq5a74lynji46" path="res://Scenes/Interactions/Clues/text_clue_barbaraLetter.tscn" id="5_ifcui"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_fqty5"]
+[ext_resource type="PackedScene" uid="uid://cm4y2f527gbun" path="res://Scenes/Interactions/Characters/barbara_interactable.tscn" id="6_kki88"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqty5"]
+resource_local_to_scene = true
+shader = ExtResource("3_kki88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifcui"]
+resource_local_to_scene = true
+shader = ExtResource("3_kki88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="BarrigaHouseWindow" unique_id=1550925338 instance=ExtResource("1_w3dth")]
+
+[node name="Window" parent="." index="1" unique_id=1196447102]
+rotation = 0.5235988
+
+[node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_sd702")]
+position = Vector2(-161, -191)
+outlineThickness = 30.0
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_fqty5")
+scale = Vector2(0.10546874, 0.10546875)
+texture = ExtResource("4_fqty5")
+
+[node name="TextClue_barbaraLetter" parent="Interactions/PureClickInteractable" index="2" unique_id=1131434126 instance=ExtResource("5_ifcui")]
+process_mode = 4
+visible = false
+
+[node name="PureClickInteractable2" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=136223077 instance=ExtResource("2_sd702")]
+position = Vector2(127, 194)
+outlineThickness = 5.0
+
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=1151619031]
+scale = Vector2(1.25, 2.74)
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
+material = SubResource("ShaderMaterial_ifcui")
+texture = ExtResource("6_fqty5")
+
+[node name="barbaraInteractable" parent="Interactions/PureClickInteractable2" index="2" unique_id=1245988153 instance=ExtResource("6_kki88")]
+process_mode = 4
+visible = false
+
+[connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/TextClue_barbaraLetter" method="_interacted" binds= [true]]
+[connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/barbaraInteractable" method="_interacted" binds= [true]]
+
+[editable path="Interactions/PureClickInteractable"]
+[editable path="Interactions/PureClickInteractable2"]

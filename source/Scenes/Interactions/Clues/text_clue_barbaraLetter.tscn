@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_baarx"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_fucf6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fucf6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_baarx"]
 resource_local_to_scene = true
 shader = ExtResource("3_fucf6")
 shader_parameter/thickness = 0.0
@@ -24,9 +24,9 @@ TextsList = Array[String](["(Uma carta ainda não selada)", "Mamãe,
 	Como vai você? tem alguma notícia das imãzonas? Faz tempo que não ouço das duas. Por aqui está tudo bem, estou bem ocupada com as crianças e Dolores conseguiu bastante trabalho. Você não vai acreditar, descobri que a princesa Fotocópia é cock que nem eu, isso deve ser um bom sinal. Te amo muito
 
 		Bárbara"])
-FinalImage = null
 BackImage = ExtResource("2_5fy8u")
 audio = ExtResource("3_baarx")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_fucf6")
+material = SubResource("ShaderMaterial_baarx")
+texture = ExtResource("2_5fy8u")
