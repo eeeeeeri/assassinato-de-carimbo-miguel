@@ -2,25 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_uj1sl"]
 [ext_resource type="AudioStream" uid="uid://82micr3asrbt" path="res://Assets/SFX/SFX - An+ílise.wav" id="2_gp3ge"]
-[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_lcilw"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_uj1sl"]
-resource_local_to_scene = true
-shader = ExtResource("4_lcilw")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
+[ext_resource type="Texture2D" uid="uid://iy5mao8sddgr" path="res://Assets/Pistas/chapeu.png" id="4_l4d8n"]
+[ext_resource type="Texture2D" uid="uid://c44gf8kra4a2w" path="res://Assets/Pistas/sangue.png" id="4_uj1sl"]
 
 [node name="TextClue_fightRemains" unique_id=705077137 instance=ExtResource("1_uj1sl")]
 TextsList = Array[String](["(É possível ver rastros de uma briga e gotas de sangue no beco)"])
+show_outline = false
 audio = ExtResource("2_gp3ge")
 
-[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+[node name="Sprite2D2" type="Sprite2D" parent="." index="3" unique_id=1365094996]
+position = Vector2(-32, 24)
+texture = ExtResource("4_uj1sl")
+
+[node name="Sprite2D" parent="." index="4" unique_id=159541262]
+material = null
+position = Vector2(-32, 24)
+scale = Vector2(1, 1)
+texture = ExtResource("4_l4d8n")
+
+[node name="dropShadow" parent="Sprite2D" index="0" unique_id=771579444]
 visible = false
-material = SubResource("ShaderMaterial_uj1sl")
+texture = ExtResource("4_l4d8n")
+
+[node name="Spark" parent="." index="5" unique_id=560819456]
+position = Vector2(7.9999995, 15.999999)

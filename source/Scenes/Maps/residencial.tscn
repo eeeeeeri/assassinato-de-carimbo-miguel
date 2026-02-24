@@ -23,6 +23,19 @@
 [ext_resource type="PackedScene" uid="uid://dchxrnf5qekr6" path="res://Scenes/Interactions/Clues/Ambients/window_interact_passos_house.tscn" id="24_8l08s"]
 [ext_resource type="PackedScene" uid="uid://ix0e2bgibtn0" path="res://Scenes/Interactions/Clues/Ambients/window_interact_bundasseca_house.tscn" id="25_fxayg"]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_up5k5"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_40lvq"]
 resource_local_to_scene = true
 shader = ExtResource("15_ndk88")
@@ -37,19 +50,6 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8l08s"]
-resource_local_to_scene = true
-shader = ExtResource("15_ndk88")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxayg"]
 resource_local_to_scene = true
 shader = ExtResource("15_ndk88")
 shader_parameter/thickness = 0.0
@@ -125,13 +125,13 @@ position = Vector2(3309, 897)
 position = Vector2(3626, 1287)
 
 [node name="TextClue_fightRemains" parent="." index="15" unique_id=1098548116 instance=ExtResource("13_oj2xv")]
-position = Vector2(807, 1387)
+position = Vector2(799, 1398)
 
 [node name="TextClue_noKids" parent="." index="16" unique_id=2063602921 instance=ExtResource("14_oogwp")]
 position = Vector2(3763, 1296)
 
 [node name="Sprite2D" parent="TextClue_noKids" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_40lvq")
+material = SubResource("ShaderMaterial_up5k5")
 rotation = 0.5235988
 skew = -0.5235988
 
@@ -139,7 +139,7 @@ skew = -0.5235988
 position = Vector2(4094, 1424)
 
 [node name="Sprite2D" parent="TextClue_annoucement" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_8l08s")
+material = SubResource("ShaderMaterial_40lvq")
 rotation = 0.5235988
 skew = -0.5235988
 
@@ -147,7 +147,7 @@ skew = -0.5235988
 position = Vector2(1723, 1494)
 
 [node name="Sprite2D" parent="TextClue_annoucement2" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_fxayg")
+material = SubResource("ShaderMaterial_8l08s")
 rotation = -0.5235988
 skew = 0.5235988
 
