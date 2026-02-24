@@ -26,6 +26,8 @@ const FINALIMAGENODE = "FinalImage"
 
 @onready var stamp_lock_panel: StampLockPanel = $StampLockPanel
 
+@onready var click: AudioStreamPlayer = $Click
+
 var inDialog:bool
 var currentCharacter:CharacterData
 var currentDialog:DialogData
@@ -91,6 +93,7 @@ func InteractCharacter(character:CharacterData) -> void:
 		var newDialog:Button = scene.instantiate() as Button
 		newDialog.text = option.dialogOption
 		newDialog.pressed.connect(func():
+			click.play()
 			StartDialog(option))
 		dialog_options.add_child(newDialog)
 		option.currentInstance = newDialog
@@ -191,4 +194,5 @@ func _input(event: InputEvent) -> void:
 	if(Input.is_action_just_released("Cancel")):
 		EndInspection()
 	if(Input.is_action_just_released("AdvanceDialog") && inDialog):
+		click.play()
 		NextDialog()

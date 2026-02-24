@@ -2,10 +2,25 @@
 
 [ext_resource type="Texture2D" uid="uid://cqypamh78b5wc" path="res://Assets/object_temp.png" id="1_w8eoa"]
 [ext_resource type="Script" uid="uid://cd4hpwpiplrph" path="res://Scripts/Player/huh.gd" id="2_1kgf5"]
+[ext_resource type="AudioStream" uid="uid://ceqx1mufk2iiq" path="res://Assets/SFX/SFX - Huh.wav" id="3_35w82"]
+[ext_resource type="AudioStream" uid="uid://dpdf8cqalkom" path="res://Assets/SFX/SFX - Huh-2.wav" id="4_kyfiy"]
+[ext_resource type="AudioStream" uid="uid://k4bpsu67leqq" path="res://Assets/SFX/SFX - Huh-3.wav" id="5_46e8q"]
+[ext_resource type="AudioStream" uid="uid://cmo4kk6ylxeky" path="res://Assets/SFX/SFX - Huh-4.wav" id="6_t4f2q"]
+[ext_resource type="AudioStream" uid="uid://dbdrocftacw48" path="res://Assets/SFX/SFX - Huh-5.wav" id="7_yb0dl"]
+[ext_resource type="AudioStream" uid="uid://ckwodn0ixo2df" path="res://Assets/SFX/SFX - Huh-6.wav" id="8_5j4b1"]
 
 [sub_resource type="Gradient" id="Gradient_fkybt"]
 offsets = PackedFloat32Array(0, 0.5185185)
 colors = PackedColorArray(0, 0, 0, 0, 1, 1, 1, 1)
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_s1ewp"]
+streams_count = 6
+stream_0/stream = ExtResource("3_35w82")
+stream_1/stream = ExtResource("4_kyfiy")
+stream_2/stream = ExtResource("5_46e8q")
+stream_3/stream = ExtResource("6_t4f2q")
+stream_4/stream = ExtResource("7_yb0dl")
+stream_5/stream = ExtResource("8_5j4b1")
 
 [node name="Huh" type="CPUParticles2D" unique_id=397500989]
 emitting = false
@@ -23,5 +38,9 @@ linear_accel_min = -1000.0
 linear_accel_max = -1000.0
 color_ramp = SubResource("Gradient_fkybt")
 script = ExtResource("2_1kgf5")
+
+[node name="HuhSound" type="AudioStreamPlayer" parent="." unique_id=1083534069]
+stream = SubResource("AudioStreamRandomizer_s1ewp")
+volume_db = -10.0
 
 [connection signal="finished" from="." to="." method="_on_finished"]

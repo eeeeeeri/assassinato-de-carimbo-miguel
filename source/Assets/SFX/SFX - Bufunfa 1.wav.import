@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://5x3xvhajn1lw"
+path="res://.godot/imported/SFX - Bufunfa 1.wav-de0c5dd1e85b080fa02832029e9b1340.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/SFX - Bufunfa 1.wav"
+dest_files=["res://.godot/imported/SFX - Bufunfa 1.wav-de0c5dd1e85b080fa02832029e9b1340.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

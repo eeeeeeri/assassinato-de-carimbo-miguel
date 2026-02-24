@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dbdrocftacw48"
+path="res://.godot/imported/SFX - Huh-5.wav-3c878ee8f9f7440a32f20ecf8ee716cd.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/SFX - Huh-5.wav"
+dest_files=["res://.godot/imported/SFX - Huh-5.wav-3c878ee8f9f7440a32f20ecf8ee716cd.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

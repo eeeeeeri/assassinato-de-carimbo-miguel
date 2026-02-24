@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://dbwxdhea6e57i" path="res://Scripts/Interactions/InteractableObj.gd" id="1_ioulm"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_aqi78"]
+[ext_resource type="AudioStream" uid="uid://ms4ch3i0n8wj" path="res://CustomResources/AudioStreams/click.tres" id="2_kcics"]
 [ext_resource type="PackedScene" uid="uid://vr3e5l0s2f2i" path="res://Scenes/Interactions/spark.tscn" id="3_jon3w"]
-[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="3_kcics"]
+[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="3_kcics"]
 [ext_resource type="Texture2D" uid="uid://cqypamh78b5wc" path="res://Assets/object_temp.png" id="3_u8gpf"]
-[ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="4_gs4tt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ioulm"]
 radius = 256.0
@@ -39,7 +39,7 @@ collision_layer = 5
 collision_mask = 5
 input_pickable = true
 script = ExtResource("1_ioulm")
-audio = ExtResource("4_gs4tt")
+audio = ExtResource("2_kcics")
 
 [node name="InteractionArea" type="Area2D" parent="." unique_id=146712339]
 collision_layer = 2

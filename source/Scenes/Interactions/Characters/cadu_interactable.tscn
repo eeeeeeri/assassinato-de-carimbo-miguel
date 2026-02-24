@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://dnr2ykof67e40" path="res://CustomResources/Characters/Cadu/Cadu.tres" id="2_8cbd1"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_lad5m"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d1dff"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8cbd1"]
 resource_local_to_scene = true
 shader = ExtResource("3_lad5m")
 shader_parameter/thickness = 0.0
@@ -19,6 +19,7 @@ shader_parameter/max_or_add = false
 
 [node name="caduInteractable" unique_id=705077137 instance=ExtResource("1_8cbd1")]
 Character = ExtResource("2_8cbd1")
+audio_pitch = 0.7
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_d1dff")
+material = SubResource("ShaderMaterial_8cbd1")

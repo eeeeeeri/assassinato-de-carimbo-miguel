@@ -2,7 +2,10 @@ class_name Interactable extends Node2D
 
 @export var OutlineMaxThickness:float = 3
 @export var hideSprite:bool = false
+@export var show_outline := true
 @export var audio : AudioStream
+@export var audio_volume : float
+@export var audio_pitch := 1.0
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interaction_area: Area2D = $InteractionArea
@@ -27,9 +30,11 @@ func _ready() -> void:
 	startProccessMode = process_mode
 	useSpark = spark.visible
 	drop_shadow.texture = sprite_2d.texture
+	audio_stream_player.volume_db = audio_volume
+	audio_stream_player.pitch_scale = audio_pitch
 
 func _process(delta: float) -> void:
-	if is_interactable:
+	if is_interactable && show_outline:
 		time += delta
 		sprite_scale = sin(time + 1.5*PI) * .05 + 1.05
 		outline_thickness = OutlineMaxThickness
