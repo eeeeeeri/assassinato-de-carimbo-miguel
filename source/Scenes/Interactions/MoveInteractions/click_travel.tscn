@@ -2,8 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_3xajp"]
 [ext_resource type="Script" uid="uid://x1l35ueqvsmg" path="res://Scripts/Interactions/Travel.gd" id="2_7lkkb"]
+[ext_resource type="Texture2D" uid="uid://dqug3wtgmavf1" path="res://Assets/arrow.png" id="3_imcwa"]
 
-[sub_resource type="Shader" id="Shader_7lkkb"]
+[sub_resource type="Shader" id="Shader_imcwa"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -75,9 +76,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_pe0xi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5wcv3"]
 resource_local_to_scene = true
-shader = SubResource("Shader_7lkkb")
+shader = SubResource("Shader_imcwa")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -89,8 +90,20 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [node name="ClickTravel" unique_id=705077137 instance=ExtResource("1_3xajp")]
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("2_7lkkb")
 scene = ""
+OutlineMaxThickness = 15.0
+hideSprite = true
+
+[node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(146712339) index="0" unique_id=2125542557]
+scale = Vector2(2, 2)
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_pe0xi")
+material = SubResource("ShaderMaterial_5wcv3")
+scale = Vector2(0.23437501, 0.23437507)
+texture = ExtResource("3_imcwa")
+
+[node name="Spark" parent="." index="4" unique_id=560819456]
+visible = false

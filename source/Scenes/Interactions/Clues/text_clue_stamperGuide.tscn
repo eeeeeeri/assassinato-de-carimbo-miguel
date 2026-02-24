@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://doka7kc54xkeu"]
+
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_fjhxj"]
+[ext_resource type="Texture2D" uid="uid://dlbxoshyea455" path="res://Assets/Pistas/profissoes.png" id="2_fjhxj"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_os662"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_qx2v5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjhxj"]
+resource_local_to_scene = true
+shader = ExtResource("4_qx2v5")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[node name="TextClue_stamperGuide" unique_id=705077137 instance=ExtResource("1_fjhxj")]
+TextsList = Array[String](["(Guia do carimbeiro - Profissões)"])
+FinalImage = ExtResource("2_fjhxj")
+BackImage = ExtResource("2_fjhxj")
+audio = ExtResource("3_os662")
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_fjhxj")
+scale = Vector2(0.125, 0.12500001)
+texture = ExtResource("2_fjhxj")

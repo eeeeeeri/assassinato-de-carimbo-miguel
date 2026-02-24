@@ -1,3 +1,3 @@
-class_name CharactersLoader extends Resource
+class_name ResourcesLoader extends Resource
 
-@export var Characters:Array[CharacterData]
+@export var Resources:Array[Resource]

@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_7uayf"]
 [ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_cwyrs"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7uayf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cwyrs"]
 resource_local_to_scene = true
 shader = ExtResource("3_7uayf")
 shader_parameter/thickness = 0.0
@@ -24,9 +24,9 @@ TextsList = Array[String](["(Uma carta aberta)", "Armando,
 	Meu filho, eu sei que seu trabalho como guarda real é muito importante, mas por favor, tire um tempo para me visitar, desde que sua irmãzinha saiu de casa, tenho estado bem solitário, vocês dois são tudo o que eu tenho. Tem umas belas donzelas solteiras aqui na cidade pra você conversar.
 
 		Com amor, seu pai"])
-FinalImage = null
 BackImage = ExtResource("2_cwyrs")
 audio = ExtResource("3_cwyrs")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_7uayf")
+material = SubResource("ShaderMaterial_cwyrs")
+texture = ExtResource("2_cwyrs")

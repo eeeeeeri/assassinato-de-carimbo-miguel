@@ -2,7 +2,30 @@
 
 [ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_67wj3"]
 [ext_resource type="Script" uid="uid://cu6fk46tr7fyn" path="res://Scripts/Interactions/InteractableInspectTxt.gd" id="2_w380c"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_ibcjf"]
+[ext_resource type="Texture2D" uid="uid://b2l5q48qy4yom" path="res://Assets/Pistas/papel_generico.png" id="4_8ou1d"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s8yhm"]
+resource_local_to_scene = true
+shader = ExtResource("3_ibcjf")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
 
 [node name="ClickInspectableText" unique_id=705077137 instance=ExtResource("1_67wj3")]
 script = ExtResource("2_w380c")
 TextsList = Array[String](["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa", "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb", "cccccccccccccccccccccccccccccccccc", "dddddddddddddddddddddddddddddddddd", "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"])
+FinalImage = null
+BackImage = null
+OutlineMaxThickness = 30.0
+
+[node name="Sprite2D" parent="." index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_s8yhm")
+scale = Vector2(0.095703125, 0.09570313)
+texture = ExtResource("4_8ou1d")

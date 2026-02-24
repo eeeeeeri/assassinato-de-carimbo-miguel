@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_cf2ya"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="4_juau3"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_jwxts"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cf2ya"]
 resource_local_to_scene = true
 shader = ExtResource("4_cf2ya")
 shader_parameter/thickness = 0.0
@@ -28,6 +28,9 @@ position = Vector2(1.5, -88)
 scale = Vector2(1.31, 2.76)
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_jwxts")
+material = SubResource("ShaderMaterial_cf2ya")
 position = Vector2(1.5, -88)
 texture = ExtResource("4_juau3")
+
+[node name="Spark" parent="." index="4" unique_id=560819456]
+visible = false

@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_0d16n"]
 [ext_resource type="PackedScene" uid="uid://b7n282i8hb86c" path="res://Scenes/Interactions/Clues/3D/ink_and_Quill_object.tscn" id="2_0d16n"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_3v32j"]
+[ext_resource type="Texture2D" uid="uid://cnbncprbi5e8n" path="res://Assets/Pistas/screenshots/inkAndQuill.png" id="4_xunju"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xunju"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3v32j"]
 resource_local_to_scene = true
 shader = ExtResource("3_3v32j")
 shader_parameter/thickness = 0.0
@@ -19,6 +20,9 @@ shader_parameter/max_or_add = false
 
 [node name="object_clue_InkAndQuill" unique_id=705077137 instance=ExtResource("1_0d16n")]
 InspectableScene = ExtResource("2_0d16n")
+OutlineMaxThickness = 10.0
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_xunju")
+material = SubResource("ShaderMaterial_3v32j")
+scale = Vector2(0.26953125, 0.26953125)
+texture = ExtResource("4_xunju")

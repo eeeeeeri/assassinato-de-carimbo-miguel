@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dbwxdhea6e57i" path="res://Scripts/Interactions/InteractableObj.gd" id="1_ioulm"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_aqi78"]
+[ext_resource type="PackedScene" uid="uid://vr3e5l0s2f2i" path="res://Scenes/Interactions/spark.tscn" id="3_jon3w"]
 [ext_resource type="Texture2D" uid="uid://cqypamh78b5wc" path="res://Assets/object_temp.png" id="3_u8gpf"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="4_gs4tt"]
 
@@ -56,10 +57,14 @@ shape = SubResource("RectangleShape2D_k4glw")
 material = SubResource("ShaderMaterial_gxer8")
 texture = ExtResource("3_u8gpf")
 
+[node name="Spark" parent="." unique_id=560819456 instance=ExtResource("3_jon3w")]
+scale = Vector2(1.3125, 1.28125)
+
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=610547525]
 bus = &"SFX"
 
 [connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="body_entered" from="InteractionArea" to="." method="_on_interaction_area_body_entered"]
 [connection signal="body_exited" from="InteractionArea" to="." method="_on_interaction_area_body_exited"]
 [connection signal="body_entered" from="StopArea" to="." method="_on_stop_area_body_entered"]

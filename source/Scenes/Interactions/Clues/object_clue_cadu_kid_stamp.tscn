@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://birawuwygp05j" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_object.tscn" id="1_mqf8w"]
 [ext_resource type="PackedScene" uid="uid://hxeqv8j8vt5x" path="res://Scenes/Interactions/Clues/3D/caduKid_stamp_object.tscn" id="2_mqf8w"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_u0cji"]
+[ext_resource type="Texture2D" uid="uid://n7sxel6moqio" path="res://Assets/Pistas/screenshots/caduStamp.png" id="4_00t7i"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_00t7i"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u0cji"]
 resource_local_to_scene = true
 shader = ExtResource("3_u0cji")
 shader_parameter/thickness = 0.0
@@ -19,6 +20,10 @@ shader_parameter/max_or_add = false
 
 [node name="object_clue_caduKidStamp" unique_id=705077137 instance=ExtResource("1_mqf8w")]
 InspectableScene = ExtResource("2_mqf8w")
+OutlineMaxThickness = 10.0
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_00t7i")
+material = SubResource("ShaderMaterial_u0cji")
+position = Vector2(0, 6)
+scale = Vector2(0.21093751, 0.21093751)
+texture = ExtResource("4_00t7i")

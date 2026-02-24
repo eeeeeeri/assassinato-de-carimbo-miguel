@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="2_nmiwn"]
 [ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_nmiwn"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8251"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nmiwn"]
 resource_local_to_scene = true
 shader = ExtResource("2_d823j")
 shader_parameter/thickness = 0.0
@@ -38,9 +38,9 @@ Achas que tens o que é preciso para esmagares a minha rata?
 ME ENCONTRE na Rua dos Bobos número 0", "Oi meu nome é Samara, tenho 14 anos (Teria se estivesse viva), morri aos 13 em Carimbia. Eu andava de Ponei Quando não pude desviar de uma vinha espinhosa. O pior foi que o dono da terra não quis me ajudar, riu bastante mim após agonizar por 2 horas enroscada nas vinhas eu faleci, através dessa carta eu peço que façam com que eu possa descançar em paz. Envie isso para 5 reinos e minha alma estara sendo salva por você e pelos outros 5 que receberão. Caso não repasse essa mensagem vou visitar-lhe hoje a noite assim vc poderá conhecer a tal vinha bem de pertinho. Dia 15 de Julho Mariana resolveu rir dessa mensagem, uma noite depois ela sumiu sem deixar vestigios. O mesmo aconteceu com Kare dia 18 de Outubro. Não Quebre essa corrente por favor, a não ser que queira sentir a minha presença", "Você me deve. 
 E eu não cobro barato.
 Boa sorte aos pombinhos."])
-FinalImage = null
 BackImage = ExtResource("2_nmiwn")
 audio = ExtResource("3_nmiwn")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_n8251")
+material = SubResource("ShaderMaterial_nmiwn")
+texture = ExtResource("2_nmiwn")

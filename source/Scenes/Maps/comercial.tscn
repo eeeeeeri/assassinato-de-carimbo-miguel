@@ -24,11 +24,13 @@ tile_map_data = PackedByteArray("AAADAP//eQAIAAAAAAADAAAAeQAIAAAAAAACAAEAeQAIAAA
 
 [node name="ClickTravel" parent="." index="4" unique_id=705077137 instance=ExtResource("5_kafox")]
 position = Vector2(544, -10)
+rotation = 1.5707964
 scene = "res://Scenes/Maps/residencial.tscn"
 
 [node name="ClickTravel2" parent="." index="5" unique_id=111834332 instance=ExtResource("5_kafox")]
 visible = false
 position = Vector2(-577, -14)
+rotation = -1.5707964
 scene = "res://Scenes/Maps/castelo.tscn"
 
 [node name="ClickInspectableObject" parent="." index="6" unique_id=2133723097 instance=ExtResource("3_68qxl")]
@@ -36,8 +38,6 @@ position = Vector2(-243, -341)
 
 [node name="ClickInspectableText" parent="." index="7" unique_id=558703017 instance=ExtResource("4_kafox")]
 position = Vector2(-136, 334)
-FinalImage = null
-BackImage = null
 
 [node name="ClickCharacterInteractable" parent="." index="8" unique_id=799633218 instance=ExtResource("5_t55c3")]
 position = Vector2(217, -350)
@@ -51,7 +51,6 @@ visible = false
 position = Vector2(416, -358)
 TextsList = Array[String]([])
 FinalImage = ExtResource("8_u584y")
-BackImage = null
 
 [node name="VisibleStateSave" type="Node" parent="." index="11" unique_id=807322980 node_paths=PackedStringArray("targetNodes")]
 script = ExtResource("9_n0u8l")
