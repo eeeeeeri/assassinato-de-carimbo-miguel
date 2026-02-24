@@ -169,6 +169,8 @@ func InspectStampLock(correctStamp:StampData, correctSignal:Signal) -> void:
 	inspecting = true
 
 func EndInspection() -> void:
+	if(!inspecting): return
+	
 	GlobalResources.GLOBAL_EVENTS.EndInspection.emit()
 	
 	_3d_object_panel.visible = false
@@ -187,7 +189,6 @@ func EndInspection() -> void:
 		
 func _input(event: InputEvent) -> void:
 	if(Input.is_action_just_released("Cancel")):
-		if(inspecting):
-			EndInspection()
+		EndInspection()
 	if(Input.is_action_just_released("AdvanceDialog") && inDialog):
 		NextDialog()

@@ -1,4 +1,4 @@
-extends Node
+class_name VisibleStateSaver extends Node
 
 @export var boolArrayData:BoolArrayData
 @export var targetNodes:Array[Node2D]

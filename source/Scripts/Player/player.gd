@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 const SPEED = 300.0
 
@@ -8,19 +8,26 @@ const HUH = preload("uid://brvbdoqchxkay")
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var possible_position: Area2D = $PossiblePosition
 @onready var wait_position: Timer = $WaitPosition
+@onready var camera_2d: Camera2D = $Camera2D
 @onready var walk_timer: Timer = $WalkTimer
 @onready var walk_sound: AudioStreamPlayer = $WalkSound
 
 var click_position : Vector2
 var target_position : Vector2
 var mouse_mode := false
-var is_interacting := false
+var is_interacting:bool:
+	get():
+		return interationCalls > 0
+var interationCalls : int = 0:
+	set(value):
+		interationCalls = clamp(value, 0, 1000)
 var in_menu := false
 var is_possible_position := true
 var moving_to_object := false
 
 func _ready() -> void:
 	click_position = position
+	GlobalResources.player = self
 	GlobalResources.GLOBAL_EVENTS.OnInteract.connect(_on_interact)
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(_end_inspection)
 	GlobalResources.GLOBAL_EVENTS.MapOpen.connect(map_open)
@@ -117,27 +124,26 @@ func _on_interact():
 	mouse_mode = false
 	animated_sprite.play("idle")
 	click_position = Vector2.ZERO
-	is_interacting = true
+	interationCalls += 1
 
 
 func _end_inspection():
-	is_interacting = false
-
+	interationCalls -= 1
 
 func map_open() -> void:
-	is_interacting = true
+	interationCalls += 1
 
 
 func map_close() -> void:
-	is_interacting = false
+	interationCalls -= 1
 
 
 func sus_open() -> void:
-	is_interacting = true
+	interationCalls += 1
 
 
 func sus_close() -> void:
-	is_interacting = false
+	interationCalls -= 1
 
 
 func paused() -> void:

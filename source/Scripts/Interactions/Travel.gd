@@ -2,7 +2,7 @@ extends Interactable
 
 @export var scene : String
 
-func _interacted() -> void:
+func _interacted(override:bool = false) -> void:
 	super()
 	SceneTransition.change_scene_to(scene)
 

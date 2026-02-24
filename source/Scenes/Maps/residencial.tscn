@@ -1,8 +1,11 @@
 [gd_scene format=4 uid="uid://d4i27kar1d2u5"]
 
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_00dw8"]
+[ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="2_x0dcx"]
 [ext_resource type="Texture2D" uid="uid://b6yordjq6oiyl" path="res://Assets/vila/vila.png" id="2_xub7h"]
 [ext_resource type="PackedScene" uid="uid://cf2ytexwnfh2s" path="res://Scenes/Interactions/Clues/object_clue_armando_stamp.tscn" id="4_c1hy4"]
+[ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="4_up5k5"]
+[ext_resource type="Resource" uid="uid://cifgbo4y764k1" path="res://CustomResources/Save/residencialVisibleStateData.tres" id="5_up5k5"]
 [ext_resource type="PackedScene" uid="uid://bkwtekniv2hh4" path="res://Scenes/Interactions/Clues/object_clue_cadu_kid_stamp.tscn" id="5_x0dcx"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="5_ypm8x"]
 [ext_resource type="PackedScene" uid="uid://d08xgowqidu6a" path="res://Scenes/Interactions/Clues/object_clue_cadu_products.tscn" id="6_yajkd"]
@@ -18,20 +21,29 @@
 [ext_resource type="PackedScene" uid="uid://84pqspn1bnei" path="res://Scenes/Interactions/Clues/text_clue_guardsPatrol.tscn" id="16_8hvyc"]
 [ext_resource type="PackedScene" uid="uid://bv2ywypmendwm" path="res://Scenes/Interactions/Clues/text_clue_kingsWill.tscn" id="17_lon5d"]
 [ext_resource type="PackedScene" uid="uid://cbdcxtcvpptum" path="res://Scenes/Interactions/Clues/text_clue_personalityTest.tscn" id="18_sbyme"]
+[ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/MoveInteractions/click_coin.tscn" id="20_yajkd"]
+[ext_resource type="PackedScene" uid="uid://csp7loll5hw76" path="res://Scenes/Interactions/Clues/Ambients/window_interact_barriga_house.tscn" id="23_40lvq"]
 
 [node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
 
-[node name="Ground" parent="." index="0" unique_id=2054894502]
+[node name="Background" type="Sprite2D" parent="." index="0" unique_id=280844342]
+self_modulate = Color(0.22115254, 0.11027486, 0.06808466, 1)
+z_index = -10
+position = Vector2(2754, 1582.5004)
+scale = Vector2(18.925783, 11.927734)
+texture = ExtResource("2_x0dcx")
+
+[node name="Ground" parent="." index="1" unique_id=2054894502]
 visible = false
 tile_map_data = PackedByteArray("AAD8/wEAPwAJAAMAAAD9/wIAPwAJAAMAAAD9/wMAPwAJAAMAAAD+/wQAPwAJAAMAAAD+/wUAPwAJAAMAAAD9/wAAPwAJAAMAAAD9////PwAJAAMAAAD+/wAAPwAJAAMAAAD+/wIAPwAJAAMAAAD//wIAPwAJAAMAAAD//wMAPwAJAAMAAAD///v/PwAJAAMAAAD///z/PwAJAAMAAAD+//3/PwAJAAMAAAD///7/PwAJAAMAAAD/////PwAJAAMAAAAAAAAAPwAJAAMAAAAAAAEAPwAJAAMAAAABAAAAPwAJAAMAAAABAP//PwAJAAMAAAAAAP7/PwAJAAMAAAABAPf/PwAJAAMAAAABAPj/PwAJAAMAAAAAAPn/PwAJAAMAAAABAPr/PwAJAAMAAAABAPv/PwAJAAMAAAACAPr/PwAJAAMAAAACAPn/PwAJAAMAAAADAPr/PwAJAAMAAAADAPv/PwAJAAMAAAADAPz/PwAJAAMAAAACAP3/PwAJAAMAAAA=")
 
-[node name="Vila" type="Sprite2D" parent="." index="1" unique_id=46929508]
+[node name="Vila" type="Sprite2D" parent="." index="2" unique_id=46929508]
 position = Vector2(0, 8)
 texture = ExtResource("2_xub7h")
 centered = false
 metadata/_edit_lock_ = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="2" unique_id=152049481]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="3" unique_id=152049481]
 collision_layer = 5
 collision_mask = 5
 
@@ -39,58 +51,69 @@ collision_mask = 5
 build_mode = 1
 polygon = PackedVector2Array(824, 1544, 1440, 1872, 1616, 1776, 1736, 1608, 1736, 1576, 2072, 1408, 2152, 1264, 2472, 1096, 2616, 1176, 2256, 1360, 2192, 1472, 2904, 1112, 2904, 1040, 3176, 904, 3448, 1056, 3448, 1288, 4304, 1696, 4528, 1560, 4528, 1512, 4880, 1688, 3232, 2512, 2384, 2104, 2336, 1960, 1944, 1768, 1880, 1888, 2288, 2096, 2328, 2200, 2368, 2240, 2640, 2368, 2280, 2560, 416, 1608, 456, 1536, 824, 1352)
 
-[node name="Walls" parent="." index="3" unique_id=705766568]
+[node name="Walls" parent="." index="4" unique_id=705766568]
 visible = false
 
-[node name="Player" parent="." index="4" unique_id=1389957626]
+[node name="Player" parent="." index="5" unique_id=1389957626]
 position = Vector2(912, 1680)
 
-[node name="ClickTravel" parent="." index="6" unique_id=705077137 instance=ExtResource("5_ypm8x")]
-position = Vector2(728, 1488)
+[node name="ClickTravel" parent="." index="7" unique_id=705077137 instance=ExtResource("5_ypm8x")]
+position = Vector2(643, 1504)
 scene = "res://Scenes/Maps/comercial.tscn"
-audio = null
 
-[node name="object_clue_armandoStamp" parent="." index="7" unique_id=953559596 instance=ExtResource("4_c1hy4")]
+[node name="object_clue_armandoStamp" parent="." index="8" unique_id=953559596 instance=ExtResource("4_c1hy4")]
 position = Vector2(2168, 1760)
 
-[node name="object_clue_caduKidStamp" parent="." index="8" unique_id=1433928130 instance=ExtResource("5_x0dcx")]
+[node name="object_clue_caduKidStamp" parent="." index="9" unique_id=1433928130 instance=ExtResource("5_x0dcx")]
 position = Vector2(2408, 1888)
 
-[node name="object_clue_caduProducts" parent="." index="9" unique_id=972716579 instance=ExtResource("6_yajkd")]
+[node name="object_clue_caduProducts" parent="." index="10" unique_id=972716579 instance=ExtResource("6_yajkd")]
 position = Vector2(2592, 2080)
 
-[node name="object_clue_InkAndQuill" parent="." index="10" unique_id=1529313292 instance=ExtResource("7_ndk88")]
+[node name="object_clue_InkAndQuill" parent="." index="11" unique_id=1529313292 instance=ExtResource("7_ndk88")]
 position = Vector2(2840, 2216)
 
-[node name="object_clue_Painting" parent="." index="11" unique_id=788519744 instance=ExtResource("8_up5k5")]
+[node name="object_clue_Painting" parent="." index="12" unique_id=788519744 instance=ExtResource("8_up5k5")]
 position = Vector2(3120, 2344)
 
-[node name="object_clue_Sword" parent="." index="12" unique_id=1143465593 instance=ExtResource("9_40lvq")]
+[node name="object_clue_Sword" parent="." index="13" unique_id=1143465593 instance=ExtResource("9_40lvq")]
 position = Vector2(3440, 2240)
 
-[node name="TextClue_annoucement" parent="." index="13" unique_id=1246281753 instance=ExtResource("10_8l08s")]
-position = Vector2(3696, 2056)
+[node name="TextClue_annoucement" parent="." index="14" unique_id=1246281753 instance=ExtResource("10_8l08s")]
+position = Vector2(3696, 2057)
 
-[node name="TextClue_armandoLetter" parent="." index="14" unique_id=319192190 instance=ExtResource("11_fxayg")]
+[node name="TextClue_armandoLetter" parent="." index="15" unique_id=319192190 instance=ExtResource("11_fxayg")]
 position = Vector2(3920, 1872)
 
-[node name="TextClue_barbaraLetter" parent="." index="15" unique_id=177388277 instance=ExtResource("12_kps16")]
+[node name="TextClue_barbaraLetter" parent="." index="16" unique_id=177388277 instance=ExtResource("12_kps16")]
 position = Vector2(4144, 1720)
 
-[node name="TextClue_bastardSonDoc" parent="." index="16" unique_id=855956287 instance=ExtResource("13_s0wg4")]
+[node name="TextClue_bastardSonDoc" parent="." index="17" unique_id=855956287 instance=ExtResource("13_s0wg4")]
 position = Vector2(3872, 1536)
 
-[node name="TextClue_castleDrawing" parent="." index="17" unique_id=1340173266 instance=ExtResource("14_pty0l")]
+[node name="TextClue_castleDrawing" parent="." index="18" unique_id=1340173266 instance=ExtResource("14_pty0l")]
 position = Vector2(3568, 1440)
 
-[node name="TextClue_castleLetters" parent="." index="18" unique_id=2140866769 instance=ExtResource("15_g7mqf")]
+[node name="TextClue_castleLetters" parent="." index="19" unique_id=2140866769 instance=ExtResource("15_g7mqf")]
 position = Vector2(3256, 1320)
 
-[node name="TextClue_guardsPatrol" parent="." index="19" unique_id=1090590201 instance=ExtResource("16_8hvyc")]
+[node name="TextClue_guardsPatrol" parent="." index="20" unique_id=1090590201 instance=ExtResource("16_8hvyc")]
 position = Vector2(3144, 1080)
 
-[node name="TextClue_kingsWill" parent="." index="20" unique_id=778961392 instance=ExtResource("17_lon5d")]
+[node name="TextClue_kingsWill" parent="." index="21" unique_id=778961392 instance=ExtResource("17_lon5d")]
 position = Vector2(2880, 1248)
 
-[node name="TextClue_personalityTest" parent="." index="21" unique_id=1351897928 instance=ExtResource("18_sbyme")]
+[node name="TextClue_personalityTest" parent="." index="22" unique_id=1351897928 instance=ExtResource("18_sbyme")]
 position = Vector2(2592, 1376)
+
+[node name="Click_coin" parent="." index="23" unique_id=1710188801 instance=ExtResource("20_yajkd")]
+position = Vector2(2979, 1743)
+
+[node name="VisibleStateSaver" type="Node" parent="." index="24" unique_id=266798634 node_paths=PackedStringArray("targetNodes")]
+script = ExtResource("4_up5k5")
+boolArrayData = ExtResource("5_up5k5")
+targetNodes = [NodePath("../Click_coin")]
+metadata/_custom_type_script = "uid://d1y8kysganspd"
+
+[node name="window_interact_barrigaHouse" parent="." index="25" unique_id=737221805 instance=ExtResource("23_40lvq")]
+position = Vector2(1248, 1645)

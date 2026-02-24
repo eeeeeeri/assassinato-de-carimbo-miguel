@@ -5,7 +5,7 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_a3qss"]
 [ext_resource type="Resource" uid="uid://wotfu8qwvhmw" path="res://CustomResources/Stamps/BrucesfildeStamp.tres" id="3_xe4fc"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_xe4fc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhyx2"]
 resource_local_to_scene = true
 shader = ExtResource("3_a3qss")
 shader_parameter/thickness = 0.0
@@ -23,4 +23,7 @@ script = ExtResource("2_xe4fc")
 correctStamp = ExtResource("3_xe4fc")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_xe4fc")
+material = SubResource("ShaderMaterial_vhyx2")
+
+[node name="dropShadow" parent="Sprite2D" index="0" unique_id=771579444]
+visible = false
