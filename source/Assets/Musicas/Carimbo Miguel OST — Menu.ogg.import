@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c07mdq7itl1bi"
+path="res://.godot/imported/Carimbo Miguel OST — Menu.ogg-c6a4c1bd283503cd13c8891640ff7559.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Musicas/Carimbo Miguel OST — Menu.ogg"
+dest_files=["res://.godot/imported/Carimbo Miguel OST — Menu.ogg-c6a4c1bd283503cd13c8891640ff7559.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

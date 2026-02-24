@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://c6my8483ht875"
+path="res://.godot/imported/Carimbo Miguel OST — Reino de Carimbia.ogg-b19044a571913e67db88fef4cb633b1b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Musicas/Carimbo Miguel OST — Reino de Carimbia.ogg"
+dest_files=["res://.godot/imported/Carimbo Miguel OST — Reino de Carimbia.ogg-b19044a571913e67db88fef4cb633b1b.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
