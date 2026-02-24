@@ -1,12 +1,11 @@
 [gd_scene format=3 uid="uid://bli10dlqoffgd"]
 
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="1_b8itc"]
-[ext_resource type="Texture2D" uid="uid://b2l5q48qy4yom" path="res://Assets/Pistas/papel_generico.png" id="2_6s5ud"]
-[ext_resource type="Texture2D" uid="uid://dgmkbt1wpf53s" path="res://Assets/Pistas/papel_generico_fundo.png" id="2_b8itc"]
+[ext_resource type="Texture2D" uid="uid://dd1erj7vi722n" path="res://Assets/Pistas/noKids.png" id="2_b8itc"]
 [ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="3_dvcxx"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_qf5vx"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b8itc"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6s5ud"]
 resource_local_to_scene = true
 shader = ExtResource("4_qf5vx")
 shader_parameter/thickness = 0.0
@@ -20,11 +19,12 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [node name="TextClue_noKids" unique_id=705077137 instance=ExtResource("1_b8itc")]
-TextsList = Array[String](["(Um aviso na porta da taverna)", "PROIBIDO CRIANÇAS"])
-BackImage = ExtResource("2_6s5ud")
+TextsList = Array[String](["(Um aviso na porta da taverna)"])
+FinalImage = ExtResource("2_b8itc")
+BackImage = ExtResource("2_b8itc")
 audio = ExtResource("3_dvcxx")
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_b8itc")
+material = SubResource("ShaderMaterial_6s5ud")
 scale = Vector2(0.13541667, 0.13541667)
 texture = ExtResource("2_b8itc")

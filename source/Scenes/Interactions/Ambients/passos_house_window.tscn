@@ -12,33 +12,20 @@
 [ext_resource type="Texture2D" uid="uid://bs7vp7f3k6ilg" path="res://Assets/Pistas/glow2.png" id="10_5bns0"]
 [ext_resource type="PackedScene" uid="uid://gs5a1n6d2f4v" path="res://Scenes/Interactions/Clues/object_clue_painting.tscn" id="11_miv2w"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_qs0l3"]
-resource_local_to_scene = true
-shader = ExtResource("3_yxkep")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c4sye"]
-resource_local_to_scene = true
-shader = ExtResource("3_yxkep")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5bns0"]
+resource_local_to_scene = true
+shader = ExtResource("3_yxkep")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_miv2w"]
 resource_local_to_scene = true
 shader = ExtResource("3_yxkep")
 shader_parameter/thickness = 0.0
@@ -64,17 +51,31 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_01e6l"]
+resource_local_to_scene = true
+shader = ExtResource("3_yxkep")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
 [node name="PassosHouseWindow" unique_id=1550925338 instance=ExtResource("1_qs0l3")]
 
 [node name="Window" parent="." index="1" unique_id=1196447102]
 rotation = -0.5235988
+skew = -0.5235988
 
 [node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_c4sye")]
 position = Vector2(-331, 12)
 outlineThickness = 30.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_qs0l3")
+material = SubResource("ShaderMaterial_5bns0")
 scale = Vector2(0.12847221, 0.12847222)
 texture = ExtResource("4_qs0l3")
 
@@ -90,7 +91,7 @@ outlineThickness = 5.0
 scale = Vector2(1.25, 2.74)
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_c4sye")
+material = SubResource("ShaderMaterial_miv2w")
 texture = ExtResource("6_miv2w")
 
 [node name="markaInteractable" parent="Interactions/PureClickInteractable2" index="2" unique_id=389771739 instance=ExtResource("6_ik5kh")]
@@ -102,7 +103,7 @@ position = Vector2(-14, 207)
 outlineThickness = 30.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable3" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_5bns0")
+material = SubResource("ShaderMaterial_cyrnr")
 scale = Vector2(0.12847221, 0.12847222)
 texture = ExtResource("8_yxkep")
 
@@ -115,7 +116,7 @@ position = Vector2(267, -318)
 outlineThickness = 30.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable4" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_cyrnr")
+material = SubResource("ShaderMaterial_01e6l")
 scale = Vector2(1.0312504, 1.0312505)
 texture = ExtResource("10_5bns0")
 
