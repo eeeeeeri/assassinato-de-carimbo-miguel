@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://d3nw4qua7wbt4"
-path="res://.godot/imported/SFX - NPC.wav-599b88bb55dd668be7b3e771803554a8.sample"
+uid="uid://cmo4kk6ylxeky"
+path="res://.godot/imported/SFX - Huh-4.wav-bb60995426d2b02eedc3e73a23335d3c.sample"
 
 [deps]
 
-source_file="res://Assets/SFX/SFX - NPC.wav"
-dest_files=["res://.godot/imported/SFX - NPC.wav-599b88bb55dd668be7b3e771803554a8.sample"]
+source_file="res://Assets/SFX/SFX - Huh-4.wav"
+dest_files=["res://.godot/imported/SFX - Huh-4.wav-bb60995426d2b02eedc3e73a23335d3c.sample"]
 
 [params]
 

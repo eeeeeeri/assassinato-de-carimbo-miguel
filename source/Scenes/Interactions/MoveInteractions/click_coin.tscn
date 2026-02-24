@@ -4,21 +4,8 @@
 [ext_resource type="Script" uid="uid://dn6uxk7cm7j8x" path="res://Scripts/Interactions/coinInteractable.gd" id="2_57n2f"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_hknp1"]
 [ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="3_57n2f"]
-[ext_resource type="AudioStream" uid="uid://3f7h8vbfk6qx" path="res://Assets/SFX/coin00.wav" id="3_leq3n"]
-[ext_resource type="AudioStream" uid="uid://did2tcmlg4hup" path="res://Assets/SFX/coin01.wav" id="4_c2w73"]
-[ext_resource type="AudioStream" uid="uid://cg7m01h4sk6v2" path="res://Assets/SFX/coin02.wav" id="5_pdt85"]
-[ext_resource type="AudioStream" uid="uid://cdojo34pkktpo" path="res://Assets/SFX/coin03.wav" id="6_7lsmq"]
-[ext_resource type="AudioStream" uid="uid://cem3u1rctm3s0" path="res://Assets/SFX/coin04.wav" id="7_pnrbt"]
 
-[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_085jx"]
-streams_count = 5
-stream_0/stream = ExtResource("3_leq3n")
-stream_1/stream = ExtResource("4_c2w73")
-stream_2/stream = ExtResource("5_pdt85")
-stream_3/stream = ExtResource("6_7lsmq")
-stream_4/stream = ExtResource("7_pnrbt")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_c53vl"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6cx0w"]
 resource_local_to_scene = true
 shader = ExtResource("2_hknp1")
 shader_parameter/thickness = 0.0
@@ -36,9 +23,9 @@ collision_layer = 4
 collision_mask = 4
 script = ExtResource("2_57n2f")
 OutlineMaxThickness = 20.0
-audio = SubResource("AudioStreamRandomizer_085jx")
+show_outline = false
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_c53vl")
+material = SubResource("ShaderMaterial_6cx0w")
 scale = Vector2(0.171875, 0.171875)
 texture = ExtResource("3_57n2f")
