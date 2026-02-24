@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cmgaa35ll2nq6"]
+
+[ext_resource type="AudioStream" uid="uid://c07mdq7itl1bi" path="res://Assets/Musicas/Carimbo Miguel OST — Menu.ogg" id="1_lld0g"]
+[ext_resource type="Script" uid="uid://dqe2ly6aogbx2" path="res://music.gd" id="1_rriyv"]
+
+[node name="Music" type="AudioStreamPlayer" unique_id=401533889]
+stream = ExtResource("1_lld0g")
+volume_db = -10.0
+autoplay = true
+bus = &"Music"
+script = ExtResource("1_rriyv")

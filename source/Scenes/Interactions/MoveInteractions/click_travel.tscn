@@ -94,6 +94,7 @@ collision_layer = 4
 collision_mask = 4
 script = ExtResource("2_7lkkb")
 scene = ""
+next_audio = null
 OutlineMaxThickness = 15.0
 hideSprite = true
 

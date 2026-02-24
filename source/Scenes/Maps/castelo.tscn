@@ -2,12 +2,14 @@
 
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_lldms"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="2_755oh"]
+[ext_resource type="AudioStream" uid="uid://btb6burm64qvp" path="res://Assets/Musicas/Carimbo Miguel OST — Vila de Carimbia.ogg" id="3_phbd6"]
 
 [node name="Castelo" unique_id=146350973 instance=ExtResource("1_lldms")]
 
 [node name="Ground" parent="." index="0" unique_id=2054894502]
 tile_map_data = PackedByteArray("AAD9////PwAGAAMAAAD9/wAAPwAGAAMAAAD8/wEAPwAGAAMAAAD9/wIAPwAGAAMAAAD9/wMAPwAGAAMAAAD+/wQAPwAGAAMAAAD+/wUAPwAGAAMAAAD//wQAPwAGAAMAAAD//wMAPwAGAAMAAAAAAAEAPwAGAAMAAAAAAAAAPwAGAAMAAAD/////PwAGAAMAAAD///7/PwAGAAMAAAD+//3/PwAGAAMAAAD///z/PwAGAAMAAAD///v/PwAGAAMAAAAAAPz/PwAGAAMAAAAAAP3/PwAGAAMAAAAAAP7/PwAGAAMAAAABAP7/PwAGAAMAAAABAP//PwAGAAMAAAABAPf/PwAGAAMAAAABAPj/PwAGAAMAAAAAAPn/PwAGAAMAAAABAPr/PwAGAAMAAAABAPv/PwAGAAMAAAACAPr/PwAGAAMAAAACAPn/PwAGAAMAAAADAPr/PwAGAAMAAAADAPv/PwAGAAMAAAADAPz/PwAGAAMAAAACAP3/PwAGAAMAAAA=")
 
-[node name="ClickTravel" parent="." index="5" unique_id=705077137 instance=ExtResource("2_755oh")]
+[node name="ClickTravel" parent="." index="4" unique_id=705077137 instance=ExtResource("2_755oh")]
 position = Vector2(574, -14)
-scene = "res://Scenes/Maps/comercial.tscn"
+scene = "res://Scenes/Maps/residencial.tscn"
+next_audio = ExtResource("3_phbd6")
