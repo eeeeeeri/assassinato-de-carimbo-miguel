@@ -119,5 +119,6 @@ autostart = true
 [node name="WalkSound" type="AudioStreamPlayer" parent="." unique_id=529295966]
 stream = SubResource("AudioStreamRandomizer_dey5f")
 volume_db = -12.0
+bus = &"SFX"
 
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]

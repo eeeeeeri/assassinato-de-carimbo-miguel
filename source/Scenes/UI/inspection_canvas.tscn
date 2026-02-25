@@ -558,6 +558,7 @@ one_shot = true
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=171526335]
 stream = ExtResource("12_yeqav")
 volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="pressed" from="3DObjectPanel/ButtonClose" to="." method="EndInspection"]
 [connection signal="tab_changed" from="TextPanel/TabContainer" to="." method="_on_tab_container_tab_changed"]

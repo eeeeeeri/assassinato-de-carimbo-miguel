@@ -4,10 +4,16 @@
 [ext_resource type="PackedScene" uid="uid://crtsmg6s70bm6" path="res://Scenes/UI/settings.tscn" id="2_2ceew"]
 [ext_resource type="Shader" uid="uid://cnugbujjfv030" path="res://CustomResources/Shaders/blur.gdshader" id="2_3vu23"]
 [ext_resource type="PackedScene" uid="uid://xn5yf12qhpmt" path="res://Scenes/UI/tutorial.tscn" id="2_a111y"]
+[ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="5_no3u0"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_no3u0"]
 shader = ExtResource("2_3vu23")
 shader_parameter/amount = 3.0000001425
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x1tur"]
+random_pitch = 1.3348398
+streams_count = 1
+stream_0/stream = ExtResource("5_no3u0")
 
 [node name="Pause" type="CanvasLayer" unique_id=1283916714]
 process_mode = 3
@@ -77,6 +83,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "AJUDA"
 
+[node name="Menu" type="Button" parent="Main/VBoxContainer" unique_id=922440410]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "MENU"
+
 [node name="Sair" type="Button" parent="Main/VBoxContainer" unique_id=557317014]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
@@ -106,9 +117,14 @@ offset_bottom = 690.0
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2123725489]
+stream = SubResource("AudioStreamRandomizer_x1tur")
+bus = &"SFX"
+
 [connection signal="button_up" from="Main/VBoxContainer/Continuar" to="." method="_on_continuar_button_up"]
 [connection signal="button_up" from="Main/VBoxContainer/Config" to="." method="_on_config_button_up"]
 [connection signal="button_up" from="Main/VBoxContainer/Ajuda" to="." method="_on_ajuda_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Menu" to="." method="_on_menu_button_up"]
 [connection signal="button_up" from="Main/VBoxContainer/Sair" to="." method="_on_sair_button_up"]
 [connection signal="button_up" from="Settings/BackButton" to="." method="_on_back_button_button_up"]
 [connection signal="button_up" from="Tutorial/BackButton" to="." method="_on_back_button_button_up"]

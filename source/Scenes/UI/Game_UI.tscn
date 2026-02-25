@@ -12,7 +12,7 @@ font_size = 25
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_4o8mf"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddusd"]
 resource_local_to_scene = true
 shader = ExtResource("4_ddusd")
 shader_parameter/shadow_offset = Vector2(0, 0)
@@ -106,7 +106,7 @@ scale = Vector2(0.275, 0.275)
 mouse_filter = 2
 
 [node name="Shadow" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_4o8mf")
+material = SubResource("ShaderMaterial_ddusd")
 
 [node name="Label" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="2" unique_id=324695650]
 visible = false
@@ -161,5 +161,6 @@ vertical_alignment = 1
 [node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=593048924]
 stream = ExtResource("3_j8f76")
 volume_db = -10.0
+bus = &"SFX"
 
 [editable path="Canvas/inputTooltips/SussyBaka"]
