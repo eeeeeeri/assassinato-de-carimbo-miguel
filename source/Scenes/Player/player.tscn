@@ -97,6 +97,7 @@ debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
 [node name="InspectionCanvasLayer" parent="." unique_id=1988823393 instance=ExtResource("4_dd0ac")]
 
 [node name="Mapa" parent="." unique_id=1576189297 instance=ExtResource("3_htcer")]
+process_mode = 4
 
 [node name="SusSelect2" parent="." unique_id=647023198 instance=ExtResource("6_oikmp")]
 visible = false
