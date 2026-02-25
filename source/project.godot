@@ -31,7 +31,7 @@ Music="*uid://cmgaa35ll2nq6"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
-window/size/mode=4
+window/size/mode=3
 window/size/resizable=false
 window/size/borderless=true
 window/stretch/mode="canvas_items"
@@ -129,3 +129,4 @@ journal={
 
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="mobile"
+environment/defaults/default_clear_color=Color(0, 0, 0, 1)
