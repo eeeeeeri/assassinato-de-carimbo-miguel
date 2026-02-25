@@ -10,10 +10,11 @@ config_version=5
 
 [application]
 
-config/name="O Assassinato de Carimbo Miguel"
-run/main_scene="uid://d4i27kar1d2u5"
+config/name="Casos de Carimbia"
+config/version="0.1"
+run/main_scene="uid://33q6vaoy6h8k"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="res://icon.svg"
+config/icon="uid://dua6lynxkyar5"
 
 [audio]
 
@@ -30,7 +31,10 @@ Music="*uid://cmgaa35ll2nq6"
 
 window/size/viewport_width=1280
 window/size/viewport_height=720
+window/size/resizable=false
+window/size/borderless=true
 window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [input]
 
