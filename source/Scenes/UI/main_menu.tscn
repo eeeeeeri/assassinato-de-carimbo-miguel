@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cly6xr12vfjuv" path="res://Scripts/UI/main_menu.gd" id="1_o14dv"]
 [ext_resource type="PackedScene" uid="uid://crtsmg6s70bm6" path="res://Scenes/UI/settings.tscn" id="2_u7lva"]
 [ext_resource type="PackedScene" uid="uid://xn5yf12qhpmt" path="res://Scenes/UI/tutorial.tscn" id="3_mrfpk"]
+[ext_resource type="PackedScene" uid="uid://cddct1kcs4qby" path="res://Scenes/UI/credits.tscn" id="4_u7lva"]
 
 [node name="MainMenu" type="Control" unique_id=421816059]
 layout_mode = 3
@@ -54,6 +55,11 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 36
 text = "AJUDA"
 
+[node name="Creditos" type="Button" parent="Main/VBoxContainer" unique_id=520249859]
+layout_mode = 2
+theme_override_font_sizes/font_size = 36
+text = "CRÉDITOS"
+
 [node name="Sair" type="Button" parent="Main/VBoxContainer" unique_id=856090810]
 layout_mode = 2
 theme_override_font_sizes/font_size = 36
@@ -85,9 +91,24 @@ offset_bottom = 690.0
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
+[node name="Credits" parent="." unique_id=1192477558 instance=ExtResource("4_u7lva")]
+visible = false
+layout_mode = 1
+
+[node name="BackButton" type="Button" parent="Credits" unique_id=1706535263]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 102.0
+offset_bottom = 66.0
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
 [connection signal="button_up" from="Main/VBoxContainer/Continuar" to="." method="_on_iniciar_button_up"]
 [connection signal="button_up" from="Main/VBoxContainer/Config" to="." method="_on_config_button_up"]
 [connection signal="button_up" from="Main/VBoxContainer/Ajuda" to="." method="_on_ajuda_button_up"]
+[connection signal="button_up" from="Main/VBoxContainer/Creditos" to="." method="_on_creditos_button_up"]
 [connection signal="button_up" from="Main/VBoxContainer/Sair" to="." method="_on_sair_button_up"]
 [connection signal="button_up" from="Settings/BackButton" to="." method="_on_back_button_button_up"]
 [connection signal="button_up" from="Tutorial/BackButton" to="." method="_on_back_button_button_up"]
+[connection signal="button_up" from="Credits/BackButton" to="." method="_on_back_button_button_up"]

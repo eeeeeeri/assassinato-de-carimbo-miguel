@@ -1,0 +1,108 @@
+[gd_scene format=3 uid="uid://cddct1kcs4qby"]
+
+[ext_resource type="Texture2D" uid="uid://div7fsto50ooo" path="res://Assets/Menu/felpojam_white.png" id="1_h87vg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrfpk"]
+font_size = 33
+
+[sub_resource type="LabelSettings" id="LabelSettings_4pqbp"]
+font_size = 41
+
+[sub_resource type="LabelSettings" id="LabelSettings_gih0s"]
+font_size = 35
+
+[node name="Credits" type="Control" unique_id=1192477558]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="backgorund" type="ColorRect" parent="." unique_id=399317057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="Label" type="Label" parent="." unique_id=301227045]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -205.0
+offset_top = 34.0
+offset_right = 201.0
+offset_bottom = 80.0
+grow_horizontal = 2
+text = "Jogo feito para:"
+label_settings = SubResource("LabelSettings_mrfpk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="." unique_id=45171655]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 141.0
+offset_top = 164.0
+offset_right = 275.0
+offset_bottom = 210.0
+grow_horizontal = 2
+text = "2026"
+label_settings = SubResource("LabelSettings_mrfpk")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1854814746]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -322.5
+offset_top = 247.0
+offset_right = 322.5
+offset_bottom = 364.0
+grow_horizontal = 2
+text = "Equipe:
+Molhos Mortais 🔥🔥🔥"
+label_settings = SubResource("LabelSettings_4pqbp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=1775318071]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -322.0
+offset_top = 374.0
+offset_right = 323.0
+offset_bottom = 690.0
+grow_horizontal = 2
+text = "eri ⚙️
+Eshlii 🎵🔊
+Flower 🎨
+Luci 🎨
+Ninjt500 ⚙️"
+label_settings = SubResource("LabelSettings_gih0s")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1300388485]
+self_modulate = Color(0.99607843, 0.21960784, 0.40392157, 1)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -214.0
+offset_top = 60.0
+offset_right = 214.0
+offset_bottom = 208.0
+grow_horizontal = 2
+texture = ExtResource("1_h87vg")
+expand_mode = 1
+stretch_mode = 5
