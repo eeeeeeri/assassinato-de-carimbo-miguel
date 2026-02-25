@@ -1,0 +1,190 @@
+[gd_scene format=3 uid="uid://d2v37w8i1og4j"]
+
+[ext_resource type="Texture2D" uid="uid://bfnbyscl76jsx" path="res://Assets/circle.png" id="1_odfs4"]
+[ext_resource type="Script" uid="uid://b6ctrtkrkj551" path="res://Scripts/UI/editable_stamp.gd" id="2_elx2m"]
+[ext_resource type="Texture2D" uid="uid://bg8rankhyt0md" path="res://Assets/Carimbo/idade/adulto.png" id="2_q0lb0"]
+[ext_resource type="PackedScene" uid="uid://dg4316gxkl21n" path="res://Scenes/UI/stamp_part_image_scene.tscn" id="3_0vqfi"]
+[ext_resource type="Texture2D" uid="uid://crdp5dtf4vcao" path="res://Assets/Carimbo/marca/boy.png" id="3_elx2m"]
+[ext_resource type="Texture2D" uid="uid://cfx3b3srvev1a" path="res://Assets/Carimbo/profissao/aposentado.png" id="4_0vqfi"]
+[ext_resource type="Texture2D" uid="uid://dknva67prsxj5" path="res://Assets/Carimbo/nascimento/1.png" id="5_2ke7c"]
+[ext_resource type="Texture2D" uid="uid://c68oi7v6bc678" path="res://Assets/Carimbo/familia/barriga.png" id="6_1mv5k"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_560rx"]
+
+[node name="EditableStamp" type="TextureRect" unique_id=1977885419]
+modulate = Color(0.69803923, 0.34509805, 0.078431375, 1)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.75
+offset_top = -221.75
+offset_right = 221.75
+offset_bottom = 221.75
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_odfs4")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_elx2m")
+stampPartScene = ExtResource("3_0vqfi")
+
+[node name="AgeContainer" type="TabContainer" parent="." unique_id=2083923122]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_560rx")
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="ageImg" type="TextureRect" parent="AgeContainer" unique_id=1603400940]
+layout_mode = 2
+texture = ExtResource("2_q0lb0")
+expand_mode = 1
+stretch_mode = 5
+metadata/_tab_index = 0
+
+[node name="MarkContainer" type="TabContainer" parent="." unique_id=1291302119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_560rx")
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="MarkImg" type="TextureRect" parent="MarkContainer" unique_id=1091371196]
+layout_mode = 2
+texture = ExtResource("3_elx2m")
+expand_mode = 1
+stretch_mode = 5
+metadata/_tab_index = 0
+
+[node name="ProfessionContainer" type="TabContainer" parent="." unique_id=1973352791]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_560rx")
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="ProfessionImg" type="TextureRect" parent="ProfessionContainer" unique_id=85418015]
+layout_mode = 2
+texture = ExtResource("4_0vqfi")
+expand_mode = 1
+stretch_mode = 5
+metadata/_tab_index = 0
+
+[node name="birthContainer" type="TabContainer" parent="." unique_id=382758173]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_560rx")
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="birthImg" type="TextureRect" parent="birthContainer" unique_id=1031809262]
+layout_mode = 2
+texture = ExtResource("5_2ke7c")
+expand_mode = 1
+stretch_mode = 5
+metadata/_tab_index = 0
+
+[node name="familyContainer" type="TabContainer" parent="." unique_id=1536777011]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_560rx")
+current_tab = 0
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="familyImg" type="TextureRect" parent="familyContainer" unique_id=902550527]
+layout_mode = 2
+texture = ExtResource("6_1mv5k")
+expand_mode = 1
+stretch_mode = 5
+metadata/_tab_index = 0
+
+[node name="AgeButton" type="TextureButton" parent="." unique_id=772996640]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="professionButton" type="TextureButton" parent="." unique_id=855681604]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.1550169
+anchor_top = 0.31473684
+anchor_right = 0.8449831
+anchor_bottom = 0.68526316
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="MarkButton" type="TextureButton" parent="." unique_id=2019467625]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.29789475
+anchor_top = 0.10842105
+anchor_right = 0.7021053
+anchor_bottom = 0.34210527
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="birthButton" type="TextureButton" parent="." unique_id=918420709]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3463158
+anchor_top = 0.69578946
+anchor_right = 0.6536842
+anchor_bottom = 0.86421055
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="familyButton" type="TextureButton" parent="." unique_id=37968289]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.3631579
+anchor_top = 0.31263158
+anchor_right = 0.63684213
+anchor_bottom = 0.6873684
+grow_horizontal = 2
+grow_vertical = 2
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="AgeButton" to="." method="PressStampPart" binds= [0]]
+[connection signal="pressed" from="professionButton" to="." method="PressStampPart" binds= [1]]
+[connection signal="pressed" from="MarkButton" to="." method="PressStampPart" binds= [2]]
+[connection signal="pressed" from="birthButton" to="." method="PressStampPart" binds= [3]]
+[connection signal="pressed" from="familyButton" to="." method="PressStampPart" binds= [4]]

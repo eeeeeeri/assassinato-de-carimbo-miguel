@@ -11,9 +11,17 @@
 [ext_resource type="Resource" uid="uid://duyxp42ds1oy7" path="res://CustomResources/Characters/TestChar/CharacterTest.tres" id="9_4vul5"]
 [ext_resource type="Resource" uid="uid://drc74scictreg" path="res://CustomResources/Save/comercialVisibleStateData.tres" id="10_pfscg"]
 [ext_resource type="Resource" uid="uid://cifgbo4y764k1" path="res://CustomResources/Save/residencialVisibleStateData.tres" id="11_f4wk7"]
+[ext_resource type="Resource" uid="uid://v3xw158vkd3n" path="res://CustomResources/Stamps/journalGuessStamps/ArmandoGuessStamp.tres" id="12_4vul5"]
 [ext_resource type="Script" uid="uid://fhsl8l0k7foi" path="res://Scripts/Characters/charactersLoader.gd" id="12_dg7xn"]
+[ext_resource type="Resource" uid="uid://cga0s6bcb12sp" path="res://CustomResources/Stamps/journalGuessStamps/BarbaraGuessStamp.tres" id="13_pfscg"]
+[ext_resource type="Resource" uid="uid://dbbbjkuonoyy7" path="res://CustomResources/Stamps/journalGuessStamps/CaduGuessStamp.tres" id="14_f4wk7"]
+[ext_resource type="Resource" uid="uid://c44ll8dlb177a" path="res://CustomResources/Stamps/journalGuessStamps/DoloresGuessStamp.tres" id="15_dg7xn"]
+[ext_resource type="Resource" uid="uid://cdauuf4p24duy" path="res://CustomResources/Stamps/journalGuessStamps/FotocopiaGuessStamp.tres" id="16_pec46"]
+[ext_resource type="Resource" uid="uid://cmirh2mlor13s" path="res://CustomResources/Stamps/journalGuessStamps/JairGuessStamp.tres" id="17_px31x"]
+[ext_resource type="Resource" uid="uid://ru5c5eq5o6jc" path="res://CustomResources/Stamps/journalGuessStamps/MarkaGuessStamp.tres" id="18_di235"]
+[ext_resource type="Resource" uid="uid://baitihl2dush6" path="res://CustomResources/Stamps/journalGuessStamps/PequenaGuessStamp.tres" id="19_awdrt"]
 
 [resource]
 script = ExtResource("12_dg7xn")
-Resources = Array[Resource]([ExtResource("1_8ft67"), ExtResource("2_0s5pq"), ExtResource("3_e8him"), ExtResource("4_b4i11"), ExtResource("5_wlosa"), ExtResource("6_gc2pg"), ExtResource("7_e30vg"), ExtResource("8_vpsi6"), ExtResource("9_4vul5"), ExtResource("10_pfscg"), ExtResource("11_f4wk7")])
+Resources = Array[Resource]([ExtResource("1_8ft67"), ExtResource("2_0s5pq"), ExtResource("3_e8him"), ExtResource("4_b4i11"), ExtResource("5_wlosa"), ExtResource("6_gc2pg"), ExtResource("7_e30vg"), ExtResource("8_vpsi6"), ExtResource("9_4vul5"), ExtResource("10_pfscg"), ExtResource("11_f4wk7"), ExtResource("12_4vul5"), ExtResource("13_pfscg"), ExtResource("14_f4wk7"), ExtResource("15_dg7xn"), ExtResource("16_pec46"), ExtResource("17_px31x"), ExtResource("18_di235"), ExtResource("19_awdrt")])
 metadata/_custom_type_script = "uid://fhsl8l0k7foi"

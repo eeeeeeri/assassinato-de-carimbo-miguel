@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://m3cjfjrwg6ke" path="res://Scenes/UI/mapa.tscn" id="3_htcer"]
 [ext_resource type="PackedScene" uid="uid://dsjfujutu60vs" path="res://Scenes/UI/inspection_canvas.tscn" id="4_dd0ac"]
 [ext_resource type="PackedScene" uid="uid://brigp3oi0gu53" path="res://Scenes/UI/sus_select.tscn" id="4_mtuoh"]
+[ext_resource type="PackedScene" uid="uid://gya30ibur3nr" path="res://Scenes/UI/stampJournal.tscn" id="6_oikmp"]
 [ext_resource type="PackedScene" uid="uid://rfst80paug5w" path="res://Scenes/UI/pause.tscn" id="7_0u5uq"]
 [ext_resource type="AudioStream" uid="uid://djyr38dafs2j3" path="res://Assets/SFX/stone00.wav" id="8_74mp2"]
 [ext_resource type="AudioStream" uid="uid://drg3nq4pb3dva" path="res://Assets/SFX/stone01.wav" id="9_oikmp"]
@@ -97,7 +98,10 @@ debug_color = Color(0.9695274, 0, 0.46390176, 0.41960785)
 
 [node name="Mapa" parent="." unique_id=1576189297 instance=ExtResource("3_htcer")]
 
-[node name="SusSelect" parent="." unique_id=647023198 instance=ExtResource("4_mtuoh")]
+[node name="SusSelect2" parent="." unique_id=647023198 instance=ExtResource("6_oikmp")]
+visible = false
+
+[node name="SusSelect" parent="." unique_id=2081621417 instance=ExtResource("4_mtuoh")]
 visible = false
 
 [node name="Pause" parent="." unique_id=1283916714 instance=ExtResource("7_0u5uq")]

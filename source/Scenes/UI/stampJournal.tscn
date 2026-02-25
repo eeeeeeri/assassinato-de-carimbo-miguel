@@ -1,0 +1,461 @@
+[gd_scene format=3 uid="uid://gya30ibur3nr"]
+
+[ext_resource type="Script" uid="uid://cw4wh1w5c6cv" path="res://Scripts/UI/stamp_journal.gd" id="1_mxt4o"]
+[ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="2_ep287"]
+[ext_resource type="PackedScene" uid="uid://d2v37w8i1og4j" path="res://Scenes/UI/editableStamp.tscn" id="2_vffhr"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_37eg1"]
+[ext_resource type="Resource" uid="uid://v3xw158vkd3n" path="res://CustomResources/Stamps/journalGuessStamps/ArmandoGuessStamp.tres" id="5_wep0g"]
+[ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="6_8cet4"]
+[ext_resource type="Resource" uid="uid://cga0s6bcb12sp" path="res://CustomResources/Stamps/journalGuessStamps/BarbaraGuessStamp.tres" id="6_tyjf5"]
+[ext_resource type="Resource" uid="uid://dbbbjkuonoyy7" path="res://CustomResources/Stamps/journalGuessStamps/CaduGuessStamp.tres" id="7_dqn03"]
+[ext_resource type="Resource" uid="uid://dwmq0qv80wpua" path="res://CustomResources/Stamps/ArmandoStamp.tres" id="7_vkn1i"]
+[ext_resource type="Resource" uid="uid://c44ll8dlb177a" path="res://CustomResources/Stamps/journalGuessStamps/DoloresGuessStamp.tres" id="8_0tlxq"]
+[ext_resource type="Resource" uid="uid://bd4aw6hsigqte" path="res://CustomResources/Stamps/BarbaraStamp.tres" id="9_xaw7t"]
+[ext_resource type="Resource" uid="uid://c6chi2lhbrfu5" path="res://CustomResources/Stamps/CaduStamp.tres" id="11_18b7q"]
+[ext_resource type="Resource" uid="uid://cydn6u1ekdupt" path="res://CustomResources/Stamps/CaduStampKid.tres" id="12_evhj2"]
+[ext_resource type="Resource" uid="uid://c5f26onagudlm" path="res://CustomResources/Stamps/DoloresStamp1.tres" id="14_yb0at"]
+[ext_resource type="Resource" uid="uid://vgrldba0u7cn" path="res://CustomResources/Stamps/DoloresStamp2.tres" id="15_m48n0"]
+[ext_resource type="Resource" uid="uid://cdauuf4p24duy" path="res://CustomResources/Stamps/journalGuessStamps/FotocopiaGuessStamp.tres" id="16_qksq4"]
+[ext_resource type="Resource" uid="uid://71j6eoqoo6yo" path="res://CustomResources/Stamps/FotocopiaStamp.tres" id="17_0p6f8"]
+[ext_resource type="Resource" uid="uid://cmirh2mlor13s" path="res://CustomResources/Stamps/journalGuessStamps/JairGuessStamp.tres" id="18_x7omx"]
+[ext_resource type="Resource" uid="uid://d3id6u266ummr" path="res://CustomResources/Stamps/JairStamp.tres" id="19_g0egy"]
+[ext_resource type="Resource" uid="uid://ru5c5eq5o6jc" path="res://CustomResources/Stamps/journalGuessStamps/MarkaGuessStamp.tres" id="20_v8byh"]
+[ext_resource type="Resource" uid="uid://ocucq2i7ucxc" path="res://CustomResources/Stamps/MarkaStamp.tres" id="21_12jm4"]
+[ext_resource type="Resource" uid="uid://baitihl2dush6" path="res://CustomResources/Stamps/journalGuessStamps/PequenaGuessStamp.tres" id="22_jqt7w"]
+[ext_resource type="Resource" uid="uid://nsugappdoxt" path="res://CustomResources/Stamps/PequenaStamp.tres" id="23_lyxpq"]
+[ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="24_vkn1i"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ep287"]
+font_size = 51
+
+[sub_resource type="Animation" id="Animation_mxt4o"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_vffhr"]
+resource_name = "hide"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 720)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_382ya"]
+resource_name = "show"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 720), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ep287"]
+_data = {
+&"RESET": SubResource("Animation_mxt4o"),
+&"hide": SubResource("Animation_vffhr"),
+&"show": SubResource("Animation_382ya")
+}
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xaw7t"]
+random_pitch = 1.3348398
+streams_count = 1
+stream_0/stream = ExtResource("24_vkn1i")
+
+[node name="StampJournal" type="CanvasLayer" unique_id=647023198 node_paths=PackedStringArray("editableStamps")]
+script = ExtResource("1_mxt4o")
+almostColor = Color(0.75266093, 0.7526609, 0, 1)
+editableStamps = [NodePath("Panel/CenterContainer/GridContainer/Armando/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Barbara/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Cadu/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Dolores/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Fotocopia/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Jair/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Marka/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Pequena/EditableStamp")]
+
+[node name="Panel" type="Control" parent="." unique_id=185544462]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="Panel" unique_id=115388172]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.6784314)
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel" unique_id=1105810027]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = 30.0
+offset_right = -439.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GridContainer" type="GridContainer" parent="Panel/CenterContainer" unique_id=1780098921]
+layout_mode = 2
+theme_override_constants/h_separation = 117
+theme_override_constants/v_separation = 15
+columns = 2
+
+[node name="Armando" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=1000171449]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Armando" unique_id=1594300993]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Armando/char" unique_id=573520760]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Armando" unique_id=1977885419 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("5_wep0g")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("7_vkn1i")])
+
+[node name="Barbara" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=876122420]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Barbara" unique_id=740332031]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Barbara/char" unique_id=1951173767]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Barbara" unique_id=957339837 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("6_tyjf5")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("9_xaw7t")])
+
+[node name="Cadu" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=1496070484]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Cadu" unique_id=1416586844]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Cadu/char" unique_id=1451897168]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Cadu" unique_id=1701396159 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("7_dqn03")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("11_18b7q"), ExtResource("12_evhj2")])
+
+[node name="Dolores" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=1563576908]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Dolores" unique_id=1041630436]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Dolores/char" unique_id=325353812]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Dolores" unique_id=277947482 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("8_0tlxq")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("14_yb0at"), ExtResource("15_m48n0")])
+
+[node name="Fotocopia" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=1310252887]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Fotocopia" unique_id=1275167509]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Fotocopia/char" unique_id=1638920192]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Fotocopia" unique_id=391469616 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("16_qksq4")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("17_0p6f8")])
+
+[node name="Jair" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=1201365105]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Jair" unique_id=542256083]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Jair/char" unique_id=421957026]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Jair" unique_id=757618845 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("18_x7omx")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("19_g0egy")])
+
+[node name="Marka" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=1451079834]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Marka" unique_id=475793299]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Marka/char" unique_id=302005213]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Marka" unique_id=735083637 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("20_v8byh")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("21_12jm4")])
+
+[node name="Pequena" type="HBoxContainer" parent="Panel/CenterContainer/GridContainer" unique_id=1202175137]
+custom_minimum_size = Vector2(300, 150)
+layout_mode = 2
+alignment = 1
+
+[node name="char" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Pequena" unique_id=2047503143]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_ep287")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Pequena/char" unique_id=20553193]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.12195122
+anchor_top = 0.008
+anchor_right = 0.8568293
+anchor_bottom = 1.42112
+offset_right = 40.61
+offset_bottom = 79.36
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.69, 0.69)
+texture = ExtResource("3_37eg1")
+metadata/_edit_use_anchors_ = true
+
+[node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Pequena" unique_id=318924809 instance=ExtResource("2_vffhr")]
+layout_mode = 2
+size_flags_horizontal = 3
+guessStamp = ExtResource("22_jqt7w")
+correctStamps = Array[ExtResource("6_8cet4")]([ExtResource("23_lyxpq")])
+
+[node name="feedbackText" type="Label" parent="Panel" unique_id=273820747]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -377.0
+offset_top = 41.0
+offset_right = -72.0
+offset_bottom = -41.0
+grow_horizontal = 0
+grow_vertical = 2
+text = "Três ou mais carimbos estão incorretos"
+label_settings = SubResource("LabelSettings_ep287")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=36216388]
+libraries/ = SubResource("AnimationLibrary_ep287")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2573128]
+stream = SubResource("AudioStreamRandomizer_xaw7t")
+volume_db = -10.0
