@@ -84,6 +84,7 @@ metadata/_edit_lock_ = true
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="3" unique_id=152049481]
 collision_layer = 5
 collision_mask = 5
+metadata/_edit_lock_ = true
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0" unique_id=1914651995]
 build_mode = 1

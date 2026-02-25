@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://bl04ewkivmfmt" path="res://CustomResources/Characters/Pequena/Pequena.tres" id="2_io5p4"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_plg7s"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_10des"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_io5p4"]
 resource_local_to_scene = true
 shader = ExtResource("3_plg7s")
 shader_parameter/thickness = 0.0
@@ -19,6 +19,7 @@ shader_parameter/max_or_add = false
 
 [node name="pequenaInteractable" unique_id=705077137 instance=ExtResource("1_io5p4")]
 Character = ExtResource("2_io5p4")
+audio_pitch = 1.4
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_10des")
+material = SubResource("ShaderMaterial_io5p4")

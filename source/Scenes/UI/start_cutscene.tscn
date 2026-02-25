@@ -1,0 +1,288 @@
+[gd_scene format=3 uid="uid://b3u71jhc80r0q"]
+
+[ext_resource type="Script" uid="uid://dadnqocgce3l5" path="res://Scripts/UI/start_cutscene.gd" id="1_cl4oq"]
+[ext_resource type="Script" uid="uid://bnbv38ity1a1b" path="res://Scripts/UI/map_view.gd" id="1_k4ntd"]
+[ext_resource type="Shader" uid="uid://fotlq7tvk1fi" path="res://CustomResources/Shaders/tilt.gdshader" id="2_qu41u"]
+[ext_resource type="Texture2D" uid="uid://brncxjv0xy0y1" path="res://Assets/Pistas/envelope_atras.png" id="2_rdcee"]
+[ext_resource type="Texture2D" uid="uid://crl3u6yrhs8d" path="res://Assets/Pistas/envelope_frente.png" id="3_8j4dp"]
+[ext_resource type="Texture2D" uid="uid://b8pkhi0fok274" path="res://Assets/Pistas/envelope_fechado.png" id="4_cl4oq"]
+[ext_resource type="Texture2D" uid="uid://xe58v8p075s5" path="res://Assets/Pistas/clipmask.png" id="4_qu41u"]
+[ext_resource type="Texture2D" uid="uid://dgwushhxsk5va" path="res://Assets/Pistas/carta.png" id="5_n8ltu"]
+[ext_resource type="AudioStream" uid="uid://nvgiklh7rdj8" path="res://CustomResources/AudioStreams/paper.tres" id="9_n8ltu"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n8ltu"]
+shader = ExtResource("2_qu41u")
+shader_parameter/fov = 90.0
+shader_parameter/cull_back = true
+shader_parameter/y_rot = 0.0
+shader_parameter/x_rot = 0.0
+shader_parameter/inset = 0.0
+
+[sub_resource type="Animation" id="Animation_jpq7y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/EnvelopeFechado:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/EnvelopeAtras:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/EnvelopeFrente:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 256)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/SubViewport/EnvelopeAtras:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 256)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/Clipmask/Carta:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 379)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SubViewportContainer/SubViewport/Clipmask/Carta:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SubViewportContainer/SubViewport/Clipmask:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(640, 256)]
+}
+
+[sub_resource type="Animation" id="Animation_m4isp"]
+resource_name = "abrir carta"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SubViewportContainer/SubViewport/EnvelopeFechado:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SubViewportContainer/SubViewport/EnvelopeAtras:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AudioStreamPlayer:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SubViewportContainer/SubViewport/EnvelopeFrente:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 256), Vector2(640, 980)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SubViewportContainer/SubViewport/EnvelopeAtras:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 256), Vector2(640, 980)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SubViewportContainer/SubViewport/Clipmask/Carta:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 379), Vector2(0, 153), Vector2(0, -30)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SubViewportContainer/SubViewport/Clipmask/Carta:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SubViewportContainer/SubViewport/Clipmask:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0.5, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(640, 256), Vector2(640, 374)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_jpq7y"]
+_data = {
+&"RESET": SubResource("Animation_jpq7y"),
+&"abrir carta": SubResource("Animation_m4isp")
+}
+
+[node name="StartCutscene" type="Control" unique_id=1022084664]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cl4oq")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="." unique_id=2134443453]
+material = SubResource("ShaderMaterial_n8ltu")
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -256.0
+offset_right = 256.0
+offset_bottom = 256.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+script = ExtResource("1_k4ntd")
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer" unique_id=1822737908]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="EnvelopeAtras" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1412409870]
+visible = false
+position = Vector2(640, 256)
+texture = ExtResource("2_rdcee")
+
+[node name="Clipmask" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1215435084]
+clip_children = 1
+position = Vector2(640, 256)
+texture = ExtResource("4_qu41u")
+
+[node name="Carta" type="Sprite2D" parent="SubViewportContainer/SubViewport/Clipmask" unique_id=1050397313]
+position = Vector2(0, 379)
+texture = ExtResource("5_n8ltu")
+
+[node name="EnvelopeFrente" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=809313293]
+position = Vector2(640, 256)
+texture = ExtResource("3_8j4dp")
+
+[node name="EnvelopeFechado" type="Sprite2D" parent="SubViewportContainer/SubViewport" unique_id=1014630557]
+position = Vector2(640, 256)
+texture = ExtResource("4_cl4oq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=761006765]
+libraries/ = SubResource("AnimationLibrary_jpq7y")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=335969236]
+stream = ExtResource("9_n8ltu")
+bus = &"SFX"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
+[connection signal="gui_input" from="SubViewportContainer" to="SubViewportContainer" method="_on_gui_input"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

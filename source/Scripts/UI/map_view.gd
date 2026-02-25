@@ -1,7 +1,7 @@
 extends SubViewportContainer
 
-var angle_x_max = 15.0
-var angle_y_max = 15.0
+@export var angle_x_max = 15.0
+@export var angle_y_max = 15.0
 
 func _ready() -> void:
 	angle_x_max = deg_to_rad(angle_x_max)

@@ -43,7 +43,7 @@ func _on_config_button_up() -> void:
 
 func _on_iniciar_button_up() -> void:
 	audio_stream_player.play()
-	SceneTransition.change_scene_to("res://Scenes/Maps/residencial.tscn",CARIMBO_MIGUEL_OST___VILA_DE_CARIMBIA)
+	SceneTransition.change_scene_to("res://Scenes/UI/start_cutscene.tscn",CARIMBO_MIGUEL_OST___VILA_DE_CARIMBIA)
 
 func _on_creditos_button_up() -> void:
 	main.visible = false
