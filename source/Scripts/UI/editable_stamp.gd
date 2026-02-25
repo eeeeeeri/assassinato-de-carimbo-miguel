@@ -100,9 +100,9 @@ func SetCurrentStamp(stamp:StampData) -> void:
 	isCorrect = CheckCorrectStamp()
 	OnUpdateIsCorrect.emit()
 	
-func _input(event: InputEvent) -> void:
-	if(Input.is_key_pressed(KEY_B)):
-		SetCurrentStamp(correctStamps.get(0))
-	
-	if(Input.is_key_pressed(KEY_C)):
-		UpdateCurrentGuess()
+#func _input(event: InputEvent) -> void:
+	#if(Input.is_key_pressed(KEY_B)):
+		#SetCurrentStamp(correctStamps.get(0))
+	#
+	#if(Input.is_key_pressed(KEY_C)):
+		#UpdateCurrentGuess()

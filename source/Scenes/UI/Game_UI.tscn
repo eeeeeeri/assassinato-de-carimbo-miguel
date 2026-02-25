@@ -2,10 +2,26 @@
 
 [ext_resource type="Script" uid="uid://b1h4kw2y7hu7i" path="res://Scripts/UI/gameUI.gd" id="1_acqpm"]
 [ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="2_5lict"]
+[ext_resource type="PackedScene" uid="uid://b6qhhcbw14o3w" path="res://Scenes/UI/sussy_baka.tscn" id="3_8od7p"]
 [ext_resource type="AudioStream" uid="uid://bmx3vtrhsexr7" path="res://CustomResources/AudioStreams/coin.tres" id="3_j8f76"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="4_ddusd"]
+[ext_resource type="PackedScene" uid="uid://x0e7vbsd852" path="res://Scenes/UI/modular_stamp.tscn" id="5_ddusd"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j8f76"]
-font_size = 40
+font_size = 25
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4o8mf"]
+resource_local_to_scene = true
+shader = ExtResource("4_ddusd")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mi66r"]
+font_size = 45
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
 
 [node name="GameUI" type="CanvasLayer" unique_id=1169247324]
 script = ExtResource("1_acqpm")
@@ -22,38 +38,128 @@ mouse_filter = 2
 [node name="CoinInfo" type="Control" parent="Canvas" unique_id=2070201393]
 layout_mode = 1
 anchors_preset = 0
-offset_right = 229.0
-offset_bottom = 117.0
+offset_left = 1.0
+offset_top = 16.0
+offset_right = 128.0
+offset_bottom = 85.0
 mouse_filter = 2
 
 [node name="TextureRect" type="TextureRect" parent="Canvas/CoinInfo" unique_id=909706289]
 layout_mode = 1
-anchors_preset = 8
+anchors_preset = 5
 anchor_left = 0.5
-anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -71.5
-offset_top = -26.5
-offset_right = -18.5
-offset_bottom = 26.5
+offset_left = -47.5
+offset_right = -14.5
+offset_bottom = 33.0
 grow_horizontal = 2
-grow_vertical = 2
 mouse_filter = 2
 texture = ExtResource("2_5lict")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="CoinsCount" type="Label" parent="Canvas/CoinInfo" unique_id=840154043]
-layout_mode = 0
-offset_left = 111.0
-offset_top = 32.0
-offset_right = 191.0
-offset_bottom = 87.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -10.5
+offset_right = 69.5
+offset_bottom = 35.0
+grow_horizontal = 2
 text = "0"
 label_settings = SubResource("LabelSettings_j8f76")
+vertical_alignment = 1
+
+[node name="inputTooltips" type="Control" parent="Canvas" unique_id=536585365]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -189.99988
+offset_top = -183.0
+offset_right = 54.000122
+offset_bottom = 51.0
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.77, 0.77)
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="SussyBaka" parent="Canvas/inputTooltips" unique_id=423670737 instance=ExtResource("3_8od7p")]
+process_mode = 4
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -151.0
+offset_top = -253.36363
+offset_right = 49.0
+offset_bottom = -13.363617
+grow_horizontal = 0
+grow_vertical = 0
+scale = Vector2(0.275, 0.275)
+mouse_filter = 2
+
+[node name="Shadow" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_4o8mf")
+
+[node name="Label" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="2" unique_id=324695650]
+visible = false
+
+[node name="LabelSusSelect" type="Label" parent="Canvas/inputTooltips" unique_id=1649522843]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -170.36362
+offset_right = -90.0
+offset_bottom = -107.36362
+grow_horizontal = 0
+grow_vertical = 0
+text = "Q"
+label_settings = SubResource("LabelSettings_mi66r")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="ModularStamp" parent="Canvas/inputTooltips" unique_id=25480418 instance=ExtResource("5_ddusd")]
+process_mode = 4
+layout_mode = 0
+offset_left = 165.0
+offset_top = 155.75322
+offset_right = 381.0
+offset_bottom = 371.75323
+scale = Vector2(0.255, 0.255)
+mouse_filter = 2
+mouse_behavior_recursive = 1
+
+[node name="Labeljournal" type="Label" parent="Canvas/inputTooltips" unique_id=699342774]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -170.0
+offset_top = -87.24678
+offset_right = -90.0
+offset_bottom = -24.24678
+grow_horizontal = 0
+grow_vertical = 0
+text = "Tab"
+label_settings = SubResource("LabelSettings_mi66r")
+horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="CoinSound" type="AudioStreamPlayer" parent="." unique_id=593048924]
 stream = ExtResource("3_j8f76")
 volume_db = -10.0
+
+[editable path="Canvas/inputTooltips/SussyBaka"]

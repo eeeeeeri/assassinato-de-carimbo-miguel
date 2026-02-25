@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://brf6vmqxym01r"]
 
 [ext_resource type="Shader" path="res://CustomResources/Shaders/tilt.gdshader" id="1_gg3sq"]
-[ext_resource type="Script" path="res://Scripts/UI/map_view.gd" id="2_8dmld"]
+[ext_resource type="Script" uid="uid://bnbv38ity1a1b" path="res://Scripts/UI/map_view.gd" id="2_8dmld"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nexxf"]
 shader = ExtResource("1_gg3sq")
@@ -20,13 +20,14 @@ grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 mouse_filter = 0
+stretch = true
 script = ExtResource("2_8dmld")
 metadata/_tab_index = 1
 
 [node name="SubViewport" type="SubViewport" parent="." unique_id=2066409982]
 transparent_bg = true
 handle_input_locally = false
-size = Vector2i(1280, 720)
+size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
 [node name="FinalImage" type="TextureRect" parent="SubViewport" unique_id=1721593530]
