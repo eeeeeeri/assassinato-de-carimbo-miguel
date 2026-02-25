@@ -456,3 +456,4 @@ libraries/ = SubResource("AnimationLibrary_ep287")
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2573128]
 stream = SubResource("AudioStreamRandomizer_xaw7t")
 volume_db = -10.0
+bus = &"SFX"

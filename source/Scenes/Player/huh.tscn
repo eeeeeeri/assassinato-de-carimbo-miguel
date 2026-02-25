@@ -42,5 +42,6 @@ script = ExtResource("2_1kgf5")
 [node name="HuhSound" type="AudioStreamPlayer" parent="." unique_id=1083534069]
 stream = SubResource("AudioStreamRandomizer_s1ewp")
 volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="finished" from="." to="." method="_on_finished"]
