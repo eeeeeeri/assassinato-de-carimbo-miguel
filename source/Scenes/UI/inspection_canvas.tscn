@@ -398,6 +398,7 @@ expand_mode = 1
 stretch_mode = 5
 
 [node name="AgeContainer" type="TabContainer" parent="StampLockPanel/Padlock" unique_id=200918125]
+modulate = Color(0.2784314, 0.2901961, 0.3254902, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -415,6 +416,7 @@ tabs_visible = false
 switch_on_drag_hover = false
 
 [node name="MarkContainer" type="TabContainer" parent="StampLockPanel/Padlock" unique_id=681856817]
+modulate = Color(0.2784314, 0.2901961, 0.3254902, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -432,6 +434,7 @@ tabs_visible = false
 switch_on_drag_hover = false
 
 [node name="ProfessionContainer" type="TabContainer" parent="StampLockPanel/Padlock" unique_id=2098083872]
+modulate = Color(0.2784314, 0.2901961, 0.3254902, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -449,6 +452,7 @@ tabs_visible = false
 switch_on_drag_hover = false
 
 [node name="birthContainer" type="TabContainer" parent="StampLockPanel/Padlock" unique_id=1071001043]
+modulate = Color(0.2784314, 0.2901961, 0.3254902, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -466,6 +470,7 @@ tabs_visible = false
 switch_on_drag_hover = false
 
 [node name="familyContainer" type="TabContainer" parent="StampLockPanel/Padlock" unique_id=365408581]
+modulate = Color(0.2784314, 0.2901961, 0.3254902, 1)
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

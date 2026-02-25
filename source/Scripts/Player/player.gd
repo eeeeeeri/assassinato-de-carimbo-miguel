@@ -30,10 +30,12 @@ func _ready() -> void:
 	GlobalResources.player = self
 	GlobalResources.GLOBAL_EVENTS.OnInteract.connect(_on_interact)
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(_end_inspection)
-	GlobalResources.GLOBAL_EVENTS.MapOpen.connect(map_open)
-	GlobalResources.GLOBAL_EVENTS.MapClose.connect(map_close)
-	GlobalResources.GLOBAL_EVENTS.SusOpen.connect(sus_open)
-	GlobalResources.GLOBAL_EVENTS.SusClose.connect(sus_close)
+	GlobalResources.GLOBAL_EVENTS.MapOpen.connect(tab_open)
+	GlobalResources.GLOBAL_EVENTS.MapClose.connect(tab_close)
+	GlobalResources.GLOBAL_EVENTS.SusOpen.connect(tab_open)
+	GlobalResources.GLOBAL_EVENTS.SusClose.connect(tab_close)
+	GlobalResources.GLOBAL_EVENTS.JournalOpen.connect(tab_open)
+	GlobalResources.GLOBAL_EVENTS.JournalClose.connect(tab_close)
 	GlobalResources.GLOBAL_EVENTS.MoveToObject.connect(move_to_object)
 	GlobalResources.GLOBAL_EVENTS.StopMoving.connect(stop_moving)
 	GlobalResources.GLOBAL_EVENTS.Paused.connect(paused)
@@ -130,21 +132,11 @@ func _on_interact():
 func _end_inspection():
 	interationCalls -= 1
 
-func map_open() -> void:
+func tab_open() -> void:
 	interationCalls += 1
 
-
-func map_close() -> void:
+func tab_close() -> void:
 	interationCalls -= 1
-
-
-func sus_open() -> void:
-	interationCalls += 1
-
-
-func sus_close() -> void:
-	interationCalls -= 1
-
 
 func paused() -> void:
 	in_menu = true
