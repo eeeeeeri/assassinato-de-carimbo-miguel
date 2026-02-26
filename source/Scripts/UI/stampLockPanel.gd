@@ -14,6 +14,9 @@ class_name StampLockPanel extends Control
 @onready var check_timer: Timer = $CheckTimer
 @onready var animation_player: AnimationPlayer = $lock/AnimationPlayer
 
+@onready var lock_interact: AudioStreamPlayer = $LockInteract
+@onready var unlock: AudioStreamPlayer = $Unlock
+
 var tabContainers:Array[TabContainer] = []
 var correctStamp:StampData
 var correctSignal:Signal
@@ -68,6 +71,7 @@ func PressStampPart(containerIdx:int) -> void:
 		container.select_next_available()
 	else: container.current_tab = 0
 	
+	lock_interact.play()
 	check_timer.start()
 	
 func CheckCorrectStamp() -> void:
@@ -78,6 +82,7 @@ func CheckCorrectStamp() -> void:
 			button.disabled = true
 		
 		animation_player.play("lockOpen")
+		unlock.play()
 		animation_player.animation_finished.connect(func(animName:String):
 			if(animName == "lockOpen"):
 				correctSignal.emit()

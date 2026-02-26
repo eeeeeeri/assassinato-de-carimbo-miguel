@@ -11,12 +11,14 @@ const PORTRAIT_TEMP = preload("uid://bn720yj88xobh")
 @onready var nao: Button = $PanelContainer/VBoxContainer/Confirm/Nao
 @onready var culpado_select: Button = $PanelContainer/VBoxContainer/CulpadoSelect
 @onready var culpados_box: HBoxContainer = $PanelContainer/VBoxContainer/Culpados
+@onready var click: AudioStreamPlayer = $Click
 
 var showing = false
 var suspeitos = []
 var culpados = []
 var confirming = false
 var correct := 0
+var lockedin := false
 
 func _ready() -> void:
 	panel_container.visible = false
@@ -24,7 +26,7 @@ func _ready() -> void:
 		suspeitos.append(i)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("select_culpado"):
+	if Input.is_action_just_pressed("select_culpado") && !lockedin:
 		if showing:
 			animation_player.play("hide")
 			GlobalResources.GLOBAL_EVENTS.SusClose.emit()
@@ -37,7 +39,7 @@ func _process(delta: float) -> void:
 			visible = true
 			showing = true
 	
-	if Input.is_action_just_pressed("Cancel") && showing:
+	if Input.is_action_just_pressed("Cancel") && showing && !lockedin:
 		animation_player.play("hide")
 		GlobalResources.GLOBAL_EVENTS.SusClose.emit()
 		showing = false
@@ -49,6 +51,7 @@ func _shake(value: float) -> void:
 
 
 func _on_culpado_select_button_up() -> void:
+	click.play()
 	for i in suspeitos:
 		if i.selected:
 			var culpado = CULPADO.instantiate()
@@ -62,6 +65,7 @@ func _on_culpado_select_button_up() -> void:
 
 
 func _on_nao_button_up() -> void:
+	click.play()
 	for i in culpados_box.get_children():
 		culpados_box.remove_child(i)
 	culpados.clear()
@@ -71,6 +75,9 @@ func _on_nao_button_up() -> void:
 
 
 func _on_sim_button_up() -> void:
+	click.play()
+	lockedin = true
+	Music._mute()
 	for i in culpados:
 		if i.sus_name == "Cadu" or i.sus_name == "Armando":
 			correct += 1
