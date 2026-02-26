@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://dg4316gxkl21n" path="res://Scenes/UI/stamp_part_image_scene.tscn" id="8_6tbbf"]
 [ext_resource type="Texture2D" uid="uid://c7xckcfqbi4fc" path="res://Assets/Carimbo/padlockLock.png" id="9_r3vh6"]
 [ext_resource type="Texture2D" uid="uid://co5x6veyqbylw" path="res://Assets/Carimbo/padlockBody.png" id="10_560rx"]
+[ext_resource type="AudioStream" uid="uid://fo1o0446ysob" path="res://Assets/SFX/SFX - Cadeado abrindo.wav" id="12_fatg8"]
+[ext_resource type="AudioStream" uid="uid://b3ui87ab3861o" path="res://Assets/SFX/SFX - Interação Cadeado.wav" id="12_p0shn"]
 [ext_resource type="AudioStream" uid="uid://ms4ch3i0n8wj" path="res://CustomResources/AudioStreams/click.tres" id="12_yeqav"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_166hs"]
@@ -553,7 +555,16 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="CheckTimer" type="Timer" parent="StampLockPanel" unique_id=848968931]
+wait_time = 0.2
 one_shot = true
+
+[node name="LockInteract" type="AudioStreamPlayer" parent="StampLockPanel" unique_id=1015386674]
+stream = ExtResource("12_p0shn")
+bus = &"SFX"
+
+[node name="Unlock" type="AudioStreamPlayer" parent="StampLockPanel" unique_id=1789139056]
+stream = ExtResource("12_fatg8")
+bus = &"SFX"
 
 [node name="Click" type="AudioStreamPlayer" parent="." unique_id=171526335]
 stream = ExtResource("12_yeqav")
