@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://b5x473oakc2m1"
+path="res://.godot/imported/SFX - Errar Culpado.wav-3c636c86aea0a5143e4fe2c33d8d1f35.sample"
+
+[deps]
+
+source_file="res://Assets/SFX/SFX - Errar Culpado.wav"
+dest_files=["res://.godot/imported/SFX - Errar Culpado.wav-3c636c86aea0a5143e4fe2c33d8d1f35.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

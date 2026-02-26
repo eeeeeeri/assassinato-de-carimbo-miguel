@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://cuc3mxx806457" path="res://Assets/jail.png" id="3_tv2qg"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_x5eou"]
 [ext_resource type="PackedScene" uid="uid://duw0dr8wm210s" path="res://Scenes/UI/confetti.tscn" id="4_uk1mx"]
+[ext_resource type="AudioStream" uid="uid://cydu47tmkwqa1" path="res://Assets/SFX/SFX - Jaula Caindo.wav" id="5_g2i0m"]
+[ext_resource type="AudioStream" uid="uid://b5x473oakc2m1" path="res://Assets/SFX/SFX - Errar Culpado.wav" id="7_4ajkc"]
+[ext_resource type="AudioStream" uid="uid://c14gp4xii3ffn" path="res://Assets/SFX/SFX - Acertou Culpado.wav" id="8_3yu13"]
+[ext_resource type="AudioStream" uid="uid://ms4ch3i0n8wj" path="res://CustomResources/AudioStreams/click.tres" id="9_4ajkc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kxo7"]
 bg_color = Color(0, 0, 0, 0.39215687)
@@ -276,6 +280,42 @@ tracks/21/keys = {
 "update": 0,
 "values": [Vector2(640, 445)]
 }
+tracks/22/type = "value"
+tracks/22/imported = false
+tracks/22/enabled = true
+tracks/22/path = NodePath("Jail/Fall:playing")
+tracks/22/interp = 1
+tracks/22/loop_wrap = true
+tracks/22/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/23/type = "value"
+tracks/23/imported = false
+tracks/23/enabled = true
+tracks/23/path = NodePath("Fail:playing")
+tracks/23/interp = 1
+tracks/23/loop_wrap = true
+tracks/23/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/24/type = "value"
+tracks/24/imported = false
+tracks/24/enabled = true
+tracks/24/path = NodePath("Success:playing")
+tracks/24/interp = 1
+tracks/24/loop_wrap = true
+tracks/24/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_x5eou"]
 resource_name = "confirm"
@@ -415,7 +455,7 @@ tracks/10/keys = {
 
 [sub_resource type="Animation" id="Animation_wfm3f"]
 resource_name = "success"
-length = 6.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -615,6 +655,30 @@ tracks/15/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("Jail/Fall:playing")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("Fail:playing")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(6.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_7kxo7"]
@@ -852,6 +916,30 @@ tracks/13/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Success:playing")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(5.5),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Jail/Fall:playing")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_x5eou"]
 _data = {
@@ -983,6 +1071,10 @@ visible = false
 position = Vector2(640, 360)
 texture = ExtResource("3_tv2qg")
 
+[node name="Fall" type="AudioStreamPlayer" parent="Jail" unique_id=419577998]
+stream = ExtResource("5_g2i0m")
+bus = &"SFX"
+
 [node name="Label" type="Label" parent="." unique_id=1479463979]
 visible = false
 anchors_preset = 8
@@ -1009,6 +1101,19 @@ initial_velocity_min = 500.0
 initial_velocity_max = 1000.0
 scale_amount_min = 10.0
 scale_amount_max = 10.0
+
+[node name="Fail" type="AudioStreamPlayer" parent="." unique_id=653190091]
+stream = ExtResource("7_4ajkc")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="Success" type="AudioStreamPlayer" parent="." unique_id=86180322]
+stream = ExtResource("8_3yu13")
+volume_db = -8.0
+bus = &"SFX"
+
+[node name="Click" type="AudioStreamPlayer" parent="." unique_id=2101074548]
+stream = ExtResource("9_4ajkc")
 
 [connection signal="button_up" from="PanelContainer/VBoxContainer/CulpadoSelect" to="." method="_on_culpado_select_button_up"]
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Confirm/Sim" to="." method="_on_sim_button_up"]

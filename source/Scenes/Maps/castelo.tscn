@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://dfydt1f58qj8m" path="res://Assets/escritorio/mask.png" id="7_8n5uc"]
 [ext_resource type="Texture2D" uid="uid://c318voptycsya" path="res://Assets/escritorio/estante.png" id="7_aqr4c"]
 [ext_resource type="Script" uid="uid://dyfb3j6cog4k2" path="res://Scripts/Global/transformStateSave.gd" id="10_3gqay"]
+[ext_resource type="AudioStream" uid="uid://dwvoyjsn3qofq" path="res://Assets/SFX/SFX - Passagem Secreta.wav" id="10_twdsq"]
 [ext_resource type="Resource" uid="uid://bcyrs1v03hd8k" path="res://CustomResources/Save/escritorioTransformArrayData.tres" id="11_whkou"]
 [ext_resource type="PackedScene" uid="uid://cf2ytexwnfh2s" path="res://Scenes/Interactions/Clues/object_clue_armando_stamp.tscn" id="12_xt6f8"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="13_aqr4c"]
@@ -28,6 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://dgmkbt1wpf53s" path="res://Assets/Pistas/papel_generico_fundo.png" id="22_mfycn"]
 [ext_resource type="Texture2D" uid="uid://ucadn0fo7nv2" path="res://Assets/escritorio/alavanca.png" id="22_r2dus"]
 [ext_resource type="PackedScene" uid="uid://dsdpnmxl30dvj" path="res://Scenes/Interactions/MoveInteractions/click_stamp_lock.tscn" id="23_ub0so"]
+[ext_resource type="AudioStream" uid="uid://p1qmjpmetfih" path="res://Assets/SFX/SFX - Click Da Alavanca.wav" id="24_w5pnw"]
 [ext_resource type="Texture2D" uid="uid://cfuxfugqcvij0" path="res://Assets/escritorio/cadeado.png" id="24_xkhmk"]
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="29_0x7wf"]
 [ext_resource type="Texture2D" uid="uid://4k50fe1jdvaq" path="res://Assets/escritorio/rei.png" id="30_8n5uc"]
@@ -84,6 +86,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Wow:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Open:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_twdsq"]
 resource_name = "hide"
@@ -135,6 +161,30 @@ tracks/3/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Wow:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Open:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_yea3t"]
 _data = {
@@ -143,6 +193,7 @@ _data = {
 }
 
 [sub_resource type="Shader" id="Shader_8n5uc"]
+[sub_resource type="Shader" id="Shader_w5pnw"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -229,7 +280,7 @@ shader_parameter/max_or_add = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_twdsq"]
 resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
+shader = SubResource("Shader_w5pnw")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -270,6 +321,23 @@ shader_parameter/max_or_add = false
 size = Vector2(160.09856, 88.4079)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r25g"]
+size = Vector2(160.09856, 88.4079)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -296,6 +364,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hiddenLever_interaction/AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_r2dus"]
 resource_name = "open"
@@ -312,6 +392,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [0.0, 0.34906584]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("hiddenLever_interaction/AudioStreamPlayer:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3gqay"]
 _data = {
@@ -320,6 +412,20 @@ _data = {
 }
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6of3"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jqfi"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -346,6 +452,7 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [sub_resource type="Shader" id="Shader_3jqfi"]
+[sub_resource type="Shader" id="Shader_y7uid"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -420,6 +527,9 @@ void fragment(){
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_y7uid"]
 resource_local_to_scene = true
 shader = SubResource("Shader_3jqfi")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adtpa"]
+resource_local_to_scene = true
+shader = SubResource("Shader_y7uid")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -433,6 +543,7 @@ shader_parameter/max_or_add = false
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x7wf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_adtpa"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dooms"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -525,6 +636,17 @@ polygon = PackedVector2Array(-70, 137, -18, 170, 173, 69, 119, 36)
 root_node = NodePath("../Mask/Estante")
 libraries/ = SubResource("AnimationLibrary_yea3t")
 
+[node name="Wow" type="AudioStreamPlayer" parent="Estante" index="2" unique_id=990338270]
+stream = ExtResource("20_nopwh")
+volume_db = -8.0
+pitch_scale = 1.3
+bus = &"SFX"
+
+[node name="Open" type="AudioStreamPlayer" parent="Estante" index="3" unique_id=489430307]
+stream = ExtResource("10_twdsq")
+volume_db = -10.0
+bus = &"SFX"
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="10" unique_id=2112876501]
 collision_layer = 5
 collision_mask = 5
@@ -558,6 +680,7 @@ scale = Vector2(0.475, 0.475)
 
 [node name="Sprite2D" parent="ClickTravel_residencial" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_w5pnw")
+material = SubResource("ShaderMaterial_twdsq")
 
 [node name="object_clue_armandoStamp" parent="." index="14" unique_id=1896811649 instance=ExtResource("12_xt6f8")]
 y_sort_enabled = true
@@ -581,6 +704,7 @@ scale = Vector2(0.45, 1.065)
 
 [node name="Sprite2D" parent="object_clue_armandoStamp" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_twdsq")
+material = SubResource("ShaderMaterial_yea3t")
 position = Vector2(0, -18.999998)
 scale = Vector2(0.103, 0.103)
 
@@ -602,6 +726,7 @@ scale = Vector2(1.195, 0.65)
 
 [node name="Sprite2D" parent="TextClue_castleLetters" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_yea3t")
+material = SubResource("ShaderMaterial_m1x7v")
 rotation = -0.5235988
 scale = Vector2(0.076, 0.076)
 skew = -0.5235988
@@ -618,6 +743,7 @@ scale = Vector2(1.89, 1.89)
 
 [node name="Sprite2D" parent="TextClue_familyTree" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_m1x7v")
+material = SubResource("ShaderMaterial_btb8p")
 scale = Vector2(1, 1)
 texture = ExtResource("16_ka4tx")
 
@@ -646,6 +772,7 @@ shape = SubResource("RectangleShape2D_3r25g")
 
 [node name="Sprite2D" parent="TextClue_kingsWill" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_btb8p")
+material = SubResource("ShaderMaterial_ls4ci")
 rotation = -2.5307274
 scale = Vector2(0.133, 0.133)
 skew = 0.5235988
@@ -667,7 +794,7 @@ material = null
 texture = ExtResource("19_nopwh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HiddenLever/hiddenLever_interaction" index="2" unique_id=1902863004]
-stream = ExtResource("20_nopwh")
+stream = ExtResource("24_w5pnw")
 volume_db = -10.0
 pitch_scale = 1.2
 bus = &"SFX"
@@ -694,6 +821,7 @@ scale = Vector2(0.71, 0.71)
 
 [node name="Sprite2D" parent="TextClue_guardsPatrol" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_ls4ci")
+material = SubResource("ShaderMaterial_t6of3")
 rotation = 0.5235988
 skew = 0.5235988
 texture = ExtResource("22_mfycn")
@@ -716,6 +844,7 @@ scale = Vector2(0.565, 0.565)
 
 [node name="Sprite2D" parent="ClickStampLock" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_t6of3")
+material = SubResource("ShaderMaterial_3jqfi")
 texture = ExtResource("24_xkhmk")
 
 [node name="ClickTravel_secretRoom" parent="." index="21" unique_id=810496024 instance=ExtResource("2_755oh")]
@@ -733,6 +862,7 @@ scale = Vector2(0.79, 0.79)
 
 [node name="Sprite2D" parent="ClickTravel_secretRoom" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_y7uid")
+material = SubResource("ShaderMaterial_adtpa")
 
 [node name="ClickInspectable_King" parent="." index="22" unique_id=1882603094 instance=ExtResource("29_0x7wf")]
 position = Vector2(782, 1359)
@@ -754,6 +884,7 @@ shape = SubResource("CircleShape2D_0x7wf")
 
 [node name="Sprite2D" parent="ClickInspectable_King" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_adtpa")
+material = SubResource("ShaderMaterial_dooms")
 scale = Vector2(1, 1)
 texture = ExtResource("30_8n5uc")
 
