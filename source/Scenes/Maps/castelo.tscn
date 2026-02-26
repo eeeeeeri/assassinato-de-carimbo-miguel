@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ba4j8nmal3t4y" path="res://Assets/escritorio/mesa.png" id="5_j5qa6"]
 [ext_resource type="Resource" uid="uid://cviiuv155u8nv" path="res://CustomResources/Save/escritorioVisibleStateData.tres" id="6_fhicc"]
 [ext_resource type="Texture2D" uid="uid://bjxhystsf8ivt" path="res://Assets/escritorio/escrivaninha.png" id="6_oqf3l"]
+[ext_resource type="Texture2D" uid="uid://dfydt1f58qj8m" path="res://Assets/escritorio/mask.png" id="7_8n5uc"]
 [ext_resource type="Texture2D" uid="uid://c318voptycsya" path="res://Assets/escritorio/estante.png" id="7_aqr4c"]
 [ext_resource type="Script" uid="uid://dyfb3j6cog4k2" path="res://Scripts/Global/transformStateSave.gd" id="10_3gqay"]
 [ext_resource type="Resource" uid="uid://bcyrs1v03hd8k" path="res://CustomResources/Save/escritorioTransformArrayData.tres" id="11_whkou"]
@@ -31,7 +32,115 @@
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="29_0x7wf"]
 [ext_resource type="Texture2D" uid="uid://4k50fe1jdvaq" path="res://Assets/escritorio/rei.png" id="30_8n5uc"]
 
-[sub_resource type="Shader" id="Shader_3gqay"]
+[sub_resource type="Animation" id="Animation_w5pnw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../ClickStampLock:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StaticBody2D/CollisionPolygon2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_twdsq"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 396)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../..:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../../ClickStampLock:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.73333335),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("StaticBody2D/CollisionPolygon2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yea3t"]
+_data = {
+&"RESET": SubResource("Animation_w5pnw"),
+&"hide": SubResource("Animation_twdsq")
+}
+
+[sub_resource type="Shader" id="Shader_0x7wf"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -103,35 +212,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_whkou"]
-resource_local_to_scene = true
-shader = SubResource("Shader_3gqay")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0x7wf"]
-resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8n5uc"]
 resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
+shader = SubResource("Shader_0x7wf")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -155,10 +238,36 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twdsq"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yea3t"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r25g"]
 size = Vector2(160.09856, 88.4079)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_twdsq"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1x7v"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -208,7 +317,7 @@ _data = {
 &"open": SubResource("Animation_r2dus")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yea3t"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -221,7 +330,7 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1x7v"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -234,7 +343,7 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="Shader" id="Shader_btb8p"]
+[sub_resource type="Shader" id="Shader_t6of3"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -306,9 +415,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jqfi"]
 resource_local_to_scene = true
-shader = SubResource("Shader_btb8p")
+shader = SubResource("Shader_t6of3")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -321,7 +430,7 @@ shader_parameter/max_or_add = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x7wf"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7uid"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -361,6 +470,7 @@ centered = false
 metadata/_edit_lock_ = true
 
 [node name="Cadeira" type="Sprite2D" parent="." index="6" unique_id=326084738]
+z_index = 1
 y_sort_enabled = true
 position = Vector2(451, 1338)
 texture = ExtResource("4_fhicc")
@@ -392,15 +502,26 @@ texture = ExtResource("6_oqf3l")
 position = Vector2(-44, 64)
 polygon = PackedVector2Array(-177, -16, 113, 129, 262, 54, -26, -93)
 
-[node name="Estante" type="Sprite2D" parent="." index="9" unique_id=1571058106]
+[node name="Estante" type="Node2D" parent="." index="9" unique_id=1100003428]
+y_sort_enabled = true
+
+[node name="Mask" type="Sprite2D" parent="Estante" index="0" unique_id=389367407]
+clip_children = 1
 position = Vector2(529, 1033)
+texture = ExtResource("7_8n5uc")
+
+[node name="Estante" type="Sprite2D" parent="Estante/Mask" index="0" unique_id=1571058106]
 texture = ExtResource("7_aqr4c")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="Estante" index="0" unique_id=1049947149]
+[node name="StaticBody2D" type="StaticBody2D" parent="Estante/Mask/Estante" index="0" unique_id=1049947149]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Estante/StaticBody2D" index="0" unique_id=15118275]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Estante/Mask/Estante/StaticBody2D" index="0" unique_id=15118275]
 position = Vector2(-44, 64)
 polygon = PackedVector2Array(-70, 137, -18, 170, 173, 69, 119, 36)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Estante" index="1" unique_id=308842893]
+root_node = NodePath("../Mask/Estante")
+libraries/ = SubResource("AnimationLibrary_yea3t")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." index="10" unique_id=2112876501]
 collision_layer = 5
@@ -413,7 +534,7 @@ polygon = PackedVector2Array(811, 1759, 615, 1662, 699, 1615, 437, 1482, 357, 15
 [node name="VisibleStateSaver" type="Node" parent="." index="11" unique_id=2026298883 node_paths=PackedStringArray("targetNodes")]
 script = ExtResource("4_j5qa6")
 boolArrayData = ExtResource("6_fhicc")
-targetNodes = [NodePath("../Estante"), NodePath("../HiddenLever/hiddenLever_interaction"), NodePath("../ClickStampLock"), NodePath("../ClickTravel_secretRoom")]
+targetNodes = [NodePath("../Estante/Mask/Estante"), NodePath("../HiddenLever/hiddenLever_interaction"), NodePath("../ClickStampLock"), NodePath("../ClickTravel_secretRoom")]
 metadata/_custom_type_script = "uid://d1y8kysganspd"
 
 [node name="TransformStateSaver" type="Node" parent="." index="12" unique_id=2093520399 node_paths=PackedStringArray("targetNodes")]
@@ -434,7 +555,7 @@ scale = Vector2(0.655, 0.655)
 scale = Vector2(0.475, 0.475)
 
 [node name="Sprite2D" parent="ClickTravel_residencial" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_whkou")
+material = SubResource("ShaderMaterial_8n5uc")
 
 [node name="object_clue_armandoStamp" parent="." index="14" unique_id=1896811649 instance=ExtResource("12_xt6f8")]
 y_sort_enabled = true
@@ -457,7 +578,7 @@ position = Vector2(0, -2)
 scale = Vector2(0.45, 1.065)
 
 [node name="Sprite2D" parent="object_clue_armandoStamp" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_0x7wf")
+material = SubResource("ShaderMaterial_w5pnw")
 position = Vector2(0, -18.999998)
 scale = Vector2(0.103, 0.103)
 
@@ -478,7 +599,7 @@ scale = Vector2(0.62, 0.62)
 scale = Vector2(1.195, 0.65)
 
 [node name="Sprite2D" parent="TextClue_castleLetters" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_8n5uc")
+material = SubResource("ShaderMaterial_twdsq")
 rotation = -0.5235988
 scale = Vector2(0.076, 0.076)
 skew = -0.5235988
@@ -494,7 +615,7 @@ scale = Vector2(1.29, 1.29)
 scale = Vector2(1.89, 1.89)
 
 [node name="Sprite2D" parent="TextClue_familyTree" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_w5pnw")
+material = SubResource("ShaderMaterial_yea3t")
 scale = Vector2(1, 1)
 texture = ExtResource("16_ka4tx")
 
@@ -522,7 +643,7 @@ skew = 0.5235988
 shape = SubResource("RectangleShape2D_3r25g")
 
 [node name="Sprite2D" parent="TextClue_kingsWill" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_twdsq")
+material = SubResource("ShaderMaterial_m1x7v")
 rotation = -2.5307274
 scale = Vector2(0.133, 0.133)
 skew = 0.5235988
@@ -545,6 +666,8 @@ texture = ExtResource("19_nopwh")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HiddenLever/hiddenLever_interaction" index="2" unique_id=1902863004]
 stream = ExtResource("20_nopwh")
+volume_db = -10.0
+pitch_scale = 1.2
 bus = &"SFX"
 
 [node name="Sprite2D2" type="Sprite2D" parent="HiddenLever" index="1" unique_id=1116209564]
@@ -568,14 +691,14 @@ position = Vector2(471, 1470)
 scale = Vector2(0.71, 0.71)
 
 [node name="Sprite2D" parent="TextClue_guardsPatrol" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_yea3t")
+material = SubResource("ShaderMaterial_btb8p")
 rotation = 0.5235988
 skew = 0.5235988
 texture = ExtResource("22_mfycn")
 
 [node name="ClickStampLock" parent="." index="20" unique_id=1050107889 instance=ExtResource("23_ub0so")]
 visible = false
-position = Vector2(545, 1090)
+position = Vector2(512, 1109)
 
 [node name="CollisionShape2D" parent="ClickStampLock/InteractionArea" parent_id_path=PackedInt32Array(1050107889, 146712339) index="0" unique_id=2125542557]
 scale = Vector2(0.825, 0.825)
@@ -590,7 +713,7 @@ scale = Vector2(1.105, 1.105)
 scale = Vector2(0.565, 0.565)
 
 [node name="Sprite2D" parent="ClickStampLock" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_m1x7v")
+material = SubResource("ShaderMaterial_ls4ci")
 texture = ExtResource("24_xkhmk")
 
 [node name="ClickTravel_secretRoom" parent="." index="21" unique_id=810496024 instance=ExtResource("2_755oh")]
@@ -607,7 +730,7 @@ scale = Vector2(0.93, 0.93)
 scale = Vector2(0.79, 0.79)
 
 [node name="Sprite2D" parent="ClickTravel_secretRoom" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_ls4ci")
+material = SubResource("ShaderMaterial_3jqfi")
 
 [node name="ClickInspectable_King" parent="." index="22" unique_id=1882603094 instance=ExtResource("29_0x7wf")]
 position = Vector2(782, 1359)
@@ -628,7 +751,7 @@ scale = Vector2(11.945, 11.945)
 shape = SubResource("CircleShape2D_0x7wf")
 
 [node name="Sprite2D" parent="ClickInspectable_King" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_btb8p")
+material = SubResource("ShaderMaterial_y7uid")
 scale = Vector2(1, 1)
 texture = ExtResource("30_8n5uc")
 
@@ -636,10 +759,9 @@ texture = ExtResource("30_8n5uc")
 visible = false
 
 [connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/hiddenLever_interaction/AudioStreamPlayer" method="play"]
-[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="Estante" method="set_visible" binds= [false]]
 [connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/hiddenLever_interaction" method="set_visible" binds= [false]]
 [connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/AnimationPlayer" method="play" binds= ["open"]]
-[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="ClickStampLock" method="set_visible" binds= [true]]
+[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="Estante/AnimationPlayer" method="play" binds= ["hide"]]
 [connection signal="animation_finished" from="HiddenLever/AnimationPlayer" to="TransformStateSaver" method="SaveData" unbinds=1]
 [connection signal="OnCorrectStampLock" from="ClickStampLock" to="ClickStampLock" method="set_visible" binds= [false]]
 [connection signal="OnCorrectStampLock" from="ClickStampLock" to="ClickTravel_secretRoom" method="set_visible" binds= [true]]
