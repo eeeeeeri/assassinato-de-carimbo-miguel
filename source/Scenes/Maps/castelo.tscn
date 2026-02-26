@@ -192,8 +192,7 @@ _data = {
 &"hide": SubResource("Animation_twdsq")
 }
 
-[sub_resource type="Shader" id="Shader_8n5uc"]
-[sub_resource type="Shader" id="Shader_w5pnw"]
+[sub_resource type="Shader" id="Shader_m1x7v"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -265,65 +264,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5pnw"]
-resource_local_to_scene = true
-shader = SubResource("Shader_8n5uc")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_twdsq"]
-resource_local_to_scene = true
-shader = SubResource("Shader_w5pnw")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yea3t"]
-resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1x7v"]
-resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r25g"]
-size = Vector2(160.09856, 88.4079)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
 resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
+shader = SubResource("Shader_m1x7v")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -333,11 +276,50 @@ shader_parameter/aspect_ratio = 1.0
 shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r25g"]
-size = Vector2(160.09856, 88.4079)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6of3"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jqfi"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r25g"]
+size = Vector2(160.09856, 88.4079)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7uid"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -411,8 +393,7 @@ _data = {
 &"open": SubResource("Animation_r2dus")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6of3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adtpa"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -425,7 +406,7 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_3jqfi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dooms"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -438,21 +419,7 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t6of3"]
-resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="Shader" id="Shader_3jqfi"]
-[sub_resource type="Shader" id="Shader_y7uid"]
+[sub_resource type="Shader" id="Shader_alawe"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -524,12 +491,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7uid"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rkmi"]
 resource_local_to_scene = true
-shader = SubResource("Shader_3jqfi")
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_adtpa"]
-resource_local_to_scene = true
-shader = SubResource("Shader_y7uid")
+shader = SubResource("Shader_alawe")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -542,8 +506,7 @@ shader_parameter/max_or_add = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x7wf"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_adtpa"]
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dooms"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d42lu"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -679,12 +642,12 @@ scale = Vector2(0.655, 0.655)
 scale = Vector2(0.475, 0.475)
 
 [node name="Sprite2D" parent="ClickTravel_residencial" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_w5pnw")
-material = SubResource("ShaderMaterial_twdsq")
+material = SubResource("ShaderMaterial_btb8p")
 
 [node name="object_clue_armandoStamp" parent="." index="14" unique_id=1896811649 instance=ExtResource("12_xt6f8")]
 y_sort_enabled = true
 position = Vector2(852, 1100)
+OutlineMaxThickness = 20.0
 
 [node name="InteractionArea" parent="object_clue_armandoStamp" index="0" unique_id=146712339]
 position = Vector2(0, -19)
@@ -703,8 +666,7 @@ position = Vector2(0, -2)
 scale = Vector2(0.45, 1.065)
 
 [node name="Sprite2D" parent="object_clue_armandoStamp" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_twdsq")
-material = SubResource("ShaderMaterial_yea3t")
+material = SubResource("ShaderMaterial_ls4ci")
 position = Vector2(0, -18.999998)
 scale = Vector2(0.103, 0.103)
 
@@ -725,8 +687,7 @@ scale = Vector2(0.62, 0.62)
 scale = Vector2(1.195, 0.65)
 
 [node name="Sprite2D" parent="TextClue_castleLetters" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_yea3t")
-material = SubResource("ShaderMaterial_m1x7v")
+material = SubResource("ShaderMaterial_t6of3")
 rotation = -0.5235988
 scale = Vector2(0.076, 0.076)
 skew = -0.5235988
@@ -742,8 +703,7 @@ scale = Vector2(1.29, 1.29)
 scale = Vector2(1.89, 1.89)
 
 [node name="Sprite2D" parent="TextClue_familyTree" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_m1x7v")
-material = SubResource("ShaderMaterial_btb8p")
+material = SubResource("ShaderMaterial_3jqfi")
 scale = Vector2(1, 1)
 texture = ExtResource("16_ka4tx")
 
@@ -771,8 +731,7 @@ skew = 0.5235988
 shape = SubResource("RectangleShape2D_3r25g")
 
 [node name="Sprite2D" parent="TextClue_kingsWill" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_btb8p")
-material = SubResource("ShaderMaterial_ls4ci")
+material = SubResource("ShaderMaterial_y7uid")
 rotation = -2.5307274
 scale = Vector2(0.133, 0.133)
 skew = 0.5235988
@@ -820,8 +779,7 @@ position = Vector2(471, 1470)
 scale = Vector2(0.71, 0.71)
 
 [node name="Sprite2D" parent="TextClue_guardsPatrol" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_ls4ci")
-material = SubResource("ShaderMaterial_t6of3")
+material = SubResource("ShaderMaterial_adtpa")
 rotation = 0.5235988
 skew = 0.5235988
 texture = ExtResource("22_mfycn")
@@ -843,8 +801,7 @@ scale = Vector2(1.105, 1.105)
 scale = Vector2(0.565, 0.565)
 
 [node name="Sprite2D" parent="ClickStampLock" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_t6of3")
-material = SubResource("ShaderMaterial_3jqfi")
+material = SubResource("ShaderMaterial_dooms")
 texture = ExtResource("24_xkhmk")
 
 [node name="ClickTravel_secretRoom" parent="." index="21" unique_id=810496024 instance=ExtResource("2_755oh")]
@@ -861,8 +818,7 @@ scale = Vector2(0.93, 0.93)
 scale = Vector2(0.79, 0.79)
 
 [node name="Sprite2D" parent="ClickTravel_secretRoom" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_y7uid")
-material = SubResource("ShaderMaterial_adtpa")
+material = SubResource("ShaderMaterial_2rkmi")
 
 [node name="ClickInspectable_King" parent="." index="22" unique_id=1882603094 instance=ExtResource("29_0x7wf")]
 position = Vector2(782, 1359)
@@ -883,8 +839,7 @@ scale = Vector2(11.945, 11.945)
 shape = SubResource("CircleShape2D_0x7wf")
 
 [node name="Sprite2D" parent="ClickInspectable_King" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_adtpa")
-material = SubResource("ShaderMaterial_dooms")
+material = SubResource("ShaderMaterial_d42lu")
 scale = Vector2(1, 1)
 texture = ExtResource("30_8n5uc")
 
