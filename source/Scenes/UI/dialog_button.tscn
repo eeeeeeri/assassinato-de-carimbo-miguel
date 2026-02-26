@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://5mrwdilq8lw"]
 
 [sub_resource type="Theme" id="Theme_vxwb6"]
-default_font_size = 18
+default_font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxwb6"]
 content_margin_left = 20.0
@@ -73,10 +73,11 @@ expand_margin_right = 2.0
 expand_margin_bottom = 2.0
 
 [node name="DialogButton" type="Button" unique_id=1828395968]
-custom_minimum_size = Vector2(0, 45)
+custom_minimum_size = Vector2(0, 50)
 offset_right = 105.0
 offset_bottom = 45.0
 theme = SubResource("Theme_vxwb6")
+theme_override_constants/outline_size = 5
 theme_override_styles/normal = SubResource("StyleBoxFlat_vxwb6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_jv83p")
 theme_override_styles/hover = SubResource("StyleBoxFlat_7sxj7")

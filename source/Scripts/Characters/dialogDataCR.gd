@@ -3,6 +3,7 @@ class_name DialogData extends Resource
 @export var dialogOption:String
 @export var charResponses:Array[String]
 @export var responsePortraits:Array[Texture2D]
+@export var playerIsSpeaking:Array[bool]
 @export var requireCurrency:bool
 @export var disableOnPlay:bool
 @export var showStampsLineIndex:int = -1

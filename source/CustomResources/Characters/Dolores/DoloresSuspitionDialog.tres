@@ -6,4 +6,5 @@
 script = ExtResource("1_xon8p")
 dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
 charResponses = Array[String](["Deixa eu veeeer....", "Não, só o de sempre, bêbados brigando, o Seu Bundasseca ali resmungando o dia todo...", "Se bem que...", "-O que!?", "Mais ou menos uma semana atrás, eu reparei 2 sujeitos sussurrando na mesa do fundo, não estavam bebendo, só conversando.", "-Sabe identificar os sujeitos?", "Não, a casa estava cheia, só vi que eram 2 homens."])
+playerIsSpeaking = Array[bool]([false, false, false, true, false, true, false])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

@@ -5,6 +5,8 @@ class_name InspectionCanvas extends Node
 @export var DialogButtonScene:PackedScene
 @export var DialogButtonCoinScene:PackedScene
 @export var ModularStampScene:PackedScene
+@export var charHighlightSizeMulti:float = 1.1
+@export var charoffuscateColor:Color = Color.GRAY
 
 @onready var _3d_object_panel: Control = $"3DObjectPanel"
 @onready var object_cam_texture: TextureRect = $"3DObjectPanel/ObjectCamTexture"
@@ -19,6 +21,7 @@ const FINALIMAGENODE = "FinalImage"
 
 @onready var dialog_panel: Control = $DialogPanel
 @onready var character_portrait: TextureRect = $DialogPanel/CharacterPortrait
+@onready var player_portrait: TextureRect = $DialogPanel/PlayerPortrait
 @onready var dialog_options: VBoxContainer = $DialogPanel/ColorRect/DialogOptions
 @onready var dialog_label: Label = $DialogPanel/ColorRect/DialogLabel
 @onready var character_name: Label = $DialogPanel/ColorRect/CharacterName
@@ -86,7 +89,8 @@ func InteractCharacter(character:CharacterData) -> void:
 	for child in dialog_options.get_children():
 		child.queue_free()
 	
-	for option in character.Dialogs:
+	for i in range(character.Dialogs.size()):
+		var option = character.Dialogs.get(i)
 		if(option.disabled): continue
 		var scene:PackedScene = DialogButtonScene
 		if(option.requireCurrency): scene = DialogButtonCoinScene
@@ -100,6 +104,7 @@ func InteractCharacter(character:CharacterData) -> void:
 	dialog_panel.visible = true
 	
 	inspecting = true
+	SetPlayerIsSpeaking(false)
 	
 	if(!character.PlayedInitialDialog && character.InitialDialog != null):
 		StartDialog(character.InitialDialog)
@@ -111,7 +116,17 @@ func InteractCharacter(character:CharacterData) -> void:
 func StartDialog(dialog:DialogData) -> void:
 	if(dialog.requireCurrency):
 		if(GlobalResources.PLAYER_DATA.currencyAmount <= 0): return
-		else: GlobalResources.PLAYER_DATA.RemoveCurrency()
+		else: 
+			GlobalResources.PLAYER_DATA.RemoveCurrency()
+			dialog.requireCurrency = false
+			dialog.currentInstance.queue_free()
+			var newDialog:Button = DialogButtonScene.instantiate() as Button
+			newDialog.text = dialog.dialogOption
+			newDialog.pressed.connect(func():
+				click.play()
+				StartDialog(dialog))
+			dialog_options.add_child(newDialog)
+			dialog.currentInstance = newDialog
 		
 	if(dialog.disableOnPlay && currentCharacter.Dialogs.has(dialog)):
 		dialog.disabled = true
@@ -133,6 +148,10 @@ func StartDialog(dialog:DialogData) -> void:
 	
 	dialog_options.visible = false
 	dialog_label.visible = true
+	if(currentDialog.playerIsSpeaking.size() > currentDialogLineIndex):
+		SetPlayerIsSpeaking(currentDialog.playerIsSpeaking.get(currentDialogLineIndex))
+	else:
+		SetPlayerIsSpeaking(false)
 	
 func CheckForShowStamp() -> void:
 	ClearStampsContainer()
@@ -149,6 +168,7 @@ func ClearStampsContainer() -> void:
 func NextDialog() -> void:
 	if(currentDialogLineIndex >= currentDialog.charResponses.size() - 1):
 		dialog_options.visible = true
+		SetPlayerIsSpeaking(true)
 		dialog_label.visible = false
 		character_portrait.texture = currentCharacter.Portrait
 		inDialog = false
@@ -164,6 +184,22 @@ func NextDialog() -> void:
 		character_portrait.texture = currentDialog.responsePortraits.get(currentDialogLineIndex)
 	
 	CheckForShowStamp()
+	if(currentDialog.playerIsSpeaking.size() > currentDialogLineIndex):
+		SetPlayerIsSpeaking(currentDialog.playerIsSpeaking.get(currentDialogLineIndex))
+	else:
+		SetPlayerIsSpeaking(false)
+
+func SetPlayerIsSpeaking(speaking:bool) -> void:
+	if(speaking):
+		character_portrait.scale = Vector2.ONE
+		character_portrait.self_modulate = charoffuscateColor
+		player_portrait.scale = Vector2(charHighlightSizeMulti, charHighlightSizeMulti)
+		player_portrait.self_modulate = Color.WHITE
+	else:
+		character_portrait.scale = Vector2(charHighlightSizeMulti, charHighlightSizeMulti)
+		character_portrait.self_modulate = Color.WHITE
+		player_portrait.scale = Vector2.ONE
+		player_portrait.self_modulate = charoffuscateColor
 	
 func InspectStampLock(correctStamp:StampData, correctSignal:Signal) -> void:
 	stamp_lock_panel.visible = true

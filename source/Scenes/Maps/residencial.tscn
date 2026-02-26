@@ -99,36 +99,39 @@ position = Vector2(912, 1680)
 [node name="VisibleStateSaver" type="Node" parent="." index="7" unique_id=266798634 node_paths=PackedStringArray("targetNodes")]
 script = ExtResource("4_up5k5")
 boolArrayData = ExtResource("5_up5k5")
-targetNodes = [NodePath("../Click_coin"), NodePath("../caduInteractable/BuyNewsEvent/TextClue_personalityTest")]
+targetNodes = [NodePath("../Click_coin"), NodePath("../caduInteractable/BuyNewsEvent/TextClue_personalityTest"), NodePath("../Click_coin2")]
 metadata/_custom_type_script = "uid://d1y8kysganspd"
 
 [node name="Click_coin" parent="." index="8" unique_id=1710188801 instance=ExtResource("20_yajkd")]
 position = Vector2(2614, 2364)
 
-[node name="ClickTravel" parent="." index="9" unique_id=705077137 instance=ExtResource("5_ypm8x")]
+[node name="Click_coin2" parent="." index="9" unique_id=705077137 instance=ExtResource("20_yajkd")]
+position = Vector2(4545, 1531)
+
+[node name="ClickTravel" parent="." index="10" unique_id=1491838405 instance=ExtResource("5_ypm8x")]
 position = Vector2(643, 1504)
 scene = "res://Scenes/Maps/castelo.tscn"
 next_audio = ExtResource("8_up5k5")
 
-[node name="window_interact_barrigaHouse" parent="." index="10" unique_id=737221805 instance=ExtResource("23_40lvq")]
+[node name="window_interact_barrigaHouse" parent="." index="11" unique_id=737221805 instance=ExtResource("23_40lvq")]
 position = Vector2(1248, 1645)
 
-[node name="window_interact_passosHouse" parent="." index="11" unique_id=582383259 instance=ExtResource("24_8l08s")]
+[node name="window_interact_passosHouse" parent="." index="12" unique_id=582383259 instance=ExtResource("24_8l08s")]
 position = Vector2(2248, 1108)
 
-[node name="window_interact_bundassecaHouse" parent="." index="12" unique_id=454586084 instance=ExtResource("25_fxayg")]
+[node name="window_interact_bundassecaHouse" parent="." index="13" unique_id=454586084 instance=ExtResource("25_fxayg")]
 position = Vector2(2784, 1067)
 
-[node name="window_interact_guerraHouse" parent="." index="13" unique_id=1803920644 instance=ExtResource("11_m00pu")]
+[node name="window_interact_guerraHouse" parent="." index="14" unique_id=1803920644 instance=ExtResource("11_m00pu")]
 position = Vector2(3309, 897)
 
-[node name="window_interact_tavern" parent="." index="14" unique_id=1785357394 instance=ExtResource("12_4gokj")]
+[node name="window_interact_tavern" parent="." index="15" unique_id=1785357394 instance=ExtResource("12_4gokj")]
 position = Vector2(3626, 1287)
 
-[node name="TextClue_fightRemains" parent="." index="15" unique_id=1098548116 instance=ExtResource("13_oj2xv")]
+[node name="TextClue_fightRemains" parent="." index="16" unique_id=1098548116 instance=ExtResource("13_oj2xv")]
 position = Vector2(799, 1398)
 
-[node name="TextClue_noKids" parent="." index="16" unique_id=2063602921 instance=ExtResource("14_oogwp")]
+[node name="TextClue_noKids" parent="." index="17" unique_id=2063602921 instance=ExtResource("14_oogwp")]
 position = Vector2(3763, 1296)
 
 [node name="Sprite2D" parent="TextClue_noKids" index="3" unique_id=159541262]
@@ -136,7 +139,7 @@ material = SubResource("ShaderMaterial_up5k5")
 rotation = 0.5235988
 skew = -0.5235988
 
-[node name="TextClue_annoucement" parent="." index="17" unique_id=1810679662 instance=ExtResource("10_8l08s")]
+[node name="TextClue_annoucement" parent="." index="18" unique_id=1810679662 instance=ExtResource("10_8l08s")]
 position = Vector2(4094, 1424)
 
 [node name="Sprite2D" parent="TextClue_annoucement" index="3" unique_id=159541262]
@@ -144,7 +147,7 @@ material = SubResource("ShaderMaterial_40lvq")
 rotation = 0.5235988
 skew = -0.5235988
 
-[node name="TextClue_annoucement2" parent="." index="18" unique_id=1945928193 instance=ExtResource("10_8l08s")]
+[node name="TextClue_annoucement2" parent="." index="19" unique_id=1945928193 instance=ExtResource("10_8l08s")]
 position = Vector2(1723, 1494)
 
 [node name="Sprite2D" parent="TextClue_annoucement2" index="3" unique_id=159541262]
@@ -152,10 +155,10 @@ material = SubResource("ShaderMaterial_8l08s")
 rotation = -0.5235988
 skew = 0.5235988
 
-[node name="pequenaInteractable" parent="." index="19" unique_id=1648232328 instance=ExtResource("16_by2w1")]
+[node name="pequenaInteractable" parent="." index="20" unique_id=1648232328 instance=ExtResource("16_by2w1")]
 position = Vector2(2100, 2235)
 
-[node name="caduInteractable" parent="." index="20" unique_id=135454890 instance=ExtResource("17_onfkq")]
+[node name="caduInteractable" parent="." index="21" unique_id=135454890 instance=ExtResource("17_onfkq")]
 position = Vector2(3142, 1686)
 
 [node name="BuyNewsEvent" type="Node" parent="caduInteractable" index="6" unique_id=878885564]

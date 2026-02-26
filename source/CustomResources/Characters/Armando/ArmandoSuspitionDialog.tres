@@ -4,6 +4,8 @@
 
 [resource]
 script = ExtResource("1_oenfg")
-dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
-charResponses = Array[String](["...", "-Qualquer informação ajuda.", "..."])
+dialogOption = "Será que isso aqui ajuda?"
+charResponses = Array[String](["...", "Armando Guerra, Guarda Real."])
+playerIsSpeaking = Array[bool]([false, false])
+requireCurrency = true
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

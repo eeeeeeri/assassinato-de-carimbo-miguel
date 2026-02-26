@@ -6,5 +6,6 @@
 script = ExtResource("1_aljpx")
 dialogOption = "Poderia me mostrar seu carimbo?"
 charResponses = Array[String](["Posso saber pra que?", "-Os carimbos são realmente muitos importantes pra esse caso.", "Se é assim, acho que tudo bem.", "Aqui estão."])
+playerIsSpeaking = Array[bool]([false, true, false, false])
 showStampsLineIndex = 3
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"
