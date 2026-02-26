@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b1h4kw2y7hu7i" path="res://Scripts/UI/gameUI.gd" id="1_acqpm"]
 [ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="2_5lict"]
+[ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="3_4o8mf"]
 [ext_resource type="PackedScene" uid="uid://b6qhhcbw14o3w" path="res://Scenes/UI/sussy_baka.tscn" id="3_8od7p"]
 [ext_resource type="AudioStream" uid="uid://bmx3vtrhsexr7" path="res://CustomResources/AudioStreams/coin.tres" id="3_j8f76"]
 [ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="4_ddusd"]
@@ -12,7 +13,7 @@ font_size = 25
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ddusd"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4o8mf"]
 resource_local_to_scene = true
 shader = ExtResource("4_ddusd")
 shader_parameter/shadow_offset = Vector2(0, 0)
@@ -67,6 +68,7 @@ offset_left = -10.5
 offset_right = 69.5
 offset_bottom = 35.0
 grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_4o8mf")
 text = "0"
 label_settings = SubResource("LabelSettings_j8f76")
 vertical_alignment = 1
@@ -106,7 +108,7 @@ scale = Vector2(0.275, 0.275)
 mouse_filter = 2
 
 [node name="Shadow" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_ddusd")
+material = SubResource("ShaderMaterial_4o8mf")
 
 [node name="Label" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="2" unique_id=324695650]
 visible = false
@@ -124,6 +126,7 @@ offset_right = -90.0
 offset_bottom = -107.36362
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_4o8mf")
 text = "Q"
 label_settings = SubResource("LabelSettings_mi66r")
 horizontal_alignment = 2
@@ -153,6 +156,7 @@ offset_right = -90.0
 offset_bottom = -24.24678
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_4o8mf")
 text = "Tab"
 label_settings = SubResource("LabelSettings_mi66r")
 horizontal_alignment = 2

@@ -6,4 +6,5 @@
 script = ExtResource("1_jxagx")
 dialogOption = "Initial"
 charResponses = Array[String](["-Olá senhor, fui encarregado de investigar esse caso, será que posso lhe fazer algumas perguntas?", "...", "-Senhor?", "...", "-Vou entender isso como um sim."])
+playerIsSpeaking = Array[bool]([true, false, true, false, true])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

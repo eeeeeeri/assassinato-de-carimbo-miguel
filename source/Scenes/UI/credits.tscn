@@ -1,14 +1,20 @@
 [gd_scene format=3 uid="uid://cddct1kcs4qby"]
 
 [ext_resource type="Texture2D" uid="uid://div7fsto50ooo" path="res://Assets/Menu/felpojam_white.png" id="1_h87vg"]
+[ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="1_q4iv0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_mrfpk"]
+font = ExtResource("1_q4iv0")
 font_size = 33
 
 [sub_resource type="LabelSettings" id="LabelSettings_4pqbp"]
+paragraph_spacing = 10.0
+font = ExtResource("1_q4iv0")
 font_size = 41
 
 [sub_resource type="LabelSettings" id="LabelSettings_gih0s"]
+paragraph_spacing = 10.0
+font = ExtResource("1_q4iv0")
 font_size = 35
 
 [node name="Credits" type="Control" unique_id=1192477558]
