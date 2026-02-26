@@ -39,7 +39,8 @@ func _on_mouse_entered() -> void:
 	scaleTween = create_tween()
 	scaleTween.tween_property(sprite_2d, "scale", startSpriteScale * hoverSizeIncrease, .1)
 	
-	sprite_2d.material.set_shader_parameter("thickness", outlineThickness)
+	if(sprite_2d.material != null):
+		sprite_2d.material.set_shader_parameter("thickness", outlineThickness)
 
 
 func _on_mouse_exited() -> void:
@@ -47,4 +48,5 @@ func _on_mouse_exited() -> void:
 	scaleTween = create_tween()
 	scaleTween.tween_property(sprite_2d, "scale", startSpriteScale, .1)
 	
-	sprite_2d.material.set_shader_parameter("thickness", Vector2.ZERO)
+	if(sprite_2d.material != null):
+		sprite_2d.material.set_shader_parameter("thickness", Vector2.ZERO)

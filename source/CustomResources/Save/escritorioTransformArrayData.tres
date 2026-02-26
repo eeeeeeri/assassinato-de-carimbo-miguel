@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="TransformArrayData" format=3 uid="uid://bcyrs1v03hd8k"]
+
+[ext_resource type="Script" uid="uid://drndt6hvtud03" path="res://Scripts/Global/transformArrayDataCR.gd" id="1_ubqi8"]
+
+[resource]
+script = ExtResource("1_ubqi8")
+metadata/_custom_type_script = "uid://drndt6hvtud03"

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="BoolArrayData" format=3 uid="uid://cifgbo4y764k1"]
 
-[ext_resource type="Script" uid="uid://drndt6hvtud03" path="res://Scripts/Global/boolArrayDataCR.gd" id="1_nutei"]
+[ext_resource type="Script" uid="uid://k6w354oq8u4h" path="res://Scripts/Global/boolArrayDataCR.gd" id="1_nutei"]
 
 [resource]
 script = ExtResource("1_nutei")

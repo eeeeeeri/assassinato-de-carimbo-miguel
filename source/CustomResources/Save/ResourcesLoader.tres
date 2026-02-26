@@ -8,8 +8,6 @@
 [ext_resource type="Resource" uid="uid://c6l6o5a017pfl" path="res://CustomResources/Characters/Jair/Jair.tres" id="6_gc2pg"]
 [ext_resource type="Resource" uid="uid://c3873ka87mobb" path="res://CustomResources/Characters/Marka/Marka.tres" id="7_e30vg"]
 [ext_resource type="Resource" uid="uid://bl04ewkivmfmt" path="res://CustomResources/Characters/Pequena/Pequena.tres" id="8_vpsi6"]
-[ext_resource type="Resource" uid="uid://duyxp42ds1oy7" path="res://CustomResources/Characters/TestChar/CharacterTest.tres" id="9_4vul5"]
-[ext_resource type="Resource" uid="uid://drc74scictreg" path="res://CustomResources/Save/comercialVisibleStateData.tres" id="10_pfscg"]
 [ext_resource type="Resource" uid="uid://cifgbo4y764k1" path="res://CustomResources/Save/residencialVisibleStateData.tres" id="11_f4wk7"]
 [ext_resource type="Resource" uid="uid://v3xw158vkd3n" path="res://CustomResources/Stamps/journalGuessStamps/ArmandoGuessStamp.tres" id="12_4vul5"]
 [ext_resource type="Script" uid="uid://fhsl8l0k7foi" path="res://Scripts/Characters/charactersLoader.gd" id="12_dg7xn"]
@@ -20,8 +18,10 @@
 [ext_resource type="Resource" uid="uid://cmirh2mlor13s" path="res://CustomResources/Stamps/journalGuessStamps/JairGuessStamp.tres" id="17_px31x"]
 [ext_resource type="Resource" uid="uid://ru5c5eq5o6jc" path="res://CustomResources/Stamps/journalGuessStamps/MarkaGuessStamp.tres" id="18_di235"]
 [ext_resource type="Resource" uid="uid://baitihl2dush6" path="res://CustomResources/Stamps/journalGuessStamps/PequenaGuessStamp.tres" id="19_awdrt"]
+[ext_resource type="Resource" uid="uid://cviiuv155u8nv" path="res://CustomResources/Save/escritorioVisibleStateData.tres" id="20_pfscg"]
+[ext_resource type="Resource" uid="uid://bcyrs1v03hd8k" path="res://CustomResources/Save/escritorioTransformArrayData.tres" id="21_f4wk7"]
 
 [resource]
 script = ExtResource("12_dg7xn")
-Resources = Array[Resource]([ExtResource("1_8ft67"), ExtResource("2_0s5pq"), ExtResource("3_e8him"), ExtResource("4_b4i11"), ExtResource("5_wlosa"), ExtResource("6_gc2pg"), ExtResource("7_e30vg"), ExtResource("8_vpsi6"), ExtResource("9_4vul5"), ExtResource("10_pfscg"), ExtResource("11_f4wk7"), ExtResource("12_4vul5"), ExtResource("13_pfscg"), ExtResource("14_f4wk7"), ExtResource("15_dg7xn"), ExtResource("16_pec46"), ExtResource("17_px31x"), ExtResource("18_di235"), ExtResource("19_awdrt")])
+Resources = Array[Resource]([ExtResource("1_8ft67"), ExtResource("2_0s5pq"), ExtResource("3_e8him"), ExtResource("4_b4i11"), ExtResource("5_wlosa"), ExtResource("6_gc2pg"), ExtResource("7_e30vg"), ExtResource("8_vpsi6"), ExtResource("11_f4wk7"), ExtResource("12_4vul5"), ExtResource("13_pfscg"), ExtResource("14_f4wk7"), ExtResource("15_dg7xn"), ExtResource("16_pec46"), ExtResource("17_px31x"), ExtResource("18_di235"), ExtResource("19_awdrt"), ExtResource("20_pfscg"), ExtResource("21_f4wk7")])
 metadata/_custom_type_script = "uid://fhsl8l0k7foi"

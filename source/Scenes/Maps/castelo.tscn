@@ -2,14 +2,655 @@
 
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_lldms"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="2_755oh"]
+[ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="2_bmver"]
+[ext_resource type="Texture2D" uid="uid://cfefkm4pmddrd" path="res://Assets/escritorio/sem candelabro.png" id="3_aqr4c"]
 [ext_resource type="AudioStream" uid="uid://btb6burm64qvp" path="res://Assets/Musicas/Carimbo Miguel OST — Vila de Carimbia.ogg" id="3_phbd6"]
+[ext_resource type="Texture2D" uid="uid://bpm8g0jdi38h3" path="res://Assets/escritorio/cadeira.png" id="4_fhicc"]
+[ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="4_j5qa6"]
+[ext_resource type="Texture2D" uid="uid://ba4j8nmal3t4y" path="res://Assets/escritorio/mesa.png" id="5_j5qa6"]
+[ext_resource type="Resource" uid="uid://cviiuv155u8nv" path="res://CustomResources/Save/escritorioVisibleStateData.tres" id="6_fhicc"]
+[ext_resource type="Texture2D" uid="uid://bjxhystsf8ivt" path="res://Assets/escritorio/escrivaninha.png" id="6_oqf3l"]
+[ext_resource type="Texture2D" uid="uid://c318voptycsya" path="res://Assets/escritorio/estante.png" id="7_aqr4c"]
+[ext_resource type="Script" uid="uid://dyfb3j6cog4k2" path="res://Scripts/Global/transformStateSave.gd" id="10_3gqay"]
+[ext_resource type="Resource" uid="uid://bcyrs1v03hd8k" path="res://CustomResources/Save/escritorioTransformArrayData.tres" id="11_whkou"]
+[ext_resource type="PackedScene" uid="uid://cf2ytexwnfh2s" path="res://Scenes/Interactions/Clues/object_clue_armando_stamp.tscn" id="12_xt6f8"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="13_aqr4c"]
+[ext_resource type="PackedScene" uid="uid://3ir8xy0a71ca" path="res://Scenes/Interactions/Clues/text_clue_castleLetters.tscn" id="14_xt6f8"]
+[ext_resource type="PackedScene" uid="uid://cwaqh5qcysihh" path="res://Scenes/Interactions/Clues/text_clue_familyTree.tscn" id="15_nawiw"]
+[ext_resource type="Texture2D" uid="uid://cdqaipif83su7" path="res://Assets/escritorio/arvoregenealogica.png" id="16_ka4tx"]
+[ext_resource type="PackedScene" uid="uid://bv2ywypmendwm" path="res://Scenes/Interactions/Clues/text_clue_kingsWill.tscn" id="17_3r25g"]
+[ext_resource type="PackedScene" uid="uid://dcff1ph7t34m2" path="res://Scenes/Interactions/PureClickInteractions/pureClick_interactable.tscn" id="18_0wo0n"]
+[ext_resource type="Texture2D" uid="uid://cq4dm77xuuo1g" path="res://Assets/escritorio/candelabro.png" id="19_nopwh"]
+[ext_resource type="AudioStream" uid="uid://82micr3asrbt" path="res://Assets/SFX/SFX - An+ílise.wav" id="20_nopwh"]
+[ext_resource type="Texture2D" uid="uid://d2gepid44gwqj" path="res://Assets/escritorio/candelabroAlavanca.png" id="21_h1usc"]
+[ext_resource type="PackedScene" uid="uid://84pqspn1bnei" path="res://Scenes/Interactions/Clues/text_clue_guardsPatrol.tscn" id="21_tbobh"]
+[ext_resource type="Texture2D" uid="uid://dgmkbt1wpf53s" path="res://Assets/Pistas/papel_generico_fundo.png" id="22_mfycn"]
+[ext_resource type="Texture2D" uid="uid://ucadn0fo7nv2" path="res://Assets/escritorio/alavanca.png" id="22_r2dus"]
+[ext_resource type="PackedScene" uid="uid://dsdpnmxl30dvj" path="res://Scenes/Interactions/MoveInteractions/click_stamp_lock.tscn" id="23_ub0so"]
+[ext_resource type="Texture2D" uid="uid://cfuxfugqcvij0" path="res://Assets/escritorio/cadeado.png" id="24_xkhmk"]
+[ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="29_0x7wf"]
+[ext_resource type="Texture2D" uid="uid://4k50fe1jdvaq" path="res://Assets/escritorio/rei.png" id="30_8n5uc"]
+
+[sub_resource type="Shader" id="Shader_3gqay"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float thickness : hint_range(0.0, 100.0);
+uniform int ring_count : hint_range(1,128) = 16;
+uniform float ring_offset : hint_range(0.0, 1.0, 0.01);
+uniform vec4 outline_color : source_color;
+uniform bool border_clipping_fix = true;
+uniform float aspect_ratio : hint_range(0.1, 10.0, 0.01) = 1.0;
+uniform bool square_border = false;
+uniform vec2 offset;
+uniform bool max_or_add = false;
+
+void vertex(){
+	if (border_clipping_fix){
+		vec2 o = (UV * 2.0 - 1.0);
+		VERTEX += o * thickness - offset;
+		VERTEX.x *= 1.0 + (aspect_ratio-1.0) * (thickness * TEXTURE_PIXEL_SIZE.x) * 2.0;
+	}
+}
+
+vec2 square(float i){ // samples a square pattern
+	i *= 2.0;
+	return (vec2(
+		clamp(abs(mod(i,2.0)-1.0),0.25,0.75),
+		clamp(abs(mod(i+0.5,2.0)-1.0),0.25,0.75)
+		)-0.5)*4.0;
+}
+
+vec4 tex(sampler2D sampler, vec2 uv){
+	vec4 clr;
+	if (uv.x > 0.0 && uv.y > 0.0 && uv.x < 1.0 && uv.y < 1.0){ // bleeding texture sampling fix
+		clr = texture(sampler, uv);
+	}else{clr = vec4(0.0);}
+	return clr;
+}
+
+void fragment(){
+	vec2 o = offset / vec2(textureSize(TEXTURE, 0));
+	vec2 uv = UV;
+	uv -= vec2(0.5);
+	if (border_clipping_fix){
+		uv.x *= 1.0 + (aspect_ratio-1.0) * thickness * TEXTURE_PIXEL_SIZE.x * 2.0;
+		uv *= (1.0 + (thickness * TEXTURE_PIXEL_SIZE * 2.0));
+		uv -= o;
+		}
+	uv += vec2(0.5);
+	vec2 size = vec2(thickness) / vec2(textureSize(TEXTURE, 0));
+	
+	vec4 sprite_color = tex(TEXTURE, uv);
+	
+	float alpha = sprite_color.a;
+	if (square_border){
+		for(int i=0;i<ring_count;++i){
+			float r = float(i) / float(ring_count) + ring_offset;
+			alpha = max(alpha,texture(TEXTURE, uv + o + size * square(r) * vec2(aspect_ratio,1.0)).a * outline_color.a);}// texture sampling fix is disabled because both with and without give the same result
+	}else{
+		for(int i=0;i<ring_count;++i){
+			float r = float(i) * 3.14159 / float(ring_count) * 2.0 + ring_offset;
+			if (max_or_add){
+				alpha = alpha+tex(TEXTURE, uv + o +  vec2(size.x * sin(r) * aspect_ratio, size.y * cos(r))).a * outline_color.a;
+			}else{
+				alpha = max(alpha,tex(TEXTURE, uv + o +  vec2(size.x * sin(r) * aspect_ratio, size.y * cos(r))).a * outline_color.a);
+			}
+		}
+	}
+    vec3 final_color = mix(outline_color.rgb, sprite_color.rgb, sprite_color.a);
+    COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whkou"]
+resource_local_to_scene = true
+shader = SubResource("Shader_3gqay")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0x7wf"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8n5uc"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5pnw"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3r25g"]
+size = Vector2(160.09856, 88.4079)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_twdsq"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="Animation" id="Animation_h1usc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lever:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_r2dus"]
+resource_name = "open"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lever:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.34906584]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3gqay"]
+_data = {
+&"RESET": SubResource("Animation_h1usc"),
+&"open": SubResource("Animation_r2dus")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yea3t"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1x7v"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="Shader" id="Shader_btb8p"]
+resource_local_to_scene = true
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform float thickness : hint_range(0.0, 100.0);
+uniform int ring_count : hint_range(1,128) = 16;
+uniform float ring_offset : hint_range(0.0, 1.0, 0.01);
+uniform vec4 outline_color : source_color;
+uniform bool border_clipping_fix = true;
+uniform float aspect_ratio : hint_range(0.1, 10.0, 0.01) = 1.0;
+uniform bool square_border = false;
+uniform vec2 offset;
+uniform bool max_or_add = false;
+
+void vertex(){
+	if (border_clipping_fix){
+		vec2 o = (UV * 2.0 - 1.0);
+		VERTEX += o * thickness - offset;
+		VERTEX.x *= 1.0 + (aspect_ratio-1.0) * (thickness * TEXTURE_PIXEL_SIZE.x) * 2.0;
+	}
+}
+
+vec2 square(float i){ // samples a square pattern
+	i *= 2.0;
+	return (vec2(
+		clamp(abs(mod(i,2.0)-1.0),0.25,0.75),
+		clamp(abs(mod(i+0.5,2.0)-1.0),0.25,0.75)
+		)-0.5)*4.0;
+}
+
+vec4 tex(sampler2D sampler, vec2 uv){
+	vec4 clr;
+	if (uv.x > 0.0 && uv.y > 0.0 && uv.x < 1.0 && uv.y < 1.0){ // bleeding texture sampling fix
+		clr = texture(sampler, uv);
+	}else{clr = vec4(0.0);}
+	return clr;
+}
+
+void fragment(){
+	vec2 o = offset / vec2(textureSize(TEXTURE, 0));
+	vec2 uv = UV;
+	uv -= vec2(0.5);
+	if (border_clipping_fix){
+		uv.x *= 1.0 + (aspect_ratio-1.0) * thickness * TEXTURE_PIXEL_SIZE.x * 2.0;
+		uv *= (1.0 + (thickness * TEXTURE_PIXEL_SIZE * 2.0));
+		uv -= o;
+		}
+	uv += vec2(0.5);
+	vec2 size = vec2(thickness) / vec2(textureSize(TEXTURE, 0));
+	
+	vec4 sprite_color = tex(TEXTURE, uv);
+	
+	float alpha = sprite_color.a;
+	if (square_border){
+		for(int i=0;i<ring_count;++i){
+			float r = float(i) / float(ring_count) + ring_offset;
+			alpha = max(alpha,texture(TEXTURE, uv + o + size * square(r) * vec2(aspect_ratio,1.0)).a * outline_color.a);}// texture sampling fix is disabled because both with and without give the same result
+	}else{
+		for(int i=0;i<ring_count;++i){
+			float r = float(i) * 3.14159 / float(ring_count) * 2.0 + ring_offset;
+			if (max_or_add){
+				alpha = alpha+tex(TEXTURE, uv + o +  vec2(size.x * sin(r) * aspect_ratio, size.y * cos(r))).a * outline_color.a;
+			}else{
+				alpha = max(alpha,tex(TEXTURE, uv + o +  vec2(size.x * sin(r) * aspect_ratio, size.y * cos(r))).a * outline_color.a);
+			}
+		}
+	}
+    vec3 final_color = mix(outline_color.rgb, sprite_color.rgb, sprite_color.a);
+    COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
+resource_local_to_scene = true
+shader = SubResource("Shader_btb8p")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0x7wf"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
 
 [node name="Castelo" unique_id=146350973 instance=ExtResource("1_lldms")]
 
-[node name="Ground" parent="." index="0" unique_id=2054894502]
+[node name="Background" type="Sprite2D" parent="." index="0" unique_id=1424575677]
+self_modulate = Color(0.22115254, 0.11027486, 0.06808466, 1)
+z_index = -10
+position = Vector2(2754, 1582.5004)
+scale = Vector2(18.925783, 11.927734)
+texture = ExtResource("2_bmver")
+
+[node name="Ground" parent="." index="1" unique_id=2054894502]
+visible = false
 tile_map_data = PackedByteArray("AAD9////PwAGAAMAAAD9/wAAPwAGAAMAAAD8/wEAPwAGAAMAAAD9/wIAPwAGAAMAAAD9/wMAPwAGAAMAAAD+/wQAPwAGAAMAAAD+/wUAPwAGAAMAAAD//wQAPwAGAAMAAAD//wMAPwAGAAMAAAAAAAEAPwAGAAMAAAAAAAAAPwAGAAMAAAD/////PwAGAAMAAAD///7/PwAGAAMAAAD+//3/PwAGAAMAAAD///z/PwAGAAMAAAD///v/PwAGAAMAAAAAAPz/PwAGAAMAAAAAAP3/PwAGAAMAAAAAAP7/PwAGAAMAAAABAP7/PwAGAAMAAAABAP//PwAGAAMAAAABAPf/PwAGAAMAAAABAPj/PwAGAAMAAAAAAPn/PwAGAAMAAAABAPr/PwAGAAMAAAABAPv/PwAGAAMAAAACAPr/PwAGAAMAAAACAPn/PwAGAAMAAAADAPr/PwAGAAMAAAADAPv/PwAGAAMAAAADAPz/PwAGAAMAAAACAP3/PwAGAAMAAAA=")
 
-[node name="ClickTravel" parent="." index="4" unique_id=705077137 instance=ExtResource("2_755oh")]
-position = Vector2(574, -14)
+[node name="Walls" parent="." index="2" unique_id=705766568]
+visible = false
+
+[node name="Player" parent="." index="3" unique_id=1389957626]
+y_sort_enabled = true
+position = Vector2(1241, 1467)
+
+[node name="escritorio" type="Sprite2D" parent="." index="5" unique_id=919795321]
+position = Vector2(0, 8)
+texture = ExtResource("3_aqr4c")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Cadeira" type="Sprite2D" parent="." index="6" unique_id=326084738]
+y_sort_enabled = true
+position = Vector2(451, 1338)
+texture = ExtResource("4_fhicc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Cadeira" index="0" unique_id=2053078015]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Cadeira/StaticBody2D" index="0" unique_id=1395197513]
+polygon = PackedVector2Array(-66, 75, 2, 98, 66, 55, -2, 35)
+
+[node name="Mesa" type="Sprite2D" parent="." index="7" unique_id=624012816]
+y_sort_enabled = true
+position = Vector2(523, 1545)
+texture = ExtResource("5_j5qa6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Mesa" index="0" unique_id=36224324]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Mesa/StaticBody2D" index="0" unique_id=1569237737]
+position = Vector2(-8, -19)
+polygon = PackedVector2Array(-154, -5, 113, 129, 185, 88, -87, -44)
+
+[node name="Escrivaninha" type="Sprite2D" parent="." index="8" unique_id=243339419]
+y_sort_enabled = true
+position = Vector2(1218, 1069)
+texture = ExtResource("6_oqf3l")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Escrivaninha" index="0" unique_id=715779970]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Escrivaninha/StaticBody2D" index="0" unique_id=1499157502]
+position = Vector2(-44, 64)
+polygon = PackedVector2Array(-177, -16, 113, 129, 262, 54, -26, -93)
+
+[node name="Estante" type="Sprite2D" parent="." index="9" unique_id=1571058106]
+position = Vector2(529, 1033)
+texture = ExtResource("7_aqr4c")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Estante" index="0" unique_id=1049947149]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Estante/StaticBody2D" index="0" unique_id=15118275]
+position = Vector2(-44, 64)
+polygon = PackedVector2Array(-70, 137, -18, 170, 173, 69, 119, 36)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="10" unique_id=2112876501]
+collision_layer = 5
+collision_mask = 5
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" index="0" unique_id=1914382353]
+build_mode = 1
+polygon = PackedVector2Array(811, 1759, 615, 1662, 699, 1615, 437, 1482, 357, 1520, 209, 1445, 254, 1422, 216, 1397, 460, 1265, 421, 1239, 661, 1119, 660, 1101, 680, 1091, 679, 1073, 698, 1066, 695, 1043, 850, 964, 901, 989, 1084, 895, 1039, 870, 1120, 832, 1172, 863, 1226, 834, 1342, 891, 1342, 973, 1564, 1085, 1651, 1040, 1845, 1139, 1781, 1179, 1837, 1206, 1425, 1405, 1425, 1425, 1403, 1432, 1402, 1451, 1385, 1461, 1385, 1480)
+
+[node name="VisibleStateSaver" type="Node" parent="." index="11" unique_id=2026298883 node_paths=PackedStringArray("targetNodes")]
+script = ExtResource("4_j5qa6")
+boolArrayData = ExtResource("6_fhicc")
+targetNodes = [NodePath("../Estante"), NodePath("../HiddenLever/hiddenLever_interaction"), NodePath("../ClickStampLock"), NodePath("../ClickTravel_secretRoom")]
+metadata/_custom_type_script = "uid://d1y8kysganspd"
+
+[node name="TransformStateSaver" type="Node" parent="." index="12" unique_id=2093520399 node_paths=PackedStringArray("targetNodes")]
+script = ExtResource("10_3gqay")
+transformArrayData = ExtResource("11_whkou")
+targetNodes = [NodePath("../HiddenLever/Lever")]
+
+[node name="ClickTravel_residencial" parent="." index="13" unique_id=705077137 instance=ExtResource("2_755oh")]
+position = Vector2(1015, 1555)
+rotation = 1.5707964
 scene = "res://Scenes/Maps/residencial.tscn"
 next_audio = ExtResource("3_phbd6")
+
+[node name="CollisionShape2D" parent="ClickTravel_residencial/InteractionArea" parent_id_path=PackedInt32Array(705077137, 146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.655, 0.655)
+
+[node name="CollisionShape2D" parent="ClickTravel_residencial/StopArea" parent_id_path=PackedInt32Array(705077137, 1120606992) index="0" unique_id=1626029816]
+scale = Vector2(0.475, 0.475)
+
+[node name="Sprite2D" parent="ClickTravel_residencial" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_whkou")
+
+[node name="object_clue_armandoStamp" parent="." index="14" unique_id=1896811649 instance=ExtResource("12_xt6f8")]
+y_sort_enabled = true
+position = Vector2(852, 1100)
+
+[node name="InteractionArea" parent="object_clue_armandoStamp" index="0" unique_id=146712339]
+position = Vector2(0, -19)
+
+[node name="CollisionShape2D" parent="object_clue_armandoStamp/InteractionArea" index="0" unique_id=2125542557]
+scale = Vector2(0.73, 0.73)
+
+[node name="StopArea" parent="object_clue_armandoStamp" index="1" unique_id=1120606992]
+position = Vector2(0, -19)
+
+[node name="CollisionShape2D" parent="object_clue_armandoStamp/StopArea" index="0" unique_id=1626029816]
+scale = Vector2(0.475, 0.475)
+
+[node name="CollisionShape2D" parent="object_clue_armandoStamp" index="2" unique_id=1151619031]
+position = Vector2(0, -2)
+scale = Vector2(0.45, 1.065)
+
+[node name="Sprite2D" parent="object_clue_armandoStamp" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_0x7wf")
+position = Vector2(0, -18.999998)
+scale = Vector2(0.103, 0.103)
+
+[node name="Spark" parent="object_clue_armandoStamp" index="4" unique_id=560819456]
+position = Vector2(0, -18.999998)
+
+[node name="TextClue_castleLetters" parent="." index="15" unique_id=1002797317 instance=ExtResource("14_xt6f8")]
+z_index = 1
+position = Vector2(612, 1538)
+
+[node name="CollisionShape2D" parent="TextClue_castleLetters/InteractionArea" parent_id_path=PackedInt32Array(1002797317, 146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.7, 0.7)
+
+[node name="CollisionShape2D" parent="TextClue_castleLetters/StopArea" parent_id_path=PackedInt32Array(1002797317, 1120606992) index="0" unique_id=1626029816]
+scale = Vector2(0.62, 0.62)
+
+[node name="CollisionShape2D" parent="TextClue_castleLetters" index="2" unique_id=1151619031]
+scale = Vector2(1.195, 0.65)
+
+[node name="Sprite2D" parent="TextClue_castleLetters" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_8n5uc")
+rotation = -0.5235988
+scale = Vector2(0.076, 0.076)
+skew = -0.5235988
+
+[node name="TextClue_familyTree" parent="." index="16" unique_id=954071128 instance=ExtResource("15_nawiw")]
+position = Vector2(705, 883)
+OutlineMaxThickness = 6.0
+
+[node name="CollisionShape2D" parent="TextClue_familyTree/InteractionArea" parent_id_path=PackedInt32Array(954071128, 146712339) index="0" unique_id=2125542557]
+scale = Vector2(1.29, 1.29)
+
+[node name="CollisionShape2D" parent="TextClue_familyTree/StopArea" parent_id_path=PackedInt32Array(954071128, 1120606992) index="0" unique_id=1626029816]
+scale = Vector2(1.89, 1.89)
+
+[node name="Sprite2D" parent="TextClue_familyTree" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_w5pnw")
+scale = Vector2(1, 1)
+texture = ExtResource("16_ka4tx")
+
+[node name="dropShadow" parent="TextClue_familyTree/Sprite2D" index="0" unique_id=771579444]
+visible = false
+
+[node name="TextClue_kingsWill" parent="." index="17" unique_id=1077445775 instance=ExtResource("17_3r25g")]
+z_index = 1
+position = Vector2(1187, 1029)
+
+[node name="InteractionArea" parent="TextClue_kingsWill" index="0" unique_id=146712339]
+position = Vector2(0, 67)
+
+[node name="CollisionShape2D" parent="TextClue_kingsWill/InteractionArea" index="0" unique_id=2125542557]
+scale = Vector2(0.99, 0.99)
+
+[node name="StopArea" parent="TextClue_kingsWill" index="1" unique_id=1120606992]
+position = Vector2(15, 44)
+
+[node name="CollisionShape2D" parent="TextClue_kingsWill/StopArea" index="0" unique_id=1626029816]
+position = Vector2(16.584839, 69.6416)
+rotation = 0.5235988
+scale = Vector2(2.23, 2.23)
+skew = 0.5235988
+shape = SubResource("RectangleShape2D_3r25g")
+
+[node name="Sprite2D" parent="TextClue_kingsWill" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_twdsq")
+rotation = -2.5307274
+scale = Vector2(0.133, 0.133)
+skew = 0.5235988
+
+[node name="HiddenLever" type="Node2D" parent="." index="18" unique_id=1738166547]
+position = Vector2(322, 1201)
+
+[node name="hiddenLever_interaction" parent="HiddenLever" index="0" unique_id=1354987944 instance=ExtResource("18_0wo0n")]
+hoverSizeIncrease = 1.0
+outlineThickness = 0.0
+
+[node name="CollisionShape2D" parent="HiddenLever/hiddenLever_interaction" index="0" unique_id=1151619031]
+position = Vector2(-3, -3)
+scale = Vector2(0.675, 1.435)
+
+[node name="Sprite2D" parent="HiddenLever/hiddenLever_interaction" index="1" unique_id=159541262]
+visible = false
+material = null
+texture = ExtResource("19_nopwh")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HiddenLever/hiddenLever_interaction" index="2" unique_id=1902863004]
+stream = ExtResource("20_nopwh")
+bus = &"SFX"
+
+[node name="Sprite2D2" type="Sprite2D" parent="HiddenLever" index="1" unique_id=1116209564]
+texture = ExtResource("21_h1usc")
+
+[node name="Lever" type="Node2D" parent="HiddenLever" index="2" unique_id=1928795963]
+position = Vector2(1, -15)
+
+[node name="Sprite2D3" type="Sprite2D" parent="HiddenLever/Lever" index="0" unique_id=23878039]
+position = Vector2(-1, 15)
+texture = ExtResource("22_r2dus")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HiddenLever" index="3" unique_id=638101319]
+libraries/ = SubResource("AnimationLibrary_3gqay")
+
+[node name="TextClue_guardsPatrol" parent="." index="19" unique_id=1056826935 instance=ExtResource("21_tbobh")]
+z_index = 1
+position = Vector2(471, 1470)
+
+[node name="CollisionShape2D" parent="TextClue_guardsPatrol/InteractionArea" parent_id_path=PackedInt32Array(1056826935, 146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.71, 0.71)
+
+[node name="Sprite2D" parent="TextClue_guardsPatrol" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_yea3t")
+rotation = 0.5235988
+skew = 0.5235988
+texture = ExtResource("22_mfycn")
+
+[node name="ClickStampLock" parent="." index="20" unique_id=1050107889 instance=ExtResource("23_ub0so")]
+visible = false
+position = Vector2(545, 1090)
+
+[node name="CollisionShape2D" parent="ClickStampLock/InteractionArea" parent_id_path=PackedInt32Array(1050107889, 146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.825, 0.825)
+
+[node name="StopArea" parent="ClickStampLock" index="1" unique_id=1120606992]
+position = Vector2(-3, 16)
+
+[node name="CollisionShape2D" parent="ClickStampLock/StopArea" index="0" unique_id=1626029816]
+scale = Vector2(1.105, 1.105)
+
+[node name="CollisionShape2D" parent="ClickStampLock" index="2" unique_id=1151619031]
+scale = Vector2(0.565, 0.565)
+
+[node name="Sprite2D" parent="ClickStampLock" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_m1x7v")
+texture = ExtResource("24_xkhmk")
+
+[node name="ClickTravel_secretRoom" parent="." index="21" unique_id=810496024 instance=ExtResource("2_755oh")]
+visible = false
+position = Vector2(552, 1123)
+rotation = -1.5707964
+scene = "res://Scenes/Maps/residencial.tscn"
+next_audio = ExtResource("3_phbd6")
+
+[node name="CollisionShape2D" parent="ClickTravel_secretRoom/InteractionArea" parent_id_path=PackedInt32Array(810496024, 146712339) index="0" unique_id=2125542557]
+scale = Vector2(0.93, 0.93)
+
+[node name="CollisionShape2D" parent="ClickTravel_secretRoom/StopArea" parent_id_path=PackedInt32Array(810496024, 1120606992) index="0" unique_id=1626029816]
+scale = Vector2(0.79, 0.79)
+
+[node name="Sprite2D" parent="ClickTravel_secretRoom" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_ls4ci")
+
+[node name="ClickInspectable_King" parent="." index="22" unique_id=1882603094 instance=ExtResource("29_0x7wf")]
+position = Vector2(782, 1359)
+TextsList = Array[String](["(O corpo do rei)", "(O ferimento fatal foi um corte na garganta)"])
+OutlineMaxThickness = 6.0
+audio = ExtResource("20_nopwh")
+
+[node name="CollisionShape2D" parent="ClickInspectable_King/InteractionArea" parent_id_path=PackedInt32Array(1882603094, 146712339) index="0" unique_id=2125542557]
+position = Vector2(0, 20)
+scale = Vector2(1.105, 1.105)
+
+[node name="CollisionShape2D" parent="ClickInspectable_King/StopArea" parent_id_path=PackedInt32Array(1882603094, 1120606992) index="0" unique_id=1626029816]
+scale = Vector2(1.68, 1.68)
+
+[node name="CollisionShape2D" parent="ClickInspectable_King" index="2" unique_id=1151619031]
+position = Vector2(0, 17)
+scale = Vector2(11.945, 11.945)
+shape = SubResource("CircleShape2D_0x7wf")
+
+[node name="Sprite2D" parent="ClickInspectable_King" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_btb8p")
+scale = Vector2(1, 1)
+texture = ExtResource("30_8n5uc")
+
+[node name="dropShadow" parent="ClickInspectable_King/Sprite2D" index="0" unique_id=771579444]
+visible = false
+
+[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/hiddenLever_interaction/AudioStreamPlayer" method="play"]
+[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="Estante" method="set_visible" binds= [false]]
+[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/hiddenLever_interaction" method="set_visible" binds= [false]]
+[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/AnimationPlayer" method="play" binds= ["open"]]
+[connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="ClickStampLock" method="set_visible" binds= [true]]
+[connection signal="animation_finished" from="HiddenLever/AnimationPlayer" to="TransformStateSaver" method="SaveData" unbinds=1]
+[connection signal="OnCorrectStampLock" from="ClickStampLock" to="ClickStampLock" method="set_visible" binds= [false]]
+[connection signal="OnCorrectStampLock" from="ClickStampLock" to="ClickTravel_secretRoom" method="set_visible" binds= [true]]
+
+[editable path="ClickTravel_residencial"]
+[editable path="object_clue_armandoStamp"]
+[editable path="TextClue_castleLetters"]
+[editable path="TextClue_familyTree"]
+[editable path="TextClue_kingsWill"]
+[editable path="HiddenLever/hiddenLever_interaction"]
+[editable path="TextClue_guardsPatrol"]
+[editable path="ClickStampLock"]
+[editable path="ClickTravel_secretRoom"]
+[editable path="ClickInspectable_King"]
