@@ -10,14 +10,13 @@ const PORTRAIT_TEMP = preload("uid://bn720yj88xobh")
 @onready var sim: Button = $PanelContainer/VBoxContainer/Confirm/Sim
 @onready var nao: Button = $PanelContainer/VBoxContainer/Confirm/Nao
 @onready var culpado_select: Button = $PanelContainer/VBoxContainer/CulpadoSelect
-@onready var culpados_box: HBoxContainer = $PanelContainer/VBoxContainer/Culpados
+@onready var culpados_box: GridContainer = $PanelContainer/VBoxContainer/Culpados/CulpadosContainer
 @onready var click: AudioStreamPlayer = $Click
 
 var showing = false
 var suspeitos = []
 var culpados = []
 var confirming = false
-var correct := 0
 var lockedin := false
 
 func _ready() -> void:
@@ -77,11 +76,15 @@ func _on_nao_button_up() -> void:
 func _on_sim_button_up() -> void:
 	click.play()
 	lockedin = true
+	var correct = 0
+	var incorrect = 0
 	Music._mute()
 	for i in culpados:
 		if i.sus_name == "Cadu" or i.sus_name == "Armando":
 			correct += 1
-	if correct == 2 && culpados.size():
+		else:
+			incorrect += 1
+	if correct == 2 && incorrect == 0:
 		animation_player.play("success")
 	else:
 		animation_player.play("failed")
