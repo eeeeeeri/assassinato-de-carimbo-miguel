@@ -6,4 +6,5 @@
 script = ExtResource("1_ctqs7")
 dialogOption = "Reparou alguma movimentação suspeita nos últimos dias?"
 charResponses = Array[String](["Só consigo pensar nos barulhos que ouvi aqui pela vizinhança ontem a noite.", "-Que tipo de barulhos?", "Eu não sei, na hora achei que fosse uns gatos fazendo bagunça."])
+playerIsSpeaking = Array[bool]([false, true, false])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

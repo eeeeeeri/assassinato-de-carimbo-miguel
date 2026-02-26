@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://duu8ety807k0j"]
 
-[ext_resource type="Shader" uid="uid://dkskcxcayytq3" path="res://CustomResources/Shaders/shake.gdshader" id="1_0megp"]
-[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="2_0megp"]
-[ext_resource type="Script" uid="uid://dbcq87xk3a21o" path="res://Scripts/UI/culpado.gd" id="2_map2b"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/shake.gdshader" id="1_0megp"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="2_0megp"]
+[ext_resource type="Script" path="res://Scripts/UI/culpado.gd" id="2_map2b"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_map2b"]
 [ext_resource type="Texture2D" uid="uid://bcxy583oqmksl" path="res://Assets/mark.png" id="4_o846e"]
+[ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="5_map2b"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o846e"]
 shader = ExtResource("1_0megp")
@@ -106,6 +107,7 @@ grow_horizontal = 2
 grow_vertical = 0
 pivot_offset_ratio = Vector2(0.5, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_map2b")
 theme_override_font_sizes/font_size = 24
 text = "NOME"
 horizontal_alignment = 1

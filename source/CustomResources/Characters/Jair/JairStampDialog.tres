@@ -6,4 +6,5 @@
 script = ExtResource("1_07wwv")
 dialogOption = "Poderia me mostrar seu carimbo?"
 charResponses = Array[String](["MOSTRAR O QUE RAPAZ?", "-Seu carimbo senhor.", "QUE FALTA DE RESPEITO MULEQUE, VOCÊ VAI VER O QUE EU VOU TE MOSTRAR."])
+playerIsSpeaking = Array[bool]([false, true, false])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

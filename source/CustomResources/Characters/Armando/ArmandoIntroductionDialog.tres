@@ -6,4 +6,5 @@
 script = ExtResource("1_grg3n")
 dialogOption = "Qual o seu nome e profissão?"
 charResponses = Array[String](["...", "-Oláaa, pode me dizer seu nome?", "..."])
+playerIsSpeaking = Array[bool]([false, true, false])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"

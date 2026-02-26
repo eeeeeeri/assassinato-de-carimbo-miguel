@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_vbau5")
 dialogOption = "Qual o seu nome e profissão?"
-charResponses = Array[String](["Dolores Barriga, taverneira de dia, cozinheira de noite."])
+charResponses = Array[String](["Dolores de Barriga, taverneira de dia, cozinheira de noite."])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"
