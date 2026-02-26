@@ -5,14 +5,15 @@ extends CanvasLayer
 var tween : Tween
 var new_scene : String
 
-func change_scene_to(scene : String, new_audio : AudioStream) -> void:
+func change_scene_to(scene : String, new_audio : AudioStream = null) -> void:
 	if tween:
 		tween.kill()
 	
 	new_scene = scene
 	color_rect.material.set_shader_parameter("invert", true)
 	
-	GlobalResources.GLOBAL_EVENTS.UpdateMusic.emit(new_audio)
+	if(new_audio):
+		GlobalResources.GLOBAL_EVENTS.UpdateMusic.emit(new_audio)
 	
 	tween = create_tween().set_trans(Tween.TRANS_SINE)
 	tween.tween_method(update_shader, -0.1, 3.0, .5).connect("finished", _load_new_scene)
