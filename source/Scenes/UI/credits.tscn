@@ -84,11 +84,11 @@ offset_top = 374.0
 offset_right = 323.0
 offset_bottom = 690.0
 grow_horizontal = 2
-text = "eri ⚙️
+text = "eri ⚙️🎨
 Eshlii 🎵🔊
-Flower 🎨
-Luci 🎨
-Ninjt500 ⚙️"
+Flower 🎨(Personagens)
+Luci 🎨(Cenários)
+Ninjt500 ⚙🎨"
 label_settings = SubResource("LabelSettings_gih0s")
 horizontal_alignment = 1
 

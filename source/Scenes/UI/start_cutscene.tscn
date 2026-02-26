@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dadnqocgce3l5" path="res://Scripts/UI/start_cutscene.gd" id="1_cl4oq"]
 [ext_resource type="Script" uid="uid://bnbv38ity1a1b" path="res://Scripts/UI/map_view.gd" id="1_k4ntd"]
-[ext_resource type="Shader" uid="uid://fotlq7tvk1fi" path="res://CustomResources/Shaders/tilt.gdshader" id="2_qu41u"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/tilt.gdshader" id="2_qu41u"]
 [ext_resource type="Texture2D" uid="uid://brncxjv0xy0y1" path="res://Assets/Pistas/envelope_atras.png" id="2_rdcee"]
 [ext_resource type="Texture2D" uid="uid://crl3u6yrhs8d" path="res://Assets/Pistas/envelope_frente.png" id="3_8j4dp"]
 [ext_resource type="Texture2D" uid="uid://b8pkhi0fok274" path="res://Assets/Pistas/envelope_fechado.png" id="4_cl4oq"]
