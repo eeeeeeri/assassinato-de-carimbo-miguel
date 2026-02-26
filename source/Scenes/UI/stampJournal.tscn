@@ -24,6 +24,7 @@
 [ext_resource type="Resource" uid="uid://baitihl2dush6" path="res://CustomResources/Stamps/journalGuessStamps/PequenaGuessStamp.tres" id="22_jqt7w"]
 [ext_resource type="Resource" uid="uid://nsugappdoxt" path="res://CustomResources/Stamps/PequenaStamp.tres" id="23_lyxpq"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="24_vkn1i"]
+[ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="24_xaw7t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ep287"]
 font_size = 51
@@ -443,6 +444,7 @@ anchor_right = 0.92578125
 anchor_bottom = 0.94305557
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("24_xaw7t")
 text = "Três ou mais carimbos estão incorretos"
 label_settings = SubResource("LabelSettings_ep287")
 horizontal_alignment = 1

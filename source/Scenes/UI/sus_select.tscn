@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnrpich0pg45h" path="res://Scripts/UI/sus_select.gd" id="1_7kxo7"]
 [ext_resource type="PackedScene" uid="uid://b6qhhcbw14o3w" path="res://Scenes/UI/sussy_baka.tscn" id="1_feb6v"]
+[ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="2_ygu1w"]
 [ext_resource type="Texture2D" uid="uid://cuc3mxx806457" path="res://Assets/jail.png" id="3_tv2qg"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_x5eou"]
 [ext_resource type="PackedScene" uid="uid://duw0dr8wm210s" path="res://Scenes/UI/confetti.tscn" id="4_uk1mx"]
@@ -889,6 +890,7 @@ theme_override_constants/separation = 24
 [node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1177553943]
 z_index = 2
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 48
 text = "Quem são os culpados?"
 horizontal_alignment = 1
@@ -942,6 +944,7 @@ alignment = 1
 
 [node name="CulpadoSelect" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1423558960]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 36
 text = "CONFIRMAR CULPADOS"
 
@@ -955,12 +958,14 @@ alignment = 1
 [node name="Sim" type="Button" parent="PanelContainer/VBoxContainer/Confirm" unique_id=175170429]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 36
 text = "SIM"
 
 [node name="Nao" type="Button" parent="PanelContainer/VBoxContainer/Confirm" unique_id=583512478]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 36
 text = "NÃO"
 
@@ -993,6 +998,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 24
+theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 128
 text = "CULPADO"
 

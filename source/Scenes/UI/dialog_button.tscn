@@ -1,6 +1,9 @@
 [gd_scene format=3 uid="uid://5mrwdilq8lw"]
 
+[ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="1_jv83p"]
+
 [sub_resource type="Theme" id="Theme_vxwb6"]
+default_font = ExtResource("1_jv83p")
 default_font_size = 24
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vxwb6"]
