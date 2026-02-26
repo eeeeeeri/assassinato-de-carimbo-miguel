@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://cj2a848vem8ks" path="res://Scenes/Interactions/MoveInteractions/click_interactable.tscn" id="1_3xajp"]
 [ext_resource type="Script" uid="uid://x1l35ueqvsmg" path="res://Scripts/Interactions/Travel.gd" id="2_7lkkb"]
+[ext_resource type="AudioStream" uid="uid://bu750jjv24t4x" path="res://Assets/SFX/SFX - Transição.wav" id="3_5wcv3"]
 [ext_resource type="Texture2D" uid="uid://dqug3wtgmavf1" path="res://Assets/arrow.png" id="3_imcwa"]
 
-[sub_resource type="Shader" id="Shader_imcwa"]
+[sub_resource type="Shader" id="Shader_ram1b"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -76,9 +77,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5wcv3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hx4sd"]
 resource_local_to_scene = true
-shader = SubResource("Shader_imcwa")
+shader = SubResource("Shader_ram1b")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -97,12 +98,13 @@ scene = ""
 next_audio = null
 OutlineMaxThickness = 15.0
 hideSprite = true
+audio = ExtResource("3_5wcv3")
 
 [node name="CollisionShape2D" parent="InteractionArea" parent_id_path=PackedInt32Array(146712339) index="0" unique_id=2125542557]
 scale = Vector2(2, 2)
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_5wcv3")
+material = SubResource("ShaderMaterial_hx4sd")
 scale = Vector2(0.23437501, 0.23437507)
 texture = ExtResource("3_imcwa")
 

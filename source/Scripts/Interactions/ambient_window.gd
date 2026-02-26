@@ -13,7 +13,6 @@ var isInteracting:bool:
 
 func EndInteraction() -> void:
 	if(isInteracting): return
-	
 	GlobalResources.GLOBAL_EVENTS.EndInspection.emit()
 
 func _input(event: InputEvent) -> void:

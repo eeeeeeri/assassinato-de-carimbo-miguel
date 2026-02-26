@@ -2,6 +2,7 @@ extends Interactable
 
 @export var window:PackedScene
 @export var popupDuration:float = 0.25
+@onready var close: AudioStreamPlayer = $Close
 
 var currentWindow:AmbientWindow
 var popupPositionTween:Tween
@@ -31,4 +32,5 @@ func end_inspection() -> void:
 	
 	super()
 	if(currentWindow != null):
+		close.play()
 		currentWindow.queue_free()
