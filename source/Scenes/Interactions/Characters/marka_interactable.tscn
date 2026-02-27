@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_bk5jg"]
 [ext_resource type="Resource" uid="uid://c3873ka87mobb" path="res://CustomResources/Characters/Marka/Marka.tres" id="2_bk5jg"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_kfsqq"]
+[ext_resource type="Resource" uid="uid://dggjjj2upv020" path="res://CustomResources/Characters/Marka/MarkaIntroductionDialog.tres" id="4_6ho3i"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ho3i"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfsqq"]
 resource_local_to_scene = true
 shader = ExtResource("3_kfsqq")
 shader_parameter/thickness = 0.0
@@ -20,5 +21,8 @@ shader_parameter/max_or_add = false
 [node name="markaInteractable" unique_id=705077137 instance=ExtResource("1_bk5jg")]
 Character = ExtResource("2_bk5jg")
 
-[node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_6ho3i")
+[node name="Sprite2D" parent="." index="4" unique_id=159541262]
+material = SubResource("ShaderMaterial_kfsqq")
+
+[node name="SayMyName" parent="." index="7" unique_id=294947695]
+SourceDialog = ExtResource("4_6ho3i")

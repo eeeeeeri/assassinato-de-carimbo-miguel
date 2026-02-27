@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_brdaw"]
 [ext_resource type="Resource" uid="uid://c6l6o5a017pfl" path="res://CustomResources/Characters/Jair/Jair.tres" id="2_brdaw"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_w0bhe"]
+[ext_resource type="Resource" uid="uid://dkrmqv3v1g4ny" path="res://CustomResources/Characters/Jair/JairIntroductionDialog.tres" id="4_b62xm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_brdaw"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w0bhe"]
 resource_local_to_scene = true
 shader = ExtResource("3_w0bhe")
 shader_parameter/thickness = 0.0
@@ -21,5 +22,8 @@ shader_parameter/max_or_add = false
 Character = ExtResource("2_brdaw")
 audio_pitch = 0.5
 
-[node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_brdaw")
+[node name="Sprite2D" parent="." index="4" unique_id=159541262]
+material = SubResource("ShaderMaterial_w0bhe")
+
+[node name="SayMyName" parent="." index="7" unique_id=294947695]
+SourceDialog = ExtResource("4_b62xm")

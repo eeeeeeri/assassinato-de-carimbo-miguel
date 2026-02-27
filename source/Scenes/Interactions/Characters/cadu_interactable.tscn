@@ -4,8 +4,9 @@
 [ext_resource type="Resource" uid="uid://dnr2ykof67e40" path="res://CustomResources/Characters/Cadu/Cadu.tres" id="2_8cbd1"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_lad5m"]
 [ext_resource type="Texture2D" uid="uid://di7m0gppspwp6" path="res://Assets/Personagens/CarlosEduardo.png" id="4_d1dff"]
+[ext_resource type="Resource" uid="uid://bihcgxsy45o1b" path="res://CustomResources/Characters/Cadu/caduIntroductionDialog.tres" id="5_lad5m"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_lad5m"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ghxha"]
 resource_local_to_scene = true
 shader = ExtResource("3_lad5m")
 shader_parameter/thickness = 0.0
@@ -31,8 +32,11 @@ position = Vector2(4, 41)
 scale = Vector2(0.185, 0.185)
 
 [node name="Sprite2D" parent="." index="4" unique_id=159541262]
-material = SubResource("ShaderMaterial_lad5m")
+material = SubResource("ShaderMaterial_ghxha")
 position = Vector2(0, 0)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_d1dff")
 offset = Vector2(-13.333333, -293.3333)
+
+[node name="SayMyName" parent="." index="7" unique_id=294947695]
+SourceDialog = ExtResource("5_lad5m")
