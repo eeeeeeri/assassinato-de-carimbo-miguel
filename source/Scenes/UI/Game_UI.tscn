@@ -5,16 +5,16 @@
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="3_4o8mf"]
 [ext_resource type="PackedScene" uid="uid://b6qhhcbw14o3w" path="res://Scenes/UI/sussy_baka.tscn" id="3_8od7p"]
 [ext_resource type="AudioStream" uid="uid://bmx3vtrhsexr7" path="res://CustomResources/AudioStreams/coin.tres" id="3_j8f76"]
-[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="4_ddusd"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="4_ddusd"]
 [ext_resource type="PackedScene" uid="uid://x0e7vbsd852" path="res://Scenes/UI/modular_stamp.tscn" id="5_ddusd"]
-[ext_resource type="Resource" uid="uid://duyxp42ds1oy7" path="res://CustomResources/Characters/TestChar/CharacterTest.tres" id="5_mi66r"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="7_5ji76"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j8f76"]
 font_size = 25
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_5ji76"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5bd3"]
 resource_local_to_scene = true
 shader = ExtResource("4_ddusd")
 shader_parameter/shadow_offset = Vector2(0, 0)
@@ -107,10 +107,15 @@ grow_horizontal = 0
 grow_vertical = 0
 scale = Vector2(0.275, 0.275)
 mouse_filter = 2
-character = ExtResource("5_mi66r")
+script = null
 
 [node name="Shadow" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_5ji76")
+material = SubResource("ShaderMaterial_j5bd3")
+
+[node name="Sprite2D" parent="Canvas/inputTooltips/SussyBaka/Panel/ColorRect" parent_id_path=PackedInt32Array(423670737, 101840902) index="0" unique_id=657806657]
+position = Vector2(15.725801, -6.2102013)
+scale = Vector2(0.99689484, 0.99689484)
+texture = ExtResource("7_5ji76")
 
 [node name="Label" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="2" unique_id=324695650]
 visible = false

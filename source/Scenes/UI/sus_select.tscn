@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dnrpich0pg45h" path="res://Scripts/UI/sus_select.gd" id="1_7kxo7"]
 [ext_resource type="PackedScene" uid="uid://b6qhhcbw14o3w" path="res://Scenes/UI/sussy_baka.tscn" id="1_feb6v"]
+[ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="2_rvxh6"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="2_ygu1w"]
 [ext_resource type="Texture2D" uid="uid://cuc3mxx806457" path="res://Assets/jail.png" id="3_tv2qg"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_x5eou"]
@@ -9,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://kbddmohelx6c" path="res://CustomResources/Characters/Fotocopia/Fotocopia.tres" id="4_tbpqc"]
 [ext_resource type="PackedScene" uid="uid://duw0dr8wm210s" path="res://Scenes/UI/confetti.tscn" id="4_uk1mx"]
 [ext_resource type="AudioStream" uid="uid://cydu47tmkwqa1" path="res://Assets/SFX/SFX - Jaula Caindo.wav" id="5_g2i0m"]
-[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="5_lrd7u"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="5_lrd7u"]
 [ext_resource type="Texture2D" uid="uid://c0mbgw7fohlmc" path="res://Assets/Personagens/DoloresDeBarriga.png" id="6_80i56"]
 [ext_resource type="Texture2D" uid="uid://di7m0gppspwp6" path="res://Assets/Personagens/CarlosEduardo.png" id="6_mpk3j"]
 [ext_resource type="AudioStream" uid="uid://b5x473oakc2m1" path="res://Assets/SFX/SFX - Errar Culpado.wav" id="7_4ajkc"]
@@ -1093,6 +1094,7 @@ _data = {
 
 [node name="SusSelect" type="CanvasLayer" unique_id=647023198]
 script = ExtResource("1_7kxo7")
+correctGuilties = Array[ExtResource("2_rvxh6")]([ExtResource("11_237ot"), ExtResource("7_rvxh6")])
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=1021235507]
 anchors_preset = 15

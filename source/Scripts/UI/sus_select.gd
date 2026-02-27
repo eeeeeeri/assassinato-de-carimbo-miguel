@@ -4,6 +4,8 @@ const CULPADO = preload("uid://duu8ety807k0j")
 const PORTRAIT_TEMP = preload("uid://bn720yj88xobh")
 const CARIMBO_MIGUEL_OST___MENU = preload("uid://c07mdq7itl1bi")
 
+@export var correctGuilties:Array[CharacterData]
+
 @onready var panel_container: PanelContainer = $PanelContainer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var suspeitos_grid: GridContainer = $PanelContainer/VBoxContainer/Suspeitos
@@ -16,7 +18,7 @@ const CARIMBO_MIGUEL_OST___MENU = preload("uid://c07mdq7itl1bi")
 
 var showing = false
 var suspeitos = []
-var culpados = []
+var culpados:Array[Culpado] = []
 var confirming = false
 var lockedin := false
 
@@ -59,6 +61,7 @@ func _on_culpado_select_button_up() -> void:
 				culpado.sus_name = i.character.Name.split(" ")[0]
 			culpado.sus_sprite = i.character.Portrait
 			culpado.sus_spritePosition = i.sus_spritePosition
+			culpado.sus_character = i.character
 			culpados.append(culpado)
 	if !culpados.is_empty():
 		for i in culpados:
@@ -83,11 +86,11 @@ func _on_sim_button_up() -> void:
 	var incorrect = 0
 	Music._mute()
 	for i in culpados:
-		if i.sus_name == "Cadu" or i.sus_name == "Armando":
+		if correctGuilties.has(i.sus_character):
 			correct += 1
 		else:
 			incorrect += 1
-	if correct == 2 && incorrect == 0:
+	if correct == correctGuilties.size() && incorrect == 0:
 		animation_player.play("success")
 	else:
 		animation_player.play("failed")
