@@ -520,7 +520,6 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh4v5"]
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xrfvn"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
@@ -878,12 +877,7 @@ position = Vector2(1665, 1150)
 [node name="armandoInteractable" parent="." index="24" unique_id=1954946162 instance=ExtResource("33_yea3t")]
 position = Vector2(773, 1670)
 
-[node name="CollisionShape2D" parent="armandoInteractable" index="2" unique_id=1151619031]
-position = Vector2(2, -12.645)
-scale = Vector2(1.226, 0.94)
-
 [node name="Sprite2D" parent="armandoInteractable" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_yh4v5")
 material = SubResource("ShaderMaterial_xrfvn")
 
 [connection signal="animation_finished" from="Estante/AnimationPlayer" to="TransformStateSaver" method="SaveData" unbinds=1]
