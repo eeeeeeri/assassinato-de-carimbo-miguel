@@ -15,7 +15,7 @@ const CARIMBO_MIGUEL_OST___MENU = preload("uid://c07mdq7itl1bi")
 @onready var click: AudioStreamPlayer = $Click
 
 var showing = false
-var suspeitos = []
+var suspeitos:Array[SussyBaka] = []
 var culpados = []
 var confirming = false
 var lockedin := false
@@ -54,8 +54,9 @@ func _on_culpado_select_button_up() -> void:
 	click.play()
 	for i in suspeitos:
 		if i.selected:
-			var culpado = CULPADO.instantiate()
-			culpado.sus_name = i.character.Name.split(" ")[0]
+			var culpado = CULPADO.instantiate() as Culpado
+			if(i.character.hasSaidName):
+				culpado.sus_name = i.character.Name.split(" ")[0]
 			culpado.sus_sprite = i.character.Portrait
 			culpado.sus_spritePosition = i.sus_spritePosition
 			culpados.append(culpado)

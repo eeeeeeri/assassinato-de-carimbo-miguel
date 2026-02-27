@@ -1,4 +1,4 @@
-extends SubViewportContainer
+class_name Culpado extends SubViewportContainer
 
 @onready var sprite_2d: Sprite2D = $SubViewport/Panel/ColorRect/Sprite2D
 @onready var label: Label = $SubViewport/Panel/Label

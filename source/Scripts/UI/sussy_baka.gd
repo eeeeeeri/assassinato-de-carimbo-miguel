@@ -1,4 +1,4 @@
-extends Button
+class_name SussyBaka extends Button
 
 @onready var label: Label = $Panel/Label
 @onready var sprite_2d: Sprite2D = $Panel/ColorRect/Sprite2D
