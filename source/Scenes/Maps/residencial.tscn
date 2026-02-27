@@ -62,6 +62,19 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxayg"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
 [node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
 
 [node name="Background" type="Sprite2D" parent="." index="0" unique_id=280844342]
@@ -99,7 +112,7 @@ position = Vector2(912, 1680)
 [node name="VisibleStateSaver" type="Node" parent="." index="7" unique_id=266798634 node_paths=PackedStringArray("targetNodes")]
 script = ExtResource("4_up5k5")
 boolArrayData = ExtResource("5_up5k5")
-targetNodes = [NodePath("../Click_coin"), NodePath("../caduInteractable/BuyNewsEvent/TextClue_personalityTest"), NodePath("../Click_coin2")]
+targetNodes = [NodePath("../Click_coin"), NodePath("../TextClue_personalityTest"), NodePath("../Click_coin2")]
 metadata/_custom_type_script = "uid://d1y8kysganspd"
 
 [node name="Click_coin" parent="." index="8" unique_id=1710188801 instance=ExtResource("20_yajkd")]
@@ -165,13 +178,21 @@ position = Vector2(3142, 1686)
 script = ExtResource("18_yajkd")
 SourceDialog = ExtResource("19_ndk88")
 
-[node name="TextClue_personalityTest" parent="caduInteractable/BuyNewsEvent" index="0" unique_id=259402919 instance=ExtResource("18_sbyme")]
+[node name="TextClue_personalityTest" parent="." index="22" unique_id=259402919 instance=ExtResource("18_sbyme")]
 process_mode = 4
 visible = false
 position = Vector2(3281, 1785)
 
-[connection signal="DialogEnd" from="caduInteractable/BuyNewsEvent" to="caduInteractable/BuyNewsEvent/TextClue_personalityTest" method="set_visible" binds= [true]]
+[node name="CollisionShape2D" parent="TextClue_personalityTest" index="2" unique_id=1151619031]
+position = Vector2(0, 35.915)
+scale = Vector2(1, 1.115)
+
+[node name="Sprite2D" parent="TextClue_personalityTest" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_fxayg")
+
+[connection signal="DialogEnd" from="caduInteractable/BuyNewsEvent" to="TextClue_personalityTest" method="set_visible" binds= [true]]
 
 [editable path="TextClue_noKids"]
 [editable path="TextClue_annoucement"]
 [editable path="TextClue_annoucement2"]
+[editable path="TextClue_personalityTest"]

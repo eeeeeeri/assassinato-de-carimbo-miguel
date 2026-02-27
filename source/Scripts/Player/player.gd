@@ -133,12 +133,16 @@ func _end_inspection():
 	interationCalls -= 1
 
 func tab_open() -> void:
+	animated_sprite.play("idle")
+	walk_sound.stop()
 	interationCalls += 1
 
 func tab_close() -> void:
 	interationCalls -= 1
 
 func paused() -> void:
+	animated_sprite.play("idle")
+	walk_sound.stop()
 	in_menu = true
 
 
