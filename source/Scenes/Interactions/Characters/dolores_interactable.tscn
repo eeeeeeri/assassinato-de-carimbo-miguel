@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://cavcbunbm4cp6" path="res://CustomResources/Characters/Dolores/Dolores.tres" id="2_un7yo"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_c6oft"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a7sr3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_un7yo"]
 resource_local_to_scene = true
 shader = ExtResource("3_c6oft")
 shader_parameter/thickness = 0.0
@@ -19,6 +19,7 @@ shader_parameter/max_or_add = false
 
 [node name="doloresInteractable" unique_id=705077137 instance=ExtResource("1_un7yo")]
 Character = ExtResource("2_un7yo")
+audio_pitch = 0.9
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_a7sr3")
+material = SubResource("ShaderMaterial_un7yo")

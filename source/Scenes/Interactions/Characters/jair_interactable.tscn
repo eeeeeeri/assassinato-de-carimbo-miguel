@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://c6l6o5a017pfl" path="res://CustomResources/Characters/Jair/Jair.tres" id="2_brdaw"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_w0bhe"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b62xm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_brdaw"]
 resource_local_to_scene = true
 shader = ExtResource("3_w0bhe")
 shader_parameter/thickness = 0.0
@@ -19,6 +19,7 @@ shader_parameter/max_or_add = false
 
 [node name="jairInteractable" unique_id=705077137 instance=ExtResource("1_brdaw")]
 Character = ExtResource("2_brdaw")
+audio_pitch = 0.5
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_b62xm")
+material = SubResource("ShaderMaterial_brdaw")

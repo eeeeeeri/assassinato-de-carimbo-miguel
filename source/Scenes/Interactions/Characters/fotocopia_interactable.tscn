@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://kbddmohelx6c" path="res://CustomResources/Characters/Fotocopia/Fotocopia.tres" id="2_0emgn"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_qf7yd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc6dx"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqog3"]
 resource_local_to_scene = true
 shader = ExtResource("4_qf7yd")
 shader_parameter/thickness = 0.0
@@ -19,6 +19,7 @@ shader_parameter/max_or_add = false
 
 [node name="FotocopiaInteractable" unique_id=705077137 instance=ExtResource("1_dqog3")]
 Character = ExtResource("2_0emgn")
+audio_pitch = 1.12
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_sc6dx")
+material = SubResource("ShaderMaterial_dqog3")

@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://1y8vvmmdknbl" path="res://CustomResources/Characters/Armando/Armando.tres" id="2_1mwe2"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_dumqh"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_58ywm"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mwe2"]
 resource_local_to_scene = true
 shader = ExtResource("3_dumqh")
 shader_parameter/thickness = 0.0
@@ -19,6 +19,7 @@ shader_parameter/max_or_add = false
 
 [node name="armandoInteractable" unique_id=705077137 instance=ExtResource("1_1mwe2")]
 Character = ExtResource("2_1mwe2")
+audio_pitch = 0.67
 
 [node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_58ywm")
+material = SubResource("ShaderMaterial_1mwe2")
