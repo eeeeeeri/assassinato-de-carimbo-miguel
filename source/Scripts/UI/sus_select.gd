@@ -55,8 +55,8 @@ func _on_culpado_select_button_up() -> void:
 	for i in suspeitos:
 		if i.selected:
 			var culpado = CULPADO.instantiate()
-			culpado.sus_name = i.sus_name
-			culpado.sus_sprite = i.sus_sprite
+			culpado.sus_name = i.character.Name.split(" ")[0]
+			culpado.sus_sprite = i.character.Portrait
 			culpado.sus_spritePosition = i.sus_spritePosition
 			culpados.append(culpado)
 	if !culpados.is_empty():
