@@ -1,6 +1,6 @@
 extends Control
 
-const CARIMBO_MIGUEL_OST___VILA_DE_CARIMBIA = preload("uid://btb6burm64qvp")
+const CONTOS_DE_CARIMBIA___TUTORIAL = preload("uid://cm4j107i25jh7")
 
 @onready var continuar_button: Button = $Main/VBoxContainer/Continuar
 @onready var config_button: Button = $Main/VBoxContainer/Config
@@ -43,7 +43,7 @@ func _on_config_button_up() -> void:
 
 func _on_iniciar_button_up() -> void:
 	audio_stream_player.play()
-	SceneTransition.change_scene_to("res://Scenes/UI/start_cutscene.tscn",CARIMBO_MIGUEL_OST___VILA_DE_CARIMBIA)
+	SceneTransition.change_scene_to("res://Scenes/UI/start_cutscene.tscn", CONTOS_DE_CARIMBIA___TUTORIAL)
 
 func _on_creditos_button_up() -> void:
 	main.visible = false

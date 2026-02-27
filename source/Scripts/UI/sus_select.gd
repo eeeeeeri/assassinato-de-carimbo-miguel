@@ -2,6 +2,7 @@ extends CanvasLayer
 
 const CULPADO = preload("uid://duu8ety807k0j")
 const PORTRAIT_TEMP = preload("uid://bn720yj88xobh")
+const CARIMBO_MIGUEL_OST___MENU = preload("uid://c07mdq7itl1bi")
 
 @onready var panel_container: PanelContainer = $PanelContainer
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
@@ -88,3 +89,11 @@ func _on_sim_button_up() -> void:
 		animation_player.play("success")
 	else:
 		animation_player.play("failed")
+
+
+func _on_menu_button_up() -> void:
+	SceneTransition.change_scene_to("res://Scenes/UI/main_menu.tscn", CARIMBO_MIGUEL_OST___MENU)
+
+
+func _on_continuar_button_up() -> void:
+	SceneTransition.change_scene_to("res://Scenes/UI/endingScene.tscn")

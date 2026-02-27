@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cm4j107i25jh7"
+path="res://.godot/imported/Contos De Carimbia - Tutorial.ogg-5e42c6a6d1252cf0ccc2d172920945a0.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Musicas/Contos De Carimbia - Tutorial.ogg"
+dest_files=["res://.godot/imported/Contos De Carimbia - Tutorial.ogg-5e42c6a6d1252cf0ccc2d172920945a0.oggvorbisstr"]
+
+[params]
+
+loop=true
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4
