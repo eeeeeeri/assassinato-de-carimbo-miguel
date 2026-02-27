@@ -520,6 +520,7 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh4v5"]
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xrfvn"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
@@ -849,6 +850,7 @@ position = Vector2(782, 1359)
 TextsList = Array[String](["(O corpo do rei)", "(O ferimento fatal foi um corte na garganta)"])
 OutlineMaxThickness = 6.0
 audio = ExtResource("20_nopwh")
+audio_volume = -10.0
 
 [node name="CollisionShape2D" parent="ClickInspectable_King/InteractionArea" parent_id_path=PackedInt32Array(1882603094, 146712339) index="0" unique_id=2125542557]
 position = Vector2(0, 20)
@@ -881,6 +883,7 @@ position = Vector2(2, -12.645)
 scale = Vector2(1.226, 0.94)
 
 [node name="Sprite2D" parent="armandoInteractable" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_yh4v5")
 material = SubResource("ShaderMaterial_xrfvn")
 
 [connection signal="animation_finished" from="Estante/AnimationPlayer" to="TransformStateSaver" method="SaveData" unbinds=1]
