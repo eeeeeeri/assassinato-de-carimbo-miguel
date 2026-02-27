@@ -60,6 +60,7 @@ toggle_mode = true
 script = ExtResource("1_uynpu")
 sus_name = "Cadu"
 sus_sprite = ExtResource("2_ukgb1")
+sus_spritePosition = Vector2(-165.00003, -12.000002)
 
 [node name="Panel" type="Panel" parent="." unique_id=960644912]
 layout_mode = 0
@@ -95,8 +96,10 @@ mouse_filter = 2
 color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Panel/ColorRect" unique_id=657806657]
-position = Vector2(80, 108)
-texture = ExtResource("2_ukgb1")
+position = Vector2(-165.00003, -12.000002)
+scale = Vector2(0.49218756, 0.49218756)
+centered = false
+flip_h = true
 
 [node name="Label" type="Label" parent="Panel" unique_id=324695650]
 layout_mode = 1

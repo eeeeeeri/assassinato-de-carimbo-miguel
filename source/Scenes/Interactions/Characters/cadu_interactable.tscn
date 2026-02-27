@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_8cbd1"]
 [ext_resource type="Resource" uid="uid://dnr2ykof67e40" path="res://CustomResources/Characters/Cadu/Cadu.tres" id="2_8cbd1"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_lad5m"]
+[ext_resource type="Texture2D" uid="uid://di7m0gppspwp6" path="res://Assets/Personagens/CarlosEduardo.png" id="4_d1dff"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8cbd1"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lad5m"]
 resource_local_to_scene = true
 shader = ExtResource("3_lad5m")
 shader_parameter/thickness = 0.0
@@ -21,5 +22,17 @@ shader_parameter/max_or_add = false
 Character = ExtResource("2_8cbd1")
 audio_pitch = 0.7
 
-[node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_8cbd1")
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+position = Vector2(2, -56)
+scale = Vector2(1.226, 2.8649998)
+
+[node name="shadow" parent="." index="3" unique_id=1605338158]
+position = Vector2(4, 41)
+scale = Vector2(0.185, 0.185)
+
+[node name="Sprite2D" parent="." index="4" unique_id=159541262]
+material = SubResource("ShaderMaterial_lad5m")
+position = Vector2(0, 0)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_d1dff")
+offset = Vector2(-13.333333, -293.3333)

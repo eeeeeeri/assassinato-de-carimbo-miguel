@@ -2,8 +2,7 @@
 
 [ext_resource type="Shader" path="res://CustomResources/Shaders/shake.gdshader" id="1_0megp"]
 [ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="2_0megp"]
-[ext_resource type="Script" path="res://Scripts/UI/culpado.gd" id="2_map2b"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_map2b"]
+[ext_resource type="Script" uid="uid://dbcq87xk3a21o" path="res://Scripts/UI/culpado.gd" id="2_map2b"]
 [ext_resource type="Texture2D" uid="uid://bcxy583oqmksl" path="res://Assets/mark.png" id="4_o846e"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="5_map2b"]
 
@@ -89,8 +88,10 @@ mouse_filter = 2
 color = Color(0.8, 0.8, 0.8, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="SubViewport/Panel/ColorRect" unique_id=657806657]
-position = Vector2(80, 108)
-texture = ExtResource("3_map2b")
+position = Vector2(-165.00003, -12.000002)
+scale = Vector2(0.49218756, 0.49218756)
+centered = false
+flip_h = true
 
 [node name="Label" type="Label" parent="SubViewport/Panel" unique_id=324695650]
 layout_mode = 1

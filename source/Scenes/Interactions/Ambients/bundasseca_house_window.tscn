@@ -57,7 +57,7 @@ skew = -0.5235988
 
 [node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_dtvhp")]
 position = Vector2(-267, -43)
-outlineThickness = 30.0
+outlineThickness = 15.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
 material = SubResource("ShaderMaterial_nw337")
@@ -70,7 +70,7 @@ visible = false
 
 [node name="PureClickInteractable3" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=1560656246 instance=ExtResource("2_dtvhp")]
 position = Vector2(177, -204)
-outlineThickness = 30.0
+outlineThickness = 15.0
 
 [node name="CollisionShape2D" parent="Interactions/PureClickInteractable3" index="0" unique_id=1151619031]
 scale = Vector2(1.72, 1.69)
@@ -86,7 +86,7 @@ visible = false
 
 [node name="PureClickInteractable4" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="2" unique_id=742716121 instance=ExtResource("2_dtvhp")]
 position = Vector2(-357, 72)
-outlineThickness = 30.0
+outlineThickness = 15.0
 
 [node name="CollisionShape2D" parent="Interactions/PureClickInteractable4" index="0" unique_id=1151619031]
 scale = Vector2(1.685, 1)

@@ -10,6 +10,7 @@ extends Button
 
 @export var sus_name : String
 @export var sus_sprite : Texture2D
+@export var sus_spritePosition:Vector2
 
 var scale_tween : Tween
 var angle_tween : Tween
@@ -20,6 +21,7 @@ var selected := false
 func _ready() -> void:
 	label.text = sus_name
 	sprite_2d.texture = sus_sprite
+	sprite_2d.position = sus_spritePosition
 	mark.scale = Vector2.ZERO
 	rotate()
 
