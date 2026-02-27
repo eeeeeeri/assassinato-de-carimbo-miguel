@@ -48,7 +48,12 @@ func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInspectStampLock.connect(InspectStampLock)
 	
 	defaultCharacterScale = character_portrait.scale
-	
+
+func _process(delta: float) -> void:
+	if currentCharacter:
+		if currentCharacter.hasSaidName: character_name.visible = true
+		else: character_name.visible = false
+
 func Inspect3D(camTex:ViewportTexture) -> void:
 	_3d_object_panel.visible = true
 	object_cam_texture.texture = camTex
@@ -204,7 +209,7 @@ func SetPlayerIsSpeaking(speaking:bool) -> void:
 		character_portrait.self_modulate = Color.WHITE
 		player_portrait.scale = Vector2.ONE
 		player_portrait.self_modulate = charoffuscateColor
-	
+
 func InspectStampLock(correctStamp:StampData, correctSignal:Signal) -> void:
 	stamp_lock_panel.visible = true
 	stamp_lock_panel.StartInspection(correctStamp, correctSignal)

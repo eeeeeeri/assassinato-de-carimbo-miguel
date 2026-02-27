@@ -57,16 +57,8 @@ func _physics_process(delta: float) -> void:
 	if Input.get_vector("left", "right", "up", "down"):
 		mouse_mode = false
 	
-	if Input.is_action_just_pressed("zoom_in"):
-		zoomTarget *= 1.1
-	
-	if Input.is_action_just_pressed("zoom_out"):
-		zoomTarget *= 0.9
-	
-	zoomTarget = clamp(zoomTarget, Vector2(.3,.3), Vector2(1.5,1.5))
-	camera_2d.zoom = camera_2d.zoom.slerp(zoomTarget, 10 * delta)
-	
 	if !is_interacting && !in_menu:
+		zoom(delta)
 		if mouse_mode:
 			_move_mouse()
 		else:
@@ -130,6 +122,17 @@ func stop_moving() -> void:
 		click_position = position
 		velocity = Vector2.ZERO
 		animated_sprite.play("idle")
+
+
+func zoom(delta : float) -> void:
+	if Input.is_action_just_pressed("zoom_in"):
+		zoomTarget *= 1.1
+	
+	if Input.is_action_just_pressed("zoom_out"):
+		zoomTarget *= 0.9
+	
+	zoomTarget = clamp(zoomTarget, Vector2(.3,.3), Vector2(1.5,1.5))
+	camera_2d.zoom = camera_2d.zoom.slerp(zoomTarget, 10 * delta)
 
 
 func _on_interact():

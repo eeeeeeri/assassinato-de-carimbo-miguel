@@ -7,3 +7,6 @@ func _interacted(override:bool = false) -> void:
 	
 	super(override)
 	GlobalResources.GLOBAL_EVENTS.OnStartDialog.emit(Character)
+
+func _has_said_name() -> void:
+	Character.hasSaidName = true

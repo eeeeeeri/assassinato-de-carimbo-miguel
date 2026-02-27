@@ -5,5 +5,6 @@ class_name CharacterData extends Resource
 @export var Stamps:Array[StampData]
 @export var InitialDialog:DialogData
 @export var Dialogs:Array[DialogData]
+@export var hasSaidName := false
 
 var PlayedInitialDialog:bool

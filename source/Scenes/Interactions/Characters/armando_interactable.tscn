@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_1mwe2"]
 [ext_resource type="Resource" uid="uid://1y8vvmmdknbl" path="res://CustomResources/Characters/Armando/Armando.tres" id="2_1mwe2"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_dumqh"]
+[ext_resource type="Resource" uid="uid://b18j0yr24linc" path="res://CustomResources/Characters/Armando/ArmandoSuspitionDialog.tres" id="4_58ywm"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1mwe2"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dumqh"]
 resource_local_to_scene = true
 shader = ExtResource("3_dumqh")
 shader_parameter/thickness = 0.0
@@ -21,5 +22,8 @@ shader_parameter/max_or_add = false
 Character = ExtResource("2_1mwe2")
 audio_pitch = 0.67
 
-[node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_1mwe2")
+[node name="Sprite2D" parent="." index="4" unique_id=159541262]
+material = SubResource("ShaderMaterial_dumqh")
+
+[node name="SayMyName" parent="." index="7" unique_id=294947695]
+SourceDialog = ExtResource("4_58ywm")

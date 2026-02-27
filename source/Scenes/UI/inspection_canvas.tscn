@@ -23,6 +23,8 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_2uy4u"]
 font_size = 28
+outline_size = 8
+outline_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_166hs"]
 font_size = 28
@@ -309,15 +311,16 @@ patch_margin_right = 91
 patch_margin_bottom = 58
 
 [node name="CharacterName" type="Label" parent="DialogPanel/ColorRect" unique_id=444401136]
-visible = false
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_left = 30.0
-offset_right = -30.0
-offset_bottom = 39.0
+offset_left = 10.0
+offset_top = -32.0
+offset_right = -10.0
+offset_bottom = 7.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("10_r3vh6")
+text = "TESTE"
 label_settings = SubResource("LabelSettings_2uy4u")
 horizontal_alignment = 1
 vertical_alignment = 1

@@ -3,8 +3,9 @@
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_7hadk"]
 [ext_resource type="Resource" uid="uid://b6xia38c240ds" path="res://CustomResources/Characters/Barbara/Barbara.tres" id="2_7hadk"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_a1f3d"]
+[ext_resource type="Resource" uid="uid://4lj2em70xrjo" path="res://CustomResources/Characters/Barbara/BarbaraIntroductionDialog.tres" id="4_7a652"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_7hadk"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a1f3d"]
 resource_local_to_scene = true
 shader = ExtResource("3_a1f3d")
 shader_parameter/thickness = 0.0
@@ -21,5 +22,8 @@ shader_parameter/max_or_add = false
 Character = ExtResource("2_7hadk")
 audio_pitch = 0.95
 
-[node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_7hadk")
+[node name="Sprite2D" parent="." index="4" unique_id=159541262]
+material = SubResource("ShaderMaterial_a1f3d")
+
+[node name="SayMyName" parent="." index="7" unique_id=294947695]
+SourceDialog = ExtResource("4_7a652")
