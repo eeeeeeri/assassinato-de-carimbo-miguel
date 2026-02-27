@@ -70,7 +70,7 @@ visible = false
 
 [node name="PureClickInteractable2" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=1122020805 instance=ExtResource("2_dxd8k")]
 position = Vector2(237, -45)
-outlineThickness = 30.0
+outlineThickness = 15.0
 
 [node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=1151619031]
 scale = Vector2(1.385, 2.855)

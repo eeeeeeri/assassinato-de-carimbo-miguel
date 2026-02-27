@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://njssnhx4u2x5" path="res://Scripts/UI/ending_scene.gd" id="1_kdcbo"]
 [ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="1_nkack"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="2_s4dlf"]
+[ext_resource type="Texture2D" uid="uid://dtu4nret0rfw8" path="res://Assets/Personagens/FotocopiaMiguel.png" id="3_3igfd"]
 [ext_resource type="Texture2D" uid="uid://cnnts8oiyp468" path="res://Assets/crownFront.png" id="3_mn6dd"]
 [ext_resource type="Texture2D" uid="uid://ys7baa7eo4v2" path="res://Assets/crownBack.png" id="4_kdcbo"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="5_mn6dd"]
@@ -544,15 +544,16 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -138.0
-offset_top = -201.0534
-offset_right = 138.0
-offset_bottom = 338.30536
+offset_left = -604.0
+offset_top = -248.0
+offset_right = 508.75098
+offset_bottom = 801.25195
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("2_s4dlf")
+texture = ExtResource("3_3igfd")
 expand_mode = 1
 stretch_mode = 5
+flip_h = true
 
 [node name="Crown" type="Control" parent="crowning" unique_id=740398422]
 layout_mode = 1
@@ -564,7 +565,7 @@ anchor_bottom = 0.5
 offset_left = -20.0
 offset_top = -476.0
 offset_right = 20.0
-offset_bottom = -435.99957
+offset_bottom = -435.99948
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -671,7 +672,7 @@ anchor_bottom = 0.5
 offset_left = -20.0
 offset_top = 735.0
 offset_right = 20.0
-offset_bottom = 775.0043
+offset_bottom = 775.0045
 grow_horizontal = 2
 grow_vertical = 2
 

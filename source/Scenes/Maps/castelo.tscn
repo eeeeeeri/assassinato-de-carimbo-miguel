@@ -872,12 +872,12 @@ texture = ExtResource("30_8n5uc")
 visible = false
 
 [node name="FotocopiaInteractable" parent="." index="23" unique_id=510177866 instance=ExtResource("32_twdsq")]
-position = Vector2(1665, 1150)
+position = Vector2(1582, 1190)
 
 [node name="armandoInteractable" parent="." index="24" unique_id=1954946162 instance=ExtResource("33_yea3t")]
 position = Vector2(773, 1670)
 
-[node name="Sprite2D" parent="armandoInteractable" index="3" unique_id=159541262]
+[node name="Sprite2D" parent="armandoInteractable" index="4" unique_id=159541262]
 material = SubResource("ShaderMaterial_xrfvn")
 
 [connection signal="animation_finished" from="Estante/AnimationPlayer" to="TransformStateSaver" method="SaveData" unbinds=1]

@@ -5,14 +5,50 @@
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="2_ygu1w"]
 [ext_resource type="Texture2D" uid="uid://cuc3mxx806457" path="res://Assets/jail.png" id="3_tv2qg"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_x5eou"]
+[ext_resource type="Texture2D" uid="uid://dtu4nret0rfw8" path="res://Assets/Personagens/FotocopiaMiguel.png" id="4_aeian"]
 [ext_resource type="PackedScene" uid="uid://duw0dr8wm210s" path="res://Scenes/UI/confetti.tscn" id="4_uk1mx"]
 [ext_resource type="AudioStream" uid="uid://cydu47tmkwqa1" path="res://Assets/SFX/SFX - Jaula Caindo.wav" id="5_g2i0m"]
+[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="5_lrd7u"]
+[ext_resource type="Texture2D" uid="uid://c0mbgw7fohlmc" path="res://Assets/Personagens/DoloresDeBarriga.png" id="6_80i56"]
+[ext_resource type="Texture2D" uid="uid://di7m0gppspwp6" path="res://Assets/Personagens/CarlosEduardo.png" id="6_mpk3j"]
 [ext_resource type="AudioStream" uid="uid://b5x473oakc2m1" path="res://Assets/SFX/SFX - Errar Culpado.wav" id="7_4ajkc"]
+[ext_resource type="Texture2D" uid="uid://blf4akk5hetpv" path="res://Assets/Personagens/JairEsqueciOSobrenome.png" id="7_mpk3j"]
 [ext_resource type="AudioStream" uid="uid://c14gp4xii3ffn" path="res://Assets/SFX/SFX - Acertou Culpado.wav" id="8_3yu13"]
+[ext_resource type="Texture2D" uid="uid://di1vsnhb0nb4q" path="res://Assets/Personagens/BarbaraDeBarriga.png" id="8_g0kkb"]
 [ext_resource type="AudioStream" uid="uid://ms4ch3i0n8wj" path="res://CustomResources/AudioStreams/click.tres" id="9_4ajkc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kxo7"]
 bg_color = Color(0, 0, 0, 0.39215687)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g0kkb"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d7jsr"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ufvo6"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rio5x"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_psi4o"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
 [sub_resource type="Animation" id="Animation_tv2qg"]
 length = 0.001
@@ -1091,13 +1127,38 @@ columns = 4
 [node name="SussyBaka" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=423670737 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 sus_name = "Fotocópia"
+sus_sprite = ExtResource("4_aeian")
+sus_spritePosition = Vector2(-201, -39)
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_g0kkb")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka/Panel/ColorRect" parent_id_path=PackedInt32Array(423670737, 101840902) index="0" unique_id=657806657]
+position = Vector2(-201, -39)
+texture = ExtResource("4_aeian")
 
 [node name="SussyBaka2" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=1534123851 instance=ExtResource("1_feb6v")]
 layout_mode = 2
+sus_sprite = ExtResource("6_mpk3j")
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2/Panel" parent_id_path=PackedInt32Array(1534123851, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_d7jsr")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2/Panel/ColorRect" parent_id_path=PackedInt32Array(1534123851, 101840902) index="0" unique_id=657806657]
+texture = ExtResource("6_mpk3j")
 
 [node name="SussyBaka3" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=183995324 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 sus_name = "Dolores"
+sus_sprite = ExtResource("6_80i56")
+sus_spritePosition = Vector2(-189.00003, -121.99999)
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3/Panel" parent_id_path=PackedInt32Array(183995324, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_ufvo6")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3/Panel/ColorRect" parent_id_path=PackedInt32Array(183995324, 101840902) index="0" unique_id=657806657]
+position = Vector2(-189.00003, -121.99999)
+texture = ExtResource("6_80i56")
 
 [node name="SussyBaka4" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=202936831 instance=ExtResource("1_feb6v")]
 layout_mode = 2
@@ -1114,10 +1175,28 @@ sus_name = "Pequena"
 [node name="SussyBaka7" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=2055334827 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 sus_name = "Jair"
+sus_sprite = ExtResource("7_mpk3j")
+sus_spritePosition = Vector2(-173.00003, -212.99998)
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7/Panel" parent_id_path=PackedInt32Array(2055334827, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_rio5x")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7/Panel/ColorRect" parent_id_path=PackedInt32Array(2055334827, 101840902) index="0" unique_id=657806657]
+position = Vector2(-173.00003, -212.99998)
+texture = ExtResource("7_mpk3j")
 
 [node name="SussyBaka8" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=1048267071 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 sus_name = "Bárbara"
+sus_sprite = ExtResource("8_g0kkb")
+sus_spritePosition = Vector2(-165.00003, -58)
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8/Panel" parent_id_path=PackedInt32Array(1048267071, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_psi4o")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8/Panel/ColorRect" parent_id_path=PackedInt32Array(1048267071, 101840902) index="0" unique_id=657806657]
+position = Vector2(-165.00003, -58)
+texture = ExtResource("8_g0kkb")
 
 [node name="Culpados" type="CenterContainer" parent="PanelContainer/VBoxContainer" unique_id=290040872]
 visible = false
@@ -1255,3 +1334,9 @@ stream = ExtResource("9_4ajkc")
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Confirm/Nao" to="." method="_on_nao_button_up"]
 [connection signal="button_up" from="Menu" to="." method="_on_menu_button_up"]
 [connection signal="button_up" from="Continuar" to="." method="_on_continuar_button_up"]
+
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka"]
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2"]
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3"]
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7"]
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8"]

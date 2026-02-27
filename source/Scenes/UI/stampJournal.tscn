@@ -10,17 +10,22 @@
 [ext_resource type="Resource" uid="uid://dbbbjkuonoyy7" path="res://CustomResources/Stamps/journalGuessStamps/CaduGuessStamp.tres" id="7_dqn03"]
 [ext_resource type="Resource" uid="uid://dwmq0qv80wpua" path="res://CustomResources/Stamps/ArmandoStamp.tres" id="7_vkn1i"]
 [ext_resource type="Resource" uid="uid://c44ll8dlb177a" path="res://CustomResources/Stamps/journalGuessStamps/DoloresGuessStamp.tres" id="8_0tlxq"]
+[ext_resource type="Texture2D" uid="uid://di1vsnhb0nb4q" path="res://Assets/Personagens/BarbaraDeBarriga.png" id="8_18b7q"]
 [ext_resource type="Resource" uid="uid://bd4aw6hsigqte" path="res://CustomResources/Stamps/BarbaraStamp.tres" id="9_xaw7t"]
 [ext_resource type="Resource" uid="uid://c6chi2lhbrfu5" path="res://CustomResources/Stamps/CaduStamp.tres" id="11_18b7q"]
+[ext_resource type="Texture2D" uid="uid://di7m0gppspwp6" path="res://Assets/Personagens/CarlosEduardo.png" id="11_qksq4"]
 [ext_resource type="Resource" uid="uid://cydn6u1ekdupt" path="res://CustomResources/Stamps/CaduStampKid.tres" id="12_evhj2"]
 [ext_resource type="Resource" uid="uid://c5f26onagudlm" path="res://CustomResources/Stamps/DoloresStamp1.tres" id="14_yb0at"]
+[ext_resource type="Texture2D" uid="uid://c0mbgw7fohlmc" path="res://Assets/Personagens/DoloresDeBarriga.png" id="15_0p6f8"]
 [ext_resource type="Resource" uid="uid://vgrldba0u7cn" path="res://CustomResources/Stamps/DoloresStamp2.tres" id="15_m48n0"]
 [ext_resource type="Resource" uid="uid://cdauuf4p24duy" path="res://CustomResources/Stamps/journalGuessStamps/FotocopiaGuessStamp.tres" id="16_qksq4"]
 [ext_resource type="Resource" uid="uid://71j6eoqoo6yo" path="res://CustomResources/Stamps/FotocopiaStamp.tres" id="17_0p6f8"]
 [ext_resource type="Resource" uid="uid://cmirh2mlor13s" path="res://CustomResources/Stamps/journalGuessStamps/JairGuessStamp.tres" id="18_x7omx"]
 [ext_resource type="Resource" uid="uid://d3id6u266ummr" path="res://CustomResources/Stamps/JairStamp.tres" id="19_g0egy"]
+[ext_resource type="Texture2D" uid="uid://dtu4nret0rfw8" path="res://Assets/Personagens/FotocopiaMiguel.png" id="19_x7omx"]
 [ext_resource type="Resource" uid="uid://ru5c5eq5o6jc" path="res://CustomResources/Stamps/journalGuessStamps/MarkaGuessStamp.tres" id="20_v8byh"]
 [ext_resource type="Resource" uid="uid://ocucq2i7ucxc" path="res://CustomResources/Stamps/MarkaStamp.tres" id="21_12jm4"]
+[ext_resource type="Texture2D" uid="uid://blf4akk5hetpv" path="res://Assets/Personagens/JairEsqueciOSobrenome.png" id="22_g0egy"]
 [ext_resource type="Resource" uid="uid://baitihl2dush6" path="res://CustomResources/Stamps/journalGuessStamps/PequenaGuessStamp.tres" id="22_jqt7w"]
 [ext_resource type="Resource" uid="uid://nsugappdoxt" path="res://CustomResources/Stamps/PequenaStamp.tres" id="23_lyxpq"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="24_vkn1i"]
@@ -189,6 +194,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
 texture = ExtResource("3_37eg1")
+expand_mode = 1
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Armando" unique_id=1977885419 instance=ExtResource("2_vffhr")]
@@ -213,16 +220,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Barbara/char" unique_id=1951173767]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
+anchor_left = -1.1824323
+anchor_top = -1.96
+anchor_right = 3.4671457
+anchor_bottom = 6.986365
 offset_right = 40.61
 offset_bottom = 79.36
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("8_18b7q")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Barbara" unique_id=957339837 instance=ExtResource("2_vffhr")]
@@ -247,16 +257,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Cadu/char" unique_id=1451897168]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
-offset_right = 40.61
-offset_bottom = 79.36
+anchor_left = -1.1554054
+anchor_top = -1.6933334
+anchor_right = 1.7315402
+anchor_bottom = 3.8611133
+offset_right = 301.4796
+offset_bottom = 588.1477
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("11_qksq4")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Cadu" unique_id=1701396159 instance=ExtResource("2_vffhr")]
@@ -281,16 +294,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Dolores/char" unique_id=325353812]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
-offset_right = 40.61
-offset_bottom = 79.36
+anchor_left = -1.3040539
+anchor_top = -2.3466668
+anchor_right = -0.5691759
+anchor_bottom = -0.93354654
+offset_right = 619.9856
+offset_bottom = 1209.3467
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("15_0p6f8")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Dolores" unique_id=277947482 instance=ExtResource("2_vffhr")]
@@ -315,16 +331,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Fotocopia/char" unique_id=1638920192]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
-offset_right = 40.61
-offset_bottom = 79.36
+anchor_left = -1.3783784
+anchor_top = -1.78
+anchor_right = -0.64350027
+anchor_bottom = -0.36687988
+offset_right = 619.9856
+offset_bottom = 1209.3467
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("19_x7omx")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Fotocopia" unique_id=391469616 instance=ExtResource("2_vffhr")]
@@ -349,16 +368,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Jair/char" unique_id=421957026]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
-offset_right = 40.61
-offset_bottom = 79.36
+anchor_left = -1.2027026
+anchor_top = -3.0266666
+anchor_right = -0.46782458
+anchor_bottom = -1.6135465
+offset_right = 619.9856
+offset_bottom = 1209.3467
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("22_g0egy")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Jair" unique_id=757618845 instance=ExtResource("2_vffhr")]
@@ -393,6 +415,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
 texture = ExtResource("3_37eg1")
+expand_mode = 1
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Marka" unique_id=735083637 instance=ExtResource("2_vffhr")]
@@ -427,6 +451,8 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
 texture = ExtResource("3_37eg1")
+expand_mode = 1
+stretch_mode = 5
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Pequena" unique_id=318924809 instance=ExtResource("2_vffhr")]

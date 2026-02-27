@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://3o1mtmvqotfh" path="res://CustomResources/Characters/Jair/JairStampDialog.tres" id="3_nyl0u"]
 [ext_resource type="Resource" uid="uid://daklxd7i55k1e" path="res://CustomResources/Characters/Jair/JairSuspitionDialog.tres" id="4_foesh"]
 [ext_resource type="Resource" uid="uid://dag2nf0cyhthq" path="res://CustomResources/Characters/Jair/JairInitialDialog.tres" id="5_1camj"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_io250"]
+[ext_resource type="Texture2D" uid="uid://blf4akk5hetpv" path="res://Assets/Personagens/JairEsqueciOSobrenome.png" id="6_3scfx"]
 [ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_bac1u"]
 [ext_resource type="Resource" uid="uid://d3id6u266ummr" path="res://CustomResources/Stamps/JairStamp.tres" id="8_3scfx"]
 [ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="9_2e05w"]
@@ -13,7 +13,7 @@
 [resource]
 script = ExtResource("9_2e05w")
 Name = "Jair Bundasseca"
-Portrait = ExtResource("6_io250")
+Portrait = ExtResource("6_3scfx")
 Stamps = Array[ExtResource("7_bac1u")]([ExtResource("8_3scfx")])
 InitialDialog = ExtResource("5_1camj")
 Dialogs = Array[ExtResource("1_jrccf")]([ExtResource("2_aey4v"), ExtResource("3_nyl0u"), ExtResource("4_foesh")])

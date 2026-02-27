@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://csjx54h5s3yh7" path="res://CustomResources/Characters/Fotocopia/fotocopiaStampDialog.tres" id="3_y415o"]
 [ext_resource type="Resource" uid="uid://bm8rqm4f5dh4l" path="res://CustomResources/Characters/Fotocopia/fotocopiaSuspitionDialog.tres" id="4_itrye"]
 [ext_resource type="Resource" uid="uid://brngve2pddj6b" path="res://CustomResources/Characters/Fotocopia/fotocopiaInitialDialog.tres" id="5_bupcr"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_2wfa6"]
+[ext_resource type="Texture2D" uid="uid://dtu4nret0rfw8" path="res://Assets/Personagens/FotocopiaMiguel.png" id="6_2s8gb"]
 [ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_2s8gb"]
 [ext_resource type="Resource" uid="uid://71j6eoqoo6yo" path="res://CustomResources/Stamps/FotocopiaStamp.tres" id="7_gopim"]
 [ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="8_i6mgu"]
@@ -13,7 +13,7 @@
 [resource]
 script = ExtResource("8_i6mgu")
 Name = "Fotocópia Miguel"
-Portrait = ExtResource("6_2wfa6")
+Portrait = ExtResource("6_2s8gb")
 Stamps = Array[ExtResource("7_2s8gb")]([ExtResource("7_gopim")])
 InitialDialog = ExtResource("5_bupcr")
 Dialogs = Array[ExtResource("1_ud4ta")]([ExtResource("2_2s8gb"), ExtResource("3_y415o"), ExtResource("4_itrye")])

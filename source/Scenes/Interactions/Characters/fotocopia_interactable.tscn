@@ -2,9 +2,10 @@
 
 [ext_resource type="PackedScene" uid="uid://c8u2gfrtw53q4" path="res://Scenes/Interactions/Characters/click_character_interactable.tscn" id="1_dqog3"]
 [ext_resource type="Resource" uid="uid://kbddmohelx6c" path="res://CustomResources/Characters/Fotocopia/Fotocopia.tres" id="2_0emgn"]
+[ext_resource type="Texture2D" uid="uid://dtu4nret0rfw8" path="res://Assets/Personagens/FotocopiaMiguel.png" id="4_0emgn"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_qf7yd"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_dqog3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0emgn"]
 resource_local_to_scene = true
 shader = ExtResource("4_qf7yd")
 shader_parameter/thickness = 0.0
@@ -21,5 +22,16 @@ shader_parameter/max_or_add = false
 Character = ExtResource("2_0emgn")
 audio_pitch = 1.12
 
-[node name="Sprite2D" parent="." index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_dqog3")
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+position = Vector2(2, -54.86)
+scale = Vector2(1.581, 2.625)
+
+[node name="shadow" parent="." index="3" unique_id=1605338158]
+scale = Vector2(0.295, 0.295)
+
+[node name="Sprite2D" parent="." index="4" unique_id=159541262]
+material = SubResource("ShaderMaterial_0emgn")
+position = Vector2(4.7683716e-07, 4.7683716e-07)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_0emgn")
+offset = Vector2(87.5, -317.5)

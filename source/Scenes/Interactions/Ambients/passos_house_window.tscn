@@ -113,7 +113,7 @@ visible = false
 
 [node name="PureClickInteractable4" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="3" unique_id=742716121 instance=ExtResource("2_c4sye")]
 position = Vector2(267, -318)
-outlineThickness = 30.0
+outlineThickness = 15.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable4" index="1" unique_id=159541262]
 material = SubResource("ShaderMaterial_01e6l")

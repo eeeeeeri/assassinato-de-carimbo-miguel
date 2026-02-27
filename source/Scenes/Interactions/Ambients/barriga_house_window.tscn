@@ -5,10 +5,11 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_kki88"]
 [ext_resource type="Texture2D" uid="uid://cihamefdi3u70" path="res://Assets/Pistas/envelope.png" id="4_fqty5"]
 [ext_resource type="PackedScene" uid="uid://dq5a74lynji46" path="res://Scenes/Interactions/Clues/text_clue_barbaraLetter.tscn" id="5_ifcui"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_fqty5"]
+[ext_resource type="Texture2D" uid="uid://bfnbyscl76jsx" path="res://Assets/circle.png" id="6_ifcui"]
 [ext_resource type="PackedScene" uid="uid://cm4y2f527gbun" path="res://Scenes/Interactions/Characters/barbara_interactable.tscn" id="6_kki88"]
+[ext_resource type="Texture2D" uid="uid://di1vsnhb0nb4q" path="res://Assets/Personagens/BarbaraDeBarriga.png" id="7_fxigk"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqty5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bckl7"]
 resource_local_to_scene = true
 shader = ExtResource("3_kki88")
 shader_parameter/thickness = 0.0
@@ -21,7 +22,20 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ifcui"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_agt4c"]
+resource_local_to_scene = true
+shader = ExtResource("3_kki88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jk3ny"]
 resource_local_to_scene = true
 shader = ExtResource("3_kki88")
 shader_parameter/thickness = 0.0
@@ -45,7 +59,7 @@ position = Vector2(-161, -191)
 outlineThickness = 30.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_fqty5")
+material = SubResource("ShaderMaterial_bckl7")
 scale = Vector2(0.10546874, 0.10546875)
 texture = ExtResource("4_fqty5")
 
@@ -54,22 +68,37 @@ process_mode = 4
 visible = false
 
 [node name="PureClickInteractable2" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=136223077 instance=ExtResource("2_sd702")]
-position = Vector2(127, 194)
-outlineThickness = 5.0
+position = Vector2(145, 149)
+outlineThickness = 10.0
 
-[node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=1151619031]
-scale = Vector2(1.25, 2.74)
+[node name="shadow" type="Sprite2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=2103936569]
+self_modulate = Color(0, 0, 0, 0.4862745)
+position = Vector2(2, 108)
+rotation = 0.5235988
+scale = Vector2(0.205, 0.205)
+skew = 0.5235988
+texture = ExtResource("6_ifcui")
 
-[node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_ifcui")
-texture = ExtResource("6_fqty5")
+[node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=1151619031]
+position = Vector2(0, -7.000001)
+scale = Vector2(1.25, 3.1399987)
 
-[node name="barbaraInteractable" parent="Interactions/PureClickInteractable2" index="2" unique_id=1245988153 instance=ExtResource("6_kki88")]
+[node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="2" unique_id=159541262]
+material = SubResource("ShaderMaterial_agt4c")
+position = Vector2(-5, -23)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_fxigk")
+
+[node name="barbaraInteractable" parent="Interactions/PureClickInteractable2" index="3" unique_id=1245988153 instance=ExtResource("6_kki88")]
 process_mode = 4
 visible = false
+
+[node name="Sprite2D" parent="Interactions/PureClickInteractable2/barbaraInteractable" index="4" unique_id=159541262]
+material = SubResource("ShaderMaterial_jk3ny")
 
 [connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/TextClue_barbaraLetter" method="_interacted" binds= [true]]
 [connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/barbaraInteractable" method="_interacted" binds= [true]]
 
 [editable path="Interactions/PureClickInteractable"]
 [editable path="Interactions/PureClickInteractable2"]
+[editable path="Interactions/PureClickInteractable2/barbaraInteractable"]

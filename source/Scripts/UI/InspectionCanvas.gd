@@ -37,6 +37,8 @@ var currentDialog:DialogData
 var currentDialogLineIndex:int
 var textHasFinalImage:bool
 
+var defaultCharacterScale:Vector2
+
 var inspecting:bool
 
 func _ready() -> void:
@@ -44,6 +46,8 @@ func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnInteractInspectionText.connect(InspectText)
 	GlobalResources.GLOBAL_EVENTS.OnStartDialog.connect(InteractCharacter)
 	GlobalResources.GLOBAL_EVENTS.OnInspectStampLock.connect(InspectStampLock)
+	
+	defaultCharacterScale = character_portrait.scale
 	
 func Inspect3D(camTex:ViewportTexture) -> void:
 	_3d_object_panel.visible = true
@@ -191,12 +195,12 @@ func NextDialog() -> void:
 
 func SetPlayerIsSpeaking(speaking:bool) -> void:
 	if(speaking):
-		character_portrait.scale = Vector2.ONE
+		character_portrait.scale = defaultCharacterScale
 		character_portrait.self_modulate = charoffuscateColor
 		player_portrait.scale = Vector2(charHighlightSizeMulti, charHighlightSizeMulti)
 		player_portrait.self_modulate = Color.WHITE
 	else:
-		character_portrait.scale = Vector2(charHighlightSizeMulti, charHighlightSizeMulti)
+		character_portrait.scale = defaultCharacterScale * charHighlightSizeMulti
 		character_portrait.self_modulate = Color.WHITE
 		player_portrait.scale = Vector2.ONE
 		player_portrait.self_modulate = charoffuscateColor

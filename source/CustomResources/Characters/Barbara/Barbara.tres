@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://cwfx67r5p0irx" path="res://CustomResources/Characters/Barbara/BarbaraStampDialog.tres" id="3_5uxqu"]
 [ext_resource type="Resource" uid="uid://heai8fbv8xjc" path="res://CustomResources/Characters/Barbara/BarbaraSuspitionDialog.tres" id="4_3mcbs"]
 [ext_resource type="Resource" uid="uid://cxmlnepplk28o" path="res://CustomResources/Characters/Barbara/BarbaraInitialDialog.tres" id="5_3n7yq"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_2cr2y"]
+[ext_resource type="Texture2D" uid="uid://di1vsnhb0nb4q" path="res://Assets/Personagens/BarbaraDeBarriga.png" id="6_1a42s"]
 [ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_tgjxr"]
 [ext_resource type="Resource" uid="uid://bd4aw6hsigqte" path="res://CustomResources/Stamps/BarbaraStamp.tres" id="8_1a42s"]
 [ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="9_t0ogi"]
@@ -13,7 +13,7 @@
 [resource]
 script = ExtResource("9_t0ogi")
 Name = "Bárbara Barriga"
-Portrait = ExtResource("6_2cr2y")
+Portrait = ExtResource("6_1a42s")
 Stamps = Array[ExtResource("7_tgjxr")]([ExtResource("8_1a42s")])
 InitialDialog = ExtResource("5_3n7yq")
 Dialogs = Array[ExtResource("1_26lh4")]([ExtResource("2_kadfa"), ExtResource("3_5uxqu"), ExtResource("4_3mcbs")])
