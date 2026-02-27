@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://clmca55m1kmjs" path="res://Scenes/Maps/map.tscn" id="1_00dw8"]
 [ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="2_x0dcx"]
-[ext_resource type="Texture2D" uid="uid://b6yordjq6oiyl" path="res://Assets/vila/vila.png" id="2_xub7h"]
+[ext_resource type="Texture2D" uid="uid://tmdft16oxg3i" path="res://Assets/vila/vila_1.png" id="3_up5k5"]
 [ext_resource type="Script" uid="uid://d1y8kysganspd" path="res://Scripts/Global/visibleStateSave.gd" id="4_up5k5"]
 [ext_resource type="Resource" uid="uid://cifgbo4y764k1" path="res://CustomResources/Save/residencialVisibleStateData.tres" id="5_up5k5"]
 [ext_resource type="PackedScene" uid="uid://bv0scnf3c7m1r" path="res://Scenes/Interactions/MoveInteractions/click_travel.tscn" id="5_ypm8x"]
@@ -19,22 +19,13 @@
 [ext_resource type="Script" uid="uid://qbxtdyl75usm" path="res://Scripts/Characters/DialogEvents.gd" id="18_yajkd"]
 [ext_resource type="Resource" uid="uid://i322no8msfij" path="res://CustomResources/Characters/Cadu/caduBuyNewsDialog.tres" id="19_ndk88"]
 [ext_resource type="PackedScene" uid="uid://coc0rw5e4dwqa" path="res://Scenes/Interactions/MoveInteractions/click_coin.tscn" id="20_yajkd"]
+[ext_resource type="Texture2D" uid="uid://gfayw6tbhn4y" path="res://Assets/vila/placataverna.png" id="23_8l08s"]
 [ext_resource type="PackedScene" uid="uid://csp7loll5hw76" path="res://Scenes/Interactions/Clues/Ambients/window_interact_barriga_house.tscn" id="23_40lvq"]
 [ext_resource type="PackedScene" uid="uid://dchxrnf5qekr6" path="res://Scenes/Interactions/Clues/Ambients/window_interact_passos_house.tscn" id="24_8l08s"]
+[ext_resource type="Texture2D" uid="uid://d1g6uqe871syp" path="res://Assets/vila/placa.png" id="24_fxayg"]
 [ext_resource type="PackedScene" uid="uid://ix0e2bgibtn0" path="res://Scenes/Interactions/Clues/Ambients/window_interact_bundasseca_house.tscn" id="25_fxayg"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_up5k5"]
-resource_local_to_scene = true
-shader = ExtResource("15_ndk88")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
+[ext_resource type="Texture2D" uid="uid://bl5is7bmyymiq" path="res://Assets/vila/mesa_taverna.png" id="25_kps16"]
+[ext_resource type="Texture2D" uid="uid://c6oi2eya36pxj" path="res://Assets/vila/barraca.png" id="26_kps16"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_40lvq"]
 resource_local_to_scene = true
@@ -75,6 +66,19 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kps16"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
 [node name="Residencial" unique_id=146350973 instance=ExtResource("1_00dw8")]
 
 [node name="Background" type="Sprite2D" parent="." index="0" unique_id=280844342]
@@ -90,7 +94,7 @@ tile_map_data = PackedByteArray("AAD8/wEAPwAJAAMAAAD9/wIAPwAJAAMAAAD9/wMAPwAJAAM
 
 [node name="Vila" type="Sprite2D" parent="." index="2" unique_id=46929508]
 position = Vector2(0, 8)
-texture = ExtResource("2_xub7h")
+texture = ExtResource("3_up5k5")
 centered = false
 metadata/_edit_lock_ = true
 
@@ -148,7 +152,7 @@ position = Vector2(799, 1398)
 position = Vector2(3763, 1296)
 
 [node name="Sprite2D" parent="TextClue_noKids" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_up5k5")
+material = SubResource("ShaderMaterial_40lvq")
 rotation = 0.5235988
 skew = -0.5235988
 
@@ -156,7 +160,7 @@ skew = -0.5235988
 position = Vector2(4094, 1424)
 
 [node name="Sprite2D" parent="TextClue_annoucement" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_40lvq")
+material = SubResource("ShaderMaterial_8l08s")
 rotation = 0.5235988
 skew = -0.5235988
 
@@ -164,7 +168,7 @@ skew = -0.5235988
 position = Vector2(1723, 1494)
 
 [node name="Sprite2D" parent="TextClue_annoucement2" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_8l08s")
+material = SubResource("ShaderMaterial_fxayg")
 rotation = -0.5235988
 skew = 0.5235988
 
@@ -188,7 +192,55 @@ position = Vector2(0, 35.915)
 scale = Vector2(1, 1.115)
 
 [node name="Sprite2D" parent="TextClue_personalityTest" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_fxayg")
+material = SubResource("ShaderMaterial_kps16")
+
+[node name="placaTaverna" type="Sprite2D" parent="." index="23" unique_id=658161973]
+y_sort_enabled = true
+position = Vector2(3462, 1317)
+texture = ExtResource("23_8l08s")
+offset = Vector2(0, -191)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="placaTaverna" index="0" unique_id=1362121360]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="placaTaverna/StaticBody2D" index="0" unique_id=670608952]
+position = Vector2(0, -62)
+polygon = PackedVector2Array(-39, 76, -12, 89, 44, 55, 16, 41)
+
+[node name="placa" type="Sprite2D" parent="." index="24" unique_id=411184412]
+y_sort_enabled = true
+position = Vector2(2749, 2112)
+texture = ExtResource("24_fxayg")
+offset = Vector2(0, -110)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="placa" index="0" unique_id=583818018]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="placa/StaticBody2D" index="0" unique_id=622307755]
+position = Vector2(7, -104)
+polygon = PackedVector2Array(-172, 40, 112, 173, 141, 157, -142, 26)
+
+[node name="mesaTaverna" type="Sprite2D" parent="." index="25" unique_id=1221013122]
+y_sort_enabled = true
+position = Vector2(3697, 1632)
+texture = ExtResource("25_kps16")
+offset = Vector2(-1, -32)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="mesaTaverna" index="0" unique_id=1754735005]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="mesaTaverna/StaticBody2D" index="0" unique_id=425585804]
+position = Vector2(0, -32)
+polygon = PackedVector2Array(-145, 41, 28, 130, 177, 53, 4, -34)
+
+[node name="barraca" type="Sprite2D" parent="." index="26" unique_id=1721808120]
+y_sort_enabled = true
+position = Vector2(3004, 1600)
+texture = ExtResource("26_kps16")
+offset = Vector2(0, -151)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="barraca" index="0" unique_id=1118387639]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="barraca/StaticBody2D" index="0" unique_id=2116228232]
+position = Vector2(0, -151)
+polygon = PackedVector2Array(-210, 142, 58, 229, 229, 82, 26, -7)
 
 [connection signal="DialogEnd" from="caduInteractable/BuyNewsEvent" to="TextClue_personalityTest" method="set_visible" binds= [true]]
 
