@@ -15,7 +15,7 @@ const CARIMBO_MIGUEL_OST___MENU = preload("uid://c07mdq7itl1bi")
 @onready var click: AudioStreamPlayer = $Click
 
 var showing = false
-var suspeitos:Array[SussyBaka] = []
+var suspeitos = []
 var culpados = []
 var confirming = false
 var lockedin := false
