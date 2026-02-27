@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bfnbyscl76jsx" path="res://Assets/circle.png" id="5_mq1m4"]
 [ext_resource type="PackedScene" uid="uid://dth0nv84i8u2q" path="res://Scenes/Interactions/Characters/say_my_name.tscn" id="8_37ufn"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mq1m4"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_37ufn"]
 resource_local_to_scene = true
 shader = ExtResource("4_cf2ya")
 shader_parameter/thickness = 0.0
@@ -41,7 +41,7 @@ skew = 0.5235988
 texture = ExtResource("5_mq1m4")
 
 [node name="Sprite2D" parent="." index="4" unique_id=159541262]
-material = SubResource("ShaderMaterial_mq1m4")
+material = SubResource("ShaderMaterial_37ufn")
 position = Vector2(1.5, -88)
 texture = ExtResource("4_juau3")
 

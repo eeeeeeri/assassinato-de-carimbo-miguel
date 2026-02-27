@@ -1,8 +1,7 @@
 [gd_scene format=3 uid="uid://b6qhhcbw14o3w"]
 
 [ext_resource type="Script" uid="uid://cr1lle55ko4gd" path="res://Scripts/UI/sussy_baka.gd" id="1_uynpu"]
-[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="2_qkck8"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="2_ukgb1"]
+[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="2_qkck8"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="4_e2yq2"]
 [ext_resource type="Texture2D" uid="uid://bcxy583oqmksl" path="res://Assets/mark.png" id="4_qkck8"]
 [ext_resource type="AudioStream" uid="uid://uqn0p0ifi6pt" path="res://Assets/SFX/hit00.wav" id="5_g5kyk"]
@@ -58,8 +57,6 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_ifxus")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_e2yq2")
 toggle_mode = true
 script = ExtResource("1_uynpu")
-sus_name = "Cadu"
-sus_sprite = ExtResource("2_ukgb1")
 sus_spritePosition = Vector2(-165.00003, -12.000002)
 
 [node name="Panel" type="Panel" parent="." unique_id=960644912]
