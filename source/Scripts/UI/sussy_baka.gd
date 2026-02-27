@@ -8,8 +8,7 @@ extends Button
 @onready var hit: AudioStreamPlayer = $Hit
 @onready var click: AudioStreamPlayer = $Click
 
-@export var sus_name : String
-@export var sus_sprite : Texture2D
+@export var character : CharacterData
 @export var sus_spritePosition:Vector2
 
 var scale_tween : Tween
@@ -19,11 +18,17 @@ var mark_tween : Tween
 var selected := false
 
 func _ready() -> void:
-	label.text = sus_name
-	sprite_2d.texture = sus_sprite
+	label.text = character.Name.split(" ")[0]
+	label.visible = false
+	sprite_2d.texture = character.Portrait
 	sprite_2d.position = sus_spritePosition
 	mark.scale = Vector2.ZERO
 	rotate()
+
+
+func _process(delta: float) -> void:
+	if character.hasSaidName:
+		label.visible = true
 
 
 func _on_toggled(toggled_on: bool) -> void:
