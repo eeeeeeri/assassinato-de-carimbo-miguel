@@ -2,11 +2,52 @@
 
 [ext_resource type="Script" uid="uid://cly6xr12vfjuv" path="res://Scripts/UI/main_menu.gd" id="1_o14dv"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="2_4pqbp"]
-[ext_resource type="Texture2D" uid="uid://cjq0sb4mhtcd" path="res://Assets/logo.png" id="2_gih0s"]
 [ext_resource type="PackedScene" uid="uid://crtsmg6s70bm6" path="res://Scenes/UI/settings.tscn" id="2_u7lva"]
+[ext_resource type="Texture2D" uid="uid://tmdft16oxg3i" path="res://Assets/vila/vila_1.png" id="2_ypsd1"]
 [ext_resource type="PackedScene" uid="uid://xn5yf12qhpmt" path="res://Scenes/UI/tutorial.tscn" id="3_mrfpk"]
+[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_xp0kt"]
+[ext_resource type="Texture2D" uid="uid://di1vsnhb0nb4q" path="res://Assets/Personagens/BarbaraDeBarriga.png" id="4_1yfdm"]
 [ext_resource type="PackedScene" uid="uid://cddct1kcs4qby" path="res://Scenes/UI/credits.tscn" id="4_u7lva"]
+[ext_resource type="Texture2D" uid="uid://di7m0gppspwp6" path="res://Assets/Personagens/CarlosEduardo.png" id="5_3h8o7"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="5_mrfpk"]
+[ext_resource type="Texture2D" uid="uid://blf4akk5hetpv" path="res://Assets/Personagens/JairEsqueciOSobrenome.png" id="6_q6o50"]
+[ext_resource type="Texture2D" uid="uid://dtu4nret0rfw8" path="res://Assets/Personagens/FotocopiaMiguel.png" id="7_46hhv"]
+[ext_resource type="Texture2D" uid="uid://c0mbgw7fohlmc" path="res://Assets/Personagens/DoloresDeBarriga.png" id="8_oslnl"]
+[ext_resource type="Texture2D" uid="uid://c8oc5o7ap37r2" path="res://Assets/centerBar.png" id="9_1yfdm"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="9_xp0kt"]
+[ext_resource type="Texture2D" uid="uid://xw3v41fdr0xx" path="res://Assets/logoTransp.png" id="10_1yfdm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1yfdm"]
+shader = ExtResource("9_xp0kt")
+shader_parameter/thickness = 5.0000002375
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xp0kt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1yfdm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3h8o7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_q6o50"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46hhv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_oslnl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tr32r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hbsmt"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0gipi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ayn3n"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_4pqbp"]
 random_pitch = 1.3348398
@@ -31,17 +72,209 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
+[node name="Background" type="Control" parent="Main" unique_id=217043453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Main/Background" unique_id=1893091104]
+layout_mode = 0
+offset_left = -1125.0
+offset_top = -1081.0
+offset_right = 1905.0
+offset_bottom = 1949.0
+texture = ExtResource("2_ypsd1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="player" type="TextureRect" parent="Main/Background" unique_id=1425811033]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -596.0
+offset_top = -141.0
+offset_right = -216.0
+offset_bottom = 239.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xp0kt")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="armando" type="TextureRect" parent="Main/Background" unique_id=1274604316]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 229.0
+offset_top = -289.0
+offset_right = 609.0
+offset_bottom = 91.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xp0kt")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="barbara" type="TextureRect" parent="Main/Background" unique_id=414108788]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -585.0
+offset_top = -305.0
+offset_right = -205.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_1yfdm")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="carlos" type="TextureRect" parent="Main/Background" unique_id=1457773676]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -466.0
+offset_top = -188.0
+offset_right = -86.0
+offset_bottom = 192.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_3h8o7")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="jair" type="TextureRect" parent="Main/Background" unique_id=1220468129]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -484.0
+offset_top = -109.0
+offset_right = -104.0
+offset_bottom = 271.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_q6o50")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="fotocopia" type="TextureRect" parent="Main/Background" unique_id=1840109226]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 133.0
+offset_top = -179.0
+offset_right = 513.0
+offset_bottom = 201.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_46hhv")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="marka" type="TextureRect" parent="Main/Background" unique_id=1685225431]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 306.0
+offset_top = -113.0
+offset_right = 686.0
+offset_bottom = 267.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xp0kt")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="dolores" type="TextureRect" parent="Main/Background" unique_id=1831589449]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -683.0
+offset_top = -138.0
+offset_right = -303.0
+offset_bottom = 242.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("8_oslnl")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="pequena" type="TextureRect" parent="Main/Background" unique_id=533497688]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 145.0
+offset_top = -33.0
+offset_right = 525.0
+offset_bottom = 347.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xp0kt")
+expand_mode = 1
+stretch_mode = 5
+flip_h = true
+
+[node name="TextureRect" type="TextureRect" parent="Main" unique_id=194888815]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 260.0
+offset_right = -260.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_1yfdm")
+expand_mode = 1
+
 [node name="Logo" type="TextureRect" parent="Main" unique_id=1995556164]
+material = SubResource("ShaderMaterial_1yfdm")
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -116.0
-offset_top = 41.0
-offset_right = 116.0
-offset_bottom = 273.0
+offset_left = -205.0
+offset_top = -15.0
+offset_right = 205.0
+offset_bottom = 395.0
 grow_horizontal = 2
-texture = ExtResource("2_gih0s")
+texture = ExtResource("10_1yfdm")
 expand_mode = 1
 stretch_mode = 5
 
@@ -53,10 +286,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -19.0
-offset_right = 200.0
-offset_bottom = 295.0
+offset_left = -211.0
+offset_top = 13.0
+offset_right = 211.0
+offset_bottom = 335.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 8
@@ -64,32 +297,78 @@ alignment = 1
 
 [node name="Continuar" type="Button" parent="Main/VBoxContainer" unique_id=2024991368]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.6836937, 0.40505388, 0.25067908, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_4pqbp")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_xp0kt")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1yfdm")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_3h8o7")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_q6o50")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_46hhv")
 text = "INICIAR"
 
 [node name="Config" type="Button" parent="Main/VBoxContainer" unique_id=1378450699]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_4pqbp")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oslnl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tr32r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hbsmt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "CONFIGURAÇÕES"
 
 [node name="Ajuda" type="Button" parent="Main/VBoxContainer" unique_id=1046908393]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_4pqbp")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oslnl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tr32r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hbsmt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "AJUDA"
 
 [node name="Creditos" type="Button" parent="Main/VBoxContainer" unique_id=520249859]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_4pqbp")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oslnl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tr32r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hbsmt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "CRÉDITOS"
 
 [node name="Sair" type="Button" parent="Main/VBoxContainer" unique_id=856090810]
 layout_mode = 2
+theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("2_4pqbp")
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxEmpty_oslnl")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tr32r")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_hbsmt")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "SAIR"
 
 [node name="Settings" parent="." unique_id=397556042 instance=ExtResource("2_u7lva")]
