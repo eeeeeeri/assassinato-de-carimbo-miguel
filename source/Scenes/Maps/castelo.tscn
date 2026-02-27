@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://cfuxfugqcvij0" path="res://Assets/escritorio/cadeado.png" id="24_xkhmk"]
 [ext_resource type="PackedScene" uid="uid://bithnrtafppjm" path="res://Scenes/Interactions/MoveInteractions/click_inspectable_text.tscn" id="29_0x7wf"]
 [ext_resource type="Texture2D" uid="uid://4k50fe1jdvaq" path="res://Assets/escritorio/rei.png" id="30_8n5uc"]
+[ext_resource type="AudioStream" uid="uid://qygvt2qyjrqt" path="res://Assets/Musicas/Contos De Carimbia OST - Investigação.ogg" id="32_btb8p"]
 [ext_resource type="PackedScene" uid="uid://bq2cs6n03ge7b" path="res://Scenes/Interactions/Characters/fotocopia_interactable.tscn" id="32_twdsq"]
 [ext_resource type="PackedScene" uid="uid://dhojxydefq4bk" path="res://Scenes/Interactions/Characters/armando_interactable.tscn" id="33_yea3t"]
 
@@ -192,7 +193,7 @@ _data = {
 &"hide": SubResource("Animation_twdsq")
 }
 
-[sub_resource type="Shader" id="Shader_m1x7v"]
+[sub_resource type="Shader" id="Shader_btb8p"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -264,22 +265,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_btb8p"]
-resource_local_to_scene = true
-shader = SubResource("Shader_m1x7v")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ls4ci"]
 resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
+shader = SubResource("Shader_btb8p")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -316,10 +304,23 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7uid"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3r25g"]
 size = Vector2(160.09856, 88.4079)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7uid"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_adtpa"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -393,19 +394,6 @@ _data = {
 &"open": SubResource("Animation_r2dus")
 }
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_adtpa"]
-resource_local_to_scene = true
-shader = ExtResource("13_aqr4c")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dooms"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
@@ -419,7 +407,20 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
-[sub_resource type="Shader" id="Shader_alawe"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_alawe"]
+resource_local_to_scene = true
+shader = ExtResource("13_aqr4c")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="Shader" id="Shader_2rkmi"]
 resource_local_to_scene = true
 code = "shader_type canvas_item;
 render_mode unshaded;
@@ -491,9 +492,9 @@ void fragment(){
     COLOR = vec4(final_color, clamp(alpha, 0.0, 1.0));
 }"
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2rkmi"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d42lu"]
 resource_local_to_scene = true
-shader = SubResource("Shader_alawe")
+shader = SubResource("Shader_2rkmi")
 shader_parameter/thickness = 0.0
 shader_parameter/ring_count = 16
 shader_parameter/ring_offset = 0.0
@@ -506,7 +507,7 @@ shader_parameter/max_or_add = false
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0x7wf"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_d42lu"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yh4v5"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -520,6 +521,7 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yh4v5"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xrfvn"]
 resource_local_to_scene = true
 shader = ExtResource("13_aqr4c")
 shader_parameter/thickness = 0.0
@@ -537,8 +539,8 @@ shader_parameter/max_or_add = false
 [node name="Background" type="Sprite2D" parent="." index="0" unique_id=1424575677]
 self_modulate = Color(0.22115254, 0.11027486, 0.06808466, 1)
 z_index = -10
-position = Vector2(2754, 1582.5004)
-scale = Vector2(18.925783, 11.927734)
+position = Vector2(1093, 1183.0001)
+scale = Vector2(11.902344, 7.824219)
 texture = ExtResource("2_bmver")
 
 [node name="Ground" parent="." index="1" unique_id=2054894502]
@@ -654,7 +656,7 @@ scale = Vector2(0.655, 0.655)
 scale = Vector2(0.475, 0.475)
 
 [node name="Sprite2D" parent="ClickTravel_residencial" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_btb8p")
+material = SubResource("ShaderMaterial_ls4ci")
 
 [node name="object_clue_armandoStamp" parent="." index="14" unique_id=1896811649 instance=ExtResource("12_xt6f8")]
 y_sort_enabled = true
@@ -678,7 +680,7 @@ position = Vector2(0, -2)
 scale = Vector2(0.45, 1.065)
 
 [node name="Sprite2D" parent="object_clue_armandoStamp" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_ls4ci")
+material = SubResource("ShaderMaterial_t6of3")
 position = Vector2(0, -18.999998)
 scale = Vector2(0.103, 0.103)
 
@@ -701,7 +703,7 @@ scale = Vector2(0.62, 0.62)
 scale = Vector2(1.195, 0.65)
 
 [node name="Sprite2D" parent="TextClue_castleLetters" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_t6of3")
+material = SubResource("ShaderMaterial_3jqfi")
 rotation = -0.5235988
 scale = Vector2(0.076, 0.076)
 skew = -0.5235988
@@ -717,7 +719,7 @@ scale = Vector2(1.29, 1.29)
 scale = Vector2(1.89, 1.89)
 
 [node name="Sprite2D" parent="TextClue_familyTree" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_3jqfi")
+material = SubResource("ShaderMaterial_y7uid")
 scale = Vector2(1, 1)
 texture = ExtResource("16_ka4tx")
 
@@ -725,7 +727,7 @@ texture = ExtResource("16_ka4tx")
 visible = false
 
 [node name="TextClue_kingsWill" parent="." index="17" unique_id=1077445775 instance=ExtResource("17_3r25g")]
-z_index = 1
+y_sort_enabled = true
 position = Vector2(1187, 1029)
 collision_layer = 4
 collision_mask = 4
@@ -747,10 +749,15 @@ skew = 0.5235988
 shape = SubResource("RectangleShape2D_3r25g")
 
 [node name="Sprite2D" parent="TextClue_kingsWill" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_y7uid")
+material = SubResource("ShaderMaterial_adtpa")
+position = Vector2(1.9741707, 41.006752)
 rotation = -2.5307274
 scale = Vector2(0.133, 0.133)
 skew = 0.5235988
+offset = Vector2(329.90625, 281.80273)
+
+[node name="dropShadow" parent="TextClue_kingsWill/Sprite2D" index="0" unique_id=771579444]
+offset = Vector2(329.906, 281.803)
 
 [node name="HiddenLever" type="Node2D" parent="." index="18" unique_id=1738166547]
 position = Vector2(322, 1201)
@@ -797,7 +804,7 @@ collision_mask = 4
 scale = Vector2(0.71, 0.71)
 
 [node name="Sprite2D" parent="TextClue_guardsPatrol" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_adtpa")
+material = SubResource("ShaderMaterial_dooms")
 rotation = 0.5235988
 skew = 0.5235988
 texture = ExtResource("22_mfycn")
@@ -819,15 +826,15 @@ scale = Vector2(1.105, 1.105)
 scale = Vector2(0.565, 0.565)
 
 [node name="Sprite2D" parent="ClickStampLock" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_dooms")
+material = SubResource("ShaderMaterial_alawe")
 texture = ExtResource("24_xkhmk")
 
 [node name="ClickTravel_secretRoom" parent="." index="21" unique_id=810496024 instance=ExtResource("2_755oh")]
 visible = false
 position = Vector2(552, 1123)
 rotation = -1.5707964
-scene = "res://Scenes/Maps/residencial.tscn"
-next_audio = ExtResource("3_phbd6")
+scene = "res://Scenes/Maps/quartoSecreto.tscn"
+next_audio = ExtResource("32_btb8p")
 
 [node name="CollisionShape2D" parent="ClickTravel_secretRoom/InteractionArea" parent_id_path=PackedInt32Array(810496024, 146712339) index="0" unique_id=2125542557]
 scale = Vector2(0.93, 0.93)
@@ -836,7 +843,7 @@ scale = Vector2(0.93, 0.93)
 scale = Vector2(0.79, 0.79)
 
 [node name="Sprite2D" parent="ClickTravel_secretRoom" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_2rkmi")
+material = SubResource("ShaderMaterial_d42lu")
 
 [node name="ClickInspectable_King" parent="." index="22" unique_id=1882603094 instance=ExtResource("29_0x7wf")]
 position = Vector2(782, 1359)
@@ -858,7 +865,7 @@ scale = Vector2(11.945, 11.945)
 shape = SubResource("CircleShape2D_0x7wf")
 
 [node name="Sprite2D" parent="ClickInspectable_King" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_d42lu")
+material = SubResource("ShaderMaterial_yh4v5")
 scale = Vector2(1, 1)
 texture = ExtResource("30_8n5uc")
 
@@ -877,6 +884,7 @@ scale = Vector2(1.226, 0.94)
 
 [node name="Sprite2D" parent="armandoInteractable" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_yh4v5")
+material = SubResource("ShaderMaterial_xrfvn")
 
 [connection signal="animation_finished" from="Estante/AnimationPlayer" to="TransformStateSaver" method="SaveData" unbinds=1]
 [connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/hiddenLever_interaction/AudioStreamPlayer" method="play"]
