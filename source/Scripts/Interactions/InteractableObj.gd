@@ -36,14 +36,14 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if is_interactable && show_outline:
 		time += delta
-		sprite_scale = sin(time + 1.5*PI) * .05 + 1.05
+		#sprite_scale = sin(time + 1.5*PI) * .05 + 1.05
 		outline_thickness = OutlineMaxThickness
 	else:
 		time = 0
-		sprite_scale = 1
+		#sprite_scale = 1
 		outline_thickness = 0
 	if show_outline: sprite_2d.material.set_shader_parameter("thickness", outline_thickness)
-	sprite_2d.scale = startSpriteScale * sprite_scale
+	#sprite_2d.scale = startSpriteScale * sprite_scale
 	spark.visible = is_interactable && useSpark
 	if(hideSprite):
 		sprite_2d.visible = is_interactable

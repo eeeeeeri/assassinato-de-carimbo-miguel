@@ -27,46 +27,46 @@
 [ext_resource type="Texture2D" uid="uid://bl5is7bmyymiq" path="res://Assets/vila/mesa_taverna.png" id="25_kps16"]
 [ext_resource type="Texture2D" uid="uid://c6oi2eya36pxj" path="res://Assets/vila/barraca.png" id="26_kps16"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_40lvq"]
-resource_local_to_scene = true
-shader = ExtResource("15_ndk88")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8l08s"]
-resource_local_to_scene = true
-shader = ExtResource("15_ndk88")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_fxayg"]
-resource_local_to_scene = true
-shader = ExtResource("15_ndk88")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kps16"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pty0l"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g7mqf"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0wg4"]
 resource_local_to_scene = true
 shader = ExtResource("15_ndk88")
 shader_parameter/thickness = 0.0
@@ -152,37 +152,29 @@ position = Vector2(799, 1398)
 position = Vector2(3763, 1296)
 
 [node name="Sprite2D" parent="TextClue_noKids" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_40lvq")
+material = SubResource("ShaderMaterial_kps16")
 rotation = 0.5235988
 skew = -0.5235988
 
-[node name="TextClue_annoucement" parent="." index="18" unique_id=1810679662 instance=ExtResource("10_8l08s")]
-position = Vector2(4094, 1424)
-
-[node name="Sprite2D" parent="TextClue_annoucement" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_8l08s")
-rotation = 0.5235988
-skew = -0.5235988
-
-[node name="TextClue_annoucement2" parent="." index="19" unique_id=1945928193 instance=ExtResource("10_8l08s")]
+[node name="TextClue_annoucement2" parent="." index="18" unique_id=1945928193 instance=ExtResource("10_8l08s")]
 position = Vector2(1723, 1494)
 
 [node name="Sprite2D" parent="TextClue_annoucement2" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_fxayg")
+material = SubResource("ShaderMaterial_pty0l")
 rotation = -0.5235988
 skew = 0.5235988
 
-[node name="pequenaInteractable" parent="." index="20" unique_id=1648232328 instance=ExtResource("16_by2w1")]
+[node name="pequenaInteractable" parent="." index="19" unique_id=1648232328 instance=ExtResource("16_by2w1")]
 position = Vector2(2100, 2235)
 
-[node name="caduInteractable" parent="." index="21" unique_id=135454890 instance=ExtResource("17_onfkq")]
+[node name="caduInteractable" parent="." index="20" unique_id=135454890 instance=ExtResource("17_onfkq")]
 position = Vector2(3142, 1686)
 
 [node name="BuyNewsEvent" type="Node" parent="caduInteractable" index="6" unique_id=878885564]
 script = ExtResource("18_yajkd")
 SourceDialog = ExtResource("19_ndk88")
 
-[node name="TextClue_personalityTest" parent="." index="22" unique_id=259402919 instance=ExtResource("18_sbyme")]
+[node name="TextClue_personalityTest" parent="." index="21" unique_id=259402919 instance=ExtResource("18_sbyme")]
 process_mode = 4
 visible = false
 position = Vector2(3281, 1785)
@@ -192,9 +184,9 @@ position = Vector2(0, 35.915)
 scale = Vector2(1, 1.115)
 
 [node name="Sprite2D" parent="TextClue_personalityTest" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_kps16")
+material = SubResource("ShaderMaterial_g7mqf")
 
-[node name="placaTaverna" type="Sprite2D" parent="." index="23" unique_id=658161973]
+[node name="placaTaverna" type="Sprite2D" parent="." index="22" unique_id=658161973]
 y_sort_enabled = true
 position = Vector2(3462, 1317)
 texture = ExtResource("23_8l08s")
@@ -206,8 +198,7 @@ offset = Vector2(0, -191)
 position = Vector2(0, -62)
 polygon = PackedVector2Array(-39, 76, -12, 89, 44, 55, 16, 41)
 
-[node name="placa" type="Sprite2D" parent="." index="24" unique_id=411184412]
-y_sort_enabled = true
+[node name="placa" type="Sprite2D" parent="." index="23" unique_id=411184412]
 position = Vector2(2749, 2112)
 texture = ExtResource("24_fxayg")
 offset = Vector2(0, -110)
@@ -216,9 +207,17 @@ offset = Vector2(0, -110)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="placa/StaticBody2D" index="0" unique_id=622307755]
 position = Vector2(7, -104)
-polygon = PackedVector2Array(-172, 40, 112, 173, 141, 157, -142, 26)
+polygon = PackedVector2Array(-178, 64, 111, 193, 145, 154, 145, 14, -178, -124, -197, 43)
 
-[node name="mesaTaverna" type="Sprite2D" parent="." index="25" unique_id=1221013122]
+[node name="TextClue_annoucement" parent="placa" index="1" unique_id=1810679662 instance=ExtResource("10_8l08s")]
+position = Vector2(-66, -120)
+
+[node name="Sprite2D" parent="placa/TextClue_annoucement" index="3" unique_id=159541262]
+material = SubResource("ShaderMaterial_s0wg4")
+rotation = 0.5235988
+skew = -0.5235988
+
+[node name="mesaTaverna" type="Sprite2D" parent="." index="24" unique_id=1221013122]
 y_sort_enabled = true
 position = Vector2(3697, 1632)
 texture = ExtResource("25_kps16")
@@ -230,7 +229,7 @@ offset = Vector2(-1, -32)
 position = Vector2(0, -32)
 polygon = PackedVector2Array(-145, 41, 28, 130, 177, 53, 4, -34)
 
-[node name="barraca" type="Sprite2D" parent="." index="26" unique_id=1721808120]
+[node name="barraca" type="Sprite2D" parent="." index="25" unique_id=1721808120]
 y_sort_enabled = true
 position = Vector2(3004, 1600)
 texture = ExtResource("26_kps16")
@@ -245,6 +244,6 @@ polygon = PackedVector2Array(-210, 142, 58, 229, 229, 82, 26, -7)
 [connection signal="DialogEnd" from="caduInteractable/BuyNewsEvent" to="TextClue_personalityTest" method="set_visible" binds= [true]]
 
 [editable path="TextClue_noKids"]
-[editable path="TextClue_annoucement"]
 [editable path="TextClue_annoucement2"]
 [editable path="TextClue_personalityTest"]
+[editable path="placa/TextClue_annoucement"]
