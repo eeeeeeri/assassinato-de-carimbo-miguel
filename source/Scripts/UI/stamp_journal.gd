@@ -24,7 +24,7 @@ func _ready() -> void:
 		stamp.OnButtonClick.connect(ClickSFX)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("journal"):
+	if Input.is_action_just_pressed("journal") && !GlobalResources.player.in_menu:
 		if showing:
 			animation_player.play("hide")
 			GlobalResources.GLOBAL_EVENTS.JournalClose.emit()

@@ -28,7 +28,7 @@ func _ready() -> void:
 		suspeitos.append(i)
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("select_culpado") && !lockedin:
+	if Input.is_action_just_pressed("select_culpado") && !lockedin && !GlobalResources.player.in_menu:
 		if showing:
 			animation_player.play("hide")
 			GlobalResources.GLOBAL_EVENTS.SusClose.emit()
