@@ -5,6 +5,6 @@
 [resource]
 script = ExtResource("1_0lsdx")
 dialogOption = "Initial"
-charResponses = Array[String](["-Olá senhor, fui encarregado de investigar esse caso, será que posso lhe fazer algumas perguntas?", "Aquele muleque estragou tudo.", "-Senhor?", "O QUE? O QUE VOCÊ QUER?", "-Só gostaria de te fazer algumas perguntas."])
+charResponses = Array[String](["-Olá senhor, fui encarregado pela corte real de investigar um caso, será que posso lhe fazer algumas perguntas?", "Aquele muleque estragou tudo.", "-Senhor?", "O QUE? O QUE VOCÊ QUER?", "-Só gostaria de te fazer algumas perguntas."])
 playerIsSpeaking = Array[bool]([true, false, true, false, true])
 metadata/_custom_type_script = "uid://bfm8hy3lr78j7"
