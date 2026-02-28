@@ -858,6 +858,9 @@ stretch_mode = 5
 visible = false
 layout_mode = 1
 
+[node name="VBoxContainer" parent="Settings" index="0" unique_id=1430442492]
+z_index = 1
+
 [node name="backgorund2" type="ColorRect" parent="Settings" unique_id=108136853]
 layout_mode = 1
 anchors_preset = 15
@@ -867,9 +870,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.8)
-
-[node name="VBoxContainer" parent="Settings" index="1" unique_id=1430442492]
-z_index = 1
 
 [node name="BackButton" type="Button" parent="Settings" unique_id=1985522980]
 layout_mode = 0
