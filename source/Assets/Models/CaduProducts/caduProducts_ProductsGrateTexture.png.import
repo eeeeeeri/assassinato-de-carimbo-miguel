@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://4kmogxxl0bhl"
 path.s3tc="res://.godot/imported/caduProducts_ProductsGrateTexture.png-da7c92c92b397bed547d79d8861e0262.s3tc.ctex"
+path.etc2="res://.godot/imported/caduProducts_ProductsGrateTexture.png-da7c92c92b397bed547d79d8861e0262.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/CaduProducts/caduProducts_ProductsGrateTexture.png"
-dest_files=["res://.godot/imported/caduProducts_ProductsGrateTexture.png-da7c92c92b397bed547d79d8861e0262.s3tc.ctex"]
+dest_files=["res://.godot/imported/caduProducts_ProductsGrateTexture.png-da7c92c92b397bed547d79d8861e0262.s3tc.ctex", "res://.godot/imported/caduProducts_ProductsGrateTexture.png-da7c92c92b397bed547d79d8861e0262.etc2.ctex"]
 
 [params]
 

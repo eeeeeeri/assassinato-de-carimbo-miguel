@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://cbokm5o0rd8hw"
 path.s3tc="res://.godot/imported/painting_FrameTexture.png-06d3244299fdd1923e9fbbe40a60ee68.s3tc.ctex"
+path.etc2="res://.godot/imported/painting_FrameTexture.png-06d3244299fdd1923e9fbbe40a60ee68.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/Painting/painting_FrameTexture.png"
-dest_files=["res://.godot/imported/painting_FrameTexture.png-06d3244299fdd1923e9fbbe40a60ee68.s3tc.ctex"]
+dest_files=["res://.godot/imported/painting_FrameTexture.png-06d3244299fdd1923e9fbbe40a60ee68.s3tc.ctex", "res://.godot/imported/painting_FrameTexture.png-06d3244299fdd1923e9fbbe40a60ee68.etc2.ctex"]
 
 [params]
 

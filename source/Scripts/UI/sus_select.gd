@@ -30,21 +30,28 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("select_culpado") && !lockedin && !GlobalResources.player.in_menu:
 		if showing:
-			animation_player.play("hide")
-			GlobalResources.GLOBAL_EVENTS.SusClose.emit()
-			showing = false
+			_show()
 		else:
-			if(GlobalResources.player.is_interacting):return
-			
-			animation_player.play("show")
-			GlobalResources.GLOBAL_EVENTS.SusOpen.emit()
-			visible = true
-			showing = true
+			_hide()
 	
 	if Input.is_action_just_pressed("Cancel") && showing && !lockedin:
 		animation_player.play("hide")
 		GlobalResources.GLOBAL_EVENTS.SusClose.emit()
 		showing = false
+
+
+func _show() -> void:
+	if(GlobalResources.player.is_interacting):return
+	animation_player.play("show")
+	GlobalResources.GLOBAL_EVENTS.SusOpen.emit()
+	visible = true
+	showing = true
+
+
+func _hide() -> void:
+	animation_player.play("hide")
+	GlobalResources.GLOBAL_EVENTS.SusClose.emit()
+	showing = false
 
 
 func _shake(value: float) -> void:

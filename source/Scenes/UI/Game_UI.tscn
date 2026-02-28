@@ -5,7 +5,7 @@
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="3_4o8mf"]
 [ext_resource type="PackedScene" uid="uid://b6qhhcbw14o3w" path="res://Scenes/UI/sussy_baka.tscn" id="3_8od7p"]
 [ext_resource type="AudioStream" uid="uid://bmx3vtrhsexr7" path="res://CustomResources/AudioStreams/coin.tres" id="3_j8f76"]
-[ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="4_ddusd"]
+[ext_resource type="Shader" uid="uid://bc4iyq3273beo" path="res://CustomResources/Shaders/shadow.gdshader" id="4_ddusd"]
 [ext_resource type="PackedScene" uid="uid://x0e7vbsd852" path="res://Scenes/UI/modular_stamp.tscn" id="5_ddusd"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="7_5ji76"]
 
@@ -14,7 +14,7 @@ font_size = 25
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5bd3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mi66r"]
 resource_local_to_scene = true
 shader = ExtResource("4_ddusd")
 shader_parameter/shadow_offset = Vector2(0, 0)
@@ -74,6 +74,36 @@ text = "0"
 label_settings = SubResource("LabelSettings_j8f76")
 vertical_alignment = 1
 
+[node name="Android" type="VBoxContainer" parent="Canvas" unique_id=1158109988]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -239.0
+offset_top = 20.0
+offset_right = -20.0
+offset_bottom = 229.0
+grow_horizontal = 0
+theme_override_constants/separation = 10
+
+[node name="MenuButton" type="Button" parent="Canvas/Android" unique_id=531000483]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4o8mf")
+theme_override_font_sizes/font_size = 48
+text = "Menu"
+
+[node name="DiarioButton" type="Button" parent="Canvas/Android" unique_id=1109702268]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4o8mf")
+theme_override_font_sizes/font_size = 48
+text = "Diário"
+
+[node name="CulpadosButton" type="Button" parent="Canvas/Android" unique_id=898907552]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_4o8mf")
+theme_override_font_sizes/font_size = 48
+text = "Culpados"
+
 [node name="inputTooltips" type="Control" parent="Canvas" unique_id=536585365]
 layout_mode = 1
 anchors_preset = 3
@@ -110,7 +140,7 @@ mouse_filter = 2
 script = null
 
 [node name="Shadow" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_j5bd3")
+material = SubResource("ShaderMaterial_mi66r")
 
 [node name="Sprite2D" parent="Canvas/inputTooltips/SussyBaka/Panel/ColorRect" parent_id_path=PackedInt32Array(423670737, 101840902) index="0" unique_id=657806657]
 position = Vector2(15.725801, -6.2102013)

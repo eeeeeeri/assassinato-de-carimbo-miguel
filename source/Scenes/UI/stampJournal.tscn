@@ -479,14 +479,33 @@ vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="ButtonHelp" type="Button" parent="Panel" unique_id=79031839]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=411787971]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -138.0
+offset_bottom = 67.0
+grow_horizontal = 0
+
+[node name="ButtonHelp" type="Button" parent="Panel/HBoxContainer" unique_id=79031839]
 custom_minimum_size = Vector2(67, 67)
 layout_direction = 3
-layout_mode = 0
+layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 0
 theme_override_font_sizes/font_size = 43
 text = "?"
+
+[node name="ButtonClose" type="Button" parent="Panel/HBoxContainer" unique_id=339506174]
+custom_minimum_size = Vector2(67, 67)
+layout_direction = 3
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "X"
 
 [node name="HelpPanel" type="Control" parent="Panel" unique_id=218224788]
 visible = false
@@ -568,7 +587,8 @@ stream = SubResource("AudioStreamRandomizer_xaw7t")
 volume_db = -10.0
 bus = &"SFX"
 
-[connection signal="button_up" from="Panel/ButtonHelp" to="Panel/ButtonHelp" method="set_visible" binds= [false]]
-[connection signal="button_up" from="Panel/ButtonHelp" to="Panel/HelpPanel" method="set_visible" binds= [true]]
-[connection signal="button_up" from="Panel/HelpPanel/ButtonClose3" to="Panel/ButtonHelp" method="set_visible" binds= [true]]
+[connection signal="button_up" from="Panel/HBoxContainer/ButtonHelp" to="Panel/HBoxContainer/ButtonHelp" method="set_visible" binds= [false]]
+[connection signal="button_up" from="Panel/HBoxContainer/ButtonHelp" to="Panel/HelpPanel" method="set_visible" binds= [true]]
+[connection signal="button_up" from="Panel/HBoxContainer/ButtonClose" to="." method="_hide"]
+[connection signal="button_up" from="Panel/HelpPanel/ButtonClose3" to="Panel/HBoxContainer/ButtonHelp" method="set_visible" binds= [true]]
 [connection signal="button_up" from="Panel/HelpPanel/ButtonClose3" to="Panel/HelpPanel" method="set_visible" binds= [false]]

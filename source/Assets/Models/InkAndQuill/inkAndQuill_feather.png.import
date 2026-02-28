@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkmei4rw1yup4"
 path.s3tc="res://.godot/imported/inkAndQuill_feather.png-014b0512593bbbea404aaf9f334e0f2c.s3tc.ctex"
+path.etc2="res://.godot/imported/inkAndQuill_feather.png-014b0512593bbbea404aaf9f334e0f2c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/InkAndQuill/inkAndQuill_feather.png"
-dest_files=["res://.godot/imported/inkAndQuill_feather.png-014b0512593bbbea404aaf9f334e0f2c.s3tc.ctex"]
+dest_files=["res://.godot/imported/inkAndQuill_feather.png-014b0512593bbbea404aaf9f334e0f2c.s3tc.ctex", "res://.godot/imported/inkAndQuill_feather.png-014b0512593bbbea404aaf9f334e0f2c.etc2.ctex"]
 
 [params]
 

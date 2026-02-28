@@ -4,15 +4,16 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc87uwcr71dr0"
 path.s3tc="res://.godot/imported/markaPainting.png-26633429bc62d9ff8fe5a9fd13aa9cde.s3tc.ctex"
+path.etc2="res://.godot/imported/markaPainting.png-26633429bc62d9ff8fe5a9fd13aa9cde.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Assets/Models/Painting/markaPainting.png"
-dest_files=["res://.godot/imported/markaPainting.png-26633429bc62d9ff8fe5a9fd13aa9cde.s3tc.ctex"]
+dest_files=["res://.godot/imported/markaPainting.png-26633429bc62d9ff8fe5a9fd13aa9cde.s3tc.ctex", "res://.godot/imported/markaPainting.png-26633429bc62d9ff8fe5a9fd13aa9cde.etc2.ctex"]
 
 [params]
 

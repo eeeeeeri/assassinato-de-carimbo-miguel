@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://byiyhp3g1db2x"
 path.s3tc="res://.godot/imported/caduKidStamp_TextureCaduKidStamp.png-f19f5c5f93dec006f624a7dac44dbdc5.s3tc.ctex"
+path.etc2="res://.godot/imported/caduKidStamp_TextureCaduKidStamp.png-f19f5c5f93dec006f624a7dac44dbdc5.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/CaduKidStamp/caduKidStamp_TextureCaduKidStamp.png"
-dest_files=["res://.godot/imported/caduKidStamp_TextureCaduKidStamp.png-f19f5c5f93dec006f624a7dac44dbdc5.s3tc.ctex"]
+dest_files=["res://.godot/imported/caduKidStamp_TextureCaduKidStamp.png-f19f5c5f93dec006f624a7dac44dbdc5.s3tc.ctex", "res://.godot/imported/caduKidStamp_TextureCaduKidStamp.png-f19f5c5f93dec006f624a7dac44dbdc5.etc2.ctex"]
 
 [params]
 

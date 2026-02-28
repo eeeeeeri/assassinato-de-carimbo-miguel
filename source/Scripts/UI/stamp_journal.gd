@@ -26,22 +26,28 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("journal") && !GlobalResources.player.in_menu:
 		if showing:
-			animation_player.play("hide")
-			GlobalResources.GLOBAL_EVENTS.JournalClose.emit()
-			showing = false
+			_show()
 		else:
-			if(GlobalResources.player.is_interacting):return
-			
-			animation_player.play("show")
-			GlobalResources.GLOBAL_EVENTS.JournalOpen.emit()
-			UpdateFeedbackText()
-			visible = true
-			showing = true
+			_hide()
 	
 	if Input.is_action_just_pressed("Cancel") && showing:
 		animation_player.play("hide")
 		GlobalResources.GLOBAL_EVENTS.JournalClose.emit()
 		showing = false
+
+func _show() -> void:
+	if(GlobalResources.player.is_interacting):return
+	animation_player.play("show")
+	GlobalResources.GLOBAL_EVENTS.JournalOpen.emit()
+	UpdateFeedbackText()
+	visible = true
+	showing = true
+
+func _hide() -> void:
+	animation_player.play("hide")
+	GlobalResources.GLOBAL_EVENTS.JournalClose.emit()
+	showing = false
+	
 
 func UpdateFeedbackText() -> void:
 	var correctCount = 0

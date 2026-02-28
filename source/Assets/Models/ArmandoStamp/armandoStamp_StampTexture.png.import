@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtve212xljmfi"
 path.s3tc="res://.godot/imported/armandoStamp_StampTexture.png-252ae65d241d7e63ca8c1e2c85bd8586.s3tc.ctex"
+path.etc2="res://.godot/imported/armandoStamp_StampTexture.png-252ae65d241d7e63ca8c1e2c85bd8586.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/ArmandoStamp/armandoStamp_StampTexture.png"
-dest_files=["res://.godot/imported/armandoStamp_StampTexture.png-252ae65d241d7e63ca8c1e2c85bd8586.s3tc.ctex"]
+dest_files=["res://.godot/imported/armandoStamp_StampTexture.png-252ae65d241d7e63ca8c1e2c85bd8586.s3tc.ctex", "res://.godot/imported/armandoStamp_StampTexture.png-252ae65d241d7e63ca8c1e2c85bd8586.etc2.ctex"]
 
 [params]
 

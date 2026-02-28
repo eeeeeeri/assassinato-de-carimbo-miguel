@@ -3,11 +3,15 @@ extends Node
 @onready var coin_info: Control = $Canvas/CoinInfo
 @onready var coins_count: Label = $Canvas/CoinInfo/CoinsCount
 @onready var coin_sound: AudioStreamPlayer = $CoinSound
+@onready var android: VBoxContainer = $Canvas/Android
 
 var first_load := true
 
 func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.OnUpdateGameUI.connect(UpdateUI)
+	
+	if OS.get_name() != "Android":
+		android.visible = false
 	
 	UpdateUI()
 	if first_load: first_load = false

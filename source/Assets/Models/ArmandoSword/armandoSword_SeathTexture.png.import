@@ -4,8 +4,9 @@ importer="texture"
 type="CompressedTexture2D"
 uid="uid://brjp4ue4x7ys2"
 path.s3tc="res://.godot/imported/armandoSword_SeathTexture.png-e14dbe00106f453b91616880a363312c.s3tc.ctex"
+path.etc2="res://.godot/imported/armandoSword_SeathTexture.png-e14dbe00106f453b91616880a363312c.etc2.ctex"
 metadata={
-"imported_formats": ["s3tc_bptc"],
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
 "vram_texture": true
 }
 generator_parameters={
@@ -15,7 +16,7 @@ generator_parameters={
 [deps]
 
 source_file="res://Assets/Models/ArmandoSword/armandoSword_SeathTexture.png"
-dest_files=["res://.godot/imported/armandoSword_SeathTexture.png-e14dbe00106f453b91616880a363312c.s3tc.ctex"]
+dest_files=["res://.godot/imported/armandoSword_SeathTexture.png-e14dbe00106f453b91616880a363312c.s3tc.ctex", "res://.godot/imported/armandoSword_SeathTexture.png-e14dbe00106f453b91616880a363312c.etc2.ctex"]
 
 [params]
 
