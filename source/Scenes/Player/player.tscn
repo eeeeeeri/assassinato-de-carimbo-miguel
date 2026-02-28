@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bqbd2v2crepoy"]
 
 [ext_resource type="Script" uid="uid://5r2tqy85as8e" path="res://Scripts/Player/player.gd" id="1_xpcdj"]
+[ext_resource type="Texture2D" uid="uid://bfnbyscl76jsx" path="res://Assets/circle.png" id="2_06tpx"]
 [ext_resource type="Texture2D" uid="uid://d33lx5oru8566" path="res://Assets/player_temp.png" id="2_mtuoh"]
 [ext_resource type="PackedScene" uid="uid://l7wjd1w8momj" path="res://Scenes/UI/Game_UI.tscn" id="3_dd0ac"]
 [ext_resource type="PackedScene" uid="uid://m3cjfjrwg6ke" path="res://Scenes/UI/mapa.tscn" id="3_htcer"]
@@ -71,6 +72,15 @@ script = ExtResource("1_xpcdj")
 position = Vector2(-4, -6)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_o06y3")
+
+[node name="shadow" type="Sprite2D" parent="." unique_id=1099276871]
+self_modulate = Color(0, 0, 0, 0.4862745)
+position = Vector2(0.837764, -86.35095)
+rotation = 0.5235988
+scale = Vector2(0.15352865, 0.15352865)
+skew = 0.5235988
+texture = ExtResource("2_06tpx")
+offset = Vector2(576.8165, 613.2018)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=149292721]
 position = Vector2(0, -75)
