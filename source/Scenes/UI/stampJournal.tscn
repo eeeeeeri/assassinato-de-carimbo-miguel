@@ -132,6 +132,7 @@ stream_0/stream = ExtResource("24_vkn1i")
 [node name="StampJournal" type="CanvasLayer" unique_id=647023198 node_paths=PackedStringArray("editableStamps")]
 script = ExtResource("1_mxt4o")
 almostColor = Color(0.75266093, 0.7526609, 0, 1)
+almostString = "Metade dos carimbos estão corretos"
 editableStamps = [NodePath("Panel/CenterContainer/GridContainer/Armando/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Barbara/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Cadu/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Dolores/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Fotocopia/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Jair/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Marka/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Pequena/EditableStamp")]
 
 [node name="Panel" type="Control" parent="." unique_id=185544462]
@@ -478,6 +479,87 @@ vertical_alignment = 1
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
+[node name="ButtonHelp" type="Button" parent="Panel" unique_id=79031839]
+custom_minimum_size = Vector2(67, 67)
+layout_direction = 3
+layout_mode = 0
+size_flags_horizontal = 8
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 43
+text = "?"
+
+[node name="HelpPanel" type="Control" parent="Panel" unique_id=218224788]
+visible = false
+z_index = 3
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="Panel/HelpPanel" unique_id=1868378950]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8862745)
+
+[node name="ButtonClose3" type="Button" parent="Panel/HelpPanel" unique_id=412627664]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -67.0
+offset_bottom = 67.0
+grow_horizontal = 0
+theme_override_colors/font_color = Color(0.88, 0, 0, 1)
+theme_override_font_sizes/font_size = 43
+text = "X"
+
+[node name="Label2" type="Label" parent="Panel/HelpPanel" unique_id=298861923]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -363.47827
+offset_top = -319.0
+offset_right = 363.47827
+offset_bottom = -235.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("24_xaw7t")
+theme_override_font_sizes/font_size = 60
+text = "Tutorial"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="Panel/HelpPanel" unique_id=2143883233]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.0
+offset_top = -209.0
+offset_right = 443.0
+offset_bottom = 260.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("24_xaw7t")
+theme_override_font_sizes/font_size = 30
+text = "Use esta tela para anotar e conferir os carimbos que descobrir durante a investigação.
+
+Clique nas partes individuais de cada carimbo para mudá-las. 
+
+O texto à direita confirmará quando a metade dos carimbos estiverem corretos, e quando todos estiverem corretos."
+autowrap_mode = 2
+
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=36216388]
 libraries/ = SubResource("AnimationLibrary_ep287")
 
@@ -485,3 +567,8 @@ libraries/ = SubResource("AnimationLibrary_ep287")
 stream = SubResource("AudioStreamRandomizer_xaw7t")
 volume_db = -10.0
 bus = &"SFX"
+
+[connection signal="button_up" from="Panel/ButtonHelp" to="Panel/ButtonHelp" method="set_visible" binds= [false]]
+[connection signal="button_up" from="Panel/ButtonHelp" to="Panel/HelpPanel" method="set_visible" binds= [true]]
+[connection signal="button_up" from="Panel/HelpPanel/ButtonClose3" to="Panel/ButtonHelp" method="set_visible" binds= [true]]
+[connection signal="button_up" from="Panel/HelpPanel/ButtonClose3" to="Panel/HelpPanel" method="set_visible" binds= [false]]

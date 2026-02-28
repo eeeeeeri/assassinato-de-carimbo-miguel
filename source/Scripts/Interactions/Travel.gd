@@ -2,6 +2,17 @@ extends Interactable
 
 @export var scene : String
 @export var next_audio : AudioStream
+@export var tooltipString:String
+
+@onready var label: Label = $Label
+
+func _ready() -> void:
+	super()
+	label.text = tooltipString
+	
+func _process(delta: float) -> void:
+	super(delta)
+	label.visible = is_interactable
 
 func _interacted(override:bool = false) -> void:
 	super()

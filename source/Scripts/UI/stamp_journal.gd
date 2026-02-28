@@ -51,7 +51,7 @@ func UpdateFeedbackText() -> void:
 	if(correctCount >= editableStamps.size()):
 		feedback_text.label_settings.font_color = correctColor
 		feedback_text.text = correctString
-	elif correctCount >= editableStamps.size() - 2:
+	elif correctCount >= editableStamps.size() / 2:
 		feedback_text.label_settings.font_color = almostColor
 		feedback_text.text = almostString
 	else:

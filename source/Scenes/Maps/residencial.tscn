@@ -40,6 +40,19 @@ shader_parameter/square_border = false
 shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0wg4"]
+resource_local_to_scene = true
+shader = ExtResource("15_ndk88")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pty0l"]
 resource_local_to_scene = true
 shader = ExtResource("15_ndk88")
@@ -54,19 +67,6 @@ shader_parameter/offset = Vector2(0, 0)
 shader_parameter/max_or_add = false
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_g7mqf"]
-resource_local_to_scene = true
-shader = ExtResource("15_ndk88")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_s0wg4"]
 resource_local_to_scene = true
 shader = ExtResource("15_ndk88")
 shader_parameter/thickness = 0.0
@@ -129,6 +129,7 @@ position = Vector2(4545, 1531)
 position = Vector2(643, 1504)
 scene = "res://Scenes/Maps/castelo.tscn"
 next_audio = ExtResource("8_up5k5")
+tooltipString = "Para o castelo"
 
 [node name="window_interact_barrigaHouse" parent="." index="11" unique_id=737221805 instance=ExtResource("23_40lvq")]
 position = Vector2(1248, 1645)
@@ -160,7 +161,7 @@ skew = -0.5235988
 position = Vector2(1723, 1494)
 
 [node name="Sprite2D" parent="TextClue_annoucement2" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_pty0l")
+material = SubResource("ShaderMaterial_s0wg4")
 rotation = -0.5235988
 skew = 0.5235988
 
@@ -184,7 +185,7 @@ position = Vector2(0, 35.915)
 scale = Vector2(1, 1.115)
 
 [node name="Sprite2D" parent="TextClue_personalityTest" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_g7mqf")
+material = SubResource("ShaderMaterial_pty0l")
 
 [node name="placaTaverna" type="Sprite2D" parent="." index="22" unique_id=658161973]
 y_sort_enabled = true
@@ -213,7 +214,7 @@ polygon = PackedVector2Array(-178, 64, 111, 193, 145, 154, 145, 14, -178, -124, 
 position = Vector2(-66, -120)
 
 [node name="Sprite2D" parent="placa/TextClue_annoucement" index="3" unique_id=159541262]
-material = SubResource("ShaderMaterial_s0wg4")
+material = SubResource("ShaderMaterial_g7mqf")
 rotation = 0.5235988
 skew = -0.5235988
 

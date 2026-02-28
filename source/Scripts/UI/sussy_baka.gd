@@ -18,8 +18,6 @@ var mark_tween : Tween
 var selected := false
 
 func _ready() -> void:
-	label.text = character.Name.split(" ")[0]
-	label.visible = false
 	sprite_2d.texture = character.Portrait
 	sprite_2d.position = sus_spritePosition
 	mark.scale = Vector2.ZERO
@@ -28,8 +26,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if character.hasSaidName:
-		label.visible = true
-
+		label.text = character.Name.split(" ")[0]
+	else:
+		label.text = "???"
 
 func _on_toggled(toggled_on: bool) -> void:
 	if toggled_on:

@@ -644,9 +644,9 @@ targetNodes = [NodePath("../HiddenLever/Lever"), NodePath("../Estante/Mask/Estan
 
 [node name="ClickTravel_residencial" parent="." index="13" unique_id=705077137 instance=ExtResource("2_755oh")]
 position = Vector2(1015, 1555)
-rotation = 1.5707964
 scene = "res://Scenes/Maps/residencial.tscn"
 next_audio = ExtResource("3_phbd6")
+tooltipString = "Para o vilarejo"
 
 [node name="CollisionShape2D" parent="ClickTravel_residencial/InteractionArea" parent_id_path=PackedInt32Array(705077137, 146712339) index="0" unique_id=2125542557]
 scale = Vector2(0.655, 0.655)
@@ -656,6 +656,7 @@ scale = Vector2(0.475, 0.475)
 
 [node name="Sprite2D" parent="ClickTravel_residencial" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_ls4ci")
+rotation = 1.5707964
 
 [node name="object_clue_armandoStamp" parent="." index="14" unique_id=1896811649 instance=ExtResource("12_xt6f8")]
 y_sort_enabled = true
@@ -834,9 +835,9 @@ texture = ExtResource("24_xkhmk")
 [node name="ClickTravel_secretRoom" parent="." index="21" unique_id=810496024 instance=ExtResource("2_755oh")]
 visible = false
 position = Vector2(552, 1123)
-rotation = -1.5707964
 scene = "res://Scenes/Maps/quartoSecreto.tscn"
 next_audio = ExtResource("32_btb8p")
+tooltipString = "???"
 
 [node name="CollisionShape2D" parent="ClickTravel_secretRoom/InteractionArea" parent_id_path=PackedInt32Array(810496024, 146712339) index="0" unique_id=2125542557]
 scale = Vector2(0.93, 0.93)
@@ -846,6 +847,7 @@ scale = Vector2(0.79, 0.79)
 
 [node name="Sprite2D" parent="ClickTravel_secretRoom" index="3" unique_id=159541262]
 material = SubResource("ShaderMaterial_d42lu")
+rotation = -1.5707964
 
 [node name="ClickInspectable_King" parent="." index="22" unique_id=1882603094 instance=ExtResource("29_0x7wf")]
 position = Vector2(782, 1359)
