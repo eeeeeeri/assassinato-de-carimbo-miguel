@@ -59,6 +59,8 @@ func _on_culpado_select_button_up() -> void:
 			var culpado = CULPADO.instantiate() as Culpado
 			if(i.character.hasSaidName):
 				culpado.sus_name = i.character.Name.split(" ")[0]
+			else:
+				culpado.sus_name = "???"
 			culpado.sus_sprite = i.character.Portrait
 			culpado.sus_spritePosition = i.sus_spritePosition
 			culpado.sus_character = i.character
