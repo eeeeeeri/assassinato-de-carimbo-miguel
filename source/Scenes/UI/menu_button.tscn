@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://dmg50hgtaqldn"]
+
+[ext_resource type="Texture2D" uid="uid://crxw1yob6don3" path="res://Assets/Menu/iniciar.png" id="1_rjie7"]
+[ext_resource type="Script" uid="uid://dy2ra25cjx0jf" path="res://Scripts/UI/menuButton.gd" id="2_k5i4o"]
+
+[node name="MenuButton" type="TextureButton" unique_id=112606761]
+offset_left = 384.0
+offset_top = -95.0
+offset_right = 896.0
+offset_bottom = 161.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_rjie7")
+script = ExtResource("2_k5i4o")
+hoverTint = Color(1.1638972, 1.1638972, 1.1638972, 1)
+hoverScale = Vector2(1.1, 1.1)
+pressTint = Color(0.5370113, 0.5370113, 0.5370112, 1)
+pressScale = Vector2(0.8, 0.8)
+
+[connection signal="button_down" from="." to="." method="_on_button_down"]
+[connection signal="button_up" from="." to="." method="_on_button_up"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

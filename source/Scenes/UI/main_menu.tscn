@@ -16,6 +16,126 @@
 [ext_resource type="Texture2D" uid="uid://c8oc5o7ap37r2" path="res://Assets/centerBar.png" id="9_1yfdm"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="9_xp0kt"]
 [ext_resource type="Texture2D" uid="uid://xw3v41fdr0xx" path="res://Assets/logoTransp.png" id="10_1yfdm"]
+[ext_resource type="PackedScene" uid="uid://dmg50hgtaqldn" path="res://Scenes/UI/menu_button.tscn" id="13_3h8o7"]
+[ext_resource type="Texture2D" uid="uid://ccqasii50fiji" path="res://Assets/Menu/fundo.png" id="13_hbsmt"]
+[ext_resource type="Texture2D" uid="uid://bstql6s4mn6nm" path="res://Assets/Menu/linha1o.png" id="14_0gipi"]
+[ext_resource type="Texture2D" uid="uid://dvjwb0fk2ut8m" path="res://Assets/Menu/linha2o.png" id="15_ayn3n"]
+[ext_resource type="Texture2D" uid="uid://f1blpoaf675v" path="res://Assets/Menu/linha3o.png" id="16_py2ge"]
+[ext_resource type="Texture2D" uid="uid://m8nravw2hn4i" path="res://Assets/Menu/logo.png" id="17_ifxty"]
+[ext_resource type="Texture2D" uid="uid://b67bf867ouyfw" path="res://Assets/Menu/configurações.png" id="19_ifxty"]
+[ext_resource type="Texture2D" uid="uid://ba2fgk527s74v" path="res://Assets/Menu/ajuda.png" id="20_wm46x"]
+[ext_resource type="Texture2D" uid="uid://diiir5k0kawq6" path="res://Assets/Menu/creditos.png" id="21_go30u"]
+[ext_resource type="Texture2D" uid="uid://pk8jb7k2jiba" path="res://Assets/Menu/sair.png" id="22_dji77"]
+
+[sub_resource type="Animation" id="Animation_ifxty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("downLines1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("downLines2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, -494)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UpLines1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 340)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UpLines2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 1174)]
+}
+
+[sub_resource type="Animation" id="Animation_wm46x"]
+resource_name = "loopDown"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("downLines1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30, 30.002, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(620, 340), Vector2(620, 1174), Vector2(620, -494), Vector2(620, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("downLines2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 30, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(620, -494), Vector2(620, 340), Vector2(620, 1174)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UpLines1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 30, 30.002, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(620, 340), Vector2(620, -494), Vector2(620, 1179.56), Vector2(620, 340)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UpLines2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 30, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(620, 1174), Vector2(620, 340), Vector2(620, -494)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_go30u"]
+_data = {
+&"RESET": SubResource("Animation_ifxty"),
+&"loopDown": SubResource("Animation_wm46x")
+}
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1yfdm"]
 shader = ExtResource("9_xp0kt")
@@ -63,6 +183,283 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o14dv")
 
+[node name="background" type="TextureRect" parent="." unique_id=945239568]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("13_hbsmt")
+expand_mode = 1
+
+[node name="stampLines" type="Control" parent="." unique_id=1226056744]
+clip_children = 2
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="downLines1" type="Control" parent="stampLines" unique_id=1508796597]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 19.997986
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line1" type="TextureRect" parent="stampLines/downLines1" unique_id=773218527]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -661.0
+offset_top = -339.0
+offset_right = -509.0
+offset_bottom = 495.0
+texture = ExtResource("14_0gipi")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line3" type="TextureRect" parent="stampLines/downLines1" unique_id=1558711527]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -357.0
+offset_top = -339.0
+offset_right = -205.0
+offset_bottom = 495.0
+texture = ExtResource("16_py2ge")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line5" type="TextureRect" parent="stampLines/downLines1" unique_id=504957084]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -53.0
+offset_top = -339.0
+offset_right = 99.0
+offset_bottom = 495.0
+texture = ExtResource("15_ayn3n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line7" type="TextureRect" parent="stampLines/downLines1" unique_id=1102153735]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 254.0
+offset_top = -339.0
+offset_right = 406.0
+offset_bottom = 495.0
+texture = ExtResource("14_0gipi")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line9" type="TextureRect" parent="stampLines/downLines1" unique_id=1102882569]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 558.0
+offset_top = -339.0
+offset_right = 710.0
+offset_bottom = 495.0
+texture = ExtResource("16_py2ge")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="downLines2" type="Control" parent="stampLines" unique_id=1735709729]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -854.0
+offset_right = 20.0
+offset_bottom = -814.00183
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line1" type="TextureRect" parent="stampLines/downLines2" unique_id=1252716782]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -661.0
+offset_top = -339.0
+offset_right = -509.0
+offset_bottom = 495.0
+texture = ExtResource("14_0gipi")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line3" type="TextureRect" parent="stampLines/downLines2" unique_id=1510027233]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -357.0
+offset_top = -339.0
+offset_right = -205.0
+offset_bottom = 495.0
+texture = ExtResource("16_py2ge")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line5" type="TextureRect" parent="stampLines/downLines2" unique_id=959464361]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -53.0
+offset_top = -339.0
+offset_right = 99.0
+offset_bottom = 495.0
+texture = ExtResource("15_ayn3n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line7" type="TextureRect" parent="stampLines/downLines2" unique_id=181558287]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 254.0
+offset_top = -339.0
+offset_right = 406.0
+offset_bottom = 495.0
+texture = ExtResource("14_0gipi")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line9" type="TextureRect" parent="stampLines/downLines2" unique_id=1413817576]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 558.0
+offset_top = -339.0
+offset_right = 710.0
+offset_bottom = 495.0
+texture = ExtResource("16_py2ge")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="UpLines1" type="Control" parent="stampLines" unique_id=2097607818]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.001831
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line2" type="TextureRect" parent="stampLines/UpLines1" unique_id=102919112]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -509.0
+offset_top = -419.0
+offset_right = -357.0
+offset_bottom = 415.0
+texture = ExtResource("15_ayn3n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line4" type="TextureRect" parent="stampLines/UpLines1" unique_id=787893529]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -205.0
+offset_top = -419.0
+offset_right = -53.0
+offset_bottom = 415.0
+texture = ExtResource("14_0gipi")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line6" type="TextureRect" parent="stampLines/UpLines1" unique_id=2095064573]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 99.0
+offset_top = -419.0
+offset_right = 251.0
+offset_bottom = 415.0
+texture = ExtResource("16_py2ge")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line8" type="TextureRect" parent="stampLines/UpLines1" unique_id=2007228009]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 406.0
+offset_top = -419.0
+offset_right = 558.0
+offset_bottom = 415.0
+texture = ExtResource("15_ayn3n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="UpLines2" type="Control" parent="stampLines" unique_id=371993975]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 814.0
+offset_right = 20.0
+offset_bottom = 853.9988
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line2" type="TextureRect" parent="stampLines/UpLines2" unique_id=1882887861]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -509.0
+offset_top = -419.0
+offset_right = -357.0
+offset_bottom = 415.0
+texture = ExtResource("15_ayn3n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line4" type="TextureRect" parent="stampLines/UpLines2" unique_id=1592660725]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -205.0
+offset_top = -419.0
+offset_right = -53.0
+offset_bottom = 415.0
+texture = ExtResource("14_0gipi")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line6" type="TextureRect" parent="stampLines/UpLines2" unique_id=2095277351]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 99.0
+offset_top = -419.0
+offset_right = 251.0
+offset_bottom = 415.0
+texture = ExtResource("16_py2ge")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line8" type="TextureRect" parent="stampLines/UpLines2" unique_id=1617991624]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 406.0
+offset_top = -419.0
+offset_right = 558.0
+offset_bottom = 415.0
+texture = ExtResource("15_ayn3n")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="stampLines" unique_id=1789342502]
+libraries/ = SubResource("AnimationLibrary_go30u")
+autoplay = &"loopDown"
+
 [node name="Main" type="Control" parent="." unique_id=1140801390]
 layout_mode = 1
 anchors_preset = 15
@@ -72,7 +469,8 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 
-[node name="Background" type="Control" parent="Main" unique_id=217043453]
+[node name="menuV1" type="Control" parent="Main" unique_id=387844091]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -80,7 +478,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="TextureRect" type="TextureRect" parent="Main/Background" unique_id=1893091104]
+[node name="Background" type="Control" parent="Main/menuV1" unique_id=217043453]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Main/menuV1/Background" unique_id=1893091104]
 layout_mode = 0
 offset_left = -1125.0
 offset_top = -1081.0
@@ -90,7 +496,7 @@ texture = ExtResource("2_ypsd1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="player" type="TextureRect" parent="Main/Background" unique_id=1425811033]
+[node name="player" type="TextureRect" parent="Main/menuV1/Background" unique_id=1425811033]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -108,7 +514,7 @@ texture = ExtResource("3_xp0kt")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="armando" type="TextureRect" parent="Main/Background" unique_id=1274604316]
+[node name="armando" type="TextureRect" parent="Main/menuV1/Background" unique_id=1274604316]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -126,7 +532,7 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="barbara" type="TextureRect" parent="Main/Background" unique_id=414108788]
+[node name="barbara" type="TextureRect" parent="Main/menuV1/Background" unique_id=414108788]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -144,7 +550,7 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="carlos" type="TextureRect" parent="Main/Background" unique_id=1457773676]
+[node name="carlos" type="TextureRect" parent="Main/menuV1/Background" unique_id=1457773676]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -162,7 +568,7 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="jair" type="TextureRect" parent="Main/Background" unique_id=1220468129]
+[node name="jair" type="TextureRect" parent="Main/menuV1/Background" unique_id=1220468129]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -180,7 +586,7 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="fotocopia" type="TextureRect" parent="Main/Background" unique_id=1840109226]
+[node name="fotocopia" type="TextureRect" parent="Main/menuV1/Background" unique_id=1840109226]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -197,7 +603,7 @@ texture = ExtResource("7_46hhv")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="marka" type="TextureRect" parent="Main/Background" unique_id=1685225431]
+[node name="marka" type="TextureRect" parent="Main/menuV1/Background" unique_id=1685225431]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -215,7 +621,7 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="dolores" type="TextureRect" parent="Main/Background" unique_id=1831589449]
+[node name="dolores" type="TextureRect" parent="Main/menuV1/Background" unique_id=1831589449]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -233,7 +639,7 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="pequena" type="TextureRect" parent="Main/Background" unique_id=533497688]
+[node name="pequena" type="TextureRect" parent="Main/menuV1/Background" unique_id=533497688]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -251,19 +657,19 @@ expand_mode = 1
 stretch_mode = 5
 flip_h = true
 
-[node name="TextureRect" type="TextureRect" parent="Main" unique_id=194888815]
+[node name="TextureRect" type="TextureRect" parent="Main/menuV1" unique_id=194888815]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 260.0
-offset_right = -260.0
+offset_right = 220.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("9_1yfdm")
 expand_mode = 1
 
-[node name="Logo" type="TextureRect" parent="Main" unique_id=1995556164]
+[node name="Logo" type="TextureRect" parent="Main/menuV1" unique_id=1995556164]
 material = SubResource("ShaderMaterial_1yfdm")
 layout_mode = 1
 anchors_preset = 5
@@ -278,7 +684,7 @@ texture = ExtResource("10_1yfdm")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Main" unique_id=1867747888]
+[node name="VBoxContainer" type="VBoxContainer" parent="Main/menuV1" unique_id=1867747888]
 custom_minimum_size = Vector2(400, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -295,7 +701,7 @@ grow_vertical = 2
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="Continuar" type="Button" parent="Main/VBoxContainer" unique_id=2024991368]
+[node name="Continuar" type="Button" parent="Main/menuV1/VBoxContainer" unique_id=2024991368]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
 theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
@@ -311,7 +717,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_q6o50")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_46hhv")
 text = "INICIAR"
 
-[node name="Config" type="Button" parent="Main/VBoxContainer" unique_id=1378450699]
+[node name="Config" type="Button" parent="Main/menuV1/VBoxContainer" unique_id=1378450699]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
 theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
@@ -326,7 +732,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "CONFIGURAÇÕES"
 
-[node name="Ajuda" type="Button" parent="Main/VBoxContainer" unique_id=1046908393]
+[node name="Ajuda" type="Button" parent="Main/menuV1/VBoxContainer" unique_id=1046908393]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
 theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
@@ -341,7 +747,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "AJUDA"
 
-[node name="Creditos" type="Button" parent="Main/VBoxContainer" unique_id=520249859]
+[node name="Creditos" type="Button" parent="Main/menuV1/VBoxContainer" unique_id=520249859]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
 theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
@@ -356,7 +762,7 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "CRÉDITOS"
 
-[node name="Sair" type="Button" parent="Main/VBoxContainer" unique_id=856090810]
+[node name="Sair" type="Button" parent="Main/menuV1/VBoxContainer" unique_id=856090810]
 layout_mode = 2
 theme_override_colors/font_pressed_color = Color(0.68235296, 0.40392157, 0.2509804, 1)
 theme_override_colors/font_hover_color = Color(0.9019608, 0.5411765, 0.14509805, 1)
@@ -371,9 +777,99 @@ theme_override_styles/disabled = SubResource("StyleBoxEmpty_0gipi")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_ayn3n")
 text = "SAIR"
 
+[node name="menuV2" type="Control" parent="Main" unique_id=1161403965]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="logo" type="TextureRect" parent="Main/menuV2" unique_id=2100370222]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("17_ifxty")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Buttons" type="Control" parent="Main/menuV2" unique_id=1878606013]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -161.0
+offset_bottom = -54.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/menuV2" unique_id=1132147315]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -107.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="iniciar" parent="Main/menuV2/HBoxContainer" unique_id=112606761 instance=ExtResource("13_3h8o7")]
+custom_minimum_size = Vector2(173, 61)
+layout_mode = 2
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="configuracoes" parent="Main/menuV2/HBoxContainer" unique_id=70684192 instance=ExtResource("13_3h8o7")]
+custom_minimum_size = Vector2(355, 61)
+layout_mode = 2
+texture_normal = ExtResource("19_ifxty")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ajuda" parent="Main/menuV2/HBoxContainer" unique_id=1042567349 instance=ExtResource("13_3h8o7")]
+custom_minimum_size = Vector2(149, 61)
+layout_mode = 2
+texture_normal = ExtResource("20_wm46x")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="creditos" parent="Main/menuV2/HBoxContainer" unique_id=1304965544 instance=ExtResource("13_3h8o7")]
+custom_minimum_size = Vector2(229, 61)
+layout_mode = 2
+texture_normal = ExtResource("21_go30u")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="sair" parent="Main/menuV2/HBoxContainer" unique_id=1609696096 instance=ExtResource("13_3h8o7")]
+custom_minimum_size = Vector2(127, 61)
+layout_mode = 2
+texture_normal = ExtResource("22_dji77")
+ignore_texture_size = true
+stretch_mode = 5
+
 [node name="Settings" parent="." unique_id=397556042 instance=ExtResource("2_u7lva")]
 visible = false
 layout_mode = 1
+
+[node name="backgorund2" type="ColorRect" parent="Settings" unique_id=108136853]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.8)
+
+[node name="VBoxContainer" parent="Settings" index="1" unique_id=1430442492]
+z_index = 1
 
 [node name="BackButton" type="Button" parent="Settings" unique_id=1985522980]
 layout_mode = 0
@@ -417,11 +913,19 @@ text = "Voltar"
 stream = SubResource("AudioStreamRandomizer_4pqbp")
 bus = &"SFX"
 
-[connection signal="button_up" from="Main/VBoxContainer/Continuar" to="." method="_on_iniciar_button_up"]
-[connection signal="button_up" from="Main/VBoxContainer/Config" to="." method="_on_config_button_up"]
-[connection signal="button_up" from="Main/VBoxContainer/Ajuda" to="." method="_on_ajuda_button_up"]
-[connection signal="button_up" from="Main/VBoxContainer/Creditos" to="." method="_on_creditos_button_up"]
-[connection signal="button_up" from="Main/VBoxContainer/Sair" to="." method="_on_sair_button_up"]
+[connection signal="button_up" from="Main/menuV1/VBoxContainer/Continuar" to="." method="_on_iniciar_button_up"]
+[connection signal="button_up" from="Main/menuV1/VBoxContainer/Config" to="." method="_on_config_button_up"]
+[connection signal="button_up" from="Main/menuV1/VBoxContainer/Ajuda" to="." method="_on_ajuda_button_up"]
+[connection signal="button_up" from="Main/menuV1/VBoxContainer/Creditos" to="." method="_on_creditos_button_up"]
+[connection signal="button_up" from="Main/menuV1/VBoxContainer/Sair" to="." method="_on_sair_button_up"]
+[connection signal="button_up" from="Main/menuV2/HBoxContainer/iniciar" to="." method="_on_iniciar_button_up"]
+[connection signal="button_up" from="Main/menuV2/HBoxContainer/configuracoes" to="." method="_on_config_button_up"]
+[connection signal="button_up" from="Main/menuV2/HBoxContainer/ajuda" to="." method="_on_ajuda_button_up"]
+[connection signal="button_up" from="Main/menuV2/HBoxContainer/creditos" to="." method="_on_creditos_button_up"]
+[connection signal="button_up" from="Main/menuV2/HBoxContainer/sair" to="." method="_on_sair_button_up"]
 [connection signal="button_up" from="Settings/BackButton" to="." method="_on_back_button_button_up"]
 [connection signal="button_up" from="Tutorial/BackButton" to="." method="_on_back_button_button_up"]
 [connection signal="button_up" from="Credits/BackButton" to="." method="_on_back_button_button_up"]
+
+[editable path="Settings"]
+[editable path="Credits"]
