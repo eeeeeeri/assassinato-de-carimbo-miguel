@@ -758,6 +758,9 @@ offset = Vector2(329.90625, 281.80273)
 [node name="dropShadow" parent="TextClue_kingsWill/Sprite2D" index="0" unique_id=771579444]
 offset = Vector2(329.906, 281.803)
 
+[node name="Spark" parent="TextClue_kingsWill" index="4" unique_id=560819456]
+z_index = 1
+
 [node name="HiddenLever" type="Node2D" parent="." index="18" unique_id=1738166547]
 position = Vector2(322, 1201)
 
