@@ -26,6 +26,9 @@
 [ext_resource type="Texture2D" uid="uid://ba2fgk527s74v" path="res://Assets/Menu/ajuda.png" id="20_wm46x"]
 [ext_resource type="Texture2D" uid="uid://diiir5k0kawq6" path="res://Assets/Menu/creditos.png" id="21_go30u"]
 [ext_resource type="Texture2D" uid="uid://pk8jb7k2jiba" path="res://Assets/Menu/sair.png" id="22_dji77"]
+[ext_resource type="StyleBox" uid="uid://di38frt1t8qkc" path="res://buttonStyle.tres" id="24_dji77"]
+[ext_resource type="StyleBox" uid="uid://dlmq05ecfcof" path="res://buttonStylePress.tres" id="25_keyrt"]
+[ext_resource type="StyleBox" uid="uid://b2hm2fpqlgb0m" path="res://buttonStyleHover.tres" id="26_0hhrj"]
 
 [sub_resource type="Animation" id="Animation_ifxty"]
 length = 0.001
@@ -858,18 +861,8 @@ stretch_mode = 5
 visible = false
 layout_mode = 1
 
-[node name="VBoxContainer" parent="Settings" index="0" unique_id=1430442492]
+[node name="VBoxContainer" parent="Settings" index="1" unique_id=1430442492]
 z_index = 1
-
-[node name="backgorund2" type="ColorRect" parent="Settings" unique_id=108136853]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 0.8)
 
 [node name="BackButton" type="Button" parent="Settings" unique_id=1985522980]
 layout_mode = 0
@@ -877,8 +870,12 @@ offset_left = 24.0
 offset_top = 24.0
 offset_right = 102.0
 offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_4pqbp")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("24_dji77")
+theme_override_styles/pressed = ExtResource("25_keyrt")
+theme_override_styles/hover = ExtResource("26_0hhrj")
 text = "Voltar"
 
 [node name="Tutorial" parent="." unique_id=109390273 instance=ExtResource("3_mrfpk")]
@@ -891,8 +888,12 @@ offset_left = 24.0
 offset_top = 24.0
 offset_right = 212.0
 offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_4pqbp")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("24_dji77")
+theme_override_styles/pressed = ExtResource("25_keyrt")
+theme_override_styles/hover = ExtResource("26_0hhrj")
 text = "Voltar ao menu"
 
 [node name="Credits" parent="." unique_id=1192477558 instance=ExtResource("4_u7lva")]
@@ -905,8 +906,12 @@ offset_left = 24.0
 offset_top = 24.0
 offset_right = 102.0
 offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_4pqbp")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("24_dji77")
+theme_override_styles/pressed = ExtResource("25_keyrt")
+theme_override_styles/hover = ExtResource("26_0hhrj")
 text = "Voltar"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1828555350]

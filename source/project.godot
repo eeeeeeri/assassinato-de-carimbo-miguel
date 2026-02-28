@@ -14,7 +14,7 @@ config/name="Casos de Carimbia"
 config/version="0.1"
 run/main_scene="uid://33q6vaoy6h8k"
 config/features=PackedStringArray("4.6", "Mobile")
-config/icon="uid://dua6lynxkyar5"
+config/icon="uid://b0e1mknrpcn6m"
 
 [audio]
 

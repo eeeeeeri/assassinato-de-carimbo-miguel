@@ -32,13 +32,15 @@ func _pause():
 	settings.visible = false
 	tutorial.visible = false
 	GlobalResources.GLOBAL_EVENTS.Paused.emit()
-	Engine.time_scale = 0
+	#Engine.time_scale = 0
+	get_tree().paused = true
 
 func _unpause():
 	visible = false
 	paused = false
 	GlobalResources.GLOBAL_EVENTS.Unpaused.emit()
-	Engine.time_scale = 1
+	#Engine.time_scale = 1
+	get_tree().paused = false
 
 
 func _on_continuar_button_up() -> void:

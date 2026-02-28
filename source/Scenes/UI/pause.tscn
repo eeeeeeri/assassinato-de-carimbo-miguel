@@ -4,12 +4,129 @@
 [ext_resource type="PackedScene" uid="uid://crtsmg6s70bm6" path="res://Scenes/UI/settings.tscn" id="2_2ceew"]
 [ext_resource type="Shader" uid="uid://cnugbujjfv030" path="res://CustomResources/Shaders/blur.gdshader" id="2_3vu23"]
 [ext_resource type="PackedScene" uid="uid://xn5yf12qhpmt" path="res://Scenes/UI/tutorial.tscn" id="2_a111y"]
+[ext_resource type="Texture2D" uid="uid://ccqasii50fiji" path="res://Assets/Menu/fundo.png" id="3_jypas"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="3_x1tur"]
+[ext_resource type="StyleBox" uid="uid://di38frt1t8qkc" path="res://buttonStyle.tres" id="4_d3ekv"]
+[ext_resource type="Texture2D" uid="uid://bstql6s4mn6nm" path="res://Assets/Menu/linha1o.png" id="4_xucxf"]
+[ext_resource type="StyleBox" uid="uid://dlmq05ecfcof" path="res://buttonStylePress.tres" id="5_86i1j"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="5_no3u0"]
+[ext_resource type="Texture2D" uid="uid://f1blpoaf675v" path="res://Assets/Menu/linha3o.png" id="5_q0aka"]
+[ext_resource type="StyleBox" uid="uid://b2hm2fpqlgb0m" path="res://buttonStyleHover.tres" id="6_ffmb0"]
+[ext_resource type="Texture2D" uid="uid://dvjwb0fk2ut8m" path="res://Assets/Menu/linha2o.png" id="6_ysvtv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_no3u0"]
 shader = ExtResource("2_3vu23")
 shader_parameter/amount = 3.0000001425
+
+[sub_resource type="Animation" id="Animation_ifxty"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("downLines1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("downLines2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, -494)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UpLines1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 340)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UpLines2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(620, 1174)]
+}
+
+[sub_resource type="Animation" id="Animation_wm46x"]
+resource_name = "loopDown"
+length = 60.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("downLines1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30, 30.002, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(620, 340), Vector2(620, 1174), Vector2(620, -494), Vector2(620, 340)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("downLines2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 30, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(620, -494), Vector2(620, 340), Vector2(620, 1174)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UpLines1:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 30, 30.002, 60),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(620, 340), Vector2(620, -494), Vector2(620, 1179.56), Vector2(620, 340)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UpLines2:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 30, 60),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(620, 1174), Vector2(620, 340), Vector2(620, -494)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_847sy"]
+_data = {
+&"RESET": SubResource("Animation_ifxty"),
+&"loopDown": SubResource("Animation_wm46x")
+}
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_x1tur"]
 random_pitch = 1.3348398
@@ -21,6 +138,7 @@ process_mode = 3
 script = ExtResource("1_goa2i")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1728305848]
+visible = false
 material = SubResource("ShaderMaterial_no3u0")
 anchors_preset = 15
 anchor_right = 1.0
@@ -30,12 +148,290 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.39215687)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1931750660]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0.39215687)
+
+[node name="background" type="TextureRect" parent="." unique_id=597857752]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_jypas")
+expand_mode = 1
+
+[node name="stampLines" type="Control" parent="." unique_id=1744913949]
+clip_children = 2
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="downLines1" type="Control" parent="stampLines" unique_id=1886715452]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.000977
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line1" type="TextureRect" parent="stampLines/downLines1" unique_id=1632653233]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -661.0
+offset_top = -339.0
+offset_right = -509.0
+offset_bottom = 495.0
+texture = ExtResource("4_xucxf")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line3" type="TextureRect" parent="stampLines/downLines1" unique_id=1339288140]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -357.0
+offset_top = -339.0
+offset_right = -205.0
+offset_bottom = 495.0
+texture = ExtResource("5_q0aka")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line5" type="TextureRect" parent="stampLines/downLines1" unique_id=1267392054]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -53.0
+offset_top = -339.0
+offset_right = 99.0
+offset_bottom = 495.0
+texture = ExtResource("6_ysvtv")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line7" type="TextureRect" parent="stampLines/downLines1" unique_id=466127225]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 254.0
+offset_top = -339.0
+offset_right = 406.0
+offset_bottom = 495.0
+texture = ExtResource("4_xucxf")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line9" type="TextureRect" parent="stampLines/downLines1" unique_id=1276344536]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 558.0
+offset_top = -339.0
+offset_right = 710.0
+offset_bottom = 495.0
+texture = ExtResource("5_q0aka")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="downLines2" type="Control" parent="stampLines" unique_id=238597847]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -854.0
+offset_right = 20.0
+offset_bottom = -814.00195
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line1" type="TextureRect" parent="stampLines/downLines2" unique_id=867412962]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -661.0
+offset_top = -339.0
+offset_right = -509.0
+offset_bottom = 495.0
+texture = ExtResource("4_xucxf")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line3" type="TextureRect" parent="stampLines/downLines2" unique_id=25559904]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -357.0
+offset_top = -339.0
+offset_right = -205.0
+offset_bottom = 495.0
+texture = ExtResource("5_q0aka")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line5" type="TextureRect" parent="stampLines/downLines2" unique_id=1511804227]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -53.0
+offset_top = -339.0
+offset_right = 99.0
+offset_bottom = 495.0
+texture = ExtResource("6_ysvtv")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line7" type="TextureRect" parent="stampLines/downLines2" unique_id=513112824]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 254.0
+offset_top = -339.0
+offset_right = 406.0
+offset_bottom = 495.0
+texture = ExtResource("4_xucxf")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line9" type="TextureRect" parent="stampLines/downLines2" unique_id=626622765]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 558.0
+offset_top = -339.0
+offset_right = 710.0
+offset_bottom = 495.0
+texture = ExtResource("5_q0aka")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="UpLines1" type="Control" parent="stampLines" unique_id=2050370698]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.001953
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line2" type="TextureRect" parent="stampLines/UpLines1" unique_id=704927966]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -509.0
+offset_top = -419.0
+offset_right = -357.0
+offset_bottom = 415.0
+texture = ExtResource("6_ysvtv")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line4" type="TextureRect" parent="stampLines/UpLines1" unique_id=1020114192]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -205.0
+offset_top = -419.0
+offset_right = -53.0
+offset_bottom = 415.0
+texture = ExtResource("4_xucxf")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line6" type="TextureRect" parent="stampLines/UpLines1" unique_id=642347466]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 99.0
+offset_top = -419.0
+offset_right = 251.0
+offset_bottom = 415.0
+texture = ExtResource("5_q0aka")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line8" type="TextureRect" parent="stampLines/UpLines1" unique_id=1868049695]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 406.0
+offset_top = -419.0
+offset_right = 558.0
+offset_bottom = 415.0
+texture = ExtResource("6_ysvtv")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="UpLines2" type="Control" parent="stampLines" unique_id=1013582637]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 814.0
+offset_right = 20.0
+offset_bottom = 853.9995
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="line2" type="TextureRect" parent="stampLines/UpLines2" unique_id=1589107071]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -509.0
+offset_top = -419.0
+offset_right = -357.0
+offset_bottom = 415.0
+texture = ExtResource("6_ysvtv")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line4" type="TextureRect" parent="stampLines/UpLines2" unique_id=1225533522]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = -205.0
+offset_top = -419.0
+offset_right = -53.0
+offset_bottom = 415.0
+texture = ExtResource("4_xucxf")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line6" type="TextureRect" parent="stampLines/UpLines2" unique_id=222526855]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 99.0
+offset_top = -419.0
+offset_right = 251.0
+offset_bottom = 415.0
+texture = ExtResource("5_q0aka")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="line8" type="TextureRect" parent="stampLines/UpLines2" unique_id=217182833]
+custom_minimum_size = Vector2(152, 834)
+layout_mode = 0
+offset_left = 406.0
+offset_top = -419.0
+offset_right = 558.0
+offset_bottom = 415.0
+texture = ExtResource("6_ysvtv")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="stampLines" unique_id=314555249]
+process_mode = 3
+libraries/ = SubResource("AnimationLibrary_847sy")
+autoplay = &"loopDown"
 
 [node name="Main" type="Control" parent="." unique_id=1864017201]
 layout_mode = 3
@@ -65,6 +461,7 @@ alignment = 1
 
 [node name="Label" type="Label" parent="Main/VBoxContainer" unique_id=1934646531]
 layout_mode = 2
+theme_override_constants/outline_size = 5
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 36
 text = "O jogo está pausado"
@@ -72,32 +469,52 @@ horizontal_alignment = 1
 
 [node name="Continuar" type="Button" parent="Main/VBoxContainer" unique_id=1246880557]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("4_d3ekv")
+theme_override_styles/pressed = ExtResource("5_86i1j")
+theme_override_styles/hover = ExtResource("6_ffmb0")
 text = "CONTINUAR"
 
 [node name="Config" type="Button" parent="Main/VBoxContainer" unique_id=318000254]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("4_d3ekv")
+theme_override_styles/pressed = ExtResource("5_86i1j")
+theme_override_styles/hover = ExtResource("6_ffmb0")
 text = "CONFIGURAÇÕES"
 
 [node name="Ajuda" type="Button" parent="Main/VBoxContainer" unique_id=915609607]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("4_d3ekv")
+theme_override_styles/pressed = ExtResource("5_86i1j")
+theme_override_styles/hover = ExtResource("6_ffmb0")
 text = "AJUDA"
 
 [node name="Menu" type="Button" parent="Main/VBoxContainer" unique_id=922440410]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("4_d3ekv")
+theme_override_styles/pressed = ExtResource("5_86i1j")
+theme_override_styles/hover = ExtResource("6_ffmb0")
 text = "MENU"
 
 [node name="Sair" type="Button" parent="Main/VBoxContainer" unique_id=557317014]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("4_d3ekv")
+theme_override_styles/pressed = ExtResource("5_86i1j")
+theme_override_styles/hover = ExtResource("6_ffmb0")
 text = "SAIR"
 
 [node name="Settings" parent="." unique_id=397556042 instance=ExtResource("2_2ceew")]
@@ -109,11 +526,16 @@ offset_left = 24.0
 offset_top = 24.0
 offset_right = 102.0
 offset_bottom = 66.0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("4_d3ekv")
+theme_override_styles/pressed = ExtResource("5_86i1j")
+theme_override_styles/hover = ExtResource("6_ffmb0")
 text = "Voltar"
 
 [node name="Tutorial" parent="." unique_id=109390273 instance=ExtResource("2_a111y")]
+visible = false
 
 [node name="BackButton" type="Button" parent="Tutorial" unique_id=513112633]
 layout_mode = 1
@@ -121,8 +543,12 @@ offset_left = 20.0
 offset_top = 20.0
 offset_right = 101.0
 offset_bottom = 62.0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("4_d3ekv")
+theme_override_styles/pressed = ExtResource("5_86i1j")
+theme_override_styles/hover = ExtResource("6_ffmb0")
 text = "Voltar ao menu"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=2123725489]

@@ -9,7 +9,10 @@
 [ext_resource type="Texture2D" uid="uid://bs7vp7f3k6ilg" path="res://Assets/Pistas/glow2.png" id="6_kaw6p"]
 [ext_resource type="AudioStream" uid="uid://cgh6kwk5tmtba" path="res://Assets/SFX/Contos De Carimbia OST - Família Imperial.wav" id="6_kdcbo"]
 [ext_resource type="PackedScene" uid="uid://cddct1kcs4qby" path="res://Scenes/UI/credits.tscn" id="7_w3mmq"]
+[ext_resource type="StyleBox" uid="uid://di38frt1t8qkc" path="res://buttonStyle.tres" id="8_gcwcg"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="9_cojm5"]
+[ext_resource type="StyleBox" uid="uid://dlmq05ecfcof" path="res://buttonStylePress.tres" id="9_pbnh5"]
+[ext_resource type="StyleBox" uid="uid://b2hm2fpqlgb0m" path="res://buttonStyleHover.tres" id="10_gpm3j"]
 [ext_resource type="AudioStream" uid="uid://dwr3iv3snop3r" path="res://Assets/Musicas/ContosDeCarimbiaOST-OFim.ogg" id="11_3igfd"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_kaw6p"]
@@ -755,8 +758,12 @@ offset_right = -54.0
 offset_bottom = -51.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("5_mn6dd")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("8_gcwcg")
+theme_override_styles/pressed = ExtResource("9_pbnh5")
+theme_override_styles/hover = ExtResource("10_gpm3j")
 text = "Continuar"
 
 [node name="Credits" type="Control" parent="." unique_id=1945037002]
@@ -820,8 +827,12 @@ offset_right = 4.0
 offset_bottom = 852.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("5_mn6dd")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("8_gcwcg")
+theme_override_styles/pressed = ExtResource("9_pbnh5")
+theme_override_styles/hover = ExtResource("10_gpm3j")
 text = "Menu"
 
 [node name="sfxStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=355808298]

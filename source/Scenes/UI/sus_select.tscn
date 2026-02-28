@@ -25,35 +25,38 @@
 [ext_resource type="Resource" uid="uid://bl04ewkivmfmt" path="res://CustomResources/Characters/Pequena/Pequena.tres" id="13_1itmj"]
 [ext_resource type="Resource" uid="uid://c6l6o5a017pfl" path="res://CustomResources/Characters/Jair/Jair.tres" id="14_3ys38"]
 [ext_resource type="Resource" uid="uid://b6xia38c240ds" path="res://CustomResources/Characters/Barbara/Barbara.tres" id="16_eej5v"]
+[ext_resource type="StyleBox" uid="uid://di38frt1t8qkc" path="res://buttonStyle.tres" id="19_1bsjj"]
+[ext_resource type="StyleBox" uid="uid://dlmq05ecfcof" path="res://buttonStylePress.tres" id="20_1itmj"]
+[ext_resource type="StyleBox" uid="uid://b2hm2fpqlgb0m" path="res://buttonStyleHover.tres" id="21_3ys38"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kxo7"]
 bg_color = Color(0, 0, 0, 0.39215687)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_rvxh6"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eej5v"]
 resource_local_to_scene = true
 shader = ExtResource("5_lrd7u")
 shader_parameter/shadow_offset = Vector2(0, 0)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ipbfn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8b0p"]
 resource_local_to_scene = true
 shader = ExtResource("5_lrd7u")
 shader_parameter/shadow_offset = Vector2(0, 0)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_237ot"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h3oup"]
 resource_local_to_scene = true
 shader = ExtResource("5_lrd7u")
 shader_parameter/shadow_offset = Vector2(0, 0)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bsjj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4kqp7"]
 resource_local_to_scene = true
 shader = ExtResource("5_lrd7u")
 shader_parameter/shadow_offset = Vector2(0, 0)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1itmj"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o45iv"]
 resource_local_to_scene = true
 shader = ExtResource("5_lrd7u")
 shader_parameter/shadow_offset = Vector2(0, 0)
@@ -1188,7 +1191,7 @@ character = ExtResource("4_tbpqc")
 sus_spritePosition = Vector2(-201, -39)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_rvxh6")
+material = SubResource("ShaderMaterial_eej5v")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka/Panel/ColorRect" parent_id_path=PackedInt32Array(423670737, 101840902) index="0" unique_id=657806657]
 position = Vector2(-201, -39)
@@ -1199,7 +1202,7 @@ layout_mode = 2
 character = ExtResource("7_rvxh6")
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2/Panel" parent_id_path=PackedInt32Array(1534123851, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_ipbfn")
+material = SubResource("ShaderMaterial_a8b0p")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2/Panel/ColorRect" parent_id_path=PackedInt32Array(1534123851, 101840902) index="0" unique_id=657806657]
 texture = ExtResource("6_mpk3j")
@@ -1210,7 +1213,7 @@ character = ExtResource("9_ipbfn")
 sus_spritePosition = Vector2(-189.00003, -121.99999)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3/Panel" parent_id_path=PackedInt32Array(183995324, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_237ot")
+material = SubResource("ShaderMaterial_h3oup")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3/Panel/ColorRect" parent_id_path=PackedInt32Array(183995324, 101840902) index="0" unique_id=657806657]
 position = Vector2(-189.00003, -121.99999)
@@ -1234,7 +1237,7 @@ character = ExtResource("14_3ys38")
 sus_spritePosition = Vector2(-173.00003, -212.99998)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7/Panel" parent_id_path=PackedInt32Array(2055334827, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_1bsjj")
+material = SubResource("ShaderMaterial_4kqp7")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7/Panel/ColorRect" parent_id_path=PackedInt32Array(2055334827, 101840902) index="0" unique_id=657806657]
 position = Vector2(-173.00003, -212.99998)
@@ -1246,7 +1249,7 @@ character = ExtResource("16_eej5v")
 sus_spritePosition = Vector2(-165.00003, -58)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8/Panel" parent_id_path=PackedInt32Array(1048267071, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_1itmj")
+material = SubResource("ShaderMaterial_o45iv")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8/Panel/ColorRect" parent_id_path=PackedInt32Array(1048267071, 101840902) index="0" unique_id=657806657]
 position = Vector2(-165.00003, -58)
@@ -1264,8 +1267,12 @@ columns = 4
 
 [node name="CulpadoSelect" type="Button" parent="PanelContainer/VBoxContainer" unique_id=1423558960]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("19_1bsjj")
+theme_override_styles/pressed = ExtResource("20_1itmj")
+theme_override_styles/hover = ExtResource("21_3ys38")
 text = "CONFIRMAR CULPADOS"
 
 [node name="Confirm" type="HBoxContainer" parent="PanelContainer/VBoxContainer" unique_id=1899672925]
@@ -1278,15 +1285,23 @@ alignment = 1
 [node name="Sim" type="Button" parent="PanelContainer/VBoxContainer/Confirm" unique_id=175170429]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("19_1bsjj")
+theme_override_styles/pressed = ExtResource("20_1itmj")
+theme_override_styles/hover = ExtResource("21_3ys38")
 text = "SIM"
 
 [node name="Nao" type="Button" parent="PanelContainer/VBoxContainer/Confirm" unique_id=583512478]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = ExtResource("19_1bsjj")
+theme_override_styles/pressed = ExtResource("20_1itmj")
+theme_override_styles/hover = ExtResource("21_3ys38")
 text = "NÃO"
 
 [node name="ButtonHelp" type="Button" parent="PanelContainer" unique_id=2019698967]
@@ -1414,8 +1429,12 @@ offset_right = 140.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("19_1bsjj")
+theme_override_styles/pressed = ExtResource("20_1itmj")
+theme_override_styles/hover = ExtResource("21_3ys38")
 text = "Menu"
 
 [node name="Continuar" type="Button" parent="." unique_id=1578702960]
@@ -1432,8 +1451,12 @@ offset_right = 140.0
 offset_bottom = -17.0
 grow_horizontal = 2
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("2_ygu1w")
 theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("19_1bsjj")
+theme_override_styles/pressed = ExtResource("20_1itmj")
+theme_override_styles/hover = ExtResource("21_3ys38")
 text = "Continuar"
 
 [node name="Confetti" parent="." unique_id=1804300501 instance=ExtResource("4_uk1mx")]
@@ -1460,10 +1483,10 @@ stream = ExtResource("9_4ajkc")
 [connection signal="button_up" from="PanelContainer/VBoxContainer/CulpadoSelect" to="." method="_on_culpado_select_button_up"]
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Confirm/Sim" to="." method="_on_sim_button_up"]
 [connection signal="button_up" from="PanelContainer/VBoxContainer/Confirm/Nao" to="." method="_on_nao_button_up"]
-[connection signal="button_up" from="PanelContainer/ButtonHelp" to="PanelContainer/HelpPanel" method="set_visible" binds= [true]]
 [connection signal="button_up" from="PanelContainer/ButtonHelp" to="PanelContainer/ButtonHelp" method="set_visible" binds= [false]]
-[connection signal="button_up" from="PanelContainer/HelpPanel/ButtonClose3" to="PanelContainer/HelpPanel" method="set_visible" binds= [false]]
+[connection signal="button_up" from="PanelContainer/ButtonHelp" to="PanelContainer/HelpPanel" method="set_visible" binds= [true]]
 [connection signal="button_up" from="PanelContainer/HelpPanel/ButtonClose3" to="PanelContainer/ButtonHelp" method="set_visible" binds= [true]]
+[connection signal="button_up" from="PanelContainer/HelpPanel/ButtonClose3" to="PanelContainer/HelpPanel" method="set_visible" binds= [false]]
 [connection signal="button_up" from="Menu" to="." method="_on_menu_button_up"]
 [connection signal="button_up" from="Continuar" to="." method="_on_continuar_button_up"]
 

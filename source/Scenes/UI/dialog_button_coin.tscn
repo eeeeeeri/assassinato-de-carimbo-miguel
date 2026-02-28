@@ -1,7 +1,20 @@
 [gd_scene format=3 uid="uid://ctouq213hfx2v"]
 
 [ext_resource type="PackedScene" uid="uid://5mrwdilq8lw" path="res://Scenes/UI/dialog_button.tscn" id="1_6ig8u"]
+[ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="2_el2lq"]
 [ext_resource type="Texture2D" uid="uid://dl6mm83rm2nuf" path="res://Assets/coin.png" id="2_miibg"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7k121"]
+shader = ExtResource("2_el2lq")
+shader_parameter/thickness = 5.0000002375
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0, 0, 0, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
 
 [node name="DialogButtonCoin" unique_id=1828395968 instance=ExtResource("1_6ig8u")]
 offset_right = 119.0
@@ -9,6 +22,7 @@ icon_alignment = 2
 expand_icon = true
 
 [node name="TextureRect" type="TextureRect" parent="." index="0" unique_id=4120198]
+material = SubResource("ShaderMaterial_7k121")
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0

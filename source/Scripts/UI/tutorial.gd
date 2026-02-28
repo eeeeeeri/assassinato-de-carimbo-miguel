@@ -7,7 +7,6 @@ extends Control
 @onready var voltar: Button = $Voltar
 
 var page := 0
-const num_pages := 3
 
 func _process(delta: float) -> void:
 	match (page):
@@ -32,8 +31,12 @@ func _process(delta: float) -> void:
 
 
 func _on_avancar_button_up() -> void:
-	page += 1
+	page = clamp(page + 1, 0, 2)
 
 
 func _on_voltar_button_up() -> void:
-	page -= 1
+	page = clamp(page - 1, 0, 2)
+
+
+func _on_visibility_changed() -> void:
+	page = 0

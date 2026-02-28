@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://c7xckcfqbi4fc" path="res://Assets/Carimbo/padlockLock.png" id="9_r3vh6"]
 [ext_resource type="Texture2D" uid="uid://co5x6veyqbylw" path="res://Assets/Carimbo/padlockBody.png" id="10_560rx"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="10_r3vh6"]
+[ext_resource type="Texture2D" uid="uid://ccqasii50fiji" path="res://Assets/Menu/fundo.png" id="11_1lpji"]
 [ext_resource type="AudioStream" uid="uid://fo1o0446ysob" path="res://Assets/SFX/SFX - Cadeado abrindo.wav" id="12_fatg8"]
 [ext_resource type="AudioStream" uid="uid://b3ui87ab3861o" path="res://Assets/SFX/SFX - Interação Cadeado.wav" id="12_p0shn"]
 [ext_resource type="AudioStream" uid="uid://ms4ch3i0n8wj" path="res://CustomResources/AudioStreams/click.tres" id="12_yeqav"]
@@ -280,7 +281,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
-color = Color(0.58516484, 0.3359017, 0.18008909, 1)
+color = Color(0.8901961, 0.5058824, 0.12941177, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="border" type="ColorRect" parent="DialogPanel/ColorRect" unique_id=266460873]
@@ -297,6 +298,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="NinePatchRect" type="NinePatchRect" parent="DialogPanel/ColorRect/border" unique_id=1447690337]
+visible = false
 layout_mode = 0
 offset_left = 1343.5793
 offset_top = -168.59482
@@ -309,6 +311,16 @@ patch_margin_left = 95
 patch_margin_top = 75
 patch_margin_right = 91
 patch_margin_bottom = 58
+
+[node name="background" type="TextureRect" parent="DialogPanel/ColorRect/border" unique_id=115515500]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("11_1lpji")
+expand_mode = 1
 
 [node name="CharacterName" type="Label" parent="DialogPanel/ColorRect" unique_id=444401136]
 layout_mode = 1

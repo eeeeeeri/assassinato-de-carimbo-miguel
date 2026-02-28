@@ -5,8 +5,12 @@
 [ext_resource type="Texture2D" uid="uid://by8mc02qmdaqx" path="res://Assets/tutorial2.png" id="2_sa18l"]
 [ext_resource type="Texture2D" uid="uid://b873ihrtl3amr" path="res://Assets/tutorial3.png" id="4_sb71i"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="5_5avan"]
+[ext_resource type="StyleBox" uid="uid://di38frt1t8qkc" path="res://buttonStyle.tres" id="6_c2ayv"]
+[ext_resource type="StyleBox" uid="uid://dlmq05ecfcof" path="res://buttonStylePress.tres" id="7_8vphl"]
+[ext_resource type="StyleBox" uid="uid://b2hm2fpqlgb0m" path="res://buttonStyleHover.tres" id="8_a7cfn"]
 
 [node name="Tutorial" type="Control" unique_id=109390273]
+process_mode = 3
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,8 +46,12 @@ offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("5_5avan")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_c2ayv")
+theme_override_styles/pressed = ExtResource("7_8vphl")
+theme_override_styles/hover = ExtResource("8_a7cfn")
 text = "Avançar"
 
 [node name="Voltar" type="Button" parent="." unique_id=289693927]
@@ -57,9 +65,14 @@ offset_top = -69.0
 offset_right = 173.0
 offset_bottom = -20.0
 grow_vertical = 0
+theme_override_colors/font_color = Color(0.9764706, 0.87058824, 0.6784314, 1)
 theme_override_fonts/font = ExtResource("5_5avan")
 theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = ExtResource("6_c2ayv")
+theme_override_styles/pressed = ExtResource("7_8vphl")
+theme_override_styles/hover = ExtResource("8_a7cfn")
 text = "Voltar"
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="button_up" from="Avancar" to="." method="_on_avancar_button_up"]
 [connection signal="button_up" from="Voltar" to="." method="_on_voltar_button_up"]
