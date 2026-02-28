@@ -9,34 +9,35 @@
 [ext_resource type="PackedScene" uid="uid://d08xgowqidu6a" path="res://Scenes/Interactions/Clues/object_clue_cadu_products.tscn" id="7_2vph4"]
 [ext_resource type="Texture2D" uid="uid://ennwxvomjifv" path="res://Assets/Pistas/screenshots/inkAndQuillIso.png" id="8_7kl4y"]
 [ext_resource type="PackedScene" uid="uid://bsq3nigw1o82s" path="res://Scenes/Interactions/Clues/object_clue_ink_and_quill.tscn" id="9_7kl4y"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_nw337"]
-resource_local_to_scene = true
-shader = ExtResource("3_r3d7o")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vph4"]
-resource_local_to_scene = true
-shader = ExtResource("3_r3d7o")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
+[ext_resource type="Texture2D" uid="uid://bk688vacqicum" path="res://Assets/vila/porta_3.png" id="10_2vph4"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_7kl4y"]
+resource_local_to_scene = true
+shader = ExtResource("3_r3d7o")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dtvhp"]
+resource_local_to_scene = true
+shader = ExtResource("3_r3d7o")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_r3d7o"]
 resource_local_to_scene = true
 shader = ExtResource("3_r3d7o")
 shader_parameter/thickness = 0.0
@@ -60,7 +61,7 @@ position = Vector2(-267, -43)
 outlineThickness = 15.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_nw337")
+material = SubResource("ShaderMaterial_7kl4y")
 scale = Vector2(0.16406244, 0.16406246)
 texture = ExtResource("4_nw337")
 
@@ -76,7 +77,7 @@ outlineThickness = 15.0
 scale = Vector2(1.72, 1.69)
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable3" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_2vph4")
+material = SubResource("ShaderMaterial_dtvhp")
 scale = Vector2(0.2929687, 0.29296875)
 texture = ExtResource("6_2vph4")
 
@@ -92,13 +93,18 @@ outlineThickness = 15.0
 scale = Vector2(1.685, 1)
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable4" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_7kl4y")
+material = SubResource("ShaderMaterial_r3d7o")
 scale = Vector2(0.26953128, 0.2695313)
 texture = ExtResource("8_7kl4y")
 
 [node name="object_clue_InkAndQuill" parent="Interactions/PureClickInteractable4" index="2" unique_id=1614793728 instance=ExtResource("9_7kl4y")]
 process_mode = 4
 visible = false
+
+[node name="door" type="Sprite2D" parent="." index="3" unique_id=387227969]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(-34, 177)
+texture = ExtResource("10_2vph4")
 
 [connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/object_clue_caduKidStamp" method="_interacted" binds= [true]]
 [connection signal="onInteracted" from="Interactions/PureClickInteractable3" to="Interactions/PureClickInteractable3/object_clue_caduProducts" method="_interacted" binds= [true]]

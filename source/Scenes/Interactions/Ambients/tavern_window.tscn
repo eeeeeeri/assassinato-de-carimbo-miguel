@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://c0mbgw7fohlmc" path="res://Assets/Personagens/DoloresDeBarriga.png" id="7_1c00a"]
 [ext_resource type="Texture2D" uid="uid://b2fq42d50qu12" path="res://Assets/Pistas/castelo_desenho.png" id="7_6hy6e"]
 [ext_resource type="PackedScene" uid="uid://uanj0yqwax66" path="res://Scenes/Interactions/Clues/text_clue_castleDrawing.tscn" id="8_bjg8k"]
+[ext_resource type="Texture2D" uid="uid://baprraqc2mnhy" path="res://Assets/vila/porta_6.png" id="11_g8r5a"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_75pbl"]
 resource_local_to_scene = true
@@ -70,7 +71,7 @@ rotation = 0.5235988
 skew = 0.5235988
 
 [node name="PureClickInteractable" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="0" unique_id=705077137 instance=ExtResource("2_1c00a")]
-position = Vector2(-110, -226)
+position = Vector2(149, -151)
 outlineThickness = 10.0
 
 [node name="CollisionShape2D" parent="Interactions/PureClickInteractable" index="0" unique_id=1151619031]
@@ -99,7 +100,7 @@ visible = false
 material = SubResource("ShaderMaterial_82osm")
 
 [node name="PureClickInteractable2" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=1122020805 instance=ExtResource("2_1c00a")]
-position = Vector2(237, -45)
+position = Vector2(291, 75)
 outlineThickness = 10.0
 
 [node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=1151619031]
@@ -125,7 +126,7 @@ process_mode = 4
 visible = false
 
 [node name="PureClickInteractable3" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="2" unique_id=968819951 instance=ExtResource("2_1c00a")]
-position = Vector2(-232, 63)
+position = Vector2(-428, -126)
 outlineThickness = 30.0
 
 [node name="CollisionShape2D" parent="Interactions/PureClickInteractable3" index="0" unique_id=1151619031]
@@ -139,6 +140,11 @@ texture = ExtResource("7_6hy6e")
 [node name="TextClue_castleDrawing" parent="Interactions/PureClickInteractable3" index="2" unique_id=1988761618 instance=ExtResource("8_bjg8k")]
 process_mode = 4
 visible = false
+
+[node name="door" type="Sprite2D" parent="." index="3" unique_id=1152520636]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(-201, 57)
+texture = ExtResource("11_g8r5a")
 
 [connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/jairInteractable" method="_interacted" binds= [true]]
 [connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/doloresInteractable" method="_interacted" binds= [true]]

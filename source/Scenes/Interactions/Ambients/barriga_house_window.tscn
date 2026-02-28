@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bfnbyscl76jsx" path="res://Assets/circle.png" id="6_ifcui"]
 [ext_resource type="PackedScene" uid="uid://cm4y2f527gbun" path="res://Scenes/Interactions/Characters/barbara_interactable.tscn" id="6_kki88"]
 [ext_resource type="Texture2D" uid="uid://di1vsnhb0nb4q" path="res://Assets/Personagens/BarbaraDeBarriga.png" id="7_fxigk"]
+[ext_resource type="Texture2D" uid="uid://8oqe4aemgfoy" path="res://Assets/vila/porta_2.png" id="9_fxigk"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bckl7"]
 resource_local_to_scene = true
@@ -95,6 +96,11 @@ visible = false
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable2/barbaraInteractable" index="4" unique_id=159541262]
 material = SubResource("ShaderMaterial_jk3ny")
+
+[node name="door" type="Sprite2D" parent="." index="3" unique_id=1824133491]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(-32, 131)
+texture = ExtResource("9_fxigk")
 
 [connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/TextClue_barbaraLetter" method="_interacted" binds= [true]]
 [connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/barbaraInteractable" method="_interacted" binds= [true]]

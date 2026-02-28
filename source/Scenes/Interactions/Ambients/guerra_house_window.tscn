@@ -9,34 +9,35 @@
 [ext_resource type="Texture2D" uid="uid://bhffh3dnv0kl2" path="res://Assets/Pistas/screenshots/swordIso.png" id="6_xx30j"]
 [ext_resource type="Texture2D" uid="uid://d2ceuxnbo8pld" path="res://Assets/Pistas/planta.png" id="8_wxdj8"]
 [ext_resource type="PackedScene" uid="uid://b6d3oetbfh87p" path="res://Scenes/Interactions/Clues/text_clue_roomPlant.tscn" id="9_b2pbl"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxdj8"]
-resource_local_to_scene = true
-shader = ExtResource("3_wxdj8")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_b2pbl"]
-resource_local_to_scene = true
-shader = ExtResource("3_wxdj8")
-shader_parameter/thickness = 0.0
-shader_parameter/ring_count = 16
-shader_parameter/ring_offset = 0.0
-shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
-shader_parameter/border_clipping_fix = true
-shader_parameter/aspect_ratio = 1.0
-shader_parameter/square_border = false
-shader_parameter/offset = Vector2(0, 0)
-shader_parameter/max_or_add = false
+[ext_resource type="Texture2D" uid="uid://br6frmkoc1rt5" path="res://Assets/vila/porta_5.png" id="10_b2pbl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_pt6of"]
+resource_local_to_scene = true
+shader = ExtResource("3_wxdj8")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ocfk"]
+resource_local_to_scene = true
+shader = ExtResource("3_wxdj8")
+shader_parameter/thickness = 0.0
+shader_parameter/ring_count = 16
+shader_parameter/ring_offset = 0.0
+shader_parameter/outline_color = Color(0.53652656, 0.89011234, 1, 1)
+shader_parameter/border_clipping_fix = true
+shader_parameter/aspect_ratio = 1.0
+shader_parameter/square_border = false
+shader_parameter/offset = Vector2(0, 0)
+shader_parameter/max_or_add = false
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_txjko"]
 resource_local_to_scene = true
 shader = ExtResource("3_wxdj8")
 shader_parameter/thickness = 0.0
@@ -60,7 +61,7 @@ position = Vector2(-110, -226)
 outlineThickness = 30.0
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_wxdj8")
+material = SubResource("ShaderMaterial_pt6of")
 scale = Vector2(0.10546874, 0.10546875)
 texture = ExtResource("4_b2pbl")
 
@@ -76,7 +77,7 @@ outlineThickness = 15.0
 scale = Vector2(1.385, 2.855)
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_b2pbl")
+material = SubResource("ShaderMaterial_2ocfk")
 scale = Vector2(0.44140625, 0.44140628)
 texture = ExtResource("6_xx30j")
 
@@ -92,13 +93,18 @@ outlineThickness = 30.0
 scale = Vector2(1.07, 0.835)
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable3" index="1" unique_id=159541262]
-material = SubResource("ShaderMaterial_pt6of")
+material = SubResource("ShaderMaterial_txjko")
 scale = Vector2(0.13541666, 0.13541666)
 texture = ExtResource("8_wxdj8")
 
 [node name="TextClue_roomPlant" parent="Interactions/PureClickInteractable3" index="2" unique_id=2061515504 instance=ExtResource("9_b2pbl")]
 process_mode = 4
 visible = false
+
+[node name="door" type="Sprite2D" parent="." index="3" unique_id=1357749344]
+modulate = Color(1, 1, 1, 0.57254905)
+position = Vector2(-390, -40)
+texture = ExtResource("10_b2pbl")
 
 [connection signal="onInteracted" from="Interactions/PureClickInteractable" to="Interactions/PureClickInteractable/TextClue_armandoLetter" method="_interacted" binds= [true]]
 [connection signal="onInteracted" from="Interactions/PureClickInteractable2" to="Interactions/PureClickInteractable2/object_clue_Sword" method="_interacted" binds= [true]]
