@@ -3,12 +3,16 @@
 [ext_resource type="Texture2D" uid="uid://bx6gmbyssm5yo" path="res://Assets/tutorial1.png" id="1_jwb06"]
 [ext_resource type="Script" uid="uid://bue8c36q0up0p" path="res://Scripts/UI/tutorial.gd" id="1_sa18l"]
 [ext_resource type="Texture2D" uid="uid://by8mc02qmdaqx" path="res://Assets/tutorial2.png" id="2_sa18l"]
+[ext_resource type="Texture2D" uid="uid://b873ihrtl3amr" path="res://Assets/tutorial3.png" id="4_sb71i"]
+[ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="5_5avan"]
 
 [node name="Tutorial" type="Control" unique_id=109390273]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_sa18l")
 
 [node name="Tutorial1" type="Sprite2D" parent="." unique_id=1045847556]
@@ -19,3 +23,43 @@ centered = false
 visible = false
 texture = ExtResource("2_sa18l")
 centered = false
+
+[node name="Tutorial3" type="Sprite2D" parent="." unique_id=1921162075]
+visible = false
+texture = ExtResource("4_sb71i")
+centered = false
+
+[node name="Avancar" type="Button" parent="." unique_id=2115882868]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -69.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_5avan")
+theme_override_font_sizes/font_size = 24
+text = "Avançar"
+
+[node name="Voltar" type="Button" parent="." unique_id=289693927]
+visible = false
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 20.0
+offset_top = -69.0
+offset_right = 173.0
+offset_bottom = -20.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("5_5avan")
+theme_override_font_sizes/font_size = 24
+text = "Voltar"
+
+[connection signal="button_up" from="Avancar" to="." method="_on_avancar_button_up"]
+[connection signal="button_up" from="Voltar" to="." method="_on_voltar_button_up"]

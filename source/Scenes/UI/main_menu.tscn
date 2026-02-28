@@ -883,17 +883,17 @@ text = "Voltar"
 
 [node name="Tutorial" parent="." unique_id=109390273 instance=ExtResource("3_mrfpk")]
 visible = false
-layout_mode = 0
+layout_mode = 1
 
 [node name="BackButton" type="Button" parent="Tutorial" unique_id=2081214979]
 layout_mode = 0
 offset_left = 24.0
-offset_top = 648.0
-offset_right = 102.0
-offset_bottom = 690.0
+offset_top = 24.0
+offset_right = 212.0
+offset_bottom = 66.0
 theme_override_fonts/font = ExtResource("2_4pqbp")
 theme_override_font_sizes/font_size = 24
-text = "Voltar"
+text = "Voltar ao menu"
 
 [node name="Credits" parent="." unique_id=1192477558 instance=ExtResource("4_u7lva")]
 visible = false
@@ -928,4 +928,5 @@ bus = &"SFX"
 [connection signal="button_up" from="Credits/BackButton" to="." method="_on_back_button_button_up"]
 
 [editable path="Settings"]
+[editable path="Tutorial"]
 [editable path="Credits"]
