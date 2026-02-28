@@ -114,14 +114,13 @@ theme_override_font_sizes/font_size = 24
 text = "Voltar"
 
 [node name="Tutorial" parent="." unique_id=109390273 instance=ExtResource("2_a111y")]
-visible = false
 
 [node name="BackButton" type="Button" parent="Tutorial" unique_id=513112633]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 648.0
-offset_right = 102.0
-offset_bottom = 690.0
+layout_mode = 1
+offset_left = 20.0
+offset_top = 20.0
+offset_right = 101.0
+offset_bottom = 62.0
 theme_override_fonts/font = ExtResource("3_x1tur")
 theme_override_font_sizes/font_size = 24
 text = "Voltar"
