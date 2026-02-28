@@ -2,11 +2,6 @@ extends Control
 
 const CONTOS_DE_CARIMBIA___TUTORIAL = preload("uid://cm4j107i25jh7")
 
-@onready var continuar_button: Button = $Main/VBoxContainer/Continuar
-@onready var config_button: Button = $Main/VBoxContainer/Config
-@onready var ajuda_button: Button = $Main/VBoxContainer/Ajuda
-@onready var sair_button: Button = $Main/VBoxContainer/Sair
-
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @onready var main: Control = $Main
