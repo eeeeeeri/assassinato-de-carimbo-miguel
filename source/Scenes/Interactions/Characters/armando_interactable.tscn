@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://1y8vvmmdknbl" path="res://CustomResources/Characters/Armando/Armando.tres" id="2_1mwe2"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_dumqh"]
 [ext_resource type="Resource" uid="uid://b18j0yr24linc" path="res://CustomResources/Characters/Armando/ArmandoSuspitionDialog.tres" id="4_58ywm"]
-[ext_resource type="Texture2D" uid="uid://wqxt0qxk738v" path="res://Assets/Personagens/ArmandoGuerraPlaceholder.png" id="4_dumqh"]
+[ext_resource type="Texture2D" uid="uid://b1durc6t3pdas" path="res://Assets/Personagens/GuardaReal.png" id="4_dumqh"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_d0w5e"]
 resource_local_to_scene = true
@@ -24,8 +24,11 @@ Character = ExtResource("2_1mwe2")
 audio_pitch = 0.67
 
 [node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
-position = Vector2(3.48, -69.38)
-scale = Vector2(1.131, 2.74)
+position = Vector2(-1.65, -69.38)
+scale = Vector2(1.551, 2.74)
+
+[node name="shadow" parent="." index="3" unique_id=1605338158]
+scale = Vector2(0.24647972, 0.24647973)
 
 [node name="Sprite2D" parent="." index="4" unique_id=159541262]
 material = SubResource("ShaderMaterial_d0w5e")

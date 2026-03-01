@@ -23,11 +23,11 @@
 [ext_resource type="Resource" uid="uid://1y8vvmmdknbl" path="res://CustomResources/Characters/Armando/Armando.tres" id="11_237ot"]
 [ext_resource type="Resource" uid="uid://c3873ka87mobb" path="res://CustomResources/Characters/Marka/Marka.tres" id="12_1bsjj"]
 [ext_resource type="Resource" uid="uid://bl04ewkivmfmt" path="res://CustomResources/Characters/Pequena/Pequena.tres" id="13_1itmj"]
-[ext_resource type="Texture2D" uid="uid://wqxt0qxk738v" path="res://Assets/Personagens/ArmandoGuerraPlaceholder.png" id="13_eej5v"]
+[ext_resource type="Texture2D" uid="uid://b1durc6t3pdas" path="res://Assets/Personagens/GuardaReal.png" id="13_eej5v"]
 [ext_resource type="Resource" uid="uid://c6l6o5a017pfl" path="res://CustomResources/Characters/Jair/Jair.tres" id="14_3ys38"]
-[ext_resource type="Texture2D" uid="uid://dnljok7pnmbb" path="res://Assets/Personagens/MarkaPassosPlaceholder.png" id="15_a8b0p"]
+[ext_resource type="Texture2D" uid="uid://bdm3lehjcfcdi" path="res://Assets/Personagens/MarkaPassos.png" id="15_a8b0p"]
 [ext_resource type="Resource" uid="uid://b6xia38c240ds" path="res://CustomResources/Characters/Barbara/Barbara.tres" id="16_eej5v"]
-[ext_resource type="Texture2D" uid="uid://yjkx8shv1cvu" path="res://Assets/Personagens/PequenaPassosPlaceholder.png" id="17_h3oup"]
+[ext_resource type="Texture2D" uid="uid://d3u83h1el2aqy" path="res://Assets/Personagens/PequenaPassos.png" id="17_h3oup"]
 [ext_resource type="StyleBox" uid="uid://di38frt1t8qkc" path="res://buttonStyle.tres" id="19_1bsjj"]
 [ext_resource type="StyleBox" uid="uid://dlmq05ecfcof" path="res://buttonStylePress.tres" id="20_1itmj"]
 [ext_resource type="StyleBox" uid="uid://b2hm2fpqlgb0m" path="res://buttonStyleHover.tres" id="21_3ys38"]
@@ -1243,37 +1243,37 @@ texture = ExtResource("6_80i56")
 [node name="SussyBaka4" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=202936831 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 character = ExtResource("11_237ot")
-sus_spritePosition = Vector2(-165.00003, -52.999992)
+sus_spritePosition = Vector2(-184.00003, -42.000008)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka4/Panel" parent_id_path=PackedInt32Array(202936831, 960644912) index="0" unique_id=1212980693]
 material = SubResource("ShaderMaterial_c8krh")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka4/Panel/ColorRect" parent_id_path=PackedInt32Array(202936831, 101840902) index="0" unique_id=657806657]
-position = Vector2(-165.00003, -52.999992)
+position = Vector2(-184.00003, -42.000008)
 texture = ExtResource("13_eej5v")
 
 [node name="SussyBaka5" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=1032094193 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 character = ExtResource("12_1bsjj")
-sus_spritePosition = Vector2(-165, -60)
+sus_spritePosition = Vector2(-193, -10.000004)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka5/Panel" parent_id_path=PackedInt32Array(1032094193, 960644912) index="0" unique_id=1212980693]
 material = SubResource("ShaderMaterial_ukwre")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka5/Panel/ColorRect" parent_id_path=PackedInt32Array(1032094193, 101840902) index="0" unique_id=657806657]
-position = Vector2(-165, -60)
+position = Vector2(-193, -10.000004)
 texture = ExtResource("15_a8b0p")
 
 [node name="SussyBaka6" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=1785692410 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 character = ExtResource("13_1itmj")
-sus_spritePosition = Vector2(-165.00003, -201.99998)
+sus_spritePosition = Vector2(-181.00002, -173.00002)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka6/Panel" parent_id_path=PackedInt32Array(1785692410, 960644912) index="0" unique_id=1212980693]
 material = SubResource("ShaderMaterial_of1yk")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka6/Panel/ColorRect" parent_id_path=PackedInt32Array(1785692410, 101840902) index="0" unique_id=657806657]
-position = Vector2(-165.00003, -201.99998)
+position = Vector2(-181.00002, -173.00002)
 texture = ExtResource("17_h3oup")
 
 [node name="SussyBaka7" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=2055334827 instance=ExtResource("1_feb6v")]

@@ -6,7 +6,7 @@
 [ext_resource type="Resource" uid="uid://b18j0yr24linc" path="res://CustomResources/Characters/Armando/ArmandoSuspitionDialog.tres" id="4_jcdfa"]
 [ext_resource type="Resource" uid="uid://8aavykumw1qh" path="res://CustomResources/Characters/Armando/ArmandoBribeDialog.tres" id="5_05g2e"]
 [ext_resource type="Resource" uid="uid://uadwgdepja50" path="res://CustomResources/Characters/Armando/ArmandoInitialDialog.tres" id="5_n48s7"]
-[ext_resource type="Texture2D" uid="uid://wqxt0qxk738v" path="res://Assets/Personagens/ArmandoGuerraPlaceholder.png" id="7_05g2e"]
+[ext_resource type="Texture2D" uid="uid://b1durc6t3pdas" path="res://Assets/Personagens/GuardaReal.png" id="7_05g2e"]
 [ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_soqbr"]
 [ext_resource type="Resource" uid="uid://dwmq0qv80wpua" path="res://CustomResources/Stamps/ArmandoStamp.tres" id="8_bl24n"]
 [ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="10_qu4ev"]
