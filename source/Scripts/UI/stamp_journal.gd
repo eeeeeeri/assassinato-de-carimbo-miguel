@@ -2,8 +2,12 @@ extends CanvasLayer
 
 @export var incorrectColor:Color = Color.DARK_RED
 @export var incorrectString:String = "Vários carimbos estão incorretos"
+@export var quarterColor:Color = Color.DARK_RED
+@export var quarterString:String = "A maioria dos carimbos estão incorretos"
+@export var halfColor:Color = Color.YELLOW
+@export var halfString:String = "Metade dos carimbos estão corretos"
 @export var almostColor:Color = Color.YELLOW
-@export var almostString:String = "Dois ou menos carimbos estão incorretos"
+@export var almostString:String = "A maioria dos carimbos estão corretos"
 @export var correctColor:Color = Color.DARK_GREEN
 @export var correctString:String = "Todos os carimbos estão corretos!"
 
@@ -51,12 +55,20 @@ func UpdateFeedbackText() -> void:
 	if(correctCount >= editableStamps.size()):
 		feedback_text.label_settings.font_color = correctColor
 		feedback_text.text = correctString
-	elif correctCount >= editableStamps.size() / 2:
+	elif correctCount >= (editableStamps.size() / 4) * 3:
 		feedback_text.label_settings.font_color = almostColor
 		feedback_text.text = almostString
+	elif correctCount >= editableStamps.size() / 2:
+		feedback_text.label_settings.font_color = halfColor
+		feedback_text.text = halfString
+	elif correctCount >= editableStamps.size() / 4:
+		feedback_text.label_settings.font_color = quarterColor
+		feedback_text.text = quarterString
 	else:
 		feedback_text.label_settings.font_color = incorrectColor
 		feedback_text.text = incorrectString
+		
+	print(correctCount)
 
 func ClickSFX() -> void:
 	audio_stream_player.play()

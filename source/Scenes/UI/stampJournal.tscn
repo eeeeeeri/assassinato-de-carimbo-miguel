@@ -131,8 +131,9 @@ stream_0/stream = ExtResource("24_vkn1i")
 
 [node name="StampJournal" type="CanvasLayer" unique_id=647023198 node_paths=PackedStringArray("editableStamps")]
 script = ExtResource("1_mxt4o")
-almostColor = Color(0.75266093, 0.7526609, 0, 1)
-almostString = "Metade dos carimbos estão corretos"
+quarterColor = Color(0.7575711, 0.28770915, 0, 1)
+halfColor = Color(0.74397665, 0.74397665, 3.85046e-07, 1)
+almostColor = Color(0.43335646, 0.65521336, 0, 1)
 editableStamps = [NodePath("Panel/CenterContainer/GridContainer/Armando/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Barbara/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Cadu/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Dolores/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Fotocopia/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Jair/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Marka/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Pequena/EditableStamp")]
 
 [node name="Panel" type="Control" parent="." unique_id=185544462]
@@ -557,7 +558,7 @@ text = "Use esta tela para anotar e conferir os carimbos que descobrir durante a
 
 Clique nas partes individuais de cada carimbo para mudá-las. 
 
-O texto à direita confirmará quando a metade dos carimbos estiverem corretos, e quando todos estiverem corretos."
+O texto à direita confirmará quando certas quantidades de carimbos estiverem corretos."
 autowrap_mode = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=36216388]
