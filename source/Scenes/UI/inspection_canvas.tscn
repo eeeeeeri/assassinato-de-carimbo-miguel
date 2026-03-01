@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dg4316gxkl21n" path="res://Scenes/UI/stamp_part_image_scene.tscn" id="8_6tbbf"]
 [ext_resource type="Texture2D" uid="uid://dgmkbt1wpf53s" path="res://Assets/Pistas/papel_generico_fundo.png" id="8_fatg8"]
 [ext_resource type="Texture2D" uid="uid://di7m0gppspwp6" path="res://Assets/Personagens/CarlosEduardo.png" id="8_oy0yl"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="8_p0shn"]
+[ext_resource type="Texture2D" uid="uid://d3fwp7yv2djsa" path="res://Assets/player/183 Sem Título_Restaurado2_20260301182716.png" id="9_1lpji"]
 [ext_resource type="Texture2D" uid="uid://c7xckcfqbi4fc" path="res://Assets/Carimbo/padlockLock.png" id="9_r3vh6"]
 [ext_resource type="Texture2D" uid="uid://co5x6veyqbylw" path="res://Assets/Carimbo/padlockBody.png" id="10_560rx"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="10_r3vh6"]
@@ -258,20 +258,19 @@ stretch_mode = 5
 
 [node name="PlayerPortrait" type="TextureRect" parent="DialogPanel" unique_id=1483933883]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 1.228125
-anchor_top = 0.12083333
-anchor_right = 1.5359375
-anchor_bottom = 0.8831587
-offset_left = -1400.0
-offset_right = -1400.0
-grow_horizontal = 2
-grow_vertical = 0
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -337.0
+offset_right = 682.4281
+offset_bottom = 321.5553
+grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 1)
-texture = ExtResource("8_p0shn")
+texture = ExtResource("9_1lpji")
 expand_mode = 1
 stretch_mode = 5
-metadata/_edit_use_anchors_ = true
+flip_h = true
 
 [node name="ColorRect" type="ColorRect" parent="DialogPanel" unique_id=337631586]
 layout_mode = 1
