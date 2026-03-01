@@ -5,7 +5,7 @@
 [ext_resource type="Resource" uid="uid://w5pumpwn04j6" path="res://CustomResources/Characters/Pequena/PequenaStampDialog.tres" id="3_0ms4h"]
 [ext_resource type="Resource" uid="uid://bwhx6ewreju3t" path="res://CustomResources/Characters/Pequena/PequenaSuspitionDialog.tres" id="4_f4ev6"]
 [ext_resource type="Resource" uid="uid://c8vl2fn4knwrp" path="res://CustomResources/Characters/Pequena/PequenaInitialDialog.tres" id="5_lprai"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_8wjup"]
+[ext_resource type="Texture2D" uid="uid://yjkx8shv1cvu" path="res://Assets/Personagens/PequenaPassosPlaceholder.png" id="6_rfiuj"]
 [ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="7_oss7c"]
 [ext_resource type="Resource" uid="uid://nsugappdoxt" path="res://CustomResources/Stamps/PequenaStamp.tres" id="8_pklyb"]
 [ext_resource type="Script" uid="uid://vddqpk5j4snt" path="res://Scripts/Characters/characterDataCR.gd" id="9_d31c6"]
@@ -13,7 +13,7 @@
 [resource]
 script = ExtResource("9_d31c6")
 Name = "Pequena Passos"
-Portrait = ExtResource("6_8wjup")
+Portrait = ExtResource("6_rfiuj")
 Stamps = Array[ExtResource("7_oss7c")]([ExtResource("8_pklyb")])
 InitialDialog = ExtResource("5_lprai")
 Dialogs = Array[ExtResource("1_rfiuj")]([ExtResource("2_nng4q"), ExtResource("3_0ms4h"), ExtResource("4_f4ev6")])

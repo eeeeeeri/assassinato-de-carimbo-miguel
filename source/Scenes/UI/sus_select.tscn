@@ -23,32 +23,17 @@
 [ext_resource type="Resource" uid="uid://1y8vvmmdknbl" path="res://CustomResources/Characters/Armando/Armando.tres" id="11_237ot"]
 [ext_resource type="Resource" uid="uid://c3873ka87mobb" path="res://CustomResources/Characters/Marka/Marka.tres" id="12_1bsjj"]
 [ext_resource type="Resource" uid="uid://bl04ewkivmfmt" path="res://CustomResources/Characters/Pequena/Pequena.tres" id="13_1itmj"]
+[ext_resource type="Texture2D" uid="uid://wqxt0qxk738v" path="res://Assets/Personagens/ArmandoGuerraPlaceholder.png" id="13_eej5v"]
 [ext_resource type="Resource" uid="uid://c6l6o5a017pfl" path="res://CustomResources/Characters/Jair/Jair.tres" id="14_3ys38"]
+[ext_resource type="Texture2D" uid="uid://dnljok7pnmbb" path="res://Assets/Personagens/MarkaPassosPlaceholder.png" id="15_a8b0p"]
 [ext_resource type="Resource" uid="uid://b6xia38c240ds" path="res://CustomResources/Characters/Barbara/Barbara.tres" id="16_eej5v"]
+[ext_resource type="Texture2D" uid="uid://yjkx8shv1cvu" path="res://Assets/Personagens/PequenaPassosPlaceholder.png" id="17_h3oup"]
 [ext_resource type="StyleBox" uid="uid://di38frt1t8qkc" path="res://buttonStyle.tres" id="19_1bsjj"]
 [ext_resource type="StyleBox" uid="uid://dlmq05ecfcof" path="res://buttonStylePress.tres" id="20_1itmj"]
 [ext_resource type="StyleBox" uid="uid://b2hm2fpqlgb0m" path="res://buttonStyleHover.tres" id="21_3ys38"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7kxo7"]
 bg_color = Color(0, 0, 0, 0.39215687)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_eej5v"]
-resource_local_to_scene = true
-shader = ExtResource("5_lrd7u")
-shader_parameter/shadow_offset = Vector2(0, 0)
-shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8b0p"]
-resource_local_to_scene = true
-shader = ExtResource("5_lrd7u")
-shader_parameter/shadow_offset = Vector2(0, 0)
-shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_h3oup"]
-resource_local_to_scene = true
-shader = ExtResource("5_lrd7u")
-shader_parameter/shadow_offset = Vector2(0, 0)
-shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_4kqp7"]
 resource_local_to_scene = true
@@ -57,6 +42,42 @@ shader_parameter/shadow_offset = Vector2(0, 0)
 shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o45iv"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uror2"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8krh"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ukwre"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_of1yk"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dte58"]
+resource_local_to_scene = true
+shader = ExtResource("5_lrd7u")
+shader_parameter/shadow_offset = Vector2(0, 0)
+shader_parameter/shadow_color = Color(0, 0, 0, 0.3)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7q50"]
 resource_local_to_scene = true
 shader = ExtResource("5_lrd7u")
 shader_parameter/shadow_offset = Vector2(0, 0)
@@ -1191,7 +1212,7 @@ character = ExtResource("4_tbpqc")
 sus_spritePosition = Vector2(-201, -39)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_eej5v")
+material = SubResource("ShaderMaterial_4kqp7")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka/Panel/ColorRect" parent_id_path=PackedInt32Array(423670737, 101840902) index="0" unique_id=657806657]
 position = Vector2(-201, -39)
@@ -1202,7 +1223,7 @@ layout_mode = 2
 character = ExtResource("7_rvxh6")
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2/Panel" parent_id_path=PackedInt32Array(1534123851, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_a8b0p")
+material = SubResource("ShaderMaterial_o45iv")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2/Panel/ColorRect" parent_id_path=PackedInt32Array(1534123851, 101840902) index="0" unique_id=657806657]
 texture = ExtResource("6_mpk3j")
@@ -1213,7 +1234,7 @@ character = ExtResource("9_ipbfn")
 sus_spritePosition = Vector2(-189.00003, -121.99999)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3/Panel" parent_id_path=PackedInt32Array(183995324, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_h3oup")
+material = SubResource("ShaderMaterial_uror2")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3/Panel/ColorRect" parent_id_path=PackedInt32Array(183995324, 101840902) index="0" unique_id=657806657]
 position = Vector2(-189.00003, -121.99999)
@@ -1222,14 +1243,38 @@ texture = ExtResource("6_80i56")
 [node name="SussyBaka4" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=202936831 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 character = ExtResource("11_237ot")
+sus_spritePosition = Vector2(-165.00003, -52.999992)
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka4/Panel" parent_id_path=PackedInt32Array(202936831, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_c8krh")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka4/Panel/ColorRect" parent_id_path=PackedInt32Array(202936831, 101840902) index="0" unique_id=657806657]
+position = Vector2(-165.00003, -52.999992)
+texture = ExtResource("13_eej5v")
 
 [node name="SussyBaka5" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=1032094193 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 character = ExtResource("12_1bsjj")
+sus_spritePosition = Vector2(-165, -60)
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka5/Panel" parent_id_path=PackedInt32Array(1032094193, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_ukwre")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka5/Panel/ColorRect" parent_id_path=PackedInt32Array(1032094193, 101840902) index="0" unique_id=657806657]
+position = Vector2(-165, -60)
+texture = ExtResource("15_a8b0p")
 
 [node name="SussyBaka6" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=1785692410 instance=ExtResource("1_feb6v")]
 layout_mode = 2
 character = ExtResource("13_1itmj")
+sus_spritePosition = Vector2(-165.00003, -201.99998)
+
+[node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka6/Panel" parent_id_path=PackedInt32Array(1785692410, 960644912) index="0" unique_id=1212980693]
+material = SubResource("ShaderMaterial_of1yk")
+
+[node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka6/Panel/ColorRect" parent_id_path=PackedInt32Array(1785692410, 101840902) index="0" unique_id=657806657]
+position = Vector2(-165.00003, -201.99998)
+texture = ExtResource("17_h3oup")
 
 [node name="SussyBaka7" parent="PanelContainer/VBoxContainer/Suspeitos" unique_id=2055334827 instance=ExtResource("1_feb6v")]
 layout_mode = 2
@@ -1237,7 +1282,7 @@ character = ExtResource("14_3ys38")
 sus_spritePosition = Vector2(-173.00003, -212.99998)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7/Panel" parent_id_path=PackedInt32Array(2055334827, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_4kqp7")
+material = SubResource("ShaderMaterial_dte58")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7/Panel/ColorRect" parent_id_path=PackedInt32Array(2055334827, 101840902) index="0" unique_id=657806657]
 position = Vector2(-173.00003, -212.99998)
@@ -1249,7 +1294,7 @@ character = ExtResource("16_eej5v")
 sus_spritePosition = Vector2(-165.00003, -58)
 
 [node name="Shadow" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8/Panel" parent_id_path=PackedInt32Array(1048267071, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_o45iv")
+material = SubResource("ShaderMaterial_w7q50")
 
 [node name="Sprite2D" parent="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8/Panel/ColorRect" parent_id_path=PackedInt32Array(1048267071, 101840902) index="0" unique_id=657806657]
 position = Vector2(-165.00003, -58)
@@ -1493,5 +1538,8 @@ stream = ExtResource("9_4ajkc")
 [editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka"]
 [editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka2"]
 [editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka3"]
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka4"]
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka5"]
+[editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka6"]
 [editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka7"]
 [editable path="PanelContainer/VBoxContainer/Suspeitos/SussyBaka8"]

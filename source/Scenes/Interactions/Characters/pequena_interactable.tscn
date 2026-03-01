@@ -4,8 +4,9 @@
 [ext_resource type="Resource" uid="uid://bl04ewkivmfmt" path="res://CustomResources/Characters/Pequena/Pequena.tres" id="2_io5p4"]
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="3_plg7s"]
 [ext_resource type="Resource" uid="uid://b7ngs1h7eqhlx" path="res://CustomResources/Characters/Pequena/PequenaIntroductionDialog.tres" id="4_10des"]
+[ext_resource type="Texture2D" uid="uid://yjkx8shv1cvu" path="res://Assets/Personagens/PequenaPassosPlaceholder.png" id="4_plg7s"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_plg7s"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kov7d"]
 resource_local_to_scene = true
 shader = ExtResource("3_plg7s")
 shader_parameter/thickness = 0.0
@@ -22,8 +23,18 @@ shader_parameter/max_or_add = false
 Character = ExtResource("2_io5p4")
 audio_pitch = 1.4
 
+[node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
+position = Vector2(2, -25.26)
+scale = Vector2(0.851, 1.57)
+
+[node name="shadow" parent="." index="3" unique_id=1605338158]
+scale = Vector2(0.1473111, 0.1473111)
+
 [node name="Sprite2D" parent="." index="4" unique_id=159541262]
-material = SubResource("ShaderMaterial_plg7s")
+material = SubResource("ShaderMaterial_kov7d")
+position = Vector2(-2, -119)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_plg7s")
 
 [node name="SayMyName" parent="." index="7" unique_id=294947695]
 SourceDialog = ExtResource("4_10des")

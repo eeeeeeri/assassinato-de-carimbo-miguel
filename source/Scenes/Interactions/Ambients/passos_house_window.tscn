@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dlbxoshyea455" path="res://Assets/Pistas/profissoes.png" id="4_qs0l3"]
 [ext_resource type="PackedScene" uid="uid://doka7kc54xkeu" path="res://Scenes/Interactions/Clues/text_clue_stamperGuide.tscn" id="5_qs0l3"]
 [ext_resource type="PackedScene" uid="uid://bf0xxmyievgn" path="res://Scenes/Interactions/Characters/marka_interactable.tscn" id="6_ik5kh"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="6_miv2w"]
+[ext_resource type="Texture2D" uid="uid://dnljok7pnmbb" path="res://Assets/Personagens/MarkaPassosPlaceholder.png" id="6_miv2w"]
 [ext_resource type="Texture2D" uid="uid://dhyihy00ekyj5" path="res://Assets/Pistas/desenho_passos.png" id="8_yxkep"]
 [ext_resource type="PackedScene" uid="uid://bluxixss53tm8" path="res://Scenes/Interactions/Clues/text_clue_pequenaDrawing.tscn" id="9_23812"]
 [ext_resource type="Texture2D" uid="uid://djs5147o4b4oa" path="res://Assets/Pistas/screenshots/painting.png" id="10_5bns0"]
@@ -85,15 +85,18 @@ process_mode = 4
 visible = false
 
 [node name="PureClickInteractable2" parent="Interactions" parent_id_path=PackedInt32Array(1001932162) index="1" unique_id=136223077 instance=ExtResource("2_c4sye")]
-position = Vector2(251, -27)
+position = Vector2(247, -56)
 outlineThickness = 5.0
 
 [node name="CollisionShape2D" parent="Interactions/PureClickInteractable2" index="0" unique_id=1151619031]
-scale = Vector2(1.25, 2.74)
+position = Vector2(-2.03, 21.455)
+scale = Vector2(1.25, 3.13)
 
 [node name="Sprite2D" parent="Interactions/PureClickInteractable2" index="1" unique_id=159541262]
 material = SubResource("ShaderMaterial_01e6l")
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("6_miv2w")
+flip_h = true
 
 [node name="markaInteractable" parent="Interactions/PureClickInteractable2" index="2" unique_id=389771739 instance=ExtResource("6_ik5kh")]
 process_mode = 4

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://cw4wh1w5c6cv" path="res://Scripts/UI/stamp_journal.gd" id="1_mxt4o"]
 [ext_resource type="Texture2D" uid="uid://do0pykk0q006d" path="res://Assets/gradientBackground.png" id="2_ep287"]
 [ext_resource type="PackedScene" uid="uid://d2v37w8i1og4j" path="res://Scenes/UI/editableStamp.tscn" id="2_vffhr"]
-[ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="3_37eg1"]
+[ext_resource type="Texture2D" uid="uid://wqxt0qxk738v" path="res://Assets/Personagens/ArmandoGuerraPlaceholder.png" id="3_x7omx"]
 [ext_resource type="Resource" uid="uid://v3xw158vkd3n" path="res://CustomResources/Stamps/journalGuessStamps/ArmandoGuessStamp.tres" id="5_wep0g"]
 [ext_resource type="Script" uid="uid://dfqgxrvertj3e" path="res://Scripts/Interactions/stampDataCR.gd" id="6_8cet4"]
 [ext_resource type="Resource" uid="uid://cga0s6bcb12sp" path="res://CustomResources/Stamps/journalGuessStamps/BarbaraGuessStamp.tres" id="6_tyjf5"]
@@ -30,6 +30,8 @@
 [ext_resource type="Resource" uid="uid://nsugappdoxt" path="res://CustomResources/Stamps/PequenaStamp.tres" id="23_lyxpq"]
 [ext_resource type="AudioStream" uid="uid://cqcbioobkh5dp" path="res://Assets/SFX/click00.wav" id="24_vkn1i"]
 [ext_resource type="FontFile" uid="uid://dke2r5kf8uy0k" path="res://Assets/Fonts/ModernAntiqua-Regular.ttf" id="24_xaw7t"]
+[ext_resource type="Texture2D" uid="uid://dnljok7pnmbb" path="res://Assets/Personagens/MarkaPassosPlaceholder.png" id="25_g0egy"]
+[ext_resource type="Texture2D" uid="uid://yjkx8shv1cvu" path="res://Assets/Personagens/PequenaPassosPlaceholder.png" id="28_v8byh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ep287"]
 font_size = 51
@@ -186,18 +188,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Armando/char" unique_id=573520760]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
-offset_right = 40.61
-offset_bottom = 79.36
+anchor_left = -1.1891892
+anchor_top = -1.96
+anchor_right = 3.636652
+anchor_bottom = 7.325557
+offset_right = 14.523071
+offset_bottom = 28.48108
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("3_x7omx")
 expand_mode = 1
 stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Armando" unique_id=1977885419 instance=ExtResource("2_vffhr")]
@@ -407,18 +410,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Marka/char" unique_id=302005213]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
-offset_right = 40.61
-offset_bottom = 79.36
+anchor_left = -1.1418918
+anchor_top = -1.98
+anchor_right = -0.40701377
+anchor_bottom = -0.56687987
+offset_right = 619.9856
+offset_bottom = 1209.3467
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("25_g0egy")
 expand_mode = 1
 stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Marka" unique_id=735083637 instance=ExtResource("2_vffhr")]
@@ -443,18 +447,19 @@ stretch_mode = 5
 [node name="portrait" type="TextureRect" parent="Panel/CenterContainer/GridContainer/Pequena/char" unique_id=20553193]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.12195122
-anchor_top = 0.008
-anchor_right = 0.8568293
-anchor_bottom = 1.42112
-offset_right = 40.61
-offset_bottom = 79.36
+anchor_left = -1.1824323
+anchor_top = -2.9933333
+anchor_right = -0.4475543
+anchor_bottom = -1.5802132
+offset_right = 619.9856
+offset_bottom = 1209.3467
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.69, 0.69)
-texture = ExtResource("3_37eg1")
+texture = ExtResource("28_v8byh")
 expand_mode = 1
 stretch_mode = 5
+flip_h = true
 metadata/_edit_use_anchors_ = true
 
 [node name="EditableStamp" parent="Panel/CenterContainer/GridContainer/Pequena" unique_id=318924809 instance=ExtResource("2_vffhr")]

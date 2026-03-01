@@ -884,6 +884,7 @@ position = Vector2(773, 1670)
 
 [node name="Sprite2D" parent="armandoInteractable" index="4" unique_id=159541262]
 material = SubResource("ShaderMaterial_xrfvn")
+flip_h = true
 
 [connection signal="animation_finished" from="Estante/AnimationPlayer" to="TransformStateSaver" method="SaveData" unbinds=1]
 [connection signal="onInteracted" from="HiddenLever/hiddenLever_interaction" to="HiddenLever/hiddenLever_interaction/AudioStreamPlayer" method="play"]
