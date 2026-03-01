@@ -4,6 +4,9 @@ const SPEED = 300.0
 
 const HUH = preload("uid://brvbdoqchxkay")
 
+@export var stopMovingSpeedThreshold:float = 50
+@export var stopMovingTimer:float = .75
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
 @onready var possible_position: Area2D = $PossiblePosition
@@ -11,6 +14,7 @@ const HUH = preload("uid://brvbdoqchxkay")
 @onready var camera_2d: Camera2D = $Camera2D
 @onready var walk_timer: Timer = $WalkTimer
 @onready var walk_sound: AudioStreamPlayer = $WalkSound
+@onready var collision_timeout: Timer = $CollisionTimeout
 
 var click_position : Vector2
 var target_position : Vector2
@@ -23,7 +27,6 @@ var interationCalls : int = 0:
 		interationCalls = clamp(value, 0, 1000)
 var in_menu := false
 var is_possible_position := true
-var moving_to_object := false
 var zoomTarget : Vector2
 
 func _ready() -> void:
@@ -38,11 +41,11 @@ func _ready() -> void:
 	GlobalResources.GLOBAL_EVENTS.SusClose.connect(tab_close)
 	GlobalResources.GLOBAL_EVENTS.JournalOpen.connect(tab_open)
 	GlobalResources.GLOBAL_EVENTS.JournalClose.connect(tab_close)
-	GlobalResources.GLOBAL_EVENTS.MoveToObject.connect(move_to_object)
 	GlobalResources.GLOBAL_EVENTS.StopMoving.connect(stop_moving)
 	GlobalResources.GLOBAL_EVENTS.Paused.connect(paused)
 	GlobalResources.GLOBAL_EVENTS.Unpaused.connect(unpaused)
-
+	
+	collision_timeout.wait_time = stopMovingTimer
 
 func _physics_process(delta: float) -> void:
 	
@@ -51,8 +54,7 @@ func _physics_process(delta: float) -> void:
 		possible_position.position = get_local_mouse_position()
 		wait_position.start()
 		await wait_position.timeout
-		if !moving_to_object:
-			_get_mouse_position()
+		_get_mouse_position()
 	
 	if Input.get_vector("left", "right", "up", "down"):
 		mouse_mode = false
@@ -63,6 +65,7 @@ func _physics_process(delta: float) -> void:
 			_move_mouse()
 		else:
 			_move_keyboard()
+			collision_timeout.stop()
 
 
 func _move_mouse() -> void:
@@ -78,6 +81,18 @@ func _move_mouse() -> void:
 		move_and_slide()
 	else:
 		animated_sprite.play("idle")
+		
+	#if(get_slide_collision_count() > 0):
+		#if(collision_timeout.is_stopped()):
+			#collision_timeout.start()
+	#else:
+		#collision_timeout.stop()
+		
+	if(get_real_velocity().length() < stopMovingSpeedThreshold):
+		if(collision_timeout.is_stopped()):
+			collision_timeout.start()
+	else:
+		collision_timeout.stop()
 
 
 func _move_keyboard() -> void:
@@ -99,29 +114,30 @@ func _move_keyboard() -> void:
 
 
 func _get_mouse_position() -> void:
+	var moving_to_object:bool = false
+	for overlap in possible_position.get_overlapping_bodies():
+		if(overlap as Interactable != null):
+			moving_to_object = true
+	
 	if (!ray_cast_2d.is_colliding() and !possible_position.has_overlapping_bodies()) or moving_to_object:
 		mouse_mode = true
 		click_position = get_global_mouse_position()
-	else:
-		if !is_interacting and !moving_to_object and !in_menu:
-			var huh = HUH.instantiate()
-			huh.position = Vector2(0,-128)
-			add_child(huh)
+	elif !is_interacting and !moving_to_object and !in_menu:
+		var huh = HUH.instantiate()
+		huh.position = Vector2(0,-128)
+		add_child(huh)
 
 
 func move_to_object(object_position : Vector2) -> void:
-	moving_to_object = true
 	ray_cast_2d.target_position = object_position
 	possible_position.position = object_position
 	_get_mouse_position()
 
 
 func stop_moving() -> void:
-	if moving_to_object:
-		moving_to_object = false
-		click_position = position
-		velocity = Vector2.ZERO
-		animated_sprite.play("idle")
+	click_position = position
+	velocity = Vector2.ZERO
+	animated_sprite.play("idle")
 
 
 func zoom(delta : float) -> void:

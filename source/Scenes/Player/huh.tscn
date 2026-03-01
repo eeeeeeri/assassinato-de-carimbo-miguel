@@ -23,6 +23,7 @@ stream_4/stream = ExtResource("7_yb0dl")
 stream_5/stream = ExtResource("8_5j4b1")
 
 [node name="Huh" type="CPUParticles2D" unique_id=397500989]
+z_index = 1
 emitting = false
 amount = 1
 texture = ExtResource("1_w8eoa")

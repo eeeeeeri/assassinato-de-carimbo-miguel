@@ -53,7 +53,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
-radius = 60.0
+radius = 38.209946
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_dey5f"]
 random_pitch = 1.2599211
@@ -127,6 +127,9 @@ visible = false
 wait_time = 0.2
 one_shot = true
 
+[node name="CollisionTimeout" type="Timer" parent="." unique_id=1284745524]
+one_shot = true
+
 [node name="WalkTimer" type="Timer" parent="." unique_id=1436659402]
 wait_time = 0.3
 autostart = true
@@ -136,4 +139,5 @@ stream = SubResource("AudioStreamRandomizer_dey5f")
 volume_db = -12.0
 bus = &"SFX"
 
+[connection signal="timeout" from="CollisionTimeout" to="." method="stop_moving"]
 [connection signal="timeout" from="WalkTimer" to="." method="_on_walk_timer_timeout"]
