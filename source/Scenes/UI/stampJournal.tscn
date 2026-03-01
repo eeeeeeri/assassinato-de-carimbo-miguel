@@ -133,9 +133,11 @@ stream_0/stream = ExtResource("24_vkn1i")
 
 [node name="StampJournal" type="CanvasLayer" unique_id=647023198 node_paths=PackedStringArray("editableStamps")]
 script = ExtResource("1_mxt4o")
-quarterColor = Color(0.7575711, 0.28770915, 0, 1)
-halfColor = Color(0.74397665, 0.74397665, 3.85046e-07, 1)
-almostColor = Color(0.43335646, 0.65521336, 0, 1)
+incorrectColor = Color(0.83571845, 1.732707e-06, 4.813075e-07, 1)
+quarterColor = Color(0.9908988, 0.38465402, 3.85046e-07, 1)
+halfColor = Color(0.96822876, 0.8563236, 3.85046e-07, 1)
+almostColor = Color(0.605511, 0.6998566, 0, 1)
+correctColor = Color(2.23808e-06, 0.56846994, 1.540184e-06, 1)
 editableStamps = [NodePath("Panel/CenterContainer/GridContainer/Armando/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Barbara/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Cadu/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Dolores/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Fotocopia/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Jair/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Marka/EditableStamp"), NodePath("Panel/CenterContainer/GridContainer/Pequena/EditableStamp")]
 
 [node name="Panel" type="Control" parent="." unique_id=185544462]
