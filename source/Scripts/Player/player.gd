@@ -70,9 +70,9 @@ func _physics_process(delta: float) -> void:
 
 func _move_mouse() -> void:
 	if position.direction_to(click_position).x > 0:
-		animated_sprite.scale.x = 1
+		animated_sprite.scale.x = -.7
 	elif position.direction_to(click_position).x < 0:
-		animated_sprite.scale.x = -1
+		animated_sprite.scale.x = .7
 	
 	if position.distance_to(click_position) > 3:
 		target_position = (click_position - position).normalized()
@@ -99,9 +99,9 @@ func _move_keyboard() -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
 	
 	if direction.x > 0:
-		animated_sprite.scale.x = 1
+		animated_sprite.scale.x = -.7
 	elif direction.x < 0:
-		animated_sprite.scale.x = -1
+		animated_sprite.scale.x = .7
 	
 	if direction:
 		velocity = direction * SPEED
