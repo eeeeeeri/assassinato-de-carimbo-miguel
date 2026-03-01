@@ -8,13 +8,15 @@
 [ext_resource type="Shader" path="res://CustomResources/Shaders/shadow.gdshader" id="4_ddusd"]
 [ext_resource type="PackedScene" uid="uid://x0e7vbsd852" path="res://Scenes/UI/modular_stamp.tscn" id="5_ddusd"]
 [ext_resource type="Texture2D" uid="uid://bn720yj88xobh" path="res://Assets/portrait_temp.png" id="7_5ji76"]
+[ext_resource type="Texture2D" uid="uid://1vw6n1yxllh" path="res://Assets/Menu/veredito icon.png" id="7_j5bd3"]
+[ext_resource type="Texture2D" uid="uid://llua32x8ymku" path="res://Assets/Menu/icon diario.png" id="8_8xaok"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_j8f76"]
 font_size = 25
 outline_size = 5
 outline_color = Color(0, 0, 0, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_j5bd3"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vhl38"]
 resource_local_to_scene = true
 shader = ExtResource("4_ddusd")
 shader_parameter/shadow_offset = Vector2(0, 0)
@@ -93,6 +95,7 @@ mouse_behavior_recursive = 1
 
 [node name="SussyBaka" parent="Canvas/inputTooltips" unique_id=423670737 instance=ExtResource("3_8od7p")]
 process_mode = 4
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -110,7 +113,7 @@ mouse_filter = 2
 script = null
 
 [node name="Shadow" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="0" unique_id=1212980693]
-material = SubResource("ShaderMaterial_j5bd3")
+material = SubResource("ShaderMaterial_vhl38")
 
 [node name="Sprite2D" parent="Canvas/inputTooltips/SussyBaka/Panel/ColorRect" parent_id_path=PackedInt32Array(423670737, 101840902) index="0" unique_id=657806657]
 position = Vector2(15.725801, -6.2102013)
@@ -119,6 +122,16 @@ texture = ExtResource("7_5ji76")
 
 [node name="Label" parent="Canvas/inputTooltips/SussyBaka/Panel" parent_id_path=PackedInt32Array(423670737, 960644912) index="2" unique_id=324695650]
 visible = false
+
+[node name="iconSusSelect" type="TextureRect" parent="Canvas/inputTooltips" unique_id=1605919687]
+layout_mode = 0
+offset_left = 155.84396
+offset_top = 58.441536
+offset_right = 234.0781
+offset_bottom = 136.67566
+texture = ExtResource("7_j5bd3")
+expand_mode = 1
+stretch_mode = 5
 
 [node name="LabelSusSelect" type="Label" parent="Canvas/inputTooltips" unique_id=1649522843]
 layout_mode = 1
@@ -139,8 +152,19 @@ label_settings = SubResource("LabelSettings_mi66r")
 horizontal_alignment = 2
 vertical_alignment = 1
 
+[node name="iconStampJournal" type="TextureRect" parent="Canvas/inputTooltips" unique_id=1119142626]
+layout_mode = 0
+offset_left = 155.844
+offset_top = 140.25977
+offset_right = 234.07813
+offset_bottom = 218.4939
+texture = ExtResource("8_8xaok")
+expand_mode = 1
+stretch_mode = 5
+
 [node name="ModularStamp" parent="Canvas/inputTooltips" unique_id=25480418 instance=ExtResource("5_ddusd")]
 process_mode = 4
+visible = false
 layout_mode = 0
 offset_left = 165.0
 offset_top = 155.75322
