@@ -28,10 +28,12 @@ var interationCalls : int = 0:
 var in_menu := false
 var is_possible_position := true
 var zoomTarget : Vector2
+var sprite_scale := .3
 
 func _ready() -> void:
 	click_position = position
 	zoomTarget = camera_2d.zoom
+	
 	GlobalResources.player = self
 	GlobalResources.GLOBAL_EVENTS.OnInteract.connect(_on_interact)
 	GlobalResources.GLOBAL_EVENTS.EndInspection.connect(_end_inspection)
@@ -70,9 +72,9 @@ func _physics_process(delta: float) -> void:
 
 func _move_mouse() -> void:
 	if position.direction_to(click_position).x > 0:
-		animated_sprite.scale.x = -.7
+		animated_sprite.scale.x = -sprite_scale
 	elif position.direction_to(click_position).x < 0:
-		animated_sprite.scale.x = .7
+		animated_sprite.scale.x = sprite_scale
 	
 	if position.distance_to(click_position) > 3:
 		target_position = (click_position - position).normalized()
@@ -99,9 +101,9 @@ func _move_keyboard() -> void:
 	var direction := Input.get_vector("left", "right", "up", "down")
 	
 	if direction.x > 0:
-		animated_sprite.scale.x = -.7
+		animated_sprite.scale.x = -sprite_scale
 	elif direction.x < 0:
-		animated_sprite.scale.x = .7
+		animated_sprite.scale.x = sprite_scale
 	
 	if direction:
 		velocity = direction * SPEED

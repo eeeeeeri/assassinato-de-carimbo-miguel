@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bictkbc6hiraj"
-path="res://.godot/imported/183 Sem Título_Restaurado2_20260301183339.png-e32bcaacbca6c89d5d80df923350528f.ctex"
+uid="uid://c7bmgb3x76y8r"
+path="res://.godot/imported/1.png-08a2b3089c3c580f01b482f998711e4f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/player/183 Sem Título_Restaurado2_20260301183339.png"
-dest_files=["res://.godot/imported/183 Sem Título_Restaurado2_20260301183339.png-e32bcaacbca6c89d5d80df923350528f.ctex"]
+source_file="res://Assets/Player/1.png"
+dest_files=["res://.godot/imported/1.png-08a2b3089c3c580f01b482f998711e4f.ctex"]
 
 [params]
 

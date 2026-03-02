@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dru03qahi2rnt"
-path="res://.godot/imported/183 Sem Título_Restaurado2_20260301183454.png-cbd46fdb319e93a7c77ea7c85ca19a89.ctex"
+uid="uid://b56q18amu6htn"
+path="res://.godot/imported/spritesheet_player.png-198ea8c1a42ad1b9d8366c15798dd2c8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/player/183 Sem Título_Restaurado2_20260301183454.png"
-dest_files=["res://.godot/imported/183 Sem Título_Restaurado2_20260301183454.png-cbd46fdb319e93a7c77ea7c85ca19a89.ctex"]
+source_file="res://Assets/Player/spritesheet_player.png"
+dest_files=["res://.godot/imported/spritesheet_player.png-198ea8c1a42ad1b9d8366c15798dd2c8.ctex"]
 
 [params]
 

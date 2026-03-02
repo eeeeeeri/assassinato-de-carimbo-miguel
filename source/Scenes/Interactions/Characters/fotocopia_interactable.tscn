@@ -6,7 +6,7 @@
 [ext_resource type="Shader" uid="uid://c8wb2o4r2lsik" path="res://CustomResources/Shaders/outline.gdshader" id="4_qf7yd"]
 [ext_resource type="Resource" uid="uid://dqnyrhmc0w82" path="res://CustomResources/Characters/Fotocopia/fotocopiaIntroductionDialog.tres" id="5_sc6dx"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_v5gvn"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sc6dx"]
 resource_local_to_scene = true
 shader = ExtResource("4_qf7yd")
 shader_parameter/thickness = 0.0
@@ -23,16 +23,23 @@ shader_parameter/max_or_add = false
 Character = ExtResource("2_0emgn")
 audio_pitch = 1.12
 
+[node name="InteractionArea" parent="." index="0" unique_id=146712339]
+position = Vector2(2.8044739, 8.850006)
+
+[node name="StopArea" parent="." index="1" unique_id=1120606992]
+position = Vector2(2.8044739, 8.850006)
+
 [node name="CollisionShape2D" parent="." index="2" unique_id=1151619031]
-position = Vector2(2, -54.86)
+position = Vector2(4.804474, -46.009995)
 scale = Vector2(1.581, 2.625)
 
 [node name="shadow" parent="." index="3" unique_id=1605338158]
+position = Vector2(2.8044739, 32.850002)
 scale = Vector2(0.295, 0.295)
 
 [node name="Sprite2D" parent="." index="4" unique_id=159541262]
-material = SubResource("ShaderMaterial_v5gvn")
-position = Vector2(4.7683716e-07, 4.7683716e-07)
+material = SubResource("ShaderMaterial_sc6dx")
+position = Vector2(2.8044744, 24.850006)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("4_0emgn")
 offset = Vector2(87.5, -317.5)
